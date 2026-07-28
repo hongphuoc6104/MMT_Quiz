@@ -1,0 +1,11 @@
+﻿ID,Bộ đề,Câu gốc,Trang,Đáp án file,Đáp án đúng,Nội dung đáp án đúng,Giải thích
+De01-2-1,De01,2,1,a,d,Network,"Cấp mạng tương ứng tầng Network (tầng 3), không phải Physical."
+De01-41-39,De01,41,8,d,x,Không có tỷ lệ cố định,"Kiểm tra chẵn lẻ phát hiện mọi lỗi có số bit đảo là lẻ, nhưng không có một tỷ lệ phần trăm cố định như 10%."
+De04-13-121,De04,13,25,c,x,Cơ chế điều khiển tắc nghẽn,"Lưu-và-chuyển-tiếp là kỹ thuật chuyển gói, không phải cơ chế giải quyết tắc nghẽn. Đáp án đúng phải là cơ chế điều khiển tắc nghẽn."
+De04-7-200,De04,7,50,d,a,5000m,1000BASE-LX chuẩn có tầm xa tối đa khoảng 5 km trên sợi quang đơn mode; 10 km là biến thể mở rộng/LX-LH hoặc LX10.
+De04-18-211,De04,18,52,d,c,CDMA,"CDMA phân chia theo mã, không dựa trực tiếp vào khe thời gian hay dải tần như TDMA/FDMA."
+De04-24-249,De04,24,61,c,d,Router,Router hoạt động ở tầng mạng; Switch và Bridge thông thường hoạt động ở tầng liên kết dữ liệu.
+De04-7-263,De04,7,63,b,x,Cả listen và connect,Cả listen và connect đều thuộc dịch vụ hướng kết nối; dịch vụ không kết nối chỉ cần send/receive.
+De04-10-266,De04,10,64,b,x,Cả A và B,"Cả A và B đều sai: UDP không tự mang địa chỉ IP để router định tuyến, và UDP không thiết lập kết nối."
+De04-2-278,De04,2,66,b,x,Cả UDP và TCP,DNS dùng UDP cho phần lớn truy vấn và dùng TCP trong một số trường hợp như truyền vùng hoặc phản hồi lớn.
+De07-10-312,De07,10,72,a,x,Toàn bộ Unicode scalar values (1–4 byte),UTF-8 mã hóa toàn bộ tập giá trị vô hướng Unicode bằng 1–4 byte; 65.536 không phải giới hạn của UTF-8.
