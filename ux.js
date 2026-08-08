@@ -3,6 +3,7 @@
   let toastTimer=null;
 
   const q=id=>document.getElementById(id);
+  const answerIsCorrect=(question,selected)=>typeof isCorrectAnswer==='function'?isCorrectAnswer(question,selected):selected===question.correct_option_id;
 
   function showToast(message){
     const el=q('uxToast');
@@ -41,7 +42,7 @@
       btn.title=`Câu ${index+1} • ${question.set} • câu gốc ${question.source_number}`;
       if(index===state.idx)btn.classList.add('current');
       if(answer?.selected){
-        btn.classList.add(answer.selected===question.correct_option_id?'done':'wrong');
+        btn.classList.add(answerIsCorrect(question,answer.selected)?'done':'wrong');
       }
       btn.onclick=()=>{
         state.idx=index;
@@ -87,7 +88,7 @@
   function retryWrongCurrent(){
     const wrong=state.pool.filter(question=>{
       const answer=state.answered[question.id];
-      return answer?.selected&&answer.selected!==question.correct_option_id;
+      return answer?.selected&&!answerIsCorrect(question,answer.selected);
     });
     if(!wrong.length){
       showToast('Chưa có câu sai trong lượt hiện tại để ôn.');
