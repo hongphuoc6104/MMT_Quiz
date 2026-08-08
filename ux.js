@@ -167,58 +167,85 @@
     applyPaletteVisibility();
   }
 
+  function teachingAuditHtml(question){
+    const audit=window.MMT_ANSWER_AUDIT?.noteFor?.(question);
+    if(!audit)return '';
+    return `<section class="answer-audit ${escapeHtml(audit.kind||'caution')}">
+      <div class="audit-kicker">${audit.kind==='corrected'?'✅ ĐÃ KIỂM TRA LẠI':audit.kind==='source-problem'?'⚠️ LƯU Ý VỀ ĐỀ GỐC':'🔎 CẦN ĐỌC KÈM ĐIỀU KIỆN'}</div>
+      <h4>${escapeHtml(audit.title)}</h4>
+      <p>${escapeHtml(audit.text)}</p>
+      ${audit.basis?`<p class="audit-basis"><b>Căn cứ:</b> ${escapeHtml(audit.basis)}</p>`:''}
+    </section>`;
+  }
+
+  function teachingConceptHtml(concept,index){
+    const points=(concept.points||[]).map(item=>`<li>${escapeHtml(item)}</li>`).join('');
+    return `<article class="concept-card">
+      <div class="concept-step">${index===0?'BẮT ĐẦU TỪ SỐ 0':'KHÁI NIỆM LIÊN QUAN'}</div>
+      <h5>${escapeHtml(concept.title)}</h5>
+      <div class="definition-box"><b>Định nghĩa đầy đủ</b><p>${escapeHtml(concept.definition)}</p></div>
+      ${points?`<div class="concept-points"><b>Hiểu từng ý</b><ul>${points}</ul></div>`:''}
+      ${concept.example?`<div class="concept-example"><b>Ví dụ dễ hình dung</b><p>${escapeHtml(concept.example)}</p></div>`:''}
+      ${concept.distinguish?`<div class="concept-distinguish"><b>Điểm rất dễ nhầm</b><p>${escapeHtml(concept.distinguish)}</p></div>`:''}
+      ${concept.source?`<div class="concept-source">Tham chiếu: ${escapeHtml(concept.source)}</div>`:''}
+    </article>`;
+  }
+
+  function fullTeachingSolutionHtml(question,s,order){
+    if(!s)return '';
+    const concepts=window.MMT_BEGINNER_THEORY?.matches?.(question,s,3)||[];
+    const theory=concepts.length
+      ? `<section class="explain-block beginner-block"><div class="section-intro"><span class="lesson-number">1</span><div><h4>📖 Trước tiên: học khái niệm từ số 0</h4><p>Đọc định nghĩa, từng ý nhỏ, ví dụ và điểm dễ nhầm trước khi kết luận đáp án.</p></div></div><div class="concept-list">${concepts.map(teachingConceptHtml).join('')}</div></section>`
+      : `<section class="explain-block beginner-block fallback-theory"><div class="section-intro"><span class="lesson-number">1</span><div><h4>📖 Trước tiên: kiến thức nền</h4><p>Đây là phần phải hiểu trước khi suy ra đáp án.</p></div></div><div class="definition-box"><b>Khái niệm / quy tắc cần biết</b><p>${escapeHtml(s.knowledge)}</p></div></section>`;
+
+    const calc=s.calculation?`<section class="explain-block calculation-block"><div class="section-intro"><span class="lesson-number">3</span><div><h4>🧮 Bài giải / công thức từng bước</h4><p>Đi từng bước để hiểu công thức, cách thay số và ý nghĩa kết quả.</p></div></div>${s.calculation.title?`<h5>${escapeHtml(s.calculation.title)}</h5>`:''}<ol>${(s.calculation.steps||[]).map((step,i)=>`<li><b>Bước ${i+1}:</b> ${escapeHtml(step)}</li>`).join('')}</ol>${s.calculation.result?`<p class="calc-result"><b>Kết quả / đối chiếu:</b> ${escapeHtml(s.calculation.result)}</p>`:''}</section>`:'';
+
+    const optionRows=(s.options||[]).map(item=>{
+      const pos=order.indexOf(item.id);
+      const letter=pos>=0?letters[pos]:String(item.id||'').toUpperCase();
+      const correct=answerIsCorrect(question,item.id);
+      return `<article class="option-analysis ${correct?'is-correct':'is-wrong'}"><h5>${correct?'✅':'❌'} ${letter}. ${escapeHtml(item.text)}</h5><p><b>${correct?'Vì sao đây là đáp án đúng':'Vì sao không chọn đáp án này'}:</b> ${escapeHtml(item.why)}</p><p class="when-line"><b>${correct?'Điều kiện để kết luận này đúng':'Khi nào ý của phương án này có thể đúng'}:</b> ${escapeHtml(item.when)}</p></article>`;
+    }).join('');
+
+    const mistakes=(s.commonMistakes||[]);
+    const sources=question.sources?.length?`<div class="source-note"><b>Nguồn / đối chiếu trong dữ liệu:</b> ${question.sources.map(escapeHtml).join(', ')}</div>`:'';
+
+    return `<div class="solution tthcm-solution beginner-solution enforced-full-teaching">
+      ${teachingAuditHtml(question)}
+      ${theory}
+      <section class="explain-block reasoning-block"><div class="section-intro"><span class="lesson-number">2</span><div><h4>🎯 Áp dụng kiến thức vào chính câu hỏi</h4><p>Nối từ khóa trong đề với định nghĩa vừa học rồi mới kết luận.</p></div></div><p>${escapeHtml(s.reasoning)}</p></section>
+      ${calc}
+      <section class="explain-block knowledge-block"><div class="section-intro"><span class="lesson-number">${s.calculation?'4':'3'}</span><div><h4>📘 Kiến thức nền riêng của câu</h4><p>Phần thủ công được viết riêng cho câu này để bổ sung cho định nghĩa tổng quát.</p></div></div><p>${escapeHtml(s.knowledge)}</p></section>
+      <section class="explain-block options-explanation"><div class="section-intro"><span class="lesson-number">${s.calculation?'5':'4'}</span><div><h4>🧩 Phân tích đầy đủ từng đáp án A/B/C/D</h4><p>Đọc cả đáp án sai để biết nó sai ở đâu và khi nào ý đó có thể đúng.</p></div></div><div class="option-analysis-list">${optionRows}</div></section>
+      <section class="explain-block mistakes-block"><h4>⚠️ Lỗi người mới rất dễ mắc</h4>${mistakes.length?`<ul>${mistakes.map(item=>`<li>${escapeHtml(item)}</li>`).join('')}</ul>`:'<p>Không có ghi chú lỗi riêng; hãy tập trung vào định nghĩa và điều kiện áp dụng.</p>'}</section>
+      <section class="explain-block memory-block"><h4>🧠 Sau cùng: điều cần nhớ</h4><p>${escapeHtml(s.summary)}</p></section>
+      ${sources}
+    </div>`;
+  }
+
+  function enforceFullTeachingFeedback(){
+    const question=state.pool?.[state.idx];
+    if(!question)return;
+    const answer=state.answered?.[question.id];
+    if(!answer?.selected)return;
+    const feedback=q('feedback');
+    const s=SOLUTIONS?.[question.id];
+    if(!feedback||!s)return;
+    const order=optionOrder(question);
+    const correct=answerIsCorrect(question,answer.selected);
+    const correctId=question.correct_option_id;
+    const correctPos=order.indexOf(correctId);
+    const correctText=question.options.find(item=>item.id===correctId)?.text||'';
+    feedback.className='feedback show '+(correct?'ok':'bad');
+    feedback.innerHTML=`<h3>${correct?'✅ Chính xác':'❌ Chưa đúng'}</h3><div class="answer-line"><b>Đáp án:</b> ${correctPos>=0?letters[correctPos]+'. ':''}${escapeHtml(correctText)}</div>${fullTeachingSolutionHtml(question,s,order)}`;
+  }
+
+  window.MMT_FULL_TEACHING_UI=Object.freeze({fullTeachingSolutionHtml,enforceFullTeachingFeedback});
+
   const baseSolutionHtml=solutionHtml;
   solutionHtml=function(question,s,order){
     if(!s)return baseSolutionHtml(question,s,order);
-
-    const calc=s.calculation?`
-      <details class="solution-details calculation-details" open>
-        <summary>🧮 Bài giải / công thức</summary>
-        <div class="solution-details-body">
-          <h5 class="calc-title">${escapeHtml(s.calculation.title)}</h5>
-          <ol>${s.calculation.steps.map(step=>`<li>${escapeHtml(step)}</li>`).join('')}</ol>
-          ${s.calculation.result?`<p class="calc-result"><b>Kết quả:</b> ${escapeHtml(s.calculation.result)}</p>`:''}
-        </div>
-      </details>`:'';
-
-    const optionRows=s.options.map(item=>{
-      const letter=letters[order.indexOf(item.id)];
-      const correct=answerIsCorrect(question,item.id);
-      return `<article class="option-analysis ${correct?'is-correct':'is-wrong'}">
-        <h5>${correct?'✅':'❌'} ${letter}. ${escapeHtml(item.text)}</h5>
-        <p><b>Vì sao ${correct?'chọn':'không chọn'}:</b> ${escapeHtml(item.why)}</p>
-        <p><b>Khi nào phương án này đúng / dùng được:</b> ${escapeHtml(item.when)}</p>
-      </article>`;
-    }).join('');
-
-    const mistakes=(s.commonMistakes||[]).map(item=>`<li>${escapeHtml(item)}</li>`).join('');
-    const sources=question.sources?.length?`<div class="source-note"><b>Nguồn/đối chiếu:</b> ${question.sources.map(escapeHtml).join(', ')}</div>`:'';
-
-    return `<div class="solution">
-      <div class="solution-quick">
-        <section class="quick-explanation">
-          <h4>💡 Giải thích nhanh</h4>
-          <p>${escapeHtml(s.reasoning)}</p>
-        </section>
-        <section class="memory-card">
-          <h4>🧠 Ghi nhớ</h4>
-          <p>${escapeHtml(s.summary)}</p>
-        </section>
-      </div>
-      ${calc}
-      <details class="solution-details">
-        <summary>📘 Kiến thức nền</summary>
-        <div class="solution-details-body"><p>${escapeHtml(s.knowledge)}</p></div>
-      </details>
-      <details class="solution-details">
-        <summary>🧩 Phân tích từng đáp án A/B/C/D</summary>
-        <div class="solution-details-body"><div class="option-analysis-list">${optionRows}</div></div>
-      </details>
-      <details class="solution-details">
-        <summary>⚠️ Lỗi dễ mắc và nguồn đối chiếu</summary>
-        <div class="solution-details-body">${mistakes?`<ul>${mistakes}</ul>`:'<p>Không có ghi chú lỗi riêng cho câu này.</p>'}${sources}</div>
-      </details>
-    </div>`;
+    return fullTeachingSolutionHtml(question,s,order);
   };
 
   const baseUpdateStats=updateStats;
@@ -242,6 +269,7 @@
   const baseRender=render;
   render=function(){
     baseRender();
+    enforceFullTeachingFeedback();
     if(!q('qPos'))return;
     decorateOptions();
     renderQuestionPalette();
