@@ -9,7 +9,7 @@
     'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
     'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
     'manual_solutions/de07.js','manual_solutions/de08.js',
-    'data_corrections.js','manual_to_static.js','app.js','image-crops.js','ux.js',
+    'data_corrections.js','manual_to_static.js','app.js','image-crops.js?v=20260808-dedicated-1','ux.js',
     'answer_audit_notes.js','beginner_theory.js','tthcm_layout.js','beginner_full_renderer.js'
   ];
 
