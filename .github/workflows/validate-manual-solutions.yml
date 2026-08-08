@@ -11,8 +11,6 @@ on:
       - 'data_corrections.js'
       - 'manual_to_static.js'
       - 'manual_bootstrap.js'
-      - 'learning_view.js'
-      - 'learning_view.css'
       - 'answer_audit_notes.js'
       - 'beginner_theory.js'
       - 'beginner_theory.css'
@@ -82,36 +80,70 @@ jobs:
           console.log('supplementary technical answers:',supplementary.length,supplementary.join(', '));
           NODE
 
-      - name: Check concise learning view behavior
+      - name: Audit knowledge-first explanation copy
         run: |
           node - <<'NODE'
           const fs=require('fs'),vm=require('vm');
-          const box={window:{},console}; vm.createContext(box);
-          vm.runInContext(fs.readFileSync('learning_view.js','utf8'),box,{filename:'learning_view.js'});
-          const ui=box.window.QUIZ_LEARNING_VIEW;
-          if(!ui?.buildSolutionHtml)throw new Error('Learning view renderer is unavailable');
-
-          const longReason='TCP '+('reason '.repeat(100))+'END-REASON';
-          const longKnowledge='OSI '+('knowledge '.repeat(100))+'END-KNOWLEDGE';
-          const longWhy='TCP '+('detail '.repeat(100))+'END-WHY';
-          const longWhen='UDP '+('condition '.repeat(80))+'END-WHEN';
-          const q={correct_option_id:'a',options:[{id:'a',text:'TCP'},{id:'b',text:'UDP'}],sources:['test']};
-          const s={
-            reasoning:longReason,summary:'TCP dùng kết nối tin cậy.',knowledge:longKnowledge,
-            options:[
-              {id:'a',text:'TCP',correct:true,why:longWhy,when:longWhen},
-              {id:'b',text:'UDP',correct:false,why:'UDP là connectionless.',when:'Dùng khi ưu tiên độ trễ thấp.'}
-            ],
-            commonMistakes:['Nhầm TCP với UDP.'],calculation:null
+          const files=[
+            'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
+            'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
+            'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de04_ch1_c.js',
+            'manual_solutions/de04_ch3_a.js','manual_solutions/de04_ch3_b.js','manual_solutions/de04_ch4.js',
+            'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
+            'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
+            'manual_solutions/de07.js','manual_solutions/de08.js'
+          ];
+          const box={
+            window:{},console,
+            letters:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            escapeHtml:v=>String(v??''),
+            isCorrectAnswer:(q,id)=>id===q.correct_option_id
           };
-          const html=ui.buildSolutionHtml(q,s,['a','b']);
-          if(!html.includes('🔑 Từ khóa:'))throw new Error('Keyword strip missing');
-          if(!html.includes('class="key-term"'))throw new Error('Important terms are not highlighted');
-          if(html.includes('END-REASON'))throw new Error('Always-visible reasoning is not concise');
-          for(const marker of ['END-KNOWLEDGE','END-WHY','END-WHEN']){
-            if(!html.includes(marker))throw new Error(`Expanded detail was truncated: ${marker}`);
+          vm.createContext(box);
+          vm.runInContext(fs.readFileSync('questions.js','utf8'),box,{filename:'questions.js'});
+          vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box,{filename:'question_structure_fixes.js'});
+          for(const f of files)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
+          vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box,{filename:'data_corrections.js'});
+          vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box,{filename:'manual_to_static.js'});
+          vm.runInContext(fs.readFileSync('tthcm_layout.js','utf8'),box,{filename:'tthcm_layout.js'});
+
+          const data=box.window.QUIZ_DATA;
+          const live=box.window.STATIC_SOLUTION_DATA;
+          const ui=box.window.MMT_TTHCM_LAYOUT;
+          if(!ui?.cleanExplanation||!ui?.fullSolutionHtml)throw new Error('Knowledge-first renderer unavailable');
+
+          const lowInformation=[];
+          const banned=['Vì sao không chọn','Vì sao đây là đáp án đúng','Khi nào phương án này','Khi nào ý của phương án này','🔑 Từ khóa:'];
+          for(const q of data.questions){
+            const s=live.solutions[q.id];
+            for(const o of s.options){
+              const cleaned=ui.cleanExplanation(o.why);
+              if(!cleaned||/^(?:đúng|sai|correct|wrong)[.!]?$/i.test(cleaned))lowInformation.push(`${q.id}/${o.id}`);
+            }
+            const order=q.options.map(o=>o.id);
+            const html=ui.fullSolutionHtml(q,s,order);
+            for(const phrase of banned){
+              if(html.includes(phrase))throw new Error(`Repeated UI phrase still rendered in ${q.id}: ${phrase}`);
+            }
           }
-          console.log('learning view behavior ok');
+          if(lowInformation.length)throw new Error(`Displayed option explanations without knowledge: ${lowInformation.join(', ')}`);
+
+          const sampleQ={id:'sample',correct_option_id:'a',options:[{id:'a',text:'Mạng điện báo'},{id:'b',text:'Mạng điện thoại'}],sources:[]};
+          const sampleS={
+            knowledge:'Telegraph truyền ký tự rời rạc bằng mã.',
+            reasoning:'Mạng điện báo phù hợp vì dữ liệu được biểu diễn thành các ký tự/mã rời rạc.',
+            summary:'Điện báo là ví dụ truyền thông dữ liệu dạng ký tự mã hóa.',
+            calculation:null,commonMistakes:[],
+            options:[
+              {id:'a',text:'Mạng điện báo',correct:true,why:'Đúng. Telegraph truyền ký tự bằng mã rời rạc.',when:'SHOULD-NOT-BE-DISPLAYED'},
+              {id:'b',text:'Mạng điện thoại',correct:false,why:'Sai. Điện thoại truyền tiếng nói, không phải ví dụ gốc của truyền ký tự điện báo.',when:'SHOULD-NOT-BE-DISPLAYED'}
+            ]
+          };
+          const sample=ui.fullSolutionHtml(sampleQ,sampleS,['a','b']);
+          if(sample.includes('SHOULD-NOT-BE-DISPLAYED'))throw new Error('The repetitive when-field is still shown');
+          if(!sample.includes('Telegraph truyền ký tự bằng mã rời rạc.'))throw new Error('Knowledge-bearing option explanation disappeared');
+          if(!sample.includes('<details class="study-details option-study-details">'))throw new Error('Option comparison should be collapsed by default');
+          console.log(`knowledge-first copy ok: ${data.questions.length} questions, ${Object.values(live.solutions).reduce((n,s)=>n+s.options.length,0)} displayed option reasons audited`);
           NODE
 
       - name: Check beginner theory library
@@ -156,7 +188,6 @@ jobs:
           node --check question_structure_fixes.js
           node --check manual_to_static.js
           node --check manual_bootstrap.js
-          node --check learning_view.js
           node --check answer_audit_notes.js
           node --check beginner_theory.js
           node --check tthcm_layout.js
@@ -172,10 +203,13 @@ jobs:
           grep -q 'manual_to_static.js' manual_bootstrap.js
           grep -q 'data_corrections.js' manual_bootstrap.js
           grep -q 'app.js' manual_bootstrap.js
-          grep -q 'learning_view.js' manual_bootstrap.js
           grep -q 'answer_audit_notes.js' manual_bootstrap.js
           grep -q 'beginner_theory.js' manual_bootstrap.js
           grep -q 'tthcm_layout.js' manual_bootstrap.js
+          if grep -q 'learning_view.js' manual_bootstrap.js || grep -q 'learning_view.css' index.html; then
+            echo 'obsolete learning_view layer is still wired into the website'
+            exit 1
+          fi
           if grep -q 'static_solutions.js\|solution_engine.js\|scripts/materialize-solutions' index.html; then
             echo 'index.html still references disabled or stale generated solution machinery'
             exit 1
