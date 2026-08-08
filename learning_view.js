@@ -13,7 +13,7 @@
     'analog','digital','Nyquist','Shannon','bandwidth','băng thông','SNR','sequence number','receive window','rwnd','cwnd',
     'Physical','Data Link','Network','Transport','Session','Presentation','Application'
   ];
-  const DISPLAY_LIMITS={reasoning:330,summary:230,knowledge:560,why:320,when:230};
+  const DISPLAY_LIMITS={reasoning:330,summary:230};
   const escapeRe=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
   const keywordSource=KEY_TERMS.slice().sort((a,b)=>b.length-a.length).map(escapeRe).join('|');
   const techRe=new RegExp('('+keywordSource+'|\\b\\d{1,3}(?:\\.\\d{1,3}){3}(?:\\/\\d{1,2})?\\b|\\/(?:[12]?\\d|3[0-2])\\b|\\b\\d+(?:[.,]\\d+)?\\s*(?:Gbps|Mbps|Kbps|bps|GHz|MHz|kHz|Hz|ms|bytes?|bits?|km|m)\\b)','gi');
@@ -40,7 +40,12 @@
     const s=tidy(v);if(!s||s.length<=max)return s;
     const parts=s.match(/[^.!?]+[.!?]?/g)||[s];
     let out='';
-    for(const p of parts){const next=(out+' '+p.trim()).trim();if(next.length>max&&out)break;out=next;if(out.length>=Math.min(max*.72,210))break;}
+    for(const p of parts){
+      const next=(out+' '+p.trim()).trim();
+      if(next.length>max&&out)break;
+      out=next;
+      if(out.length>=Math.min(max*.72,210))break;
+    }
     return out&&out.length<s.length?out+' …':(s.slice(0,max).replace(/\s+\S*$/,'')+' …');
   }
 
@@ -49,7 +54,10 @@
   function extractKeywords(text,correctText){
     const hay=(String(text||'')+' '+String(correctText||'')).toLowerCase();
     const found=[];
-    for(const term of KEY_TERMS){if(hay.includes(term.toLowerCase())&&!found.some(x=>x.toLowerCase()===term.toLowerCase()))found.push(term);if(found.length===6)break;}
+    for(const term of KEY_TERMS){
+      if(hay.includes(term.toLowerCase())&&!found.some(x=>x.toLowerCase()===term.toLowerCase()))found.push(term);
+      if(found.length===6)break;
+    }
     const ct=tidy(correctText);
     if(ct&&ct.length<=34&&!/^(đúng|sai|tất cả.*)$/i.test(ct)&&!found.some(x=>x.toLowerCase()===ct.toLowerCase()))found.unshift(ct);
     return found.slice(0,6);
@@ -69,6 +77,7 @@
     const keywords=extractKeywords([s.summary,s.reasoning,s.knowledge].join(' '),correctText);
     const keywordHtml=keywords.length?`<div class="memory-keywords"><span>🔑 Từ khóa:</span>${keywords.map(k=>`<span class="memory-chip">${esc(k)}</span>`).join('')}</div>`:'';
 
+    // Only the always-visible path is shortened. Expanded study sections remain complete.
     const reason=mark(s.reasoning,DISPLAY_LIMITS.reasoning);
     const summary=mark(s.summary,DISPLAY_LIMITS.summary);
 
@@ -78,13 +87,11 @@
     const rows=ordered.map(({id,a},i)=>{
       const correct=id===correctId;
       const text=qById[id]?.text||a.text||id;
-      const why=mark(a.why,DISPLAY_LIMITS.why);
-      const when=mark(a.when,DISPLAY_LIMITS.when);
-      return `<article class="option-analysis ${correct?'is-correct':'is-wrong'}"><h5>${correct?'✅':'❌'} ${String.fromCharCode(65+i)}. ${mark(text)} — ${correct?'Đúng':'Không chọn'}</h5><p><b>${correct?'Lý do':'Vì sao sai'}:</b> ${why}</p><p class="when-line"><b>Dùng khi:</b> ${when}</p></article>`;
+      return `<article class="option-analysis ${correct?'is-correct':'is-wrong'}"><h5>${correct?'✅':'❌'} ${String.fromCharCode(65+i)}. ${mark(text)} — ${correct?'Đúng':'Không chọn'}</h5><p><b>${correct?'Lý do':'Vì sao sai'}:</b> ${mark(a.why)}</p><p class="when-line"><b>Dùng khi:</b> ${mark(a.when)}</p></article>`;
     }).join('');
 
-    const mistakes=(s.commonMistakes||[]).length?`<details class="study-details"><summary>⚠️ Lỗi dễ nhầm</summary><div class="details-body"><ul>${s.commonMistakes.map(x=>`<li>${mark(x,260)}</li>`).join('')}</ul></div></details>`:'';
-    const knowledge=s.knowledge?`<details class="study-details"><summary>📘 Kiến thức nền</summary><div class="details-body"><p>${mark(s.knowledge,DISPLAY_LIMITS.knowledge)}</p></div></details>`:'';
+    const mistakes=(s.commonMistakes||[]).length?`<details class="study-details"><summary>⚠️ Lỗi dễ nhầm</summary><div class="details-body"><ul>${s.commonMistakes.map(x=>`<li>${mark(x)}</li>`).join('')}</ul></div></details>`:'';
+    const knowledge=s.knowledge?`<details class="study-details"><summary>📘 Kiến thức nền</summary><div class="details-body"><p>${mark(s.knowledge)}</p></div></details>`:'';
     const options=rows?`<details class="study-details"><summary>🧩 Xem phân tích A/B/C/D</summary><div class="details-body"><div class="option-analysis-list">${rows}</div></div></details>`:'';
     const source=q.sources?.length?`<div class="source-note">Nguồn đối chiếu: ${q.sources.map(esc).join(', ')}</div>`:'';
 
@@ -95,5 +102,5 @@
   // scoring, answer IDs, progress, wrong-question storage and source data stay untouched.
   window.solutionHtml=buildSolutionHtml;
   try{solutionHtml=buildSolutionHtml;}catch(e){}
-  window.QUIZ_LEARNING_VIEW={tidy,concise,extractKeywords};
+  window.QUIZ_LEARNING_VIEW={tidy,concise,extractKeywords,buildSolutionHtml};
 })();
