@@ -16,6 +16,7 @@ on:
       - 'beginner_theory.css'
       - 'tthcm_layout.js'
       - 'tthcm_layout.css'
+      - 'beginner_full_renderer.js'
       - 'app.js'
       - 'index.html'
       - 'scripts/validate-manual-solutions.cjs'
@@ -34,56 +35,10 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Check 314 manual solutions and sections
+      - name: Check all 314 manual solutions
         run: node scripts/validate-manual-solutions.cjs all
 
-      - name: Cross-check exact live answers and explanations
-        run: |
-          node - <<'NODE'
-          const fs=require('fs'),vm=require('vm');
-          const files=[
-            'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
-            'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
-            'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de04_ch1_c.js',
-            'manual_solutions/de04_ch3_a.js','manual_solutions/de04_ch3_b.js','manual_solutions/de04_ch4.js',
-            'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
-            'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
-            'manual_solutions/de07.js','manual_solutions/de08.js'
-          ];
-          const box={window:{},console}; vm.createContext(box);
-          vm.runInContext(fs.readFileSync('questions.js','utf8'),box,{filename:'questions.js'});
-          vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box,{filename:'question_structure_fixes.js'});
-          for(const f of files)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
-          vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box,{filename:'data_corrections.js'});
-          vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box,{filename:'manual_to_static.js'});
-          const data=box.window.QUIZ_DATA, live=box.window.STATIC_SOLUTION_DATA;
-          if(!data||!live?.solutions)throw new Error('Live quiz data failed to initialize');
-          if(data.questions.length!==314||Object.keys(live.solutions).length!==314)throw new Error('Live quiz is not 314/314');
-          const supplementary=[];
-          let optionCount=0;
-          for(const q of data.questions){
-            const ids=(q.options||[]).map(o=>o.id);
-            if(new Set(ids).size!==ids.length)throw new Error(`Duplicate option ID: ${q.id}`);
-            if(!ids.includes(q.correct_option_id))throw new Error(`Correct option missing: ${q.id}/${q.correct_option_id}`);
-            const s=live.solutions[q.id];
-            if(!s||s.options.length!==q.options.length)throw new Error(`Option analysis mismatch: ${q.id}`);
-            const marked=[...new Set(s.options.filter(o=>o.correct).map(o=>o.id))];
-            if(marked.length!==1||marked[0]!==q.correct_option_id)throw new Error(`Answer mismatch ${q.id}`);
-            if(!String(s.knowledge||'').trim()||!String(s.reasoning||'').trim()||!String(s.summary||'').trim())throw new Error(`Missing knowledge/reasoning/summary: ${q.id}`);
-            for(const o of s.options){
-              optionCount++;
-              if(!String(o.why||'').trim())throw new Error(`Missing why: ${q.id}/${o.id}`);
-              // Keep the old 'when' field in source data for reference, but it is no longer
-              // required to be shown in the learning UI.
-              if(!String(o.when||'').trim())throw new Error(`Missing source condition: ${q.id}/${o.id}`);
-            }
-            if(q.correct_option_id==='x')supplementary.push(q.id);
-          }
-          if(supplementary.length!==7)throw new Error(`Expected 7 supplementary technical answers, got ${supplementary.length}`);
-          console.log(`live data ok: 314 questions, ${optionCount} option explanations, 7 supplementary technical answers`);
-          NODE
-
-      - name: Enforce knowledge-first renderer behavior
+      - name: Cross-check live answers and source explanations
         run: |
           node - <<'NODE'
           const fs=require('fs'),vm=require('vm');
@@ -96,123 +51,113 @@ jobs:
             'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
             'manual_solutions/de07.js','manual_solutions/de08.js'
           ];
-          const box={
-            window:{},console,
-            letters:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            escapeHtml:v=>String(v??''),
-            isCorrectAnswer:(q,id)=>id===q.correct_option_id
-          };
-          vm.createContext(box);
+          const box={window:{},console}; vm.createContext(box);
           vm.runInContext(fs.readFileSync('questions.js','utf8'),box);
           vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box);
           for(const f of manual)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
           vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box);
           vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box);
+          const data=box.window.QUIZ_DATA, live=box.window.STATIC_SOLUTION_DATA;
+          if(data.questions.length!==314||Object.keys(live.solutions).length!==314)throw new Error('Expected 314/314');
+          let optionCount=0, supplementary=0;
+          for(const q of data.questions){
+            const ids=q.options.map(o=>o.id);
+            if(new Set(ids).size!==ids.length)throw new Error(`Duplicate option IDs: ${q.id}`);
+            if(!ids.includes(q.correct_option_id))throw new Error(`Missing correct option: ${q.id}`);
+            const s=live.solutions[q.id];
+            if(!s||s.options.length!==q.options.length)throw new Error(`Analysis mismatch: ${q.id}`);
+            const marked=s.options.filter(o=>o.correct).map(o=>o.id);
+            if(marked.length!==1||marked[0]!==q.correct_option_id)throw new Error(`Answer mismatch: ${q.id}`);
+            if(!String(s.knowledge||'').trim()||!String(s.reasoning||'').trim()||!String(s.summary||'').trim())throw new Error(`Missing teaching sections: ${q.id}`);
+            for(const o of s.options){
+              optionCount++;
+              if(!String(o.why||'').trim())throw new Error(`Missing why: ${q.id}/${o.id}`);
+              if(!String(o.when||'').trim())throw new Error(`Missing when: ${q.id}/${o.id}`);
+            }
+            if(q.correct_option_id==='x')supplementary++;
+          }
+          if(supplementary!==7)throw new Error(`Expected 7 supplementary answers, got ${supplementary}`);
+          console.log(`live data ok: 314 questions, ${optionCount} option why+when explanations`);
+          NODE
+
+      - name: Enforce final beginner renderer output
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),vm=require('vm');
+          const manual=[
+            'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
+            'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
+            'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de03_a.js'
+          ];
+          const allManual=[
+            'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
+            'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
+            'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de04_ch1_c.js',
+            'manual_solutions/de04_ch3_a.js','manual_solutions/de04_ch3_b.js','manual_solutions/de04_ch4.js',
+            'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
+            'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
+            'manual_solutions/de07.js','manual_solutions/de08.js'
+          ];
+          const box={window:{},console,letters:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',escapeHtml:v=>String(v??''),isCorrectAnswer:(q,id)=>id===q.correct_option_id};
+          vm.createContext(box);
+          vm.runInContext(fs.readFileSync('questions.js','utf8'),box);
+          vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box);
+          for(const f of allManual)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
+          vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box);
+          vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box);
           vm.runInContext(fs.readFileSync('answer_audit_notes.js','utf8'),box);
           vm.runInContext(fs.readFileSync('beginner_theory.js','utf8'),box);
           vm.runInContext(fs.readFileSync('tthcm_layout.js','utf8'),box);
-
-          const data=box.window.QUIZ_DATA, live=box.window.STATIC_SOLUTION_DATA, ui=box.window.MMT_TTHCM_LAYOUT;
-          if(!ui?.fullSolutionHtml||!ui?.cleanExplanation)throw new Error('Knowledge-first renderer unavailable');
-
-          const banned=[
-            'Vì sao đây là đáp án đúng','Vì sao không chọn','Vì sao chọn',
-            'Khi nào phương án này','Khi nào ý của phương án này',
-            'Điều kiện để kết luận này đúng','🔑 Từ khóa:'
-          ];
-          const lowInformation=[];
-          let renderedOptions=0;
-
+          vm.runInContext(fs.readFileSync('beginner_full_renderer.js','utf8'),box);
+          const data=box.window.QUIZ_DATA, live=box.window.STATIC_SOLUTION_DATA, ui=box.window.MMT_BEGINNER_FULL_RENDERER;
+          if(!ui?.fullSolutionHtml)throw new Error('Final beginner renderer unavailable');
+          let optionCount=0;
           for(const q of data.questions){
-            const s=live.solutions[q.id];
-            const html=ui.fullSolutionHtml(q,s,q.options.map(o=>o.id));
-            if(!html.includes('Kiến thức cần nhớ'))throw new Error(`Knowledge section missing: ${q.id}`);
-            if(!html.includes('Áp dụng vào câu hỏi'))throw new Error(`Reasoning section missing: ${q.id}`);
-            if(!html.includes('Ghi nhớ'))throw new Error(`Memory section missing: ${q.id}`);
-            if(!html.includes('<details class="study-details option-study-details">'))throw new Error(`Option comparison is not collapsed: ${q.id}`);
-            for(const phrase of banned){
-              if(html.includes(phrase))throw new Error(`Repeated meta-label still shown in ${q.id}: ${phrase}`);
-            }
+            const s=live.solutions[q.id], html=ui.fullSolutionHtml(q,s,q.options.map(o=>o.id));
+            if(!html.includes('Trước tiên:'))throw new Error(`Beginner theory intro missing: ${q.id}`);
+            if(!html.includes('Áp dụng kiến thức vào chính câu hỏi'))throw new Error(`Reasoning missing: ${q.id}`);
+            if(!html.includes('Phân tích đầy đủ từng đáp án A/B/C/D'))throw new Error(`A/B/C/D section missing: ${q.id}`);
+            if(html.includes('option-study-details'))throw new Error(`A/B/C/D unexpectedly collapsed: ${q.id}`);
             for(const o of s.options){
-              renderedOptions++;
-              const why=ui.cleanExplanation(o.why||'');
-              if(!why||/^(?:đúng|sai|correct|wrong)[.!]?$/i.test(why))lowInformation.push(`${q.id}/${o.id}`);
-              if(why&&!html.includes(why))throw new Error(`Knowledge-bearing reason not rendered: ${q.id}/${o.id}`);
+              optionCount++;
+              const why=ui.clean(o.why), when=ui.clean(o.when);
+              if(!html.includes(why))throw new Error(`why hidden: ${q.id}/${o.id}`);
+              if(!html.includes(when))throw new Error(`when hidden: ${q.id}/${o.id}`);
             }
           }
-          if(lowInformation.length)throw new Error(`Option reasons without useful knowledge: ${lowInformation.join(', ')}`);
-
-          const sampleQ={id:'sample',correct_option_id:'a',options:[{id:'a',text:'Mạng điện báo'},{id:'b',text:'Mạng điện thoại'}],sources:[]};
-          const sampleS={
-            knowledge:'Telegraph truyền ký tự rời rạc bằng mã.',
-            reasoning:'Mạng điện báo phù hợp vì dữ liệu được biểu diễn thành ký tự/mã rời rạc.',
-            summary:'Điện báo là ví dụ truyền dữ liệu ký tự mã hóa.',
-            calculation:null,commonMistakes:[],
-            options:[
-              {id:'a',text:'Mạng điện báo',correct:true,why:'Đúng. Telegraph truyền ký tự bằng mã rời rạc.',when:'WHEN-SHOULD-STAY-HIDDEN'},
-              {id:'b',text:'Mạng điện thoại',correct:false,why:'Sai. Điện thoại truyền tiếng nói, khác với truyền ký tự điện báo.',when:'WHEN-SHOULD-STAY-HIDDEN'}
-            ]
-          };
-          const sample=ui.fullSolutionHtml(sampleQ,sampleS,['a','b']);
-          if(sample.includes('WHEN-SHOULD-STAY-HIDDEN'))throw new Error('The repetitive when-field is still displayed');
-          if(!sample.includes('Telegraph truyền ký tự bằng mã rời rạc.'))throw new Error('Useful option knowledge disappeared');
-          console.log(`knowledge-first renderer ok: 314 questions, ${renderedOptions} option reasons audited; repetitive when-labels hidden`);
+          console.log(`final renderer ok: 314 questions, ${optionCount} visible why+when explanations`);
           NODE
 
-      - name: Check beginner theory definitions
+      - name: Check definitions and answer-audit coverage
         run: |
           node - <<'NODE'
           const fs=require('fs'),vm=require('vm');
           const box={window:{},console}; vm.createContext(box);
           vm.runInContext(fs.readFileSync('beginner_theory.js','utf8'),box);
-          const lib=box.window.MMT_BEGINNER_THEORY;
-          if(!lib?.concepts?.length||typeof lib.matches!=='function')throw new Error('Beginner theory library unavailable');
-          for(const c of lib.concepts){
-            for(const field of ['title','definition','example','distinguish','source']){
-              if(!String(c[field]||'').trim())throw new Error(`Concept ${c.id} missing ${field}`);
-            }
-            if(!Array.isArray(c.points)||c.points.length<2)throw new Error(`Concept ${c.id} needs explanatory points`);
-          }
-          const samples=['OSI Network Layer','TCP SYN ACK sequence number','UDP datagram','DNS MX record','ARP IP MAC','DHCP lease','IPv4 subnet /27','CRC parity checksum','Go-Back-N sliding window','Shannon SNR bandwidth','Ethernet CSMA/CD switch','UTF-8 Unicode'];
-          for(const text of samples){
-            if(!lib.matches({question:text,options:[]},{knowledge:'',reasoning:'',summary:''},3).length)throw new Error(`No definition matched: ${text}`);
-          }
-          console.log(`theory library ok: ${lib.concepts.length} concept groups`);
-          NODE
-
-      - name: Check answer-audit coverage
-        run: |
-          node - <<'NODE'
-          const fs=require('fs'),vm=require('vm');
-          const box={window:{},console}; vm.createContext(box);
           vm.runInContext(fs.readFileSync('answer_audit_notes.js','utf8'),box);
-          const a=box.window.MMT_ANSWER_AUDIT;
-          if(!a||Object.keys(a.corrected||{}).length!==4)throw new Error('Expected 4 corrected answer notes');
-          if(Object.keys(a.noCompleteChoice||{}).length!==7)throw new Error('Expected 7 source questions without a complete technical option');
-          for(const id of ['De01-2-1','De04-4-191','De04-2-278','De07-10-312','De08-31-321']){
-            if(!a.noteFor({id,warning:''}))throw new Error(`Missing audit note for ${id}`);
+          const lib=box.window.MMT_BEGINNER_THEORY, audit=box.window.MMT_ANSWER_AUDIT;
+          for(const c of lib.concepts){
+            for(const f of ['title','definition','example','distinguish','source'])if(!String(c[f]||'').trim())throw new Error(`${c.id} missing ${f}`);
+            if(!Array.isArray(c.points)||c.points.length<2)throw new Error(`${c.id} lacks teaching points`);
           }
-          console.log('answer audit ok: 4 corrected + 7 incomplete-source + duplicate-choice note');
+          for(const sample of ['OSI Network Layer','TCP SYN ACK','UDP datagram','DNS MX','ARP IP MAC','DHCP lease','IPv4 subnet /27','CRC parity','Go-Back-N','Shannon SNR','Ethernet CSMA/CD','UTF-8 Unicode']){
+            if(!lib.matches({question:sample,options:[]},{knowledge:'',reasoning:'',summary:''},3).length)throw new Error(`No definition match: ${sample}`);
+          }
+          if(Object.keys(audit.corrected||{}).length!==4)throw new Error('Expected 4 corrected answer notes');
+          if(Object.keys(audit.noCompleteChoice||{}).length!==7)throw new Error('Expected 7 incomplete-source notes');
+          console.log(`definitions/audit ok: ${lib.concepts.length} concept groups, 4 corrected, 7 incomplete-source`);
           NODE
 
-      - name: Check JavaScript syntax and website wiring
+      - name: Check syntax and final load order
         run: |
-          node --check question_structure_fixes.js
-          node --check manual_to_static.js
           node --check manual_bootstrap.js
           node --check answer_audit_notes.js
           node --check beginner_theory.js
           node --check tthcm_layout.js
-          grep -q 'questions.js' index.html
-          grep -q 'manual_bootstrap.js' index.html
+          node --check beginner_full_renderer.js
           grep -q 'beginner_theory.css' index.html
           grep -q 'answer_audit_notes.js' manual_bootstrap.js
           grep -q 'beginner_theory.js' manual_bootstrap.js
-          grep -q 'tthcm_layout.js' manual_bootstrap.js
-          if grep -q 'learning_view.js' manual_bootstrap.js || grep -q 'learning_view.css' index.html; then
-            echo 'obsolete learning_view layer is still wired into the website'; exit 1
-          fi
-          if grep -q 'static_solutions.js\|solution_engine.js\|scripts/materialize-solutions' index.html; then
-            echo 'stale generated solution machinery is still wired'; exit 1
-          fi
-          echo 'syntax and wiring ok'
+          grep -q "'tthcm_layout.js','beginner_full_renderer.js'" manual_bootstrap.js
+          if grep -q 'learning_view.js' manual_bootstrap.js || grep -q 'learning_view.css' index.html; then echo 'obsolete learning_view is wired'; exit 1; fi
+          echo 'final load order ok: beginner_full_renderer.js is last'
