@@ -1,6 +1,7 @@
 // Load the validated manual solution source in a deterministic order, then start the app.
 (function(){
   const scripts=[
+    'question_structure_fixes.js',
     'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
     'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
     'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de04_ch1_c.js',
