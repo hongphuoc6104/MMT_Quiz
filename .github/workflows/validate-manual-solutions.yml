@@ -73,7 +73,9 @@ jobs:
             for(const o of s.options){
               optionCount++;
               if(!String(o.why||'').trim())throw new Error(`Missing why: ${q.id}/${o.id}`);
-              if(!String(o.when||'').trim())throw new Error(`Missing when: ${q.id}/${o.id}`);
+              // Keep the old 'when' field in source data for reference, but it is no longer
+              // required to be shown in the learning UI.
+              if(!String(o.when||'').trim())throw new Error(`Missing source condition: ${q.id}/${o.id}`);
             }
             if(q.correct_option_id==='x')supplementary.push(q.id);
           }
@@ -81,7 +83,7 @@ jobs:
           console.log(`live data ok: 314 questions, ${optionCount} option explanations, 7 supplementary technical answers`);
           NODE
 
-      - name: Enforce beginner-first renderer behavior
+      - name: Enforce knowledge-first renderer behavior
         run: |
           node - <<'NODE'
           const fs=require('fs'),vm=require('vm');
@@ -111,24 +113,50 @@ jobs:
           vm.runInContext(fs.readFileSync('tthcm_layout.js','utf8'),box);
 
           const data=box.window.QUIZ_DATA, live=box.window.STATIC_SOLUTION_DATA, ui=box.window.MMT_TTHCM_LAYOUT;
-          if(!ui?.fullSolutionHtml)throw new Error('Beginner renderer unavailable');
+          if(!ui?.fullSolutionHtml||!ui?.cleanExplanation)throw new Error('Knowledge-first renderer unavailable');
+
+          const banned=[
+            'Vì sao đây là đáp án đúng','Vì sao không chọn','Vì sao chọn',
+            'Khi nào phương án này','Khi nào ý của phương án này',
+            'Điều kiện để kết luận này đúng','🔑 Từ khóa:'
+          ];
+          const lowInformation=[];
           let renderedOptions=0;
+
           for(const q of data.questions){
             const s=live.solutions[q.id];
             const html=ui.fullSolutionHtml(q,s,q.options.map(o=>o.id));
-            if(!html.includes('Trước tiên: học khái niệm từ số 0')&&!html.includes('Trước tiên: kiến thức nền'))throw new Error(`Beginner intro missing: ${q.id}`);
-            if(!html.includes('Áp dụng kiến thức vào chính câu hỏi'))throw new Error(`Reasoning section missing: ${q.id}`);
-            if(!html.includes('Phân tích đầy đủ từng đáp án A/B/C/D'))throw new Error(`Visible option analysis missing: ${q.id}`);
-            if(html.includes('<details class="study-details option-study-details">'))throw new Error(`Option analysis is collapsed: ${q.id}`);
+            if(!html.includes('Kiến thức cần nhớ'))throw new Error(`Knowledge section missing: ${q.id}`);
+            if(!html.includes('Áp dụng vào câu hỏi'))throw new Error(`Reasoning section missing: ${q.id}`);
+            if(!html.includes('Ghi nhớ'))throw new Error(`Memory section missing: ${q.id}`);
+            if(!html.includes('<details class="study-details option-study-details">'))throw new Error(`Option comparison is not collapsed: ${q.id}`);
+            for(const phrase of banned){
+              if(html.includes(phrase))throw new Error(`Repeated meta-label still shown in ${q.id}: ${phrase}`);
+            }
             for(const o of s.options){
               renderedOptions++;
               const why=ui.cleanExplanation(o.why||'');
-              const when=ui.cleanExplanation(o.when||'');
-              if(why&&!html.includes(why))throw new Error(`Why not rendered: ${q.id}/${o.id}`);
-              if(when&&!html.includes(when))throw new Error(`When-condition not rendered: ${q.id}/${o.id}`);
+              if(!why||/^(?:đúng|sai|correct|wrong)[.!]?$/i.test(why))lowInformation.push(`${q.id}/${o.id}`);
+              if(why&&!html.includes(why))throw new Error(`Knowledge-bearing reason not rendered: ${q.id}/${o.id}`);
             }
           }
-          console.log(`beginner renderer ok: all 314 questions show full why+when for ${renderedOptions} options`);
+          if(lowInformation.length)throw new Error(`Option reasons without useful knowledge: ${lowInformation.join(', ')}`);
+
+          const sampleQ={id:'sample',correct_option_id:'a',options:[{id:'a',text:'Mạng điện báo'},{id:'b',text:'Mạng điện thoại'}],sources:[]};
+          const sampleS={
+            knowledge:'Telegraph truyền ký tự rời rạc bằng mã.',
+            reasoning:'Mạng điện báo phù hợp vì dữ liệu được biểu diễn thành ký tự/mã rời rạc.',
+            summary:'Điện báo là ví dụ truyền dữ liệu ký tự mã hóa.',
+            calculation:null,commonMistakes:[],
+            options:[
+              {id:'a',text:'Mạng điện báo',correct:true,why:'Đúng. Telegraph truyền ký tự bằng mã rời rạc.',when:'WHEN-SHOULD-STAY-HIDDEN'},
+              {id:'b',text:'Mạng điện thoại',correct:false,why:'Sai. Điện thoại truyền tiếng nói, khác với truyền ký tự điện báo.',when:'WHEN-SHOULD-STAY-HIDDEN'}
+            ]
+          };
+          const sample=ui.fullSolutionHtml(sampleQ,sampleS,['a','b']);
+          if(sample.includes('WHEN-SHOULD-STAY-HIDDEN'))throw new Error('The repetitive when-field is still displayed');
+          if(!sample.includes('Telegraph truyền ký tự bằng mã rời rạc.'))throw new Error('Useful option knowledge disappeared');
+          console.log(`knowledge-first renderer ok: 314 questions, ${renderedOptions} option reasons audited; repetitive when-labels hidden`);
           NODE
 
       - name: Check beginner theory definitions
