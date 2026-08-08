@@ -72,30 +72,30 @@
       1540
     ],
     "source_box_px": [
-      202,
-      223,
-      678,
-      359
+      214,
+      236,
+      672,
+      342
     ],
     "source_box_pct": [
-      17.0,
-      14.5,
-      40.0,
-      8.8
+      18.0,
+      15.3,
+      38.5,
+      6.9
     ],
     "trim_inside_candidate_px": [
       0,
-      0,
-      476,
-      136
+      9,
+      458,
+      94
     ],
     "output_size": [
-      476,
-      136
+      458,
+      85
     ],
-    "top_edge_ink": 0.14286,
-    "bottom_edge_ink": 0.21376,
-    "overall_ink": 0.10558,
+    "top_edge_ink": 0.0,
+    "bottom_edge_ink": 0.0,
+    "overall_ink": 0.12158,
     "file": "assets/crops/De03-4-95.png"
   },
   "De03-12-101": {
