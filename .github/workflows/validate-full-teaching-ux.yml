@@ -1,0 +1,132 @@
+name: Validate full beginner teaching UX
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ux.js'
+      - 'beginner_theory.js'
+      - 'beginner_theory.css'
+      - 'answer_audit_notes.js'
+      - 'manual_bootstrap.js'
+      - 'tthcm_layout.js'
+      - 'manual_solutions/**'
+      - 'questions.js'
+      - 'question_structure_fixes.js'
+      - 'data_corrections.js'
+      - 'manual_to_static.js'
+      - 'index.html'
+      - '.github/workflows/validate-full-teaching-ux.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-teaching-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Check manual data completeness
+        run: node scripts/validate-manual-solutions.cjs all
+
+      - name: Verify post-render teaching enforcement
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const src=fs.readFileSync('ux.js','utf8');
+          const required=[
+            'function fullTeachingSolutionHtml',
+            'function enforceFullTeachingFeedback',
+            'window.MMT_FULL_TEACHING_UI',
+            'Định nghĩa đầy đủ',
+            'Ví dụ dễ hình dung',
+            'Điểm rất dễ nhầm',
+            'Áp dụng kiến thức vào chính câu hỏi',
+            'Phân tích đầy đủ từng đáp án A/B/C/D',
+            'Vì sao không chọn đáp án này',
+            'Khi nào ý của phương án này có thể đúng',
+            'Lỗi người mới rất dễ mắc'
+          ];
+          for(const text of required)if(!src.includes(text))throw new Error(`Missing full-teaching contract text: ${text}`);
+          const wrap=src.indexOf('const baseRender=render');
+          const base=src.indexOf('baseRender();',wrap);
+          const enforce=src.indexOf('enforceFullTeachingFeedback();',base);
+          if(wrap<0||base<0||enforce<0||enforce<base)throw new Error('Full feedback must be enforced immediately after baseRender');
+          const builderStart=src.indexOf('function fullTeachingSolutionHtml');
+          const builderEnd=src.indexOf('function enforceFullTeachingFeedback',builderStart);
+          const builder=src.slice(builderStart,builderEnd);
+          if(builder.includes('<details'))throw new Error('Full teaching output must not hide explanation sections in details/accordions');
+          console.log('post-render full teaching contract ok');
+          NODE
+
+      - name: Verify every live option has why and when
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),vm=require('vm');
+          const manual=[
+            'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
+            'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
+            'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de04_ch1_c.js',
+            'manual_solutions/de04_ch3_a.js','manual_solutions/de04_ch3_b.js','manual_solutions/de04_ch4.js',
+            'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
+            'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
+            'manual_solutions/de07.js','manual_solutions/de08.js'
+          ];
+          const box={window:{},console};vm.createContext(box);
+          vm.runInContext(fs.readFileSync('questions.js','utf8'),box);
+          vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box);
+          for(const f of manual)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
+          vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box);
+          vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box);
+          const data=box.window.QUIZ_DATA,sol=box.window.STATIC_SOLUTION_DATA.solutions;
+          if(data.questions.length!==314)throw new Error('Expected 314 questions');
+          let options=0;
+          for(const q of data.questions){
+            const s=sol[q.id];
+            if(!s)throw new Error(`Missing solution ${q.id}`);
+            for(const o of s.options){
+              options++;
+              if(!String(o.why||'').trim())throw new Error(`Missing why ${q.id}/${o.id}`);
+              if(!String(o.when||'').trim())throw new Error(`Missing when ${q.id}/${o.id}`);
+            }
+          }
+          console.log(`why+when complete: ${options} displayed options across 314 questions`);
+          NODE
+
+      - name: Verify beginner definitions
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),vm=require('vm');
+          const box={window:{},console};vm.createContext(box);
+          vm.runInContext(fs.readFileSync('beginner_theory.js','utf8'),box);
+          const lib=box.window.MMT_BEGINNER_THEORY;
+          if(!lib?.concepts?.length)throw new Error('Theory library missing');
+          for(const c of lib.concepts){
+            for(const f of ['title','definition','example','distinguish','source'])if(!String(c[f]||'').trim())throw new Error(`${c.id} missing ${f}`);
+            if(!Array.isArray(c.points)||c.points.length<2)throw new Error(`${c.id} lacks detailed teaching points`);
+          }
+          for(const text of ['TCP SYN ACK','UDP datagram','DNS MX','ARP IP MAC','IPv4 subnet /27','CRC parity','Go-Back-N','Shannon SNR','Ethernet CSMA/CD','UTF-8 Unicode']){
+            if(!lib.matches({question:text,options:[]},{knowledge:'',reasoning:'',summary:''},3).length)throw new Error(`No beginner concept match: ${text}`);
+          }
+          console.log(`beginner definitions ok: ${lib.concepts.length} concept groups`);
+          NODE
+
+      - name: Verify wiring cannot bypass post-render enforcement
+        run: |
+          node --check ux.js
+          grep -q "'app.js'" manual_bootstrap.js
+          grep -q "'ux.js'" manual_bootstrap.js
+          grep -q "'beginner_theory.js'" manual_bootstrap.js
+          node - <<'NODE'
+          const fs=require('fs');
+          const boot=fs.readFileSync('manual_bootstrap.js','utf8');
+          if(boot.indexOf("'ux.js'")<boot.indexOf("'app.js'"))throw new Error('ux.js must load after app.js');
+          const tth=fs.readFileSync('tthcm_layout.js','utf8');
+          if(/\brender\s*=/.test(tth))throw new Error('tthcm_layout.js must not replace render(), because UX post-render enforcement owns final feedback');
+          console.log('wiring preserves post-render enforcement');
+          NODE
