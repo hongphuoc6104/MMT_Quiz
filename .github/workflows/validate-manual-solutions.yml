@@ -6,6 +6,7 @@ on:
     paths:
       - 'questions.json'
       - 'questions.js'
+      - 'question_structure_fixes.js'
       - 'manual_solutions/**'
       - 'data_corrections.js'
       - 'manual_to_static.js'
@@ -48,6 +49,7 @@ jobs:
           ];
           const box={window:{},console}; vm.createContext(box);
           vm.runInContext(fs.readFileSync('questions.js','utf8'),box,{filename:'questions.js'});
+          vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box,{filename:'question_structure_fixes.js'});
           for(const f of files)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
           vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box,{filename:'data_corrections.js'});
           vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box,{filename:'manual_to_static.js'});
@@ -55,9 +57,10 @@ jobs:
           const live=box.window.STATIC_SOLUTION_DATA;
           if(!data||!live?.solutions)throw new Error('Live quiz data failed to initialize');
           if(data.questions.length!==314||Object.keys(live.solutions).length!==314)throw new Error('Live quiz is not 314/314');
+          const supplementary=[];
           for(const q of data.questions){
             const ids=(q.options||[]).map(o=>o.id);
-            if(new Set(ids).size!==ids.length)throw new Error(`Duplicate option ID in question ${q.id}`);
+            if(new Set(ids).size!==ids.length)throw new Error(`Duplicate option ID in live question ${q.id}`);
             if(!ids.includes(q.correct_option_id))throw new Error(`Correct option missing in question ${q.id}/${q.correct_option_id}`);
             const sol=live.solutions[q.id];
             if(!sol||sol.options.length!==q.options.length)throw new Error(`Live option analysis mismatch: ${q.id}`);
@@ -67,12 +70,15 @@ jobs:
               if(!String(o.why||'').trim()||!String(o.when||'').trim())throw new Error(`Incomplete live explanation: ${q.id}/${o.id}`);
             }
             if(!String(sol.reasoning||'').trim()||!String(sol.summary||'').trim())throw new Error(`Missing live reasoning/summary: ${q.id}`);
+            if(q.correct_option_id==='x')supplementary.push(q.id);
           }
           console.log('live answer cross-check ok: 314/314');
+          console.log('supplementary technical answers:',supplementary.length,supplementary.join(', '));
           NODE
 
       - name: Check presentation JavaScript syntax
         run: |
+          node --check question_structure_fixes.js
           node --check manual_to_static.js
           node --check manual_bootstrap.js
           node --check learning_view.js
@@ -81,6 +87,7 @@ jobs:
         run: |
           grep -q 'questions.js' index.html
           grep -q 'manual_bootstrap.js' index.html
+          grep -q 'question_structure_fixes.js' manual_bootstrap.js
           grep -q 'manual_solutions/de01_a.js' manual_bootstrap.js
           grep -q 'manual_solutions/de08.js' manual_bootstrap.js
           grep -q 'manual_to_static.js' manual_bootstrap.js
