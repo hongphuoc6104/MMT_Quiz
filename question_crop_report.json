@@ -1,0 +1,200 @@
+{
+  "De01-5-4": {
+    "page": 1,
+    "source_size": [
+      1190,
+      1540
+    ],
+    "source_box_px": [
+      60,
+      1121,
+      375,
+      1314
+    ],
+    "source_box_pct": [
+      5.0,
+      72.8,
+      26.5,
+      12.5
+    ],
+    "trim_inside_candidate_px": [
+      3,
+      0,
+      303,
+      193
+    ],
+    "output_size": [
+      300,
+      193
+    ],
+    "top_edge_ink": 0.0325,
+    "bottom_edge_ink": 0.035,
+    "overall_ink": 0.10793,
+    "file": "assets/crops/De01-5-4.png"
+  },
+  "De01-50-47": {
+    "page": 10,
+    "source_size": [
+      1190,
+      1540
+    ],
+    "source_box_px": [
+      68,
+      111,
+      336,
+      396
+    ],
+    "source_box_pct": [
+      5.7,
+      7.2,
+      22.5,
+      18.5
+    ],
+    "trim_inside_candidate_px": [
+      0,
+      0,
+      263,
+      285
+    ],
+    "output_size": [
+      263,
+      285
+    ],
+    "top_edge_ink": 0.01789,
+    "bottom_edge_ink": 0.02706,
+    "overall_ink": 0.09512,
+    "file": "assets/crops/De01-50-47.png"
+  },
+  "De03-4-95": {
+    "page": 19,
+    "source_size": [
+      1190,
+      1540
+    ],
+    "source_box_px": [
+      202,
+      223,
+      678,
+      359
+    ],
+    "source_box_pct": [
+      17.0,
+      14.5,
+      40.0,
+      8.8
+    ],
+    "trim_inside_candidate_px": [
+      0,
+      0,
+      476,
+      136
+    ],
+    "output_size": [
+      476,
+      136
+    ],
+    "top_edge_ink": 0.14286,
+    "bottom_edge_ink": 0.21376,
+    "overall_ink": 0.10558,
+    "file": "assets/crops/De03-4-95.png"
+  },
+  "De03-12-101": {
+    "page": 21,
+    "source_size": [
+      1190,
+      1540
+    ],
+    "source_box_px": [
+      60,
+      505,
+      292,
+      728
+    ],
+    "source_box_pct": [
+      5.0,
+      32.8,
+      19.5,
+      14.5
+    ],
+    "trim_inside_candidate_px": [
+      2,
+      1,
+      227,
+      223
+    ],
+    "output_size": [
+      225,
+      222
+    ],
+    "top_edge_ink": 0.35726,
+    "bottom_edge_ink": 0.57162,
+    "overall_ink": 0.85215,
+    "file": "assets/crops/De03-12-101.png"
+  },
+  "De04-5-198": {
+    "page": 49,
+    "source_size": [
+      1190,
+      1540
+    ],
+    "source_box_px": [
+      83,
+      816,
+      869,
+      1209
+    ],
+    "source_box_pct": [
+      7.0,
+      53.0,
+      66.0,
+      25.5
+    ],
+    "trim_inside_candidate_px": [
+      0,
+      9,
+      775,
+      393
+    ],
+    "output_size": [
+      775,
+      384
+    ],
+    "top_edge_ink": 0.01543,
+    "bottom_edge_ink": 0.17492,
+    "overall_ink": 0.21691,
+    "file": "assets/crops/De04-5-198.png"
+  },
+  "De04-4-228": {
+    "page": 56,
+    "source_size": [
+      1190,
+      1540
+    ],
+    "source_box_px": [
+      81,
+      397,
+      813,
+      752
+    ],
+    "source_box_pct": [
+      6.8,
+      25.8,
+      61.5,
+      23.0
+    ],
+    "trim_inside_candidate_px": [
+      0,
+      0,
+      732,
+      355
+    ],
+    "output_size": [
+      732,
+      355
+    ],
+    "top_edge_ink": 0.19822,
+    "bottom_edge_ink": 0.21513,
+    "overall_ink": 0.30528,
+    "file": "assets/crops/De04-4-228.png"
+  }
+}
