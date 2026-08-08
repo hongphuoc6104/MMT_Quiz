@@ -24,7 +24,7 @@ jobs:
       - run: python scripts/analyze_source_images.py
       - name: Commit analysis
         run: |
-          if git diff --quiet -- source_image_analysis.json source_image_analysis.txt; then
+          if [ -z "$(git status --porcelain -- source_image_analysis.json source_image_analysis.txt)" ]; then
             echo 'No analysis changes.'
             exit 0
           fi
