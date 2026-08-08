@@ -1,14 +1,18 @@
-name: Validate manual-only quiz
+name: Validate quiz content
 
 on:
   push:
     branches: [main]
     paths:
       - 'questions.json'
+      - 'questions.js'
       - 'manual_solutions/**'
-      - 'app_manual.js'
+      - 'static_solutions.js'
+      - 'data_corrections.js'
+      - 'learning_view.js'
+      - 'learning_view.css'
+      - 'app.js'
       - 'index.html'
-      - 'ux.js'
       - 'scripts/validate-manual-solutions.cjs'
       - '.github/workflows/validate-manual-solutions.yml'
   workflow_dispatch:
@@ -24,22 +28,50 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Load files and count 314
-        run: node scripts/validate-manual-solutions.cjs count
-      - name: Check required manual sections
-        run: node scripts/validate-manual-solutions.cjs sections
-      - name: Check every option analysis
-        run: node scripts/validate-manual-solutions.cjs options
-      - name: Check corrected answer IDs
-        run: node scripts/validate-manual-solutions.cjs correct
-      - name: Check calculation blocks
-        run: node scripts/validate-manual-solutions.cjs calc
-      - name: Verify manual-only website wiring
+
+      - name: Check 314 manual solutions and sections
+        run: node scripts/validate-manual-solutions.cjs all
+
+      - name: Cross-check all static answer IDs
         run: |
-          if grep -q 'static_solutions.js\|solution_engine.js\|scripts/materialize-solutions' index.html; then
-            echo 'index.html still references generated solution machinery'
+          node - <<'NODE'
+          const fs=require('fs'),vm=require('vm');
+          const questions=JSON.parse(fs.readFileSync('questions.json','utf8'));
+          const box={window:{}}; vm.createContext(box);
+          vm.runInContext(fs.readFileSync('static_solutions.js','utf8'),box,{filename:'static_solutions.js'});
+          const data=box.window.STATIC_SOLUTION_DATA;
+          if(!data?.solutions) throw new Error('static_solutions.js is missing or invalid');
+          const list=questions.questions||[];
+          if(list.length!==314) throw new Error(`Expected 314 questions, got ${list.length}`);
+          if(Object.keys(data.solutions).length!==314) throw new Error(`Expected 314 static solutions, got ${Object.keys(data.solutions).length}`);
+
+          for(const q of list){
+            const sol=data.solutions[q.id];
+            if(!sol) throw new Error('Missing static solution: '+q.id);
+            if(!Array.isArray(sol.options)||!sol.options.length) throw new Error('Missing option analyses: '+q.id);
+            const optionIds=new Set((q.options||[]).map(o=>o.id));
+            if(!optionIds.has(q.correct_option_id)) throw new Error(`Question correct_option_id is absent: ${q.id}/${q.correct_option_id}`);
+            const marked=sol.options.filter(o=>o.correct).map(o=>o.id);
+            if(marked.length!==1) throw new Error(`Static solution must mark exactly one answer: ${q.id}; got ${marked.join(',')}`);
+            if(marked[0]!==q.correct_option_id) throw new Error(`Answer mismatch ${q.id}: question=${q.correct_option_id}, static=${marked[0]}`);
+            for(const o of sol.options){
+              if(!optionIds.has(o.id)) throw new Error(`Unknown option in static solution: ${q.id}/${o.id}`);
+              if(!String(o.why||'').trim()||!String(o.when||'').trim()) throw new Error(`Incomplete option explanation: ${q.id}/${o.id}`);
+            }
+            if(!String(sol.reasoning||'').trim()||!String(sol.summary||'').trim()) throw new Error('Missing reasoning/summary: '+q.id);
+          }
+          console.log('answer cross-check ok: 314/314');
+          NODE
+
+      - name: Verify current website wiring
+        run: |
+          grep -q 'questions.js' index.html
+          grep -q 'static_solutions.js' index.html
+          grep -q 'data_corrections.js' index.html
+          grep -q 'app.js' index.html
+          grep -q 'learning_view.js' index.html
+          if grep -q 'solution_engine.js\|scripts/materialize-solutions' index.html; then
+            echo 'index.html references disabled generated solution machinery'
             exit 1
           fi
-          grep -q 'app_manual.js' index.html
-          grep -q 'manual_solutions/de08.js' index.html
-          echo 'manual-only wiring ok'
+          echo 'website wiring ok'
