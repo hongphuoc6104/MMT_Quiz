@@ -72,24 +72,19 @@ jobs:
             for(const o of s.options){
               optionCount++;
               if(!String(o.why||'').trim())throw new Error(`Missing why: ${q.id}/${o.id}`);
-              if(!String(o.when||'').trim())throw new Error(`Missing when: ${q.id}/${o.id}`);
+              if(!String(o.when||'').trim())throw new Error(`Missing source condition: ${q.id}/${o.id}`);
             }
             if(q.correct_option_id==='x')supplementary++;
           }
           if(supplementary!==7)throw new Error(`Expected 7 supplementary answers, got ${supplementary}`);
-          console.log(`live data ok: 314 questions, ${optionCount} option why+when explanations`);
+          console.log(`live data ok: 314 questions, ${optionCount} option explanations`);
           NODE
 
-      - name: Enforce final beginner renderer output
+      - name: Enforce knowledge-first final renderer
         run: |
           node - <<'NODE'
           const fs=require('fs'),vm=require('vm');
           const manual=[
-            'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
-            'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
-            'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de03_a.js'
-          ];
-          const allManual=[
             'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
             'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
             'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de04_ch1_c.js',
@@ -102,30 +97,41 @@ jobs:
           vm.createContext(box);
           vm.runInContext(fs.readFileSync('questions.js','utf8'),box);
           vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box);
-          for(const f of allManual)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
+          for(const f of manual)vm.runInContext(fs.readFileSync(f,'utf8'),box,{filename:f});
           vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box);
           vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box);
           vm.runInContext(fs.readFileSync('answer_audit_notes.js','utf8'),box);
           vm.runInContext(fs.readFileSync('beginner_theory.js','utf8'),box);
           vm.runInContext(fs.readFileSync('tthcm_layout.js','utf8'),box);
-          vm.runInContext(fs.readFileSync('beginner_full_renderer.js','utf8'),box);
-          const data=box.window.QUIZ_DATA, live=box.window.STATIC_SOLUTION_DATA, ui=box.window.MMT_BEGINNER_FULL_RENDERER;
-          if(!ui?.fullSolutionHtml)throw new Error('Final beginner renderer unavailable');
+
+          const data=box.window.QUIZ_DATA, live=box.window.STATIC_SOLUTION_DATA, ui=box.window.MMT_TTHCM_LAYOUT;
+          if(!ui?.fullSolutionHtml||!ui?.cleanExplanation)throw new Error('Knowledge-first renderer unavailable');
+          const banned=['Vì sao đây là đáp án đúng','Vì sao không chọn','Vì sao chọn','Khi nào phương án này','Khi nào ý của phương án này','Điều kiện để kết luận này đúng','🔑 Từ khóa:'];
+          const lowInformation=[];
           let optionCount=0;
+
           for(const q of data.questions){
             const s=live.solutions[q.id], html=ui.fullSolutionHtml(q,s,q.options.map(o=>o.id));
-            if(!html.includes('Trước tiên:'))throw new Error(`Beginner theory intro missing: ${q.id}`);
-            if(!html.includes('Áp dụng kiến thức vào chính câu hỏi'))throw new Error(`Reasoning missing: ${q.id}`);
-            if(!html.includes('Phân tích đầy đủ từng đáp án A/B/C/D'))throw new Error(`A/B/C/D section missing: ${q.id}`);
-            if(html.includes('option-study-details'))throw new Error(`A/B/C/D unexpectedly collapsed: ${q.id}`);
+            if(!html.includes('Kiến thức cần nhớ'))throw new Error(`Knowledge section missing: ${q.id}`);
+            if(!html.includes('Áp dụng vào câu hỏi'))throw new Error(`Reasoning section missing: ${q.id}`);
+            if(!html.includes('Ghi nhớ'))throw new Error(`Memory section missing: ${q.id}`);
+            if(!html.includes('option-study-details'))throw new Error(`Option comparison is not collapsed: ${q.id}`);
+            for(const phrase of banned)if(html.includes(phrase))throw new Error(`Repeated meta-label shown in ${q.id}: ${phrase}`);
             for(const o of s.options){
               optionCount++;
-              const why=ui.clean(o.why), when=ui.clean(o.when);
-              if(!html.includes(why))throw new Error(`why hidden: ${q.id}/${o.id}`);
-              if(!html.includes(when))throw new Error(`when hidden: ${q.id}/${o.id}`);
+              const why=ui.cleanExplanation(o.why||'');
+              if(!why||/^(?:đúng|sai|correct|wrong)[.!]?$/i.test(why))lowInformation.push(`${q.id}/${o.id}`);
+              if(why&&!html.includes(why))throw new Error(`Useful option reason hidden: ${q.id}/${o.id}`);
             }
           }
-          console.log(`final renderer ok: 314 questions, ${optionCount} visible why+when explanations`);
+          if(lowInformation.length)throw new Error(`Option reasons without useful knowledge: ${lowInformation.join(', ')}`);
+
+          const sampleQ={id:'sample',correct_option_id:'a',options:[{id:'a',text:'Mạng điện báo'},{id:'b',text:'Mạng điện thoại'}],sources:[]};
+          const sampleS={knowledge:'Telegraph truyền ký tự rời rạc bằng mã.',reasoning:'Mạng điện báo phù hợp vì dữ liệu được biểu diễn thành ký tự/mã rời rạc.',summary:'Điện báo là ví dụ truyền dữ liệu ký tự mã hóa.',calculation:null,commonMistakes:[],options:[{id:'a',text:'Mạng điện báo',correct:true,why:'Đúng. Telegraph truyền ký tự bằng mã rời rạc.',when:'WHEN-SHOULD-STAY-HIDDEN'},{id:'b',text:'Mạng điện thoại',correct:false,why:'Sai. Điện thoại truyền tiếng nói, khác với truyền ký tự điện báo.',when:'WHEN-SHOULD-STAY-HIDDEN'}]};
+          const sample=ui.fullSolutionHtml(sampleQ,sampleS,['a','b']);
+          if(sample.includes('WHEN-SHOULD-STAY-HIDDEN'))throw new Error('when-field is still displayed');
+          if(!sample.includes('Telegraph truyền ký tự bằng mã rời rạc.'))throw new Error('Useful option knowledge disappeared');
+          console.log(`knowledge-first renderer ok: 314 questions, ${optionCount} option reasons audited; when-fields hidden`);
           NODE
 
       - name: Check definitions and answer-audit coverage
@@ -154,10 +160,10 @@ jobs:
           node --check answer_audit_notes.js
           node --check beginner_theory.js
           node --check tthcm_layout.js
-          node --check beginner_full_renderer.js
           grep -q 'beginner_theory.css' index.html
           grep -q 'answer_audit_notes.js' manual_bootstrap.js
           grep -q 'beginner_theory.js' manual_bootstrap.js
-          grep -q "'tthcm_layout.js','beginner_full_renderer.js'" manual_bootstrap.js
+          grep -q 'tthcm_layout.js' manual_bootstrap.js
+          if grep -q 'beginner_full_renderer.js' manual_bootstrap.js; then echo 'verbose beginner_full_renderer must not be loaded'; exit 1; fi
           if grep -q 'learning_view.js' manual_bootstrap.js || grep -q 'learning_view.css' index.html; then echo 'obsolete learning_view is wired'; exit 1; fi
-          echo 'final load order ok: beginner_full_renderer.js is last'
+          echo 'final load order ok: tthcm_layout.js is the last explanation renderer'
