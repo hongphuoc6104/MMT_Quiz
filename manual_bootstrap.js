@@ -10,7 +10,7 @@
     'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
     'manual_solutions/de07.js','manual_solutions/de08.js',
     'data_corrections.js','manual_to_static.js','app.js','image-crops.js','ux.js',
-    'answer_audit_notes.js','beginner_theory.js','tthcm_layout.js'
+    'answer_audit_notes.js','beginner_theory.js','tthcm_layout.js','beginner_full_renderer.js'
   ];
 
   function load(src){
@@ -26,8 +26,6 @@
   (async()=>{
     try{
       for(const src of scripts)await load(src);
-      // Dynamic scripts may finish after DOMContentLoaded. app.js normally starts from
-      // that event, so explicitly initialize only when the event has already passed.
       const set=document.querySelector('#setSelect');
       if(document.readyState!=='loading' && set && set.options.length===0 && typeof setup==='function'){
         setup();
