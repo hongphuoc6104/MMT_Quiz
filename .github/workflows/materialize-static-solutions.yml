@@ -1,0 +1,46 @@
+name: Materialize static quiz solutions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'questions.json'
+      - 'solution_engine.js'
+      - 'scripts/materialize-solutions.cjs'
+      - '.github/workflows/materialize-static-solutions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Materialize 314 static solutions
+        run: node scripts/materialize-solutions.cjs
+      - name: Validate static solution count
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),vm=require('vm');
+          const s={window:{}};vm.createContext(s);vm.runInContext(fs.readFileSync('static_solutions.js','utf8'),s);
+          const d=s.window.STATIC_SOLUTION_DATA;
+          if(!d||d.metadata.question_count!==314) throw new Error('Expected 314 static solutions');
+          if(Object.keys(d.solutions).length!==314) throw new Error('Static solution map is incomplete');
+          console.log('Validated',Object.keys(d.solutions).length,'solutions');
+          NODE
+      - name: Commit static data
+        run: |
+          if git diff --quiet -- static_solutions.js; then
+            echo 'static_solutions.js already current'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add static_solutions.js
+          git commit -m 'materialize 314 static quiz solutions'
+          git push
