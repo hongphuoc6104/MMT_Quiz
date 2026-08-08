@@ -2,15 +2,17 @@
 
 - Mở `index.html` bằng Chrome/Edge/Firefox hoặc dùng GitHub Pages của repository.
 - Chọn bộ đề, bật/tắt xáo trộn câu hỏi và đảo đáp án.
-- Sau khi chọn đáp án, trang hiển thị lời giải học tập đầy đủ: kiến thức nền, lập luận, phân tích từng phương án A/B/C/D, vì sao không chọn, khi phương án đó có thể đúng, lỗi dễ nhầm và phần ghi nhớ.
-- Các câu bài tập được bổ sung khu vực công thức/cách giải từng bước cho các nhóm phổ biến như IPv4/CIDR, TCP SEQ/ACK, Shannon, Nyquist, transmission delay, CRC và sliding-window ARQ.
+- Sau khi chọn đáp án, trang hiển thị lời giải **đã lưu tĩnh theo ID từng câu**: kiến thức nền, lập luận, phân tích từng phương án A/B/C/D, vì sao không chọn, khi phương án đó có thể đúng, lỗi dễ nhầm và phần ghi nhớ.
+- Các câu bài tập có khu vực công thức/cách giải từng bước cho các nhóm như IPv4/CIDR, TCP SEQ/ACK, Shannon, Nyquist, transmission delay, CRC và sliding-window ARQ.
 - Câu có hình giữ nguyên ảnh/trang nguồn trong `assets/`; ảnh được hiển thị ngay trong câu hỏi và có thể bấm để mở kích thước đầy đủ.
-- Dữ liệu gốc nằm trong `questions.json`; `questions.js` giúp app chạy trực tiếp bằng `file://` mà không cần web server.
-- `solution_engine.js` tạo phần lời giải học tập cho toàn bộ câu hỏi dựa trên nội dung câu, đáp án đã đối chiếu, giải thích hiện có và các quy tắc kiến thức mạng máy tính.
+- Dữ liệu câu hỏi nằm trong `questions.json`; `questions.js` giúp app chạy trực tiếp bằng `file://`.
+- Toàn bộ 314 lời giải được lưu trong `static_solutions.js`. Website **không sinh lời giải khi chạy** và không có fallback tạo lời giải. Nếu thiếu một ID, ứng dụng sẽ báo lỗi dữ liệu thay vì tự tạo nội dung thay thế.
+- `solution_engine.js` và `scripts/materialize-solutions.cjs` đã bị vô hiệu hóa, không được website sử dụng. Workflow còn lại chỉ kiểm tra read-only rằng dữ liệu tĩnh đủ 314 câu và đủ các phương án.
 - Đáp án được lưu bằng `correct_option_id` độc lập với vị trí A/B/C/D, nên đảo lựa chọn vẫn chấm đúng.
 
 ## Thống kê
 - Câu hỏi sử dụng: 314
+- Lời giải tĩnh: 314
 - Đáp án gốc được sửa: 10
 - Câu có cảnh báo: 18
 - Mảnh văn bản/ghi chú không phải câu hỏi đã loại: 14
