@@ -1,0 +1,45 @@
+name: Validate manual-only quiz
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'questions.json'
+      - 'manual_solutions/**'
+      - 'app_manual.js'
+      - 'index.html'
+      - 'ux.js'
+      - 'scripts/validate-manual-solutions.cjs'
+      - '.github/workflows/validate-manual-solutions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Load files and count 314
+        run: node scripts/validate-manual-solutions.cjs count
+      - name: Check required manual sections
+        run: node scripts/validate-manual-solutions.cjs sections
+      - name: Check every option analysis
+        run: node scripts/validate-manual-solutions.cjs options
+      - name: Check corrected answer IDs
+        run: node scripts/validate-manual-solutions.cjs correct
+      - name: Check calculation blocks
+        run: node scripts/validate-manual-solutions.cjs calc
+      - name: Verify manual-only website wiring
+        run: |
+          if grep -q 'static_solutions.js\|solution_engine.js\|scripts/materialize-solutions' index.html; then
+            echo 'index.html still references generated solution machinery'
+            exit 1
+          fi
+          grep -q 'app_manual.js' index.html
+          grep -q 'manual_solutions/de08.js' index.html
+          echo 'manual-only wiring ok'
