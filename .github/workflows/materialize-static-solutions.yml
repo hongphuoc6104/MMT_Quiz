@@ -1,4 +1,4 @@
-name: Validate committed static quiz solutions
+name: Validate current quiz solutions
 
 on:
   workflow_dispatch:
@@ -13,21 +13,44 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - name: Validate committed static solutions only
+          node-version: '24'
+
+      - name: Validate all 314 maintained solutions
+        run: node scripts/validate-manual-solutions.cjs all
+
+      - name: Verify current live solution data initializes completely
         run: |
           node - <<'NODE'
           const fs=require('fs'),vm=require('vm');
-          const questions=JSON.parse(fs.readFileSync('questions.json','utf8'));
-          const s={window:{}};vm.createContext(s);vm.runInContext(fs.readFileSync('static_solutions.js','utf8'),s);
-          const d=s.window.STATIC_SOLUTION_DATA;
-          if(!d) throw new Error('static_solutions.js is missing/invalid');
-          if(d.metadata.question_count!==questions.metadata.question_count) throw new Error('Question count mismatch');
-          if(Object.keys(d.solutions).length!==questions.questions.length) throw new Error('Static solution map is incomplete');
-          for(const q of questions.questions){
-            const sol=d.solutions[q.id];
-            if(!sol) throw new Error('Missing static solution: '+q.id);
-            if(!Array.isArray(sol.options)||sol.options.length!==q.options.length) throw new Error('Incomplete option analysis: '+q.id);
+          const manual=[
+            'manual_solutions/de01_a.js','manual_solutions/de01_b.js','manual_solutions/de01_ver2.js',
+            'manual_solutions/de02_a.js','manual_solutions/de02_b.js','manual_solutions/de03_a.js','manual_solutions/de03_b.js',
+            'manual_solutions/de04_ch1_a.js','manual_solutions/de04_ch1_b.js','manual_solutions/de04_ch1_c.js',
+            'manual_solutions/de04_ch3_a.js','manual_solutions/de04_ch3_b.js','manual_solutions/de04_ch4.js',
+            'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
+            'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
+            'manual_solutions/de07.js','manual_solutions/de08.js'
+          ];
+          const box={window:{},console};
+          vm.createContext(box);
+          vm.runInContext(fs.readFileSync('questions.js','utf8'),box,{filename:'questions.js'});
+          vm.runInContext(fs.readFileSync('question_structure_fixes.js','utf8'),box,{filename:'question_structure_fixes.js'});
+          for(const file of manual)vm.runInContext(fs.readFileSync(file,'utf8'),box,{filename:file});
+          vm.runInContext(fs.readFileSync('data_corrections.js','utf8'),box,{filename:'data_corrections.js'});
+          vm.runInContext(fs.readFileSync('manual_to_static.js','utf8'),box,{filename:'manual_to_static.js'});
+
+          const data=box.window.QUIZ_DATA;
+          const live=box.window.STATIC_SOLUTION_DATA;
+          if(!data||!live?.solutions)throw new Error('Live quiz data failed to initialize');
+          if(data.questions.length!==314)throw new Error(`Expected 314 questions, got ${data.questions.length}`);
+          if(Object.keys(live.solutions).length!==314)throw new Error(`Expected 314 solutions, got ${Object.keys(live.solutions).length}`);
+
+          for(const q of data.questions){
+            const solution=live.solutions[q.id];
+            if(!solution)throw new Error(`Missing solution: ${q.id}`);
+            if(!Array.isArray(solution.options)||solution.options.length!==q.options.length){
+              throw new Error(`Option analysis mismatch: ${q.id}`);
+            }
           }
-          console.log('Validated static-only solutions:',questions.questions.length);
+          console.log('Current live quiz solution data validated: 314/314');
           NODE
