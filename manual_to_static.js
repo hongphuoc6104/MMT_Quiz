@@ -30,8 +30,21 @@
     };
   }
 
+  const supplementalCount=data.questions.filter(q=>q.correct_option_id==='x').length;
+  if(data.metadata){
+    data.metadata.corrected_count=data.questions.filter(q=>q.verification==='corrected').length;
+    data.metadata.warning_count=data.questions.filter(q=>Boolean(q.warning)).length;
+    data.metadata.text_cleanup=data.metadata.text_cleanup||{};
+    data.metadata.text_cleanup.supplemental_answer_count=supplementalCount;
+    data.metadata.text_cleanup.note='Dữ liệu hiển thị đã khử lặp lựa chọn, sửa OCR và đánh dấu rõ đáp án kỹ thuật bổ sung.';
+  }
+
   window.STATIC_SOLUTION_DATA={
-    metadata:{question_count:data.metadata?.question_count||data.questions.length,source:'manual_solutions'},
+    metadata:{
+      question_count:data.metadata?.question_count||data.questions.length,
+      source:'manual_solutions',
+      supplemental_answer_count:supplementalCount
+    },
     solutions
   };
 })();
