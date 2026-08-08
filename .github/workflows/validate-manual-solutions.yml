@@ -9,6 +9,7 @@ on:
       - 'manual_solutions/**'
       - 'data_corrections.js'
       - 'manual_to_static.js'
+      - 'manual_bootstrap.js'
       - 'learning_view.js'
       - 'learning_view.css'
       - 'app.js'
@@ -73,17 +74,19 @@ jobs:
       - name: Check presentation JavaScript syntax
         run: |
           node --check manual_to_static.js
+          node --check manual_bootstrap.js
           node --check learning_view.js
 
       - name: Verify current website wiring
         run: |
           grep -q 'questions.js' index.html
-          grep -q 'manual_solutions/de01_a.js' index.html
-          grep -q 'manual_solutions/de08.js' index.html
-          grep -q 'manual_to_static.js' index.html
-          grep -q 'data_corrections.js' index.html
-          grep -q 'app.js' index.html
-          grep -q 'learning_view.js' index.html
+          grep -q 'manual_bootstrap.js' index.html
+          grep -q 'manual_solutions/de01_a.js' manual_bootstrap.js
+          grep -q 'manual_solutions/de08.js' manual_bootstrap.js
+          grep -q 'manual_to_static.js' manual_bootstrap.js
+          grep -q 'data_corrections.js' manual_bootstrap.js
+          grep -q 'app.js' manual_bootstrap.js
+          grep -q 'learning_view.js' manual_bootstrap.js
           if grep -q 'static_solutions.js\|solution_engine.js\|scripts/materialize-solutions' index.html; then
             echo 'index.html still references disabled or stale generated solution machinery'
             exit 1
