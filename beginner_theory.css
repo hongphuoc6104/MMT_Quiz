@@ -1,0 +1,37 @@
+.beginner-solution{font-size:16.5px;line-height:1.72}
+.answer-audit{margin:14px 0 4px;padding:16px 18px;border:1px solid #d9e2f2;border-left:5px solid #667085;border-radius:13px;background:#fff}
+.answer-audit.corrected{border-color:#a9d8b7;border-left-color:#15803d;background:#f7fcf8}
+.answer-audit.source-problem{border-color:#f2cf85;border-left-color:#d97706;background:#fffaf0}
+.answer-audit.caution{border-color:#c8d6ee;border-left-color:#2563eb;background:#f8fbff}
+.audit-kicker{margin-bottom:5px;font-size:11px;font-weight:900;letter-spacing:.08em;color:#667085}
+.answer-audit h4{margin:0 0 8px!important;font-size:18px!important}
+.answer-audit p{margin:6px 0!important}
+.audit-basis{font-size:14px;color:#667085}
+.section-intro{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.section-intro h4{margin:0 0 4px!important}
+.section-intro p{margin:0!important;color:#667085;font-size:14.5px;line-height:1.55}
+.lesson-number{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:#335cff;color:#fff;font-weight:900;font-size:14px;box-shadow:0 5px 14px rgba(51,92,255,.18)}
+.beginner-block{border-top:0!important;padding-top:12px!important}
+.concept-list{display:grid;gap:13px}
+.concept-card{padding:17px 18px;border:1px solid #dce4f2;border-radius:14px;background:#fff;box-shadow:0 5px 18px rgba(24,39,75,.04)}
+.concept-step{margin-bottom:5px;color:#335cff;font-size:11px;font-weight:900;letter-spacing:.08em}
+.concept-card h5{margin:0 0 12px!important;font-size:19px!important;color:#172033}
+.definition-box{padding:14px 15px;border-radius:11px;background:#eef2ff;border:1px solid #cbd5ff}
+.definition-box>b{color:#263ea8}
+.definition-box p{margin:5px 0 0!important;line-height:1.72}
+.concept-points{margin-top:13px}
+.concept-points>b,.concept-example>b,.concept-distinguish>b{color:#344054}
+.concept-points ul{margin:7px 0 0!important;padding-left:23px!important}
+.concept-points li{margin:7px 0!important}
+.concept-example{margin-top:12px;padding:12px 14px;border-radius:10px;background:#f7fbf8;border:1px solid #d6eadb}
+.concept-example p,.concept-distinguish p{margin:5px 0 0!important}
+.concept-distinguish{margin-top:10px;padding:12px 14px;border-radius:10px;background:#fff9ed;border:1px solid #f3dfb0}
+.concept-source{margin-top:11px;color:#667085;font-size:12.5px}
+.reasoning-block{background:#fbfcff;padding-left:16px!important;padding-right:16px!important;border-radius:12px}
+.knowledge-block{background:#fafafa;padding-left:16px!important;padding-right:16px!important;border-radius:12px}
+.options-explanation .option-analysis{font-size:16px;line-height:1.65}
+.options-explanation .option-analysis h5{font-size:16.5px!important}
+.options-explanation .option-analysis p b{color:#344054}
+.mistakes-block{padding:16px 18px!important;border:1px solid #f2d5d5!important;border-radius:12px;background:#fffafa}
+.fallback-theory .definition-box{margin-top:4px}
+@media(max-width:620px){.beginner-solution{font-size:16px}.answer-audit{padding:14px}.section-intro{gap:9px}.lesson-number{width:29px;height:29px;flex-basis:29px}.concept-card{padding:14px}.concept-card h5{font-size:18px!important}.definition-box{padding:12px}.concept-example,.concept-distinguish{padding:11px}.reasoning-block,.knowledge-block{padding-left:12px!important;padding-right:12px!important}}
