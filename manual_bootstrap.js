@@ -25,6 +25,12 @@
   (async()=>{
     try{
       for(const src of scripts)await load(src);
+      // Dynamic scripts may finish after DOMContentLoaded. app.js normally starts from
+      // that event, so explicitly initialize only when the event has already passed.
+      const set=document.querySelector('#setSelect');
+      if(document.readyState!=='loading' && set && set.options.length===0 && typeof setup==='function'){
+        setup();
+      }
     }catch(err){
       console.error(err);
       const main=document.querySelector('main')||document.body;
