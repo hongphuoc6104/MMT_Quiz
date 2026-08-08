@@ -1,1 +1,116 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trắc nghiệm Mạng máy tính</title><link rel="stylesheet" href="styles.css"></head><body><header class="top"><div class="wrap"><h1>Trắc nghiệm Mạng máy tính</h1><p>314 câu • lời giải tĩnh theo từng câu • phân tích A/B/C/D • bài tính từng bước • giữ ảnh đề gốc</p></div></header><main class="wrap"><section class="panel"><div class="grid"><div class="field"><label>Bộ đề</label><select id="setSelect"></select></div><div class="field"><label>Chương / nhóm</label><select id="chapterSelect"><option value="ALL">Tất cả chương</option></select></div><div class="field"><label>Tìm câu hỏi</label><input id="searchInput" placeholder="Nhập từ khóa..."></div><div class="field"><label>&nbsp;</label><button id="startBtn" class="btn primary" style="width:100%">Bắt đầu / tạo đề mới</button></div></div><div class="toggles"><label class="toggle"><input id="shuffleQ" type="checkbox" checked> Xáo trộn câu hỏi</label><label class="toggle"><input id="shuffleA" type="checkbox" checked> Đảo vị trí đáp án</label><button id="resetBtn" class="btn danger">Xóa lượt hiện tại</button></div><p class="learning-note">Lời giải đã được lưu tĩnh theo ID từng câu. Trang không sinh lời giải khi chạy. Sau khi chọn đáp án, bạn sẽ thấy kiến thức nền, vì sao chọn/không chọn từng phương án, trường hợp từng phương án đúng và công thức/các bước tính nếu là bài tập.</p></section><section id="quizArea" class="hidden"><div class="stats"><div class="stat"><b id="statTotal">0</b>Tổng câu</div><div class="stat"><b id="statDone">0</b>Đã làm</div><div class="stat"><b id="statScore">0</b>Đúng</div><div class="stat"><b id="statWrong">0</b>Sai</div></div><div class="progress"><span id="progressBar"></span></div><div class="card" style="margin-top:14px"><div class="qmeta"><span id="qPos"></span><span id="qSource"></span><span id="statusBadge" class="badge"></span></div><div id="warningBox" class="warning hidden"></div><div id="qText" class="question"></div><figure id="sourceImageWrap" class="source-figure hidden"><a id="sourceImageLink" target="_blank" rel="noopener"><img id="sourceImage" class="source-image" alt="Ảnh/trang đề gốc"></a><figcaption>Ảnh/trang đề gốc được giữ nguyên. Bấm vào ảnh để mở kích thước đầy đủ.</figcaption></figure><div id="options" class="options"></div><div id="feedback" class="feedback"><div class="pre-solution-note">Chọn một đáp án để mở lời giải tĩnh của câu này.</div></div><div class="nav"><button id="prevBtn" class="btn ghost">← Câu trước</button><button id="retryWrong" class="btn ghost">Ôn câu sai</button><button id="nextBtn" class="btn primary">Câu tiếp →</button></div></div></section></main><footer class="footer">Dữ liệu câu hỏi, lời giải tĩnh và ảnh nguồn đều nằm trong repository.</footer><script src="questions.js"></script><script src="static_solutions.js"></script><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trắc nghiệm Mạng máy tính</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Trắc nghiệm Mạng máy tính</h1>
+      <p>314 câu • lời giải tĩnh theo từng câu • phân tích A/B/C/D • bài tính từng bước • giữ ảnh đề gốc</p>
+    </div>
+  </header>
+
+  <nav id="appTabs" class="app-tabs" role="tablist" aria-label="Điều hướng học tập">
+    <button id="tabStudy" class="app-tab active" type="button" role="tab" aria-selected="true" aria-controls="studyTabPanel">
+      <span class="tab-icon">📝</span>
+      <span>Làm bài</span>
+    </button>
+    <button id="tabWrong" class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="wrongTabPanel">
+      <span class="tab-icon">❌</span>
+      <span>Câu đã sai</span>
+      <span id="wrongTabBadge" class="tab-count empty">0</span>
+    </button>
+  </nav>
+
+  <main class="wrap">
+    <section id="studyTabPanel" class="tab-panel" role="tabpanel" aria-labelledby="tabStudy">
+      <section class="panel setup-panel">
+        <div class="grid">
+          <div class="field">
+            <label>Bộ đề</label>
+            <select id="setSelect"></select>
+          </div>
+          <div class="field">
+            <label>Chương / nhóm</label>
+            <select id="chapterSelect"><option value="ALL">Tất cả chương</option></select>
+          </div>
+          <div class="field">
+            <label>Tìm câu hỏi</label>
+            <input id="searchInput" placeholder="Nhập từ khóa...">
+          </div>
+          <div class="field">
+            <label>&nbsp;</label>
+            <button id="startBtn" class="btn primary full-btn">Bắt đầu / tạo đề mới</button>
+          </div>
+        </div>
+        <div class="toggles">
+          <label class="toggle"><input id="shuffleQ" type="checkbox" checked> Xáo trộn câu hỏi</label>
+          <label class="toggle"><input id="shuffleA" type="checkbox" checked> Đảo vị trí đáp án</label>
+          <button id="resetBtn" class="btn danger">Xóa lượt hiện tại</button>
+        </div>
+        <p class="learning-note">Sau khi chọn đáp án, bạn sẽ thấy kiến thức nền, lý do đúng/sai của từng phương án và công thức từng bước nếu là bài tính. Những câu trả lời sai sẽ tự lưu vào tab <b>❌ Câu đã sai</b>.</p>
+      </section>
+
+      <section id="quizArea" class="hidden">
+        <div class="stats">
+          <div class="stat"><b id="statTotal">0</b>Tổng câu</div>
+          <div class="stat"><b id="statDone">0</b>Đã làm</div>
+          <div class="stat"><b id="statScore">0</b>Đúng</div>
+          <div class="stat"><b id="statWrong">0</b>Sai</div>
+        </div>
+        <div class="progress"><span id="progressBar"></span></div>
+
+        <div class="card">
+          <div class="qmeta">
+            <span id="qPos"></span>
+            <span id="qSource"></span>
+            <span id="statusBadge" class="badge"></span>
+          </div>
+          <div id="warningBox" class="warning hidden"></div>
+          <div id="qText" class="question"></div>
+
+          <figure id="sourceImageWrap" class="source-figure hidden">
+            <a id="sourceImageLink" target="_blank" rel="noopener">
+              <img id="sourceImage" class="source-image" alt="Ảnh/trang đề gốc">
+            </a>
+            <figcaption>Ảnh/trang đề gốc được giữ nguyên. Bấm vào ảnh để mở kích thước đầy đủ.</figcaption>
+          </figure>
+
+          <div id="options" class="options"></div>
+          <div id="feedback" class="feedback">
+            <div class="pre-solution-note">Chọn một đáp án để mở lời giải tĩnh của câu này.</div>
+          </div>
+
+          <div class="nav">
+            <button id="prevBtn" class="btn ghost">← Câu trước</button>
+            <button id="nextBtn" class="btn primary">Câu tiếp →</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="wrongTabPanel" class="tab-panel hidden" role="tabpanel" aria-labelledby="tabWrong">
+      <section class="panel wrong-review-panel">
+        <div class="wrong-review-heading">
+          <div>
+            <h2>❌ Câu đã sai</h2>
+            <p>Các câu sai được lưu trên trình duyệt này theo từng bộ đề. Làm lại đúng thì câu đó tự được gỡ khỏi danh sách.</p>
+          </div>
+          <strong id="wrongReviewTotal" class="wrong-total">0 câu cần ôn</strong>
+        </div>
+        <div id="wrongReviewList" class="wrong-review-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">Dữ liệu câu hỏi, lời giải tĩnh và ảnh nguồn đều nằm trong repository.</footer>
+
+  <script src="questions.js"></script>
+  <script src="static_solutions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
