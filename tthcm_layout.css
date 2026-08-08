@@ -189,6 +189,17 @@ body{background:var(--tth-bg);color:var(--tth-ink)}
 .question-jump{height:38px;border-radius:9px;font-size:12px}
 .question-jump.current{border-color:var(--tth-brand);color:#334bc7;box-shadow:0 0 0 3px rgba(51,92,255,.16)}
 
+/* Same desktop hierarchy as Quiz_TTHCM: navigator stays visible; main card gets the space. */
+@media(min-width:981px){
+  #questionSidebar.hidden{display:flex!important}
+  .quiz-layout.question-list-hidden{
+    width:min(1440px,100%);
+    grid-template-columns:300px minmax(0,1fr);
+    grid-template-areas:"sidebar main";
+  }
+  #toggleQuestionListBtn,#closeQuestionListBtn{display:none!important}
+}
+
 @media(max-width:980px){
   .quiz-layout,.quiz-layout.question-list-hidden{
     width:min(900px,100%);
