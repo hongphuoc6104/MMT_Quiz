@@ -76,6 +76,39 @@ jobs:
           console.log('supplementary technical answers:',supplementary.length,supplementary.join(', '));
           NODE
 
+      - name: Check concise learning view behavior
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),vm=require('vm');
+          const box={window:{},console}; vm.createContext(box);
+          vm.runInContext(fs.readFileSync('learning_view.js','utf8'),box,{filename:'learning_view.js'});
+          const ui=box.window.QUIZ_LEARNING_VIEW;
+          if(!ui?.buildSolutionHtml)throw new Error('Learning view renderer is unavailable');
+
+          const longReason='TCP '+('reason '.repeat(100))+'END-REASON';
+          const longKnowledge='OSI '+('knowledge '.repeat(100))+'END-KNOWLEDGE';
+          const longWhy='TCP '+('detail '.repeat(100))+'END-WHY';
+          const longWhen='UDP '+('condition '.repeat(80))+'END-WHEN';
+          const q={correct_option_id:'a',options:[{id:'a',text:'TCP'},{id:'b',text:'UDP'}],sources:['test']};
+          const s={
+            reasoning:longReason,summary:'TCP dùng kết nối tin cậy.',knowledge:longKnowledge,
+            options:[
+              {id:'a',text:'TCP',correct:true,why:longWhy,when:longWhen},
+              {id:'b',text:'UDP',correct:false,why:'UDP là connectionless.',when:'Dùng khi ưu tiên độ trễ thấp.'}
+            ],
+            commonMistakes:['Nhầm TCP với UDP.'],calculation:null
+          };
+          const html=ui.buildSolutionHtml(q,s,['a','b']);
+          if(!html.includes('🔑 Từ khóa:'))throw new Error('Keyword strip missing');
+          if(!html.includes('class="key-term"'))throw new Error('Important terms are not highlighted');
+          if(html.includes('END-REASON'))throw new Error('Always-visible reasoning is not concise');
+          for(const marker of ['END-KNOWLEDGE','END-WHY','END-WHEN']){
+            if(!html.includes(marker))throw new Error(`Expanded detail was truncated: ${marker}`);
+          }
+          if(!html.includes('<details class="study-details">'))throw new Error('Detailed sections are not collapsible');
+          console.log('learning view behavior ok: concise default + complete expanded details');
+          NODE
+
       - name: Check presentation JavaScript syntax
         run: |
           node --check question_structure_fixes.js
