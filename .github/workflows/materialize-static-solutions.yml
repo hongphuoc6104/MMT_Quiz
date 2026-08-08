@@ -35,7 +35,7 @@ jobs:
           NODE
       - name: Commit static data
         run: |
-          if git diff --quiet -- static_solutions.js; then
+          if [ -z "$(git status --porcelain -- static_solutions.js)" ]; then
             echo 'static_solutions.js already current'
             exit 0
           fi
