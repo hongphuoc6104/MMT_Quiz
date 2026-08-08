@@ -1,0 +1,44 @@
+/* Focused crops for questions that depend on diagrams in the source PDF. */
+.source-figure .source-crop-link{
+  position:relative;
+  display:block;
+  width:min(100%,780px);
+  margin:0 auto;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  cursor:zoom-in;
+}
+
+.source-figure .source-crop-link .source-image{
+  position:absolute;
+  display:block;
+  max-width:none;
+  max-height:none;
+  margin:0;
+  border:0;
+  border-radius:0;
+  background:#fff;
+  transform-origin:0 0;
+}
+
+.source-figure.has-focused-crop{
+  background:#f8fbff;
+}
+
+.source-figure.has-focused-crop figcaption{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.source-figure.has-focused-crop figcaption::before{
+  content:"✂️";
+}
+
+@media(max-width:560px){
+  .source-figure .source-crop-link{width:100%;border-radius:6px}
+}
