@@ -1,44 +1,50 @@
-/* Focused crops for questions that depend on diagrams in the source PDF. */
-.source-figure .source-crop-link{
-  position:relative;
-  display:block;
-  width:min(100%,780px);
-  margin:0 auto;
-  overflow:hidden;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:8px;
-  cursor:zoom-in;
-}
-
-.source-figure .source-crop-link .source-image{
-  position:absolute;
-  display:block;
-  max-width:none;
-  max-height:none;
-  margin:0;
-  border:0;
-  border-radius:0;
-  background:#fff;
-  transform-origin:0 0;
-}
-
-.source-figure.has-focused-crop{
+/* Dedicated per-question images extracted from the original source pages. */
+.source-figure.dedicated-question-image{
   background:#f8fbff;
 }
 
-.source-figure.has-focused-crop figcaption{
+.source-figure.dedicated-question-image #sourceImageLink{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  margin:0 auto;
+  cursor:zoom-in;
+}
+
+.source-figure.dedicated-question-image .source-image{
+  position:static!important;
+  display:block;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:54vh!important;
+  margin:0 auto!important;
+  border:1px solid var(--line)!important;
+  border-radius:8px!important;
+  background:#fff;
+}
+
+.source-figure.dedicated-question-image figcaption{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:7px;
+  gap:5px;
   flex-wrap:wrap;
+  line-height:1.4;
 }
 
-.source-figure.has-focused-crop figcaption::before{
-  content:"✂️";
+.source-page-link{
+  color:#174ea6;
+  font-weight:750;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+
+.source-page-link:hover{
+  color:#0f3d88;
 }
 
 @media(max-width:560px){
-  .source-figure .source-crop-link{width:100%;border-radius:6px}
+  .source-figure.dedicated-question-image .source-image{max-height:46vh!important}
+  .source-figure.dedicated-question-image figcaption{font-size:10px}
 }
