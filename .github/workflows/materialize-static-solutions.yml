@@ -1,46 +1,33 @@
-name: Materialize static quiz solutions
+name: Validate committed static quiz solutions
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'questions.json'
-      - 'solution_engine.js'
-      - 'scripts/materialize-solutions.cjs'
-      - '.github/workflows/materialize-static-solutions.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  materialize:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Materialize 314 static solutions
-        run: node scripts/materialize-solutions.cjs
-      - name: Validate static solution count
+      - name: Validate committed static solutions only
         run: |
           node - <<'NODE'
           const fs=require('fs'),vm=require('vm');
+          const questions=JSON.parse(fs.readFileSync('questions.json','utf8'));
           const s={window:{}};vm.createContext(s);vm.runInContext(fs.readFileSync('static_solutions.js','utf8'),s);
           const d=s.window.STATIC_SOLUTION_DATA;
-          if(!d||d.metadata.question_count!==314) throw new Error('Expected 314 static solutions');
-          if(Object.keys(d.solutions).length!==314) throw new Error('Static solution map is incomplete');
-          console.log('Validated',Object.keys(d.solutions).length,'solutions');
+          if(!d) throw new Error('static_solutions.js is missing/invalid');
+          if(d.metadata.question_count!==questions.metadata.question_count) throw new Error('Question count mismatch');
+          if(Object.keys(d.solutions).length!==questions.questions.length) throw new Error('Static solution map is incomplete');
+          for(const q of questions.questions){
+            const sol=d.solutions[q.id];
+            if(!sol) throw new Error('Missing static solution: '+q.id);
+            if(!Array.isArray(sol.options)||sol.options.length!==q.options.length) throw new Error('Incomplete option analysis: '+q.id);
+          }
+          console.log('Validated static-only solutions:',questions.questions.length);
           NODE
-      - name: Commit static data
-        run: |
-          if [ -z "$(git status --porcelain -- static_solutions.js)" ]; then
-            echo 'static_solutions.js already current'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add static_solutions.js
-          git commit -m 'materialize 314 static quiz solutions'
-          git push
