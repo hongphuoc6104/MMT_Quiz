@@ -13,12 +13,16 @@
 
   const originalRenderSourceImage = window.renderSourceImage;
 
-  function resetLegacyCropStyles(wrap, link, img) {
-    wrap.classList.remove('has-focused-crop');
+  function resetImageState(wrap, link, img, caption) {
+    wrap.classList.remove('has-focused-crop', 'dedicated-question-image');
     link.classList.remove('source-crop-link');
     link.style.removeProperty('aspect-ratio');
+    link.removeAttribute('aria-label');
     for (const prop of ['position','width','height','max-width','max-height','left','top','margin','border','border-radius']) {
       img.style.removeProperty(prop);
+    }
+    if (caption) {
+      caption.textContent = 'Ảnh/trang đề gốc. Bấm vào ảnh để mở kích thước đầy đủ.';
     }
   }
 
@@ -54,7 +58,7 @@
     const caption = wrap?.querySelector('figcaption');
     if (!wrap || !img || !link) return;
 
-    resetLegacyCropStyles(wrap, link, img);
+    resetImageState(wrap, link, img, caption);
 
     const cropSrc = QUESTION_IMAGES[q.id];
     if (!cropSrc) return;
