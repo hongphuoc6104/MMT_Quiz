@@ -19,7 +19,7 @@
   if(parity){
     parity.question='“Phương pháp kiểm tra chẵn lẻ” có thể phát hiện được bao nhiêu % số lỗi xảy ra trên đường truyền?';
     parity.options=(parity.options||[]).filter(o=>o.id!=='x');
-    parity.options.push({id:'x',text:'Đáp án kỹ thuật bổ sung – không có tỷ lệ phần trăm cố định'});
+    parity.options.push({id:'x',text:'[Đáp án kỹ thuật bổ sung – không có trong đề] Không có tỷ lệ phần trăm cố định'});
     parity.correct_option_id='x';
     parity.verification='corrected';
     parity.warning='Bốn lựa chọn gốc của PDF không có đáp án kỹ thuật đúng hoàn toàn. Parity phát hiện mọi mẫu lỗi có số bit đảo là lẻ; tỷ lệ phát hiện tổng thể phụ thuộc mô hình lỗi.';
