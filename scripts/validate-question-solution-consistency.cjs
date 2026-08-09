@@ -38,14 +38,23 @@ for(const q of data.questions||[]){
 const packet=data.questions.find(q=>q.id==='De04-7-115');
 assert(packet,'Missing packet-switching regression question De04-7-115');
 if(packet){
-  const expected=['Thích hợp cho mạng có thông lượng dữ liệu lớn','Thông tin được truyền đi trong những đơn vị là gói tin','Không đảm bảo được chất lượng dịch vụ','Không cần cơ chế điều khiển tắc nghẽn'];
+  const expected=[
+    'Thông tin được truyền đi trong những đơn vị là gói tin',
+    'Khó đảm bảo được chất lượng dịch vụ',
+    'Thích hợp cho mạng có thông lượng lớn',
+    'Không cần cơ chế điều khiển tắc nghẽn'
+  ];
   assert(packet.options.length===4,'De04-7-115 must have four conceptual choices');
-  expected.forEach((text,i)=>assert(packet.options[i]?.text===text,`De04-7-115 option ${i+1} not restored correctly`));
+  expected.forEach((text,i)=>assert(packet.options[i]?.text===text,`De04-7-115 option ${i+1} differs from PDF source text/order`));
   assert(packet.correct_option_id==='d','De04-7-115 correct answer must remain d');
+  assert(packet.verification==='source_exact','De04-7-115 must be marked source_exact');
+  assert(packet.source_exact?.status===true,'De04-7-115 source_exact provenance missing');
   assert(!packet.options.some(o=>/giây/i.test(o.text)),'De04-7-115 still contains timing choices from the next question');
   const solution=solutions['De04-7-115'];
   assert(solution,'De04-7-115 manual solution missing');
-  assert(solution && ['a','b','c','d'].every(id=>solution.options?.[id]?.why && solution.options?.[id]?.when),'De04-7-115 solution must explain all restored options');
+  assert(solution && ['a','b','c','d'].every(id=>solution.options?.[id]?.why && solution.options?.[id]?.when),'De04-7-115 solution must explain all PDF-exact options');
+  assert(solution && /A mô tả đơn vị truyền là gói tin/.test(solution.reasoning),'De04-7-115 solution option mapping is not aligned to PDF A/B/C/D');
+  assert(solution && /khó bảo đảm|khó đảm bảo/i.test([solution.options?.b?.why,solution.commonMistakes?.join(' ')].join(' ')),'De04-7-115 solution must preserve the PDF nuance “Khó đảm bảo”, not strengthen it to an absolute impossibility');
   assert(solution && !/mảnh OCR|2 giây|3,5 giây|3 giây/i.test([solution.knowledge,solution.reasoning,solution.summary,...Object.values(solution.options||{}).flatMap(x=>[x.why,x.when])].join(' ')),'De04-7-115 solution still describes the obsolete timing choices');
   const dirtySolution={knowledge:'Repeater Hub Bridge Switch Router Gateway '.repeat(20),reasoning:'router switch hub',summary:'gateway'};
   const concepts=theory.matches(packet,dirtySolution,3);
@@ -60,4 +69,4 @@ const polluted=theory.matches(dns,{knowledge:'router hub repeater switch gateway
 assert(clean===polluted,`Theory selection depends on solution prose: clean=${clean}, polluted=${polluted}`);
 if(warn.length){console.log(`Consistency warnings (${warn.length}, non-blocking):`);for(const w of warn.slice(0,25))console.log('  WARN',w);if(warn.length>25)console.log(`  ... ${warn.length-25} more warnings`);}
 if(fail.length){console.error(`Consistency validation failed (${fail.length}):`);for(const f of fail)console.error('  FAIL',f);process.exit(1);}
-console.log(`question/solution/theory consistency ok: ${data.questions.length} questions; packet regression restored; theory guard active`);
+console.log(`question/solution/theory consistency ok: ${data.questions.length} questions; packet regression is PDF source-exact; theory guard active`);
