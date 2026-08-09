@@ -9,7 +9,8 @@ const runtimeFiles = [
   'questions.js',
   'question_structure_fixes.js',
   'data_corrections.js',
-  'pdf_ocr_hotfixes.js'
+  'pdf_ocr_hotfixes.js',
+  'vietnamese_text_cleanup_20260809.js'
 ];
 for (const file of runtimeFiles) {
   vm.runInContext(fs.readFileSync(file, 'utf8'), box, { filename: file });
