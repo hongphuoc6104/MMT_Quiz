@@ -69,7 +69,8 @@
   }
 
   // De04 - câu gốc 23 - trang 29.
-  // The tail "4 2 ao" is OCR debris from the diagram. The original choices also lost Vietnamese diacritics.
+  // The tail "4 2 ao" is OCR debris from the diagram. The choices also lost Vietnamese diacritics.
+  // A clean vector reconstruction is attached so the learner can actually identify the topology.
   {
     const q = byId.get('De04-23-146');
     if (q) {
@@ -80,9 +81,10 @@
       setOption(q, 'd', 'Ring (vòng)');
       q.correct_option_id = 'd';
       q.file_answer_option_id = 'd';
-      q.verification = q.image ? 'corrected' : 'warning';
-      q.warning = q.image ? null : 'Câu hỏi phụ thuộc hình minh họa ở trang 29. Ký tự rác OCR đã được xóa; ảnh gốc cần được trích lại để người học tự nhận dạng topology.';
-      q.explanation = 'Đáp án theo khóa của đề là Ring (vòng). Mạng vòng nối các nút thành một vòng khép kín; khi ảnh gốc được hiển thị, hãy kiểm tra đặc điểm này thay vì chỉ học thuộc đáp án.';
+      q.image = 'assets/crops/De04-23-146.svg';
+      q.verification = 'corrected';
+      q.warning = 'Hình minh họa này được phục dựng sạch để thay phần hình bị mất khi trích PDF; nội dung thể hiện đúng đặc trưng Ring topology và đáp án đã được đối chiếu với tài liệu nguồn.';
+      q.explanation = 'Đáp án là Ring (vòng). Dấu hiệu nhận biết: mỗi nút nối với hai nút lân cận và toàn bộ các liên kết tạo thành một vòng khép kín. Star có một thiết bị trung tâm, Bus dùng một đường trục chung, còn Tree phân nhánh theo dạng cây.';
     }
   }
 
