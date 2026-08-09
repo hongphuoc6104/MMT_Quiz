@@ -7,6 +7,7 @@ on:
       - 'question_structure_fixes.js'
       - 'data_corrections.js'
       - 'pdf_ocr_hotfixes.js'
+      - 'vietnamese_text_cleanup_20260809.js'
       - 'scripts/audit_vietnamese_text.js'
       - '.github/workflows/audit-vietnamese-text.yml'
   workflow_dispatch:
