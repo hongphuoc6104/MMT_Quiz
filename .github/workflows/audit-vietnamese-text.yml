@@ -9,6 +9,9 @@ on:
       - 'pdf_ocr_hotfixes.js'
       - 'vietnamese_text_cleanup_20260809.js'
       - 'vietnamese_text_cleanup_final_20260809.js'
+      - 'source_preserving_ocr_fixes_20260809.js'
+      - 'manual_solutions/**'
+      - 'manual_to_static.js'
       - 'scripts/audit_vietnamese_text.js'
       - '.github/workflows/audit-vietnamese-text.yml'
   workflow_dispatch:
@@ -23,7 +26,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Audit all 314 questions
+      - name: Audit all 314 questions and explanations
         run: node scripts/audit_vietnamese_text.js
       - name: Commit audit report
         run: |

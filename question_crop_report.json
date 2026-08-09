@@ -7,29 +7,29 @@
     ],
     "source_box_px": [
       60,
-      1121,
+      1090,
       375,
-      1314
+      1398
     ],
     "source_box_pct": [
       5.0,
-      72.8,
+      70.8,
       26.5,
-      12.5
+      20.0
     ],
     "trim_inside_candidate_px": [
       3,
-      0,
+      2,
       303,
-      193
+      305
     ],
     "output_size": [
       300,
-      193
+      303
     ],
-    "top_edge_ink": 0.0325,
-    "bottom_edge_ink": 0.035,
-    "overall_ink": 0.10793,
+    "top_edge_ink": 0.03722,
+    "bottom_edge_ink": 0.01389,
+    "overall_ink": 0.10063,
     "file": "assets/crops/De01-5-4.png"
   },
   "De01-50-47": {

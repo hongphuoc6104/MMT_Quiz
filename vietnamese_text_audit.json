@@ -1,91 +1,43 @@
 {
   "audited_question_count": 314,
+  "audited_solution_count": 314,
   "suspicious_question_count": 0,
   "finding_count": 0,
+  "severity_counts": {},
   "runtime_files": [
     "questions.js",
     "question_structure_fixes.js",
+    "manual_solutions/de01_a.js",
+    "manual_solutions/de01_b.js",
+    "manual_solutions/de01_ver2.js",
+    "manual_solutions/de02_a.js",
+    "manual_solutions/de02_b.js",
+    "manual_solutions/de03_a.js",
+    "manual_solutions/de03_b.js",
+    "manual_solutions/de04_ch1_a.js",
+    "manual_solutions/de04_ch1_b.js",
+    "manual_solutions/de04_ch1_c.js",
+    "manual_solutions/de04_ch3_a.js",
+    "manual_solutions/de04_ch3_b.js",
+    "manual_solutions/de04_ch4.js",
+    "manual_solutions/de04_ch5_a.js",
+    "manual_solutions/de04_ch5_b.js",
+    "manual_solutions/de04_ch6_a.js",
+    "manual_solutions/de04_ch6_b.js",
+    "manual_solutions/de04_ch7_a.js",
+    "manual_solutions/de04_ch7_b.js",
+    "manual_solutions/de04_ch8_a.js",
+    "manual_solutions/de04_ch8_b.js",
+    "manual_solutions/de07.js",
+    "manual_solutions/de08.js",
+    "solution_consistency_fixes.js",
     "data_corrections.js",
+    "question_consistency_fixes.js",
     "pdf_ocr_hotfixes.js",
     "vietnamese_text_cleanup_20260809.js",
-    "vietnamese_text_cleanup_final_20260809.js"
+    "vietnamese_text_cleanup_final_20260809.js",
+    "source_preserving_ocr_fixes_20260809.js",
+    "manual_to_static.js"
   ],
-  "findings": [],
-  "focus": {
-    "De04-5-198": {
-      "question": "Cho sơ đồ mạng như hình, bạn hãy cho biết có bao nhiêu miền đụng độ (Collision Domain)?",
-      "options": [
-        {
-          "id": "a",
-          "text": "7"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correct_option_id": "c",
-      "file_answer_option_id": "c",
-      "explanation": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 6.",
-      "warning": "Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu."
-    },
-    "De02-20-63": {
-      "question": "Một tín hiệu được truyền từ điểm A đến điểm B. Hãy xác định độ suy giảm của tín hiệu này. (PDF nguồn bị thiếu các giá trị công suất tại A/B.)",
-      "options": [
-        {
-          "id": "a",
-          "text": "0, 457dBm"
-        },
-        {
-          "id": "b",
-          "text": "0, 47 dB"
-        },
-        {
-          "id": "c",
-          "text": "0, 457 dB"
-        },
-        {
-          "id": "d",
-          "text": "0, 47 dbm"
-        }
-      ],
-      "correct_option_id": "c",
-      "file_answer_option_id": "c",
-      "explanation": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: 0, 457 dB.",
-      "warning": "PDF thiếu các giá trị công suất đầu–cuối; tạm giữ đáp án gốc."
-    },
-    "De04-7-115": {
-      "question": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Switching Network)?",
-      "options": [
-        {
-          "id": "a",
-          "text": "2 giây"
-        },
-        {
-          "id": "b",
-          "text": "3.5 giây"
-        },
-        {
-          "id": "c",
-          "text": "3 giây"
-        },
-        {
-          "id": "d",
-          "text": "Không cần cơ chế điều khiển tắc nghẽn"
-        }
-      ],
-      "correct_option_id": "d",
-      "file_answer_option_id": "d",
-      "explanation": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: không cần cơ chế điều khiển tắc nghẽn.",
-      "warning": null
-    }
-  }
+  "findings": []
 }
