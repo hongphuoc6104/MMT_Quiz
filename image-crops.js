@@ -3,7 +3,7 @@
   // The quiz displays only the figure needed for the question. The untouched
   // source page remains available through an explicit verification link.
   const QUESTION_IMAGES = Object.freeze({
-    'De01-5-4': 'assets/crops/De01-5-4.png',
+    'De01-5-4': 'assets/crops/De01-5-4.png?v=20260809-handshake-2',
     'De01-50-47': 'assets/crops/De01-50-47.png',
     'De03-4-95': 'assets/crops/De03-4-95.png',
     'De03-12-101': 'assets/crops/De03-12-101.png',

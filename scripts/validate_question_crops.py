@@ -49,6 +49,16 @@ if q50_y_end_pct > 26.0:
 if q50['output_size'][1] > 320:
     raise SystemExit(f'De01-50-47 output is too tall: {q50["output_size"]}')
 
+# Regression for q5: all three arrows of the TCP handshake must be present.
+# The old crop ended at 85.3% of page 1 and had height 193, cutting off ACK/A2.
+q5 = REPORT['De01-5-4']
+q5_y_end_pct = (q5['source_box_px'][3] / q5['source_size'][1]) * 100
+if q5_y_end_pct < 90.0 or q5['output_size'][1] < 280:
+    raise SystemExit(
+        f'De01-5-4 crop may omit final ACK/A2: end={q5_y_end_pct:.2f}%, '
+        f'output={q5["output_size"]}'
+    )
+
 # HDLC was the tightest crop. It must have clean blank margins after trimming;
 # otherwise text from the question above/below is probably leaking into it.
 hdlc = REPORT['De03-4-95']
@@ -68,7 +78,7 @@ if 'Đối chiếu toàn trang gốc' not in image_js:
     raise SystemExit('Explicit full-page verification link is missing')
 
 bootstrap = (ROOT / 'manual_bootstrap.js').read_text(encoding='utf-8')
-if 'image-crops.js?v=20260808-dedicated-1' not in bootstrap:
+if 'image-crops.js?v=20260809-figure-2' not in bootstrap:
     raise SystemExit('Bootstrap does not force-load the dedicated image renderer')
 if bootstrap.index('image-crops.js') > bootstrap.index("'ux.js'"):
     raise SystemExit('Dedicated image renderer must load before UX/lightbox binding')
@@ -76,9 +86,10 @@ if bootstrap.index('image-crops.js') > bootstrap.index("'ux.js'"):
 index = (ROOT / 'index.html').read_text(encoding='utf-8')
 if 'image-crops.css?v=20260808-dedicated-1' not in index:
     raise SystemExit('Dedicated image CSS cache-bust link is missing')
-if 'manual_bootstrap.js?v=20260808-dedicated-1' not in index:
+if 'manual_bootstrap.js?v=20260809-source-2' not in index:
     raise SystemExit('Bootstrap cache-bust link is missing')
 
 print('Dedicated question-image validation passed for 6 figure-dependent questions.')
+print(f'De01-5-4 ends at {q5_y_end_pct:.2f}% of page 1 and is {q5["output_size"][0]}x{q5["output_size"][1]}.')
 print(f'De01-50-47 ends at {q50_y_end_pct:.2f}% of page 10 and is {q50["output_size"][0]}x{q50["output_size"][1]}.')
 print(f'De03-4-95 clean margins: top={hdlc["top_edge_ink"]}, bottom={hdlc["bottom_edge_ink"]}.')

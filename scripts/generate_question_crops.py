@@ -11,7 +11,9 @@ OUT.mkdir(parents=True, exist_ok=True)
 # Percent boxes measured from the actual 1190x1540 source-page PNGs.
 # They intentionally target only the diagram/figure, never the following questions.
 SPECS = {
-    "De01-5-4":    {"page": 1,  "x": 5.0, "y": 72.8, "w": 26.5, "h": 12.5},
+    # Include all three TCP handshake arrows.  The previous 12.5%-high crop
+    # stopped after SYN+ACK and silently removed the final ACK/A2 line.
+    "De01-5-4":    {"page": 1,  "x": 5.0, "y": 70.8, "w": 26.5, "h": 20.0},
     "De01-50-47":  {"page": 10, "x": 5.7, "y": 7.2,  "w": 22.5, "h": 18.5},
     "De03-4-95":   {"page": 19, "x": 18.0,"y": 15.3, "w": 38.5, "h": 6.9},
     "De03-12-101": {"page": 21, "x": 5.0, "y": 32.8, "w": 19.5, "h": 14.5},
