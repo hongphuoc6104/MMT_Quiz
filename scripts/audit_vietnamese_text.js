@@ -19,26 +19,37 @@ const data = box.window.QUIZ_DATA;
 if (!data || !Array.isArray(data.questions)) throw new Error('QUIZ_DATA unavailable');
 if (data.questions.length !== 314) throw new Error(`Expected 314 questions, got ${data.questions.length}`);
 
-// These are intentionally conservative indicators. They do not change data; they only
-// surface text for human review. English networking terms are not automatically errors.
-const asciiVietnameseWords = new RegExp(
-  String.raw`\b(?:khong|dung|mot|hai|ba|bon|nam|sau|bay|tam|chin|muoi|cua|mang|truyen|du|lieu|dieu|khien|tac|nghen|dia|chi|dich|vu|thanh|phan|chuyen|mach|su|dung|vi|tri|nhan|dang|tin|hieu|tuong|tu|mien|tram|tra|gui|goi|khung|kenh|vat|ly|lien|ket|dien|thoai|duong|cuc|bo|giam|phi|phat|bieu|can|co|che|cac|qua|tren|duoi|vao|ra|theo|thoi|gian|tan|so|may|chu|khach|hang|thong|diep|tien|trinh)\b`,
-  'i'
-);
+// Only flag ASCII tokens that are very likely Vietnamese words with missing diacritics.
+// Ambiguous plain words such as "hai", "ba", "ra", "theo", "khung", "tin" are intentionally omitted.
+const highConfidenceAsciiTokens = new Set([
+  'khong','mot','bon','cua','truyen','lieu','dieu','khien','nghen','dia','dich','phan','chuyen','mach',
+  'mien','tram','gui','goi','kenh','vat','lien','ket','dien','thoai','duong','cuc','giam','phat','bieu',
+  'tren','duoi','vao','thoi','tan','may','chu','khach','thong','diep','tien','trinh','tuyen','tinh','dam'
+]);
 
-const suspiciousRules = [
-  ['ascii-vietnamese', s => asciiVietnameseWords.test(s)],
-  ['fractured-ocr', s => /\b(?:cu\s+a|mie\s+n|tra\s+m|ca\s+c|tie\s+n|thong\s+die\s+p|truye\s+n|du\s+lie\s+u)\b/i.test(s)],
-  ['letter-digit-ocr', s => /\b\p{L}+[0-9]+\p{L}*\b/u.test(s) && !/\b(?:IPv[46]|802\.\d|10BASE|100BASE|1000BASE|RJ\d+|CAT\d+)\b/i.test(s)],
-  ['spacing-before-punctuation', s => /\s+[?,.;:]/.test(s)],
-  ['double-space', s => /[ \t]{2,}/.test(s)],
-  ['replacement-glyph', s => /[€�]/.test(s)],
-  ['known-ocr-shape', s => /\b(?:s6|ty|thé|dé|kiết|chỉ phí|vậng|vận lý|tuyén|dam may)\b/i.test(s)]
+const explicitPatterns = [
+  ['fractured-ocr', /(?:cu\s+a|mie\s+n|tra\s+m|ca\s+c|tie\s+n|thong\s+die\s+p|truye\s+n|du\s+lie\s+u)/i],
+  ['known-missing-diacritics', /(?:tac nghen|dieu khien|du lieu|dia chi|dich vu|chuyen mach|su dung|vi tri|nhan dang|tin hieu|vat ly|lien ket|dien thoai|duong truyen|mang cuc bo|khong can co che|bang phuong phap)/i],
+  ['known-ocr-shape', /(?:Tin hiệu tuần ty|Tín hiệu s6|Có thé|Mệnh dé|mệnh dé|liên kiết|Giảm chỉ phí|vậng lý|vận lý|tuyén tinh|dam may)/i],
+  ['spacing-before-punctuation', /\s+[?,.;:]/],
+  ['double-space', /[ \t]{2,}/],
+  ['replacement-glyph', /[€�]/]
 ];
+
+function asciiMissingAccentTokens(value) {
+  const tokens = String(value || '').match(/\p{L}+/gu) || [];
+  return [...new Set(tokens
+    .filter(t => /^[A-Za-z]+$/.test(t))
+    .map(t => t.toLowerCase())
+    .filter(t => highConfidenceAsciiTokens.has(t)))];
+}
 
 function inspect(q, field, value) {
   if (typeof value !== 'string' || !value.trim()) return null;
-  const rules = suspiciousRules.filter(([, test]) => test(value)).map(([name]) => name);
+  const rules = [];
+  const tokens = asciiMissingAccentTokens(value);
+  if (tokens.length) rules.push(`ascii-token:${tokens.join('|')}`);
+  for (const [name, pattern] of explicitPatterns) if (pattern.test(value)) rules.push(name);
   if (!rules.length) return null;
   return {
     id: q.id,
