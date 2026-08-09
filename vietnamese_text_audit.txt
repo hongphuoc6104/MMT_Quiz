@@ -28,3 +28,57 @@ Mã Morse: E = ., F = ..-., G = --., H = .....
 
 ===== De04-17-210 | De04 câu 17 | trang 52 | option.d | ascii-token:chu =====
 Thời gian được chia thành những “khe” (slot). Một chu kỳ hoạt động của hệ thống bắt đầu bằng N (N = số trạm) khe thời gian ngắn dùng để đặt chỗ.
+
+===== FOCUS De04-5-198 =====
+{
+  "question": "Cho sơ đồ mạng như hình, ban hãy cho biết có bao nhiêu miền đụng độ (Collision Domain)? « <P Giải thích: ® Router có n cổng => có n Broadcast domain ® 2 router kết nối với nhau => có 1 collision domain « Kết nối trực tiếp giữa router và switch => có 1 collision domain s Switch kết nối với n pc => có n collision domain ¢ Switch kết nối với 1 hub => có 1 collision domain ¢ Hub kết nối với n pc => chỉ có 1 collision domain ¢ Bridge xem như switch Nhin hinh ta thay: 2 Router kết nối với nhau qua Hub -> 1 Collision Domain Bên trai, Router kết nối trực tiếp với switch -> 1 Collision Domain 1 Switch kết nối với 2 PC -> 2 Collision Domain Bên trái, 1 Hub kết nối với 2 PC -> 1 Collision Domain Bên phải, 1 Hub kết nối với 3 PC -> 1 Collision Domain Tổng là1+1+2+1+1=6",
+  "options": [
+    {
+      "id": "a",
+      "text": "7"
+    },
+    {
+      "id": "b",
+      "text": "5"
+    },
+    {
+      "id": "c",
+      "text": "6"
+    },
+    {
+      "id": "d",
+      "text": "4 gia i thi ch: * Router co n co ng => co n broadcast domain * 2 Router ket no i voi nhau => co 1 collision domain * ket no i truc tiep giu a Router va Switch => co 1 collision domain * Switch ket no i voi n pc => co n collision domain * Switch ket no i voi 1 Hub => co 1 collision domain * Hub ket no i voi n pc => chi co 1 collision domain * Bridge xem nhu Switch nhi n hinh ta tha y: 2 Router ket no i voi nhau qua Hub -> 1 collision domain be n tra i, Router ket no i truc tiep voi Switch -> 1 collision domain 1 Switch ket no i voi 2 pc -> 2 collision domain be n tra i, 1 Hub ket no i voi 2 pc -> 1 collision domain be n phai, 1 Hub ket no i voi 3 pc -> 1 collision domain to ng la 1 + 1 + 2 + 1 + 1 = 6"
+    }
+  ],
+  "correct_option_id": "c",
+  "file_answer_option_id": "c",
+  "explanation": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 6.",
+  "warning": "Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu."
+}
+
+===== FOCUS De02-20-63 =====
+{
+  "question": "Một tín hiệu được truyền từ điểm A đến điểm B. Tại vị trí A tín hiệu ... giảm của một tín hiệu này?",
+  "options": [
+    {
+      "id": "a",
+      "text": "0, 457dBm"
+    },
+    {
+      "id": "b",
+      "text": "0, 47 dB"
+    },
+    {
+      "id": "c",
+      "text": "0, 457 dB"
+    },
+    {
+      "id": "d",
+      "text": "0, 47 dbm"
+    }
+  ],
+  "correct_option_id": "c",
+  "file_answer_option_id": "c",
+  "explanation": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: 0, 457 dB.",
+  "warning": "PDF thiếu các giá trị công suất đầu–cuối; tạm giữ đáp án gốc."
+}
