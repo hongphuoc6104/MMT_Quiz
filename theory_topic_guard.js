@@ -31,16 +31,18 @@
       const qHits=hitCount(concept.keys,qtext);
       const oHits=hitCount(concept.keys,otext);
       const ctext=conceptText(concept);
+      const isFlowConcept=FLOW_RE.test(ctext);
 
       // A device overview is only relevant when the question itself names a device.
       if(DEVICE_RE.test(ctext) && !questionMentionsDevice)continue;
 
       // Packet/congestion questions must stay in packet/control concepts.
-      if(packetTopic && !FLOW_RE.test(ctext) && !PACKET_RE.test(ctext))continue;
+      if(packetTopic && !isFlowConcept && !PACKET_RE.test(ctext))continue;
 
       // Never let a stray option alone select a concept unless there is substantial evidence.
-      if(qHits===0 && oHits<2)continue;
-      const score=qHits*5+oHits;
+      // Exception: a packet-switching question with an explicit congestion option is strong topic evidence.
+      if(qHits===0 && oHits<2 && !(packetTopic && isFlowConcept && oHits>=1))continue;
+      const score=qHits*5+oHits+(packetTopic&&isFlowConcept?3:0);
       if(score>0)ranked.push({concept,score,qHits,oHits});
     }
 
