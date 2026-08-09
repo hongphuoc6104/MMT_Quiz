@@ -26,7 +26,7 @@ const FIGURE_DEPENDENCY_RE=/(?:như|theo|trong|ở|từ)\s+hình|hình\s+(?:sau|
 function assert(ok,msg){if(!ok)fail.push(msg);}
 assert(Array.isArray(data?.questions),'QUIZ_DATA.questions missing');
 assert(data?.questions?.length===314,`Expected 314 questions, got ${data?.questions?.length}`);
-assert(theory?.guardVersion==='2026-08-09.2','Guarded beginner theory matcher is not active');
+assert(theory?.guardVersion==='2026-08-09.3','Guarded beginner theory matcher is not active');
 assert(sourceRegistry?.schema_version===2,'question source registry schema missing/unsupported');
 const ids=new Set();
 for(const q of data.questions||[]){
@@ -44,6 +44,9 @@ for(const q of data.questions||[]){
     if(q.image)assert(fs.existsSync(q.image),`${q.id}: referenced figure asset is missing: ${q.image}`);
     else assert(/(?:chưa|không).*ảnh|phụ\s+thuộc\s+hình/i.test(String(q.warning||'')),`${q.id}: figure-dependent question has neither an image nor a missing-source warning`);
   }
+  const matchedTheory=theory.matches(q,{},3);
+  assert(matchedTheory.length<=1,`${q.id}: more than one related concept is displayed (${matchedTheory.map(c=>c.id).join(',')})`);
+  assert(!matchedTheory.some(c=>c.title==='Ethernet, MAC address, switch và collision domain'),`${q.id}: obsolete broad Ethernet concept is still displayed`);
 }
 
 // Provenance rule: source_exact is forbidden unless a preserved evidence artifact exists.
@@ -92,9 +95,8 @@ if(packet && packetSource){
   const dirtySolution={knowledge:'Repeater Hub Bridge Switch Router Gateway '.repeat(20),reasoning:'router switch hub',summary:'gateway'};
   const concepts=theory.matches(packet,dirtySolution,3);
   const conceptIds=concepts.map(c=>c.id);
-  const titles=concepts.map(c=>c.title).join(' | ');
-  assert(conceptIds.includes('flowcongestion'),`De04-7-115 must match flowcongestion; got ${conceptIds.join(',')||'(none)'}`);
-  assert(!/Repeater|Hub|Bridge|Switch|Router|Gateway/i.test(titles),`De04-7-115 leaked into device theory: ${titles}`);
+  assert(conceptIds.includes('packetswitching'),`De04-7-115 must match packet-switching theory; got ${conceptIds.join(',')||'(none)'}`);
+  assert(!conceptIds.includes('devices'),`De04-7-115 leaked into device theory: ${conceptIds.join(',')}`);
 }
 const dns={question:'Trong DNS, MX record cho biết gì?',options:[{id:'a',text:'Mail server của miền'}]};
 const clean=theory.matches(dns,{},3).map(c=>c.id).join(',');
@@ -108,8 +110,8 @@ const expectedFigureTheory=new Map([
   ['De01-50-47','tcp'],
   ['De03-4-95','arq'],
   ['De03-12-101','arq'],
-  ['De04-5-198','ethernet'],
-  ['De04-4-228','ethernet']
+  ['De04-5-198','collisiondomains'],
+  ['De04-4-228','collisiondomains']
 ]);
 for(const [id,expected] of expectedFigureTheory){
   const q=data.questions.find(item=>item.id===id);
@@ -143,6 +145,50 @@ assert(!tokenTheory.includes('protocol'),'De01-40-38 must not show Protocol/Serv
 const serviceQuestion=data.questions.find(q=>q.id==='De01-19-18');
 const serviceTheory=serviceQuestion?theory.matches(serviceQuestion,{},3).map(c=>c.id):[];
 assert(serviceTheory.length===1 && serviceTheory[0]==='protocol',`De01-19-18 should show only Protocol/Service/Interface; got ${serviceTheory.join(',')||'(none)'}`);
+
+const focusedTheoryRegressions=[
+  ['De01-39-37','macaddress','MAC-address question'],
+  ['De02-24-67','ethernetframe','Ethernet MTU question'],
+  ['De01-42-40','macsublayer','MAC-sublayer question'],
+  ['De01-11-10','circuitswitching','circuit-switching question'],
+  ['De03-18-106','packetswitching','packet-switching question']
+];
+for(const [id,expected,label] of focusedTheoryRegressions){
+  const q=data.questions.find(item=>item.id===id);
+  assert(q,`Missing focused theory regression question ${id}`);
+  const matched=q?theory.matches(q,{},3).map(c=>c.id):[];
+  assert(matched.length===1&&matched[0]===expected,`${id}: ${label} should show ${expected}; got ${matched.join(',')||'(none)'}`);
+}
+
+// Production renderer must lead with the question-specific application, then
+// show the manual knowledge, at most one related concept and every option.
+box.letters=['A','B','C','D','E'];
+box.escapeHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+box.isCorrectAnswer=(question,id)=>id===question.correct_option_id;
+load('tthcm_layout.js');
+const renderer=box.window.MMT_TTHCM_LAYOUT?.fullSolutionHtml;
+assert(typeof renderer==='function','Production teaching renderer is unavailable');
+if(typeof renderer==='function'&&serviceQuestion){
+  const sampleSolution={
+    knowledge:'Kiến thức riêng của câu.',
+    reasoning:'Dấu hiệu quyết định trong câu.',
+    summary:'Điểm cần nhớ.',
+    commonMistakes:[],
+    options:serviceQuestion.options.map(option=>({id:option.id,text:option.text,why:`Giải thích ${option.id}.`,when:`Điều kiện ${option.id}.`}))
+  };
+  const order=serviceQuestion.options.map(option=>option.id);
+  const html=renderer(serviceQuestion,sampleSolution,order);
+  const applyAt=html.indexOf('🎯 Áp dụng kiến thức vào chính câu hỏi');
+  const knowledgeAt=html.indexOf('📘 Kiến thức nền riêng của câu');
+  const relatedAt=html.indexOf('📖 Khái niệm liên quan trực tiếp');
+  const optionsAt=html.indexOf('🧩 Phân tích đầy đủ từng đáp án A/B/C/D');
+  assert(applyAt>=0&&applyAt<knowledgeAt&&knowledgeAt<relatedAt&&relatedAt<optionsAt,'Teaching sections are not ordered application → question knowledge → related concept → option analysis');
+  assert((html.match(/class="concept-card"/g)||[]).length===1,'Production renderer must display exactly one focused concept for the service sample');
+  assert(!html.includes('Ethernet, MAC address, switch và collision domain'),'Production renderer still contains the obsolete broad Ethernet card');
+  for(const option of serviceQuestion.options){
+    assert(html.includes(`Giải thích ${option.id}.`)&&html.includes(`Điều kiện ${option.id}.`),`Production renderer omits full analysis for option ${option.id}`);
+  }
+}
 
 const genericTheoryRegressions=[
   ['De01-11-10','devices','“Circuit switching” must not be interpreted as a switch device'],

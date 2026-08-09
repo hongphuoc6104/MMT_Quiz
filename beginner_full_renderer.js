@@ -1,5 +1,5 @@
-// Final teaching renderer. Loaded last so compact/alternative renderers cannot hide required explanations.
-// Contract: definition -> example/confusions -> reasoning -> calculation -> manual knowledge -> every option why+when -> mistakes -> memory.
+// Full teaching renderer kept in sync with the production layout.
+// Contract: direct reasoning -> question-specific knowledge -> one related concept -> calculation -> every option why+when -> mistakes -> memory.
 (() => {
   'use strict';
   const correctFor=(question,id)=>typeof isCorrectAnswer==='function'?isCorrectAnswer(question,id):id===question.correct_option_id;
@@ -19,7 +19,7 @@
 
   function conceptHtml(concept,index){
     return `<article class="concept-card">
-      <div class="concept-step">${index===0?'BẮT ĐẦU TỪ SỐ 0':'KHÁI NIỆM LIÊN QUAN'}</div>
+      <div class="concept-step">KHÁI NIỆM LIÊN QUAN TRỰC TIẾP</div>
       <h5>${e(concept.title)}</h5>
       <div class="definition-box"><b>Định nghĩa đầy đủ</b><p>${e(concept.definition)}</p></div>
       ${(concept.points||[]).length?`<div class="concept-points"><b>Hiểu từng ý</b><ul>${concept.points.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div>`:''}
@@ -30,17 +30,14 @@
   }
 
   function theoryHtml(question,s){
-    const concepts=window.MMT_BEGINNER_THEORY?.matches?.(question,s,3)||[];
+    const concepts=window.MMT_BEGINNER_THEORY?.matches?.(question,s,1)||[];
     if(concepts.length){
       return `<section class="explain-block beginner-block">
-        <div class="section-intro"><span class="lesson-number">1</span><div><h4>📖 Trước tiên: học khái niệm từ số 0</h4><p>Đọc định nghĩa, từng ý nhỏ, ví dụ và điểm dễ nhầm trước khi nhìn vào lập luận đáp án.</p></div></div>
+        <div class="section-intro"><span class="lesson-number">3</span><div><h4>📖 Khái niệm liên quan trực tiếp</h4><p>Chỉ giữ một định nghĩa khớp trực tiếp với trọng tâm của câu.</p></div></div>
         <div class="concept-list">${concepts.map(conceptHtml).join('')}</div>
       </section>`;
     }
-    return `<section class="explain-block beginner-block fallback-theory">
-      <div class="section-intro"><span class="lesson-number">1</span><div><h4>📖 Trước tiên: kiến thức nền</h4><p>Đây là phần phải hiểu trước khi suy ra đáp án.</p></div></div>
-      <div class="definition-box"><b>Khái niệm / quy tắc cần biết</b><p>${e(clean(s.knowledge)||'Đọc phần áp dụng bên dưới để nắm quy tắc của câu này.')}</p></div>
-    </section>`;
+    return '';
   }
 
   function optionHtml(question,s,order){
@@ -63,7 +60,7 @@
   function fullSolutionHtml(question,s,order){
     if(!s)return '';
     const calc=s.calculation?`<section class="explain-block calculation-block">
-      <div class="section-intro"><span class="lesson-number">3</span><div><h4>🧮 Bài giải / công thức từng bước</h4><p>Đi từng bước để hiểu công thức, cách thay số và ý nghĩa kết quả.</p></div></div>
+      <div class="section-intro"><span class="lesson-number">4</span><div><h4>🧮 Bài giải / công thức từng bước</h4><p>Đi từng bước để hiểu công thức, cách thay số và ý nghĩa kết quả.</p></div></div>
       ${s.calculation.title?`<h5>${e(s.calculation.title)}</h5>`:''}
       <ol>${(s.calculation.steps||[]).map((step,i)=>`<li><b>Bước ${i+1}:</b> ${e(step)}</li>`).join('')}</ol>
       ${s.calculation.result?`<p class="calc-result"><b>Kết quả / đối chiếu:</b> ${e(s.calculation.result)}</p>`:''}
@@ -74,16 +71,16 @@
 
     return `<div class="solution tthcm-solution beginner-solution final-beginner-renderer">
       ${auditHtml(question)}
-      ${theoryHtml(question,s)}
       <section class="explain-block reasoning-block">
-        <div class="section-intro"><span class="lesson-number">2</span><div><h4>🎯 Áp dụng kiến thức vào chính câu hỏi</h4><p>Nối từ khóa trong đề với định nghĩa vừa học rồi mới kết luận.</p></div></div>
+        <div class="section-intro"><span class="lesson-number">1</span><div><h4>🎯 Áp dụng kiến thức vào chính câu hỏi</h4><p>Đọc ngay dấu hiệu quyết định trong đề và cách đi tới đáp án.</p></div></div>
         <p>${e(clean(s.reasoning))}</p>
       </section>
-      ${calc}
       <section class="explain-block knowledge-block">
-        <div class="section-intro"><span class="lesson-number">${s.calculation?'4':'3'}</span><div><h4>📘 Kiến thức nền riêng của câu</h4><p>Giữ phần kiến thức thủ công được viết riêng cho chính câu này để bổ sung cho định nghĩa tổng quát.</p></div></div>
+        <div class="section-intro"><span class="lesson-number">2</span><div><h4>📘 Kiến thức nền riêng của câu</h4><p>Phần kiến thức được viết riêng cho đúng câu này.</p></div></div>
         <p>${e(clean(s.knowledge))}</p>
       </section>
+      ${theoryHtml(question,s)}
+      ${calc}
       ${optionHtml(question,s,order)}
       <section class="explain-block mistakes-block"><h4>⚠️ Lỗi người mới rất dễ mắc</h4>${mistakes.length?`<ul>${mistakes.map(x=>`<li>${e(x)}</li>`).join('')}</ul>`:'<p>Không có ghi chú lỗi riêng; hãy tập trung vào định nghĩa và điều kiện áp dụng.</p>'}</section>
       <section class="explain-block memory-block"><h4>🧠 Sau cùng: điều cần nhớ</h4><p>${e(clean(s.summary))}</p></section>

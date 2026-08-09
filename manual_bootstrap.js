@@ -9,8 +9,8 @@
     'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
     'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
     'manual_solutions/de07.js','manual_solutions/de08.js','solution_consistency_fixes.js?v=20260809-1',
-    'data_corrections.js','question_consistency_fixes.js?v=20260809-1','pdf_ocr_hotfixes.js?v=20260809-ocr-2','vietnamese_text_cleanup_20260809.js?v=20260809-vi-1','vietnamese_text_cleanup_final_20260809.js?v=20260809-vi-3','source_preserving_ocr_fixes_20260809.js?v=20260809-source-2','manual_to_static.js','app.js','image-crops.js?v=20260809-figure-2','ux.js',
-    'answer_audit_notes.js','beginner_theory.js','theory_topic_guard.js?v=20260809-2','tthcm_layout.js','practice_by_type.js?v=20260809-1'
+    'data_corrections.js','question_consistency_fixes.js?v=20260809-1','pdf_ocr_hotfixes.js?v=20260809-ocr-2','vietnamese_text_cleanup_20260809.js?v=20260809-vi-1','vietnamese_text_cleanup_final_20260809.js?v=20260809-vi-3','source_preserving_ocr_fixes_20260809.js?v=20260809-source-2','manual_to_static.js','app.js','image-crops.js?v=20260809-figure-2','ux.js?v=20260810-teaching-1',
+    'answer_audit_notes.js','beginner_theory.js?v=20260810-teaching-1','theory_topic_guard.js?v=20260810-teaching-1','tthcm_layout.js?v=20260810-teaching-1','practice_by_type.js?v=20260809-1'
   ];
 
   function load(src){
