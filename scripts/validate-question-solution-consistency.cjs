@@ -15,12 +15,14 @@ load('theory_topic_guard.js');
 const data=box.window.QUIZ_DATA;
 const theory=box.window.MMT_BEGINNER_THEORY;
 const solutions=box.window.MANUAL_SOLUTIONS||{};
+const sourceRegistry=JSON.parse(fs.readFileSync('data/question_sources.json','utf8'));
 const fail=[];
 const warn=[];
 function assert(ok,msg){if(!ok)fail.push(msg);}
 assert(Array.isArray(data?.questions),'QUIZ_DATA.questions missing');
 assert(data?.questions?.length===314,`Expected 314 questions, got ${data?.questions?.length}`);
 assert(theory?.guardVersion==='2026-08-09','Guarded beginner theory matcher is not active');
+assert(sourceRegistry?.schema_version===1,'question source registry schema missing/unsupported');
 const ids=new Set();
 for(const q of data.questions||[]){
   assert(q?.id && !ids.has(q.id),`Duplicate/missing question id: ${q?.id}`);
@@ -35,17 +37,33 @@ for(const q of data.questions||[]){
   if(/phát biểu|mệnh đề/i.test(qt) && pureDurations>=2)fail.push(`${q.id}: conceptual statement question is contaminated by ${pureDurations} duration-only choices`);
   if(/hình|sơ đồ/i.test(qt) && !q.image)warn.push(`${q.id}: mentions an image/diagram but image is null`);
 }
+
+// Every source_exact registry record must match the live runtime record byte-for-byte for question/options/answer.
+for(const [id,source] of Object.entries(sourceRegistry?.questions||{})){
+  if(source.verification_status!=='source_exact')continue;
+  const q=data.questions.find(x=>x.id===id);
+  assert(q,`${id}: source registry record has no runtime question`);
+  if(!q)continue;
+  assert(q.question===source.question,`${id}: runtime question text differs from verified PDF registry`);
+  assert(JSON.stringify(q.options)===JSON.stringify(source.options),`${id}: runtime option text/order differs from verified PDF registry`);
+  assert(q.correct_option_id===source.correct_option_id,`${id}: runtime correct answer differs from verified PDF registry`);
+  assert(q.verification==='source_exact',`${id}: verified source record must be marked source_exact at runtime`);
+}
+
 const packet=data.questions.find(q=>q.id==='De04-7-115');
+const packetSource=sourceRegistry.questions['De04-7-115'];
 assert(packet,'Missing packet-switching regression question De04-7-115');
-if(packet){
-  const expected=['Thích hợp cho mạng có thông lượng dữ liệu lớn','Thông tin được truyền đi trong những đơn vị là gói tin','Không đảm bảo được chất lượng dịch vụ','Không cần cơ chế điều khiển tắc nghẽn'];
+assert(packetSource?.verification_status==='source_exact','Missing PDF-exact provenance for De04-7-115');
+if(packet && packetSource){
   assert(packet.options.length===4,'De04-7-115 must have four conceptual choices');
-  expected.forEach((text,i)=>assert(packet.options[i]?.text===text,`De04-7-115 option ${i+1} not restored correctly`));
   assert(packet.correct_option_id==='d','De04-7-115 correct answer must remain d');
+  assert(packet.source_exact?.status===true,'De04-7-115 source_exact provenance missing');
   assert(!packet.options.some(o=>/giây/i.test(o.text)),'De04-7-115 still contains timing choices from the next question');
   const solution=solutions['De04-7-115'];
   assert(solution,'De04-7-115 manual solution missing');
-  assert(solution && ['a','b','c','d'].every(id=>solution.options?.[id]?.why && solution.options?.[id]?.when),'De04-7-115 solution must explain all restored options');
+  assert(solution && ['a','b','c','d'].every(id=>solution.options?.[id]?.why && solution.options?.[id]?.when),'De04-7-115 solution must explain all PDF-exact options');
+  assert(solution && /A mô tả đơn vị truyền là gói tin/.test(solution.reasoning),'De04-7-115 solution option mapping is not aligned to PDF A/B/C/D');
+  assert(solution && /khó bảo đảm|khó đảm bảo/i.test([solution.options?.b?.why,solution.commonMistakes?.join(' ')].join(' ')),'De04-7-115 solution must preserve the PDF nuance “Khó đảm bảo”, not strengthen it to an absolute impossibility');
   assert(solution && !/mảnh OCR|2 giây|3,5 giây|3 giây/i.test([solution.knowledge,solution.reasoning,solution.summary,...Object.values(solution.options||{}).flatMap(x=>[x.why,x.when])].join(' ')),'De04-7-115 solution still describes the obsolete timing choices');
   const dirtySolution={knowledge:'Repeater Hub Bridge Switch Router Gateway '.repeat(20),reasoning:'router switch hub',summary:'gateway'};
   const concepts=theory.matches(packet,dirtySolution,3);
@@ -60,4 +78,4 @@ const polluted=theory.matches(dns,{knowledge:'router hub repeater switch gateway
 assert(clean===polluted,`Theory selection depends on solution prose: clean=${clean}, polluted=${polluted}`);
 if(warn.length){console.log(`Consistency warnings (${warn.length}, non-blocking):`);for(const w of warn.slice(0,25))console.log('  WARN',w);if(warn.length>25)console.log(`  ... ${warn.length-25} more warnings`);}
 if(fail.length){console.error(`Consistency validation failed (${fail.length}):`);for(const f of fail)console.error('  FAIL',f);process.exit(1);}
-console.log(`question/solution/theory consistency ok: ${data.questions.length} questions; packet regression restored; theory guard active`);
+console.log(`question/solution/theory consistency ok: ${data.questions.length} questions; ${Object.keys(sourceRegistry.questions||{}).length} verified source record(s) enforced; theory guard active`);
