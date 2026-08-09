@@ -20,8 +20,6 @@ const data = box.window.QUIZ_DATA;
 if (!data || !Array.isArray(data.questions)) throw new Error('QUIZ_DATA unavailable');
 if (data.questions.length !== 314) throw new Error(`Expected 314 questions, got ${data.questions.length}`);
 
-// Only flag ASCII tokens that are very likely Vietnamese words with missing diacritics.
-// Ambiguous plain words such as "hai", "ba", "ra", "theo", "khung", "tin" are intentionally omitted.
 const highConfidenceAsciiTokens = new Set([
   'khong','mot','bon','cua','truyen','lieu','dieu','khien','nghen','dia','dich','phan','chuyen','mach',
   'mien','tram','gui','goi','kenh','vat','lien','ket','dien','thoai','duong','cuc','giam','phat','bieu',
@@ -52,15 +50,7 @@ function inspect(q, field, value) {
   if (tokens.length) rules.push(`ascii-token:${tokens.join('|')}`);
   for (const [name, pattern] of explicitPatterns) if (pattern.test(value)) rules.push(name);
   if (!rules.length) return null;
-  return {
-    id: q.id,
-    set: q.set,
-    source_number: q.source_number,
-    source_page: q.source_page,
-    field,
-    rules,
-    text: value
-  };
+  return { id:q.id, set:q.set, source_number:q.source_number, source_page:q.source_page, field, rules, text:value };
 }
 
 const findings = [];
@@ -75,13 +65,27 @@ for (const q of data.questions) {
   }
 }
 
+const focusIds = ['De04-5-198', 'De02-20-63'];
+const focus = Object.fromEntries(focusIds.map(id => {
+  const q = data.questions.find(item => item.id === id);
+  return [id, q ? {
+    question:q.question,
+    options:q.options,
+    correct_option_id:q.correct_option_id,
+    file_answer_option_id:q.file_answer_option_id,
+    explanation:q.explanation,
+    warning:q.warning
+  } : null];
+}));
+
 const uniqueQuestions = new Set(findings.map(x => x.id));
 const report = {
   audited_question_count: data.questions.length,
   suspicious_question_count: uniqueQuestions.size,
   finding_count: findings.length,
   runtime_files: runtimeFiles,
-  findings
+  findings,
+  focus
 };
 fs.writeFileSync('vietnamese_text_audit.json', JSON.stringify(report, null, 2) + '\n');
 
@@ -94,6 +98,12 @@ const lines = [
 for (const x of findings) {
   lines.push(`===== ${x.id} | ${x.set} câu ${x.source_number} | trang ${x.source_page} | ${x.field} | ${x.rules.join(',')} =====`);
   lines.push(x.text);
+  lines.push('');
+}
+for (const id of focusIds) {
+  const q = focus[id];
+  lines.push(`===== FOCUS ${id} =====`);
+  lines.push(q ? JSON.stringify(q, null, 2) : 'NOT FOUND');
   lines.push('');
 }
 fs.writeFileSync('vietnamese_text_audit.txt', lines.join('\n'));
