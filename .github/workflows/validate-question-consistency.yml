@@ -8,6 +8,7 @@ on:
       - 'data_corrections.js'
       - 'question_consistency_fixes.js'
       - 'solution_consistency_fixes.js'
+      - 'data/question_sources.json'
       - 'manual_solutions/**'
       - 'beginner_theory.js'
       - 'theory_topic_guard.js'
@@ -22,6 +23,7 @@ on:
       - 'data_corrections.js'
       - 'question_consistency_fixes.js'
       - 'solution_consistency_fixes.js'
+      - 'data/question_sources.json'
       - 'manual_solutions/**'
       - 'beginner_theory.js'
       - 'theory_topic_guard.js'
@@ -44,13 +46,14 @@ jobs:
           node-version: '24'
       - name: Validate all manual solutions
         run: node scripts/validate-manual-solutions.cjs all
-      - name: Validate question/options, solution alignment and theory topic isolation
+      - name: Validate question/options, PDF source alignment and theory topic isolation
         run: node scripts/validate-question-solution-consistency.cjs
       - name: Verify runtime wiring and syntax
         run: |
           grep -q "'solution_consistency_fixes.js" manual_bootstrap.js
           grep -q "'question_consistency_fixes.js" manual_bootstrap.js
           grep -q "'theory_topic_guard.js" manual_bootstrap.js
+          node -e "JSON.parse(require('fs').readFileSync('data/question_sources.json','utf8'))"
           node --check solution_consistency_fixes.js
           node --check question_consistency_fixes.js
           node --check theory_topic_guard.js
