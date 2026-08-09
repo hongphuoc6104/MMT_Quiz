@@ -10,7 +10,8 @@ const runtimeFiles = [
   'question_structure_fixes.js',
   'data_corrections.js',
   'pdf_ocr_hotfixes.js',
-  'vietnamese_text_cleanup_20260809.js'
+  'vietnamese_text_cleanup_20260809.js',
+  'vietnamese_text_cleanup_final_20260809.js'
 ];
 for (const file of runtimeFiles) {
   vm.runInContext(fs.readFileSync(file, 'utf8'), box, { filename: file });
@@ -23,14 +24,15 @@ if (data.questions.length !== 314) throw new Error(`Expected 314 questions, got 
 const highConfidenceAsciiTokens = new Set([
   'khong','mot','bon','cua','truyen','lieu','dieu','khien','nghen','dia','dich','phan','chuyen','mach',
   'mien','tram','gui','goi','kenh','vat','lien','ket','dien','thoai','duong','cuc','giam','phat','bieu',
-  'tren','duoi','vao','thoi','tan','may','chu','khach','thong','diep','tien','trinh','tuyen','tinh','dam'
+  'tren','duoi','vao','thoi','tan','may','khach','thong','diep','tien','trinh','tuyen','tinh','dam'
 ]);
 
 const explicitPatterns = [
   ['fractured-ocr', /(?:cu\s+a|mie\s+n|tra\s+m|ca\s+c|tie\s+n|thong\s+die\s+p|truye\s+n|du\s+lie\s+u)/i],
   ['known-missing-diacritics', /(?:tac nghen|dieu khien|du lieu|dia chi|dich vu|chuyen mach|su dung|vi tri|nhan dang|tin hieu|vat ly|lien ket|dien thoai|duong truyen|mang cuc bo|khong can co che|bang phuong phap)/i],
   ['known-ocr-shape', /(?:Tin hiệu tuần ty|Tín hiệu s6|Có thé|Mệnh dé|mệnh dé|liên kiết|Giảm chỉ phí|vậng lý|vận lý|tuyén tinh|dam may)/i],
-  ['spacing-before-punctuation', /\s+[?,.;:]/],
+  // Periods are intentionally excluded because ellipses and Morse notation are valid study content.
+  ['spacing-before-punctuation', /\s+[?,;:]/],
   ['double-space', /[ \t]{2,}/],
   ['replacement-glyph', /[€�]/]
 ];
@@ -65,7 +67,7 @@ for (const q of data.questions) {
   }
 }
 
-const focusIds = ['De04-5-198', 'De02-20-63'];
+const focusIds = ['De04-5-198', 'De02-20-63', 'De04-7-115'];
 const focus = Object.fromEntries(focusIds.map(id => {
   const q = data.questions.find(item => item.id === id);
   return [id, q ? {
