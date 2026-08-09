@@ -16,6 +16,8 @@ on:
       - 'manual_solutions/**'
       - 'beginner_theory.js'
       - 'theory_topic_guard.js'
+      - 'tthcm_layout.js'
+      - 'ux.js'
       - 'manual_bootstrap.js'
       - 'scripts/validate-question-solution-consistency.cjs'
       - 'scripts/validate-manual-solutions.cjs'
@@ -35,6 +37,8 @@ on:
       - 'manual_solutions/**'
       - 'beginner_theory.js'
       - 'theory_topic_guard.js'
+      - 'tthcm_layout.js'
+      - 'ux.js'
       - 'manual_bootstrap.js'
       - 'scripts/validate-question-solution-consistency.cjs'
       - 'scripts/validate-manual-solutions.cjs'
@@ -66,4 +70,6 @@ jobs:
           node --check solution_consistency_fixes.js
           node --check question_consistency_fixes.js
           node --check theory_topic_guard.js
+          node --check tthcm_layout.js
+          node --check ux.js
           node --check source_preserving_ocr_fixes_20260809.js

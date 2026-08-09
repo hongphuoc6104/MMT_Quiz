@@ -67,6 +67,24 @@
       source:'Mô hình delay chuẩn trong mạng chuyển gói.'
     },
     {
+      id:'packetswitching', title:'Mạng chuyển gói (packet switching)',
+      keys:[/mạng chuyển gói|packet\s*(?:passing|switch(?:ing|ed)?)/i],
+      definition:'Trong mạng chuyển gói, dữ liệu được chia thành packet và các liên kết được nhiều luồng dùng chung. Mỗi nút trung gian nhận, lưu tạm khi cần rồi chuyển packet sang chặng kế tiếp; tài nguyên không bị dành cố định cho một phiên từ đầu đến cuối.',
+      points:['Các packet có thể phải xếp hàng khi nhiều luồng cùng cần một liên kết.','Độ trễ có thể biến thiên; hàng đợi đầy có thể làm mất packet.','Các packet có thể đi cùng hoặc khác đường tùy cơ chế định tuyến/chuyển tiếp.','Chia sẻ thống kê giúp dùng đường truyền hiệu quả khi lưu lượng phát theo đợt, nhưng khó bảo đảm cố định về trễ và băng thông nếu không có cơ chế QoS riêng.'],
+      example:'Hai người dùng có thể luân phiên dùng cùng một liên kết theo nhu cầu thay vì mỗi người được giữ sẵn một khe dung lượng dù đang im lặng.',
+      distinguish:'Packet switching chia sẻ tài nguyên theo packet; circuit switching thiết lập và dành tài nguyên/đường logic trước khi truyền.',
+      source:'Nguyên lý mạng chuyển gói và store-and-forward.'
+    },
+    {
+      id:'circuitswitching', title:'Mạng chuyển mạch kênh (circuit switching)',
+      keys:[/circuit\s+switch(?:ing)?|chuyển\s+mạch\s+(?:kênh|circuit)/i],
+      definition:'Trong mạng chuyển mạch kênh, một đường logic và phần tài nguyên truyền dẫn được thiết lập cho phiên trước khi trao đổi dữ liệu. Tài nguyên có thể được chia theo khe thời gian hoặc dải tần và được giữ cho phiên trong thời gian kết nối.',
+      points:['Thường có giai đoạn thiết lập kết nối trước khi truyền.','Dung lượng dành trước tạo tính dự đoán tốt hơn nhưng có thể bị lãng phí khi phiên không gửi dữ liệu.','TDM chia tài nguyên theo thời gian; FDM chia theo tần số.','Mạng điện thoại truyền thống là ví dụ kinh điển trong giáo trình.'],
+      example:'Nếu một liên kết được chia thành 12 khe TDM và mỗi cuộc gọi giữ một khe, số phiên đồng thời bị giới hạn bởi số khe đã cấp.',
+      distinguish:'“Switch” trong circuit switching là cơ chế chuyển mạch kênh, không đồng nghĩa thiết bị Ethernet switch học địa chỉ MAC.',
+      source:'Nguyên lý chuyển mạch kênh trong mạng viễn thông.'
+    },
+    {
       id:'framing', title:'Frame và kỹ thuật định khung',
       keys:[/framing|định khung|frame|byte stuffing|bit stuffing|flag byte|cờ/i],
       definition:'Data Link cần biết một frame bắt đầu và kết thúc ở đâu. Framing là nhóm kỹ thuật tạo ranh giới frame, có thể dùng trường độ dài, byte/character flag kết hợp byte stuffing, hoặc bit flag kết hợp bit stuffing tùy giao thức.',
@@ -103,13 +121,49 @@
       source:'Lý thuyết MAC/multiple access; IEEE 802.3 cho CSMA/CD Ethernet.'
     },
     {
-      id:'ethernet', title:'Ethernet, MAC address, switch và collision domain',
-      keys:[/ethernet|802\.3|mac address|địa chỉ mac|switch|bridge|hub|collision domain|broadcast domain|1000base/i],
-      definition:'Ethernet là họ công nghệ LAN của IEEE 802.3. Ethernet frame có địa chỉ MAC nguồn/đích. Hub tạo môi trường chia sẻ; bridge/switch học MAC và chuyển frame theo cổng. Router tạo ranh giới Layer 3 và thường là ranh giới broadcast giữa các subnet.',
-      points:['Hub/repeater nhiều cổng hoạt động chủ yếu ở mức bit và không học địa chỉ MAC.','Switch Layer 2 học source MAC và tra bảng MAC để quyết định cổng ra.','Mỗi cổng switch full-duplex hiện đại thường là collision domain riêng.','Broadcast Ethernet Layer 2 vẫn có thể đi qua nhiều cổng switch trong cùng VLAN; router không forward broadcast Layer 2 sang subnet khác theo kiểu đó.'],
-      example:'Hai máy qua hub có thể collision; qua hai cổng switch full-duplex riêng thì không chia sẻ collision domain truyền thống.',
-      distinguish:'Switch tách collision domain; router/subnet/VLAN Layer 3 boundary mới liên quan mạnh đến broadcast domain.',
-      source:'IEEE 802.3 và mô hình LAN Layer 2.'
+      id:'macsublayer', title:'Tầng con MAC (Medium Access Control)',
+      keys:[/tầng\s+mac\b|mac\s+protocol|medium\s+access\s+control|giao\s+thức\s+llc.*giao\s+thức\s+mac/i],
+      definition:'Trong kiến trúc IEEE 802, tầng Liên kết dữ liệu được chia thành LLC và MAC. MAC phụ trách cách trạm giành quyền dùng môi trường, địa chỉ MAC và các phần định dạng/kiểm tra cơ bản của khung; LLC cung cấp giao diện logic chung hơn cho tầng trên.',
+      points:['Medium Access Control trả lời trạm nào được phép truyền trên môi trường dùng chung và vào thời điểm nào.','Địa chỉ nguồn/đích và định dạng khung thuộc phần MAC của công nghệ LAN.','Một LLC có thể nằm trên các MAC khác nhau vì LLC và cơ chế truy cập môi trường là hai vai trò tách biệt.','Theo cách phân chia của giáo trình, điều khiển luồng không phải chức năng cốt lõi của MAC.'],
+      example:'Ethernet và Token Ring có cơ chế MAC khác nhau nhưng có thể cung cấp giao diện LLC theo cùng kiến trúc IEEE 802.',
+      distinguish:'MAC sublayer là một phần của Data Link; “MAC address” chỉ là một loại trường địa chỉ mà sublayer này sử dụng.',
+      source:'Kiến trúc IEEE 802 LLC/MAC.'
+    },
+    {
+      id:'ethernet', title:'Họ chuẩn Ethernet IEEE 802.3',
+      keys:[/ethernet|802\.3|10base|100base|1000base|10gbase/i],
+      definition:'Ethernet là một họ công nghệ mạng LAN được IEEE chuẩn hóa chủ yếu trong nhóm 802.3. Mỗi biến thể Ethernet quy định rõ tốc độ, kiểu truyền baseband, môi trường vật lý, cách mã hóa và giới hạn liên kết; vì vậy phải đọc đúng tên chuẩn đang được hỏi thay vì lấy một thuộc tính chung áp cho mọi Ethernet.',
+      points:['Tên như 10BASE-T hoặc 1000BASE-LX gồm tốc độ danh nghĩa, BASE và ký hiệu môi trường/biến thể vật lý.','Ethernet có thể chạy trên cáp xoắn đôi, cáp đồng trục hoặc cáp quang tùy chuẩn cụ thể.','Khoảng cách và cách mã hóa thuộc về từng PHY cụ thể; phần kiến thức riêng của câu cung cấp giá trị cần dùng cho đúng biến thể.','IEEE 802.3 là Ethernet; IEEE 802.11 là WLAN/Wi-Fi và IEEE 802.5 gắn với Token Ring.'],
+      example:'10BASE-T và 10BASE-2 đều thuộc Ethernet nhưng dùng môi trường và giới hạn đoạn mạng khác nhau.',
+      distinguish:'Không suy ra khoảng cách, loại cáp hoặc mã hóa chỉ từ từ “Ethernet”; phải nhìn toàn bộ tên chuẩn.',
+      source:'Họ chuẩn IEEE 802.3.'
+    },
+    {
+      id:'macaddress', title:'Địa chỉ MAC trong Ethernet',
+      keys:[/mac\s*(?:address)?|địa\s+chỉ\s+mac|địa\s+chỉ\s+(?:nguồn|đích).*ethernet|địa\s+chỉ\s+tầng\s*2/i],
+      definition:'Địa chỉ MAC là định danh ở tầng Liên kết dữ liệu dùng để giao frame trên một liên kết Ethernet. Địa chỉ MAC Ethernet thông thường dài 48 bit, tức 6 byte; trường địa chỉ đích và trường địa chỉ nguồn trong frame mỗi trường đều dài 6 byte.',
+      points:['MAC đích cho biết frame cần được giao tới giao diện hoặc nhóm giao diện nào trên LAN.','MAC nguồn cho biết giao diện đã gửi frame; switch có thể học ánh xạ MAC nguồn với cổng nhận.','MAC có thể là địa chỉ toàn cục do nhà sản xuất gán hoặc địa chỉ được quản trị cục bộ; không nên hiểu nó luôn bất biến tuyệt đối.','Địa chỉ MAC khác địa chỉ IP: MAC phục vụ giao frame trên liên kết, còn IP phục vụ định danh/định tuyến giữa các mạng.'],
+      example:'Khi gửi tới một máy ngoài subnet, host giữ IP đích cuối nhưng đặt MAC đích của frame đầu tiên là MAC của default gateway.',
+      distinguish:'DHCP thường cấp cấu hình IP; ARP tìm MAC tương ứng với IPv4/next hop trên LAN. Hai cơ chế này không “cấp MAC” cho card mạng.',
+      source:'IEEE 802 addressing và Ethernet MAC frame.'
+    },
+    {
+      id:'ethernetframe', title:'Cấu trúc khung Ethernet',
+      keys:[/(?:khung|frame).*(?:ethernet|802\.3)|(?:ethernet|802\.3).*(?:khung|frame)|\bmtu\b|start\s+of\s+frame|start\s+frame\s+delimiter|\bsof\b|\bsfd\b/i],
+      definition:'Khung Ethernet là đơn vị dữ liệu của tầng Liên kết. Nó mang địa chỉ MAC đích, địa chỉ MAC nguồn, trường Type/Length, payload và FCS; phần preamble cùng Start Frame Delimiter giúp bên nhận đồng bộ và nhận biết điểm bắt đầu khung.',
+      points:['Mỗi trường địa chỉ MAC nguồn và đích của Ethernet dài 6 byte.','Ethernet MTU thông dụng là 1500 byte payload IP và không tính Ethernet header/FCS.','FCS dùng CRC để phát hiện lỗi của khung; nó không phải cơ chế tự sửa lỗi.','Frame là đơn vị tầng Liên kết, còn packet IP nằm trong payload của frame.'],
+      example:'Một packet IP có thể được đóng trong Ethernet frame; khi qua router, packet được giữ để định tuyến nhưng lớp frame được tháo và tạo lại cho liên kết kế tiếp.',
+      distinguish:'Đừng cộng preamble/SFD, header và FCS vào đáp án nếu câu hỏi nói rõ MTU “không bao gồm header”.',
+      source:'Định dạng MAC frame trong IEEE 802.3.'
+    },
+    {
+      id:'collisiondomains', title:'Miền đụng độ và miền quảng bá',
+      keys:[/collision\s+domain|broadcast\s+domain|miền\s+(?:đụng\s+độ|va\s+chạm|quảng\s+bá)/i],
+      definition:'Collision domain là phạm vi mà các trạm dùng chung môi trường half-duplex có thể làm tín hiệu truyền đồng thời đụng nhau. Broadcast domain là phạm vi mà một frame broadcast tầng 2 được chuyển tới. Hai loại miền này phải được đếm theo thiết bị và liên kết trong đúng sơ đồ, không thể dùng một con số chung cho mọi mạng.',
+      points:['Hub/repeater không tách collision domain: các cổng của hub vẫn chia sẻ cùng môi trường.','Bridge và mỗi cổng switch tách collision domain; trên liên kết full-duplex hiện đại không xảy ra collision theo nghĩa Ethernet chia sẻ cũ.','Switch mặc định vẫn chuyển broadcast trong cùng VLAN, nên không tự tách broadcast domain chỉ vì có nhiều cổng.','Router tách broadcast domain giữa các giao diện/subnet; mỗi liên kết hoặc cổng router trong sơ đồ phải được xét riêng.'],
+      example:'Hai PC nối vào cùng một hub thuộc một collision domain; hai PC nối vào hai cổng switch riêng thuộc hai miền đụng độ theo cách đếm của giáo trình.',
+      distinguish:'Switch chủ yếu tách collision domain; router/VLAN boundary tách broadcast domain. Không cộng số PC một cách máy móc.',
+      source:'Mô hình Ethernet shared-medium, bridge/switch và định tuyến IP.'
     },
     {
       id:'devices', title:'Repeater, Hub, Bridge, Switch, Router và Gateway',

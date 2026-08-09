@@ -1,4 +1,5 @@
-// Knowledge-first reading flow: show theory and reasoning; keep option comparisons concise and optional.
+// Question-first reading flow: show the direct application before definitions,
+// then keep one tightly related prerequisite and the full option check.
 (() => {
   const correctFor=(question,id)=>typeof isCorrectAnswer==='function'
     ? isCorrectAnswer(question,id)
@@ -43,18 +44,17 @@
   }
 
   function theoryHtml(question,s){
-    const concepts=window.MMT_BEGINNER_THEORY?.matches?.(question,s,3)||[];
-    if(concepts.length){
-      const extra=cleanExplanation(s.knowledge||'');
-      return `<section class="explain-block beginner-block">
-        <h4>📘 Kiến thức cần nhớ</h4>
-        <div class="concept-list">${concepts.map(conceptHtml).join('')}</div>
-        ${extra?`<details class="study-details compact-details"><summary>Kiến thức bổ sung</summary><div class="details-body"><p>${e(extra)}</p></div></details>`:''}
-      </section>`;
-    }
+    const concepts=window.MMT_BEGINNER_THEORY?.matches?.(question,s,1)||[];
+    return concepts.length?`<section class="explain-block beginner-block">
+      <h4>📖 Khái niệm liên quan trực tiếp</h4>
+      <div class="concept-list">${concepts.map(conceptHtml).join('')}</div>
+    </section>`:'';
+  }
+
+  function knowledgeHtml(s){
     const knowledge=cleanExplanation(s.knowledge||'');
-    return knowledge?`<section class="explain-block beginner-block">
-      <h4>📘 Kiến thức cần nhớ</h4>
+    return knowledge?`<section class="explain-block knowledge-block">
+      <h4>📘 Kiến thức nền riêng của câu</h4>
       <p>${e(knowledge)}</p>
     </section>`:'';
   }
@@ -65,16 +65,18 @@
       const letter=pos>=0?letters[pos]:String(item.id||'').toUpperCase();
       const correct=correctFor(question,item.id);
       const reason=cleanExplanation(item.why);
+      const condition=cleanExplanation(item.when);
       return `<article class="option-analysis ${correct?'is-correct':'is-wrong'}">
         <h5>${correct?'✅':'❌'} ${letter}. ${e(item.text)}</h5>
-        ${reason?`<p>${e(reason)}</p>`:''}
+        ${reason?`<p><b>${correct?'Vì sao chọn':'Vì sao không chọn'}:</b> ${e(reason)}</p>`:''}
+        ${condition?`<p class="when-line"><b>${correct?'Điều kiện áp dụng':'Khi nào ý này có thể đúng'}:</b> ${e(condition)}</p>`:''}
       </article>`;
     }).join('');
 
-    return rows?`<details class="study-details option-study-details">
-      <summary>🧩 Phân biệt các phương án</summary>
-      <div class="details-body"><div class="option-analysis-list">${rows}</div></div>
-    </details>`:'';
+    return rows?`<section class="explain-block options-explanation">
+      <h4>🧩 Phân tích đầy đủ từng đáp án A/B/C/D</h4>
+      <div class="option-analysis-list">${rows}</div>
+    </section>`:'';
   }
 
   function fullSolutionHtml(question,s,order){
@@ -101,14 +103,15 @@
       ? `<div class="source-note">Nguồn đối chiếu: ${question.sources.map(e).join(', ')}</div>`
       : '';
 
-    return `<div class="solution tthcm-solution knowledge-first-solution">
+    return `<div class="solution tthcm-solution question-first-solution">
       ${auditHtml(question)}
+      ${reasoning?`<section class="explain-block reasoning-block"><h4>🎯 Áp dụng kiến thức vào chính câu hỏi</h4><p>${e(reasoning)}</p></section>`:''}
+      ${knowledgeHtml(s)}
       ${theoryHtml(question,s)}
-      ${reasoning?`<section class="explain-block reasoning-block"><h4>🎯 Áp dụng vào câu hỏi</h4><p>${e(reasoning)}</p></section>`:''}
       ${calc}
-      ${summary?`<section class="explain-block memory-block"><h4>🧠 Ghi nhớ</h4><p>${e(summary)}</p></section>`:''}
       ${optionComparisonHtml(question,s,order)}
       ${mistakesHtml}
+      ${summary?`<section class="explain-block memory-block"><h4>🧠 Ghi nhớ</h4><p>${e(summary)}</p></section>`:''}
       ${sources}
     </div>`;
   }

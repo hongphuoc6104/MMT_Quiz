@@ -80,13 +80,16 @@ if 'Đối chiếu toàn trang gốc' not in image_js:
 bootstrap = (ROOT / 'manual_bootstrap.js').read_text(encoding='utf-8')
 if 'image-crops.js?v=20260809-figure-2' not in bootstrap:
     raise SystemExit('Bootstrap does not force-load the dedicated image renderer')
-if bootstrap.index('image-crops.js') > bootstrap.index("'ux.js'"):
+ux_script = re.search(r"'ux\.js(?:\?[^']*)?'", bootstrap)
+if not ux_script:
+    raise SystemExit('Bootstrap does not load ux.js')
+if bootstrap.index('image-crops.js') > ux_script.start():
     raise SystemExit('Dedicated image renderer must load before UX/lightbox binding')
 
 index = (ROOT / 'index.html').read_text(encoding='utf-8')
 if 'image-crops.css?v=20260808-dedicated-1' not in index:
     raise SystemExit('Dedicated image CSS cache-bust link is missing')
-if 'manual_bootstrap.js?v=20260809-source-2' not in index:
+if 'manual_bootstrap.js?v=20260810-teaching-1' not in index:
     raise SystemExit('Bootstrap cache-bust link is missing')
 
 print('Dedicated question-image validation passed for 6 figure-dependent questions.')
