@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+  <title id="title">Sơ đồ hình trạng mạng vòng</title>
+  <desc id="desc">Sáu máy tính nối thành một vòng khép kín, dùng để nhận dạng Ring topology.</desc>
+  <rect width="760" height="420" rx="28" fill="#ffffff"/>
+  <g fill="none" stroke="#24324a" stroke-width="8" stroke-linecap="round">
+    <path d="M380 64 C510 64 620 126 646 210 C620 294 510 356 380 356 C250 356 140 294 114 210 C140 126 250 64 380 64 Z"/>
+  </g>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="380" y="205" font-size="34" font-weight="700" fill="#172033">Ring topology</text>
+    <text x="380" y="240" font-size="22" fill="#5b6475">Các nút nối thành một vòng khép kín</text>
+  </g>
+  <g stroke="#24324a" stroke-width="4" fill="#f4f7fb">
+    <g transform="translate(330 28)"><rect x="0" y="0" width="100" height="66" rx="8"/><rect x="14" y="11" width="72" height="38" rx="3" fill="#dce8ff"/><path d="M28 66h44M42 55h16"/></g>
+    <g transform="translate(574 116)"><rect x="0" y="0" width="100" height="66" rx="8"/><rect x="14" y="11" width="72" height="38" rx="3" fill="#dce8ff"/><path d="M28 66h44M42 55h16"/></g>
+    <g transform="translate(574 238)"><rect x="0" y="0" width="100" height="66" rx="8"/><rect x="14" y="11" width="72" height="38" rx="3" fill="#dce8ff"/><path d="M28 66h44M42 55h16"/></g>
+    <g transform="translate(330 326)"><rect x="0" y="0" width="100" height="66" rx="8"/><rect x="14" y="11" width="72" height="38" rx="3" fill="#dce8ff"/><path d="M28 66h44M42 55h16"/></g>
+    <g transform="translate(86 238)"><rect x="0" y="0" width="100" height="66" rx="8"/><rect x="14" y="11" width="72" height="38" rx="3" fill="#dce8ff"/><path d="M28 66h44M42 55h16"/></g>
+    <g transform="translate(86 116)"><rect x="0" y="0" width="100" height="66" rx="8"/><rect x="14" y="11" width="72" height="38" rx="3" fill="#dce8ff"/><path d="M28 66h44M42 55h16"/></g>
+  </g>
+</svg>
