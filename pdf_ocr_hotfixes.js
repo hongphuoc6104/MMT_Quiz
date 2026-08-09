@@ -14,6 +14,41 @@
     if (opt) opt.text = text;
   }
 
+  // Several PDF rows were extracted as: "choice 1 €. choice 2", while choice 2 also
+  // appears again in another option without Vietnamese diacritics. Only split when the
+  // duplicated right-hand text can be matched unambiguously, so legitimate euro symbols
+  // or unrelated text are never changed.
+  function comparisonKey(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd')
+      .replace(/Đ/g, 'D')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '');
+  }
+
+  function repairMergedOptions(q) {
+    if (!q || !Array.isArray(q.options)) return;
+    for (const opt of q.options) {
+      if (typeof opt.text !== 'string' || !opt.text.includes('€')) continue;
+      const parts = opt.text.split(/\s*€\.?\s*/).map(s => s.trim()).filter(Boolean);
+      if (parts.length !== 2) continue;
+
+      const [left, right] = parts;
+      const rightKey = comparisonKey(right);
+      if (!rightKey) continue;
+
+      const matches = q.options.filter(other => other !== opt && comparisonKey(other.text) === rightKey);
+      if (matches.length !== 1) continue;
+
+      opt.text = left;
+      matches[0].text = right;
+    }
+  }
+
+  for (const q of data.questions) repairMergedOptions(q);
+
   // De04 - câu gốc 15 - trang 28.
   // OCR read "vậng lý" and merged two different layer descriptions into one choice.
   // Restore the four OSI-layer functions as separate, grammatical choices.
