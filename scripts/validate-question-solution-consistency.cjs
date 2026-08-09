@@ -8,6 +8,8 @@ function load(path){vm.runInContext(fs.readFileSync(path,'utf8'),box,{filename:p
 
 load('questions.js');
 load('question_structure_fixes.js');
+load('manual_solutions/de04_ch1_a.js');
+load('solution_consistency_fixes.js');
 load('data_corrections.js');
 load('question_consistency_fixes.js');
 load('beginner_theory.js');
@@ -15,6 +17,7 @@ load('theory_topic_guard.js');
 
 const data=box.window.QUIZ_DATA;
 const theory=box.window.MMT_BEGINNER_THEORY;
+const solutions=box.window.MANUAL_SOLUTIONS||{};
 const fail=[];
 const warn=[];
 function assert(ok,msg){if(!ok)fail.push(msg);}
@@ -38,7 +41,6 @@ for(const q of data.questions||[]){
   if(/phát biểu|mệnh đề/i.test(qt) && pureDurations>=2){
     fail.push(`${q.id}: conceptual statement question is contaminated by ${pureDurations} duration-only choices`);
   }
-
   if(/hình|sơ đồ/i.test(qt) && !q.image)warn.push(`${q.id}: mentions an image/diagram but image is null`);
 }
 
@@ -55,6 +57,11 @@ if(packet){
   expected.forEach((text,i)=>assert(packet.options[i]?.text===text,`De04-7-115 option ${i+1} not restored correctly`));
   assert(packet.correct_option_id==='d','De04-7-115 correct answer must remain d');
   assert(!packet.options.some(o=>/giây/i.test(o.text)),'De04-7-115 still contains timing choices from the next question');
+
+  const solution=solutions['De04-7-115'];
+  assert(solution,'De04-7-115 manual solution missing');
+  assert(solution && ['a','b','c','d'].every(id=>solution.options?.[id]?.why && solution.options?.[id]?.when),'De04-7-115 solution must explain all restored options');
+  assert(solution && !/mảnh OCR|2 giây|3,5 giây|3 giây/i.test([solution.knowledge,solution.reasoning,solution.summary,...Object.values(solution.options||{}).flatMap(x=>[x.why,x.when])].join(' ')),'De04-7-115 solution still describes the obsolete timing choices');
 
   const dirtySolution={knowledge:'Repeater Hub Bridge Switch Router Gateway '.repeat(20),reasoning:'router switch hub',summary:'gateway'};
   const concepts=theory.matches(packet,dirtySolution,3);
@@ -80,4 +87,4 @@ if(fail.length){
   for(const f of fail)console.error('  FAIL',f);
   process.exit(1);
 }
-console.log(`question/theory consistency ok: ${data.questions.length} questions; packet regression restored; theory guard active`);
+console.log(`question/solution/theory consistency ok: ${data.questions.length} questions; packet regression restored; theory guard active`);
