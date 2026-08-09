@@ -1,7 +1,7 @@
 {
   "audited_question_count": 314,
-  "suspicious_question_count": 264,
-  "finding_count": 581,
+  "suspicious_question_count": 85,
+  "finding_count": 120,
   "runtime_files": [
     "questions.js",
     "question_structure_fixes.js",
@@ -9,259 +9,6 @@
     "pdf_ocr_hotfixes.js"
   ],
   "findings": [
-    {
-      "id": "De01-1-0",
-      "set": "De01",
-      "source_number": 1,
-      "source_page": 1,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong mô hình OSI, khi một đơn vị dữ liệu giao thức (PDU) được chuyển từ tang cao hơn xuống tầng thấp hơn, phần thông tin điều khiển Header sẽ:"
-    },
-    {
-      "id": "De01-1-0",
-      "set": "De01",
-      "source_number": 1,
-      "source_page": 1,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Thêm vào."
-    },
-    {
-      "id": "De01-1-0",
-      "set": "De01",
-      "source_number": 1,
-      "source_page": 1,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Bớt ra"
-    },
-    {
-      "id": "De01-4-3",
-      "set": "De01",
-      "source_number": 4,
-      "source_page": 1,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong phương pháp truy cập đường truyền ngẫu nhiên, tại một thời điểm, đụng độ sẽ KHÔNG xảy ra khi:"
-    },
-    {
-      "id": "De01-4-3",
-      "set": "De01",
-      "source_number": 4,
-      "source_page": 1,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "chỉ hai trạm cùng truyền dữ liệu"
-    },
-    {
-      "id": "De01-5-4",
-      "set": "De01",
-      "source_number": 5,
-      "source_page": 1,
-      "field": "question",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Giao thức bắt tay trong TCP được mô tả như hình. Hãy cho biết giá trị A1, A2?"
-    },
-    {
-      "id": "De01-5-4",
-      "set": "De01",
-      "source_number": 5,
-      "source_page": 1,
-      "field": "explanation",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: A1=6, A2=8 Ở bước 2, B phải xác nhận đã nhận dữ liệu từ A với Seq = 5 -> Ack = Seq+ 1=6=A1 Ở bước 3, A phải xác nhận đã nhận dữ liệu từ B với Seq = 7 -> Ack = Seq + 1= 8= A2."
-    },
-    {
-      "id": "De01-5-4",
-      "set": "De01",
-      "source_number": 5,
-      "source_page": 1,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu."
-    },
-    {
-      "id": "De01-5-4",
-      "set": "De01",
-      "source_number": 5,
-      "source_page": 1,
-      "field": "option.a",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "a1=3, a2=5"
-    },
-    {
-      "id": "De01-5-4",
-      "set": "De01",
-      "source_number": 5,
-      "source_page": 1,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "A1=7, A2=9"
-    },
-    {
-      "id": "De01-5-4",
-      "set": "De01",
-      "source_number": 5,
-      "source_page": 1,
-      "field": "option.c",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "A1=4, A2=6"
-    },
-    {
-      "id": "De01-5-4",
-      "set": "De01",
-      "source_number": 5,
-      "source_page": 1,
-      "field": "option.d",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "A1=6, A2=8 Ở bước 2, B phải xác nhận đã nhận dữ liệu từ A với Seq = 5 -> Ack = Seq+ 1=6=A1 Ở bước 3, A phải xác nhận đã nhận dữ liệu từ B với Seq = 7 -> Ack = Seq + 1= 8= A2"
-    },
-    {
-      "id": "De01-6-5",
-      "set": "De01",
-      "source_number": 6,
-      "source_page": 2,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau."
-    },
-    {
-      "id": "De01-6-5",
-      "set": "De01",
-      "source_number": 6,
-      "source_page": 2,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau"
-    },
-    {
-      "id": "De01-9-8",
-      "set": "De01",
-      "source_number": 9,
-      "source_page": 2,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Bằng cách nào để đảm bảo rằng toàn bộ các khung đã được phân phát đến mạng và được phân phát theo đúng trình tự chúng đã được gởi?"
-    },
-    {
-      "id": "De01-9-8",
-      "set": "De01",
-      "source_number": 9,
-      "source_page": 2,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Câu hỏi khái quát; cần phối hợp số thứ tự, ACK và timeout để bảo đảm tin cậy/thứ tự."
-    },
-    {
-      "id": "De01-9-8",
-      "set": "De01",
-      "source_number": 9,
-      "source_page": 2,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng bộ đếm thời gian (timer) kết hợp với sự quá hạn (time-out)"
-    },
-    {
-      "id": "De01-9-8",
-      "set": "De01",
-      "source_number": 9,
-      "source_page": 2,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng Khung báo nhận (acknowledgement)"
-    },
-    {
-      "id": "De01-9-8",
-      "set": "De01",
-      "source_number": 9,
-      "source_page": 2,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Gán số thứ tự cho khung"
-    },
-    {
-      "id": "De01-11-10",
-      "set": "De01",
-      "source_number": 11,
-      "source_page": 3,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển mạch (Circuit switch network)?"
-    },
-    {
-      "id": "De01-11-10",
-      "set": "De01",
-      "source_number": 11,
-      "source_page": 3,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thường sử dụng phương pháp theo tần số và/hoặc theo thời gian"
-    },
-    {
-      "id": "De01-11-10",
-      "set": "De01",
-      "source_number": 11,
-      "source_page": 3,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cần thiết lập kết nối trước khi truyền tin"
-    },
-    {
-      "id": "De01-13-12",
-      "set": "De01",
-      "source_number": 13,
-      "source_page": 3,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đường dial qua mạng điện thoại"
-    },
     {
       "id": "De01-14-13",
       "set": "De01",
@@ -296,664 +43,26 @@
       "text": "IP đích :cổng đích (destination port)"
     },
     {
-      "id": "De01-15-14",
-      "set": "De01",
-      "source_number": 15,
-      "source_page": 3,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đường dial qua mạng điện thoại"
-    },
-    {
-      "id": "De01-16-15",
-      "set": "De01",
-      "source_number": 16,
-      "source_page": 3,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây không đúng về kỹ thuật định khung bang phương pháp sử dụng byte làm cờ (Flag type) và các byte độn?"
-    },
-    {
-      "id": "De01-16-15",
-      "set": "De01",
-      "source_number": 16,
-      "source_page": 3,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng một byte đặc biệt để đánh dấu điểm bắt đầu và kết thúc khung"
-    },
-    {
-      "id": "De01-17-16",
-      "set": "De01",
-      "source_number": 17,
-      "source_page": 4,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Luôn luôn gởi riêng báo nhận và dữ liệu trên hai chuyến khác nhau"
-    },
-    {
-      "id": "De01-17-16",
-      "set": "De01",
-      "source_number": 17,
-      "source_page": 4,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Gởi báo nhận và chờ một khoảng thời gian sau để gởi dữ liệu"
-    },
-    {
-      "id": "De01-17-16",
-      "set": "De01",
-      "source_number": 17,
-      "source_page": 4,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Gởi dữ liệu và chờ một khoảng thời gian sau để gởi báo nhận"
-    },
-    {
-      "id": "De01-19-18",
-      "set": "De01",
-      "source_number": 19,
-      "source_page": 4,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: chỉ ra những gì mà một máy chủ có thể cung cấp cho các khách hàng."
-    },
-    {
-      "id": "De01-19-18",
-      "set": "De01",
-      "source_number": 19,
-      "source_page": 4,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau"
-    },
-    {
-      "id": "De01-19-18",
-      "set": "De01",
-      "source_number": 19,
-      "source_page": 4,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chỉ ra những gì mà một máy chủ có thể cung cấp cho các khách hàng"
-    },
-    {
-      "id": "De01-23-21",
-      "set": "De01",
-      "source_number": 23,
-      "source_page": 5,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Loại cáp nào sau đây thường được sử dụng ngoài trời để kết nối các hệ thống mạng của các tòa nhà lại với nhau?"
-    },
-    {
-      "id": "De01-24-22",
-      "set": "De01",
-      "source_number": 24,
-      "source_page": 5,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Ba máy tính"
-    },
-    {
-      "id": "De01-24-22",
-      "set": "De01",
-      "source_number": 24,
-      "source_page": 5,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hai máy tính"
-    },
-    {
-      "id": "De01-26-24",
-      "set": "De01",
-      "source_number": 26,
-      "source_page": 5,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho một giao thức cửa sổ trượt sử dụng 3 bits để đánh số thứ tự các vi trí trên cửa sổ, với kích thước của cửa sổ trượt được thỏa thuận giữa bên gởi và nhận là 4. Giả sử thời điểm hiện tại, cửa sổ bên gởi đang chứa các giá trị 2,3,4. Hỏi khung tiếp theo được phép gởi là những khung nào (sử dụng dấu, để ngăn cách các khung)?"
-    },
-    {
-      "id": "De01-26-24",
-      "set": "De01",
-      "source_number": 26,
-      "source_page": 5,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khung 2, 3, 4 đã gửi và cửa sổ có kích thước 4, nên còn một vị trí cho khung 5."
-    },
-    {
       "id": "De01-27-25",
       "set": "De01",
       "source_number": 27,
       "source_page": 5,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: giúp tăng hiệu suất của máy tính cá nhân."
-    },
-    {
-      "id": "De01-27-25",
-      "set": "De01",
-      "source_number": 27,
-      "source_page": 5,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giúp tạo ra nhiều ứng dụng mới"
-    },
-    {
-      "id": "De01-27-25",
-      "set": "De01",
-      "source_number": 27,
-      "source_page": 5,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giúp tăng hiệu suất của máy tính cá nhân"
-    },
-    {
-      "id": "De01-28-26",
-      "set": "De01",
-      "source_number": 28,
-      "source_page": 5,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức nào thực hiện việc ánh xạ từ địa chỉ IP về địa chỉ MAC?"
-    },
-    {
-      "id": "De01-28-26",
-      "set": "De01",
-      "source_number": 28,
-      "source_page": 5,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: ARP."
-    },
-    {
-      "id": "De01-29-27",
-      "set": "De01",
-      "source_number": 29,
-      "source_page": 6,
-      "field": "explanation",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 1->0 đen / 1 trắng b8 c4."
-    },
-    {
-      "id": "De01-30-28",
-      "set": "De01",
-      "source_number": 30,
-      "source_page": 6,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: bên gửi sẽ tạm dừng gửi dữ liệu."
-    },
-    {
-      "id": "De01-31-29",
-      "set": "De01",
-      "source_number": 31,
-      "source_page": 6,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Không có báo nhận."
-    },
-    {
-      "id": "De01-31-29",
-      "set": "De01",
-      "source_number": 31,
-      "source_page": 6,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cần cơ chế gởi lại gói tin bị mất (lỗi)"
-    },
-    {
-      "id": "De01-32-30",
-      "set": "De01",
-      "source_number": 32,
-      "source_page": 6,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: truyền tải các gói tin (packet) qua một liên mạng."
-    },
-    {
-      "id": "De01-32-30",
-      "set": "De01",
-      "source_number": 32,
-      "source_page": 6,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các khung (frame) trên một kênh truyền vật lý"
-    },
-    {
-      "id": "De01-32-30",
-      "set": "De01",
-      "source_number": 32,
-      "source_page": 6,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các gói tin (packet) qua một liên mạng"
-    },
-    {
-      "id": "De01-33-31",
-      "set": "De01",
-      "source_number": 33,
-      "source_page": 6,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tầng nào trong mô hình OSI được IEEE chia thành hai tầng con?"
-    },
-    {
-      "id": "De01-33-31",
-      "set": "De01",
-      "source_number": 33,
-      "source_page": 6,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Liên kết dữ liệu -> LLC & MAC."
-    },
-    {
-      "id": "De01-34-32",
-      "set": "De01",
-      "source_number": 34,
-      "source_page": 7,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mạng nào sau đây sử dụng mã Morse (sử dụng hai tín hiệu tít và te) để mã hóa thông tin cần truyền?"
-    },
-    {
-      "id": "De01-35-33",
-      "set": "De01",
-      "source_number": 35,
-      "source_page": 7,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho một mạng mà ở đó mỗi router phải tự tính toán tìm kiếm thông tin về các đường đi đến những điểm khác nhau trên mạng, mạng này đang sử dụng giải thuật chọn đường loại nào?"
-    },
-    {
-      "id": "De01-36-34",
-      "set": "De01",
-      "source_number": 36,
-      "source_page": 7,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong phương pháp kiểm tra phần dư tuần hoàn (Cyclic Redundancy Check) dùng để phát hiện lỗi, với thông điệp cần truyền M=101010, số dùng để kiểm tra khung P=1001. Hãy cho biết dữ liệu truyền đi (T) sau khi đã thêm chuỗi kiểm tra khung (F) là gì?"
-    },
-    {
-      "id": "De01-37-35",
-      "set": "De01",
-      "source_number": 37,
-      "source_page": 7,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây là đúng khi đề cập đến địa chi quảng bá (Broadcast Address)?"
-    },
-    {
-      "id": "De01-37-35",
-      "set": "De01",
-      "source_number": 37,
-      "source_page": 7,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 0, được sử dụng để xác định một mạng"
-    },
-    {
-      "id": "De01-38-36",
-      "set": "De01",
-      "source_number": 38,
-      "source_page": 7,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: giao thức TCP và UDP."
-    },
-    {
-      "id": "De01-40-38",
-      "set": "De01",
-      "source_number": 40,
-      "source_page": 8,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức nào có thể tính được thời gian tối đa mà một máy trạm phải chờ để đến lượt mình sử dụng đường truyền?"
-    },
-    {
-      "id": "De01-41-39",
-      "set": "De01",
-      "source_number": 41,
-      "source_page": 8,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "“Phương pháp kiểm tra chan lẻ” có thể khắc phục được bao nhiêu % số lỗi xảy ra trên đường truyền?"
-    },
-    {
-      "id": "De01-41-39",
-      "set": "De01",
-      "source_number": 41,
-      "source_page": 8,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Kiểm tra chẵn lẻ phát hiện mọi lỗi có số bit đảo là lẻ, nhưng không có một tỷ lệ phần trăm cố định như 10%."
-    },
-    {
-      "id": "De01-41-39",
-      "set": "De01",
-      "source_number": 41,
-      "source_page": 8,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc."
-    },
-    {
-      "id": "De01-42-40",
-      "set": "De01",
-      "source_number": 42,
-      "source_page": 8,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chức năng nào sau đây không thuộc tầng MAC (Medium Access Control)?"
-    },
-    {
-      "id": "De01-42-40",
-      "set": "De01",
-      "source_number": 42,
-      "source_page": 8,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: điều khiển luồng."
-    },
-    {
-      "id": "De01-42-40",
-      "set": "De01",
-      "source_number": 42,
-      "source_page": 8,
       "field": "option.a",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
-      "text": "Kiểm tra lỗi"
+      "text": "Giảm chỉ phí đầu tư"
     },
     {
-      "id": "De01-42-40",
+      "id": "De01-39-37",
       "set": "De01",
-      "source_number": 42,
+      "source_number": 39,
       "source_page": 8,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
-      "text": "Định khung"
-    },
-    {
-      "id": "De01-45-43",
-      "set": "De01",
-      "source_number": 45,
-      "source_page": 9,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó."
-    },
-    {
-      "id": "De01-45-43",
-      "set": "De01",
-      "source_number": 45,
-      "source_page": 9,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức cửa sổ trượt khắc phục được tình trạng bên nhận không phân biệt được các khung bị trùng lắp do bên gởi gởi lại."
-    },
-    {
-      "id": "De01-45-43",
-      "set": "De01",
-      "source_number": 45,
-      "source_page": 9,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó"
-    },
-    {
-      "id": "De01-45-43",
-      "set": "De01",
-      "source_number": 45,
-      "source_page": 9,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức cửa sổ trượt khắc phục được tình trạng khung báo nhận có thể bị mất"
-    },
-    {
-      "id": "De01-45-43",
-      "set": "De01",
-      "source_number": 45,
-      "source_page": 9,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho phép người gởi biết được khung gởi đi có đến nơi hay không"
-    },
-    {
-      "id": "De01-47-44",
-      "set": "De01",
-      "source_number": 47,
-      "source_page": 9,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Đúng."
-    },
-    {
-      "id": "De01-48-45",
-      "set": "De01",
-      "source_number": 48,
-      "source_page": 9,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Tất cả vấn đề trên."
-    },
-    {
-      "id": "De01-48-45",
-      "set": "De01",
-      "source_number": 48,
-      "source_page": 9,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đảm bảo cho phép một trạm truyền tin thành công tại một thời điểm"
-    },
-    {
-      "id": "De01-49-46",
-      "set": "De01",
-      "source_number": 49,
-      "source_page": 9,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "“Người nhận gởi thông tin về cho người gởi cho phép người gởi gởi thêm dữ liệu, cũng như báo với người gởi những gì mà người nhận đang làm” mệnh đề này đề cập đến tiếp cận điều khiển luồng dựa trên"
-    },
-    {
-      "id": "De01-50-47",
-      "set": "De01",
-      "source_number": 50,
-      "source_page": 10,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong kịch bản trao đổi dữ liệu dùng TCP như hình sau đây. Hãy cho biết giá trị Y?"
-    },
-    {
-      "id": "De01-50-47",
-      "set": "De01",
-      "source_number": 50,
-      "source_page": 10,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo sơ đồ TCP trong tài liệu, giá trị Y là 4."
-    },
-    {
-      "id": "De01-50-47",
-      "set": "De01",
-      "source_number": 50,
-      "source_page": 10,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu."
-    },
-    {
-      "id": "De01-ver2-18-48",
-      "set": "De01-ver2",
-      "source_number": 18,
-      "source_page": 10,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong giao thức cửa sổ trượt (sliding window), bên gởi dựa vào yếu tố gì để biết được bên nhận đã nhận được khung (frame) dữ liệu?"
-    },
-    {
-      "id": "De01-ver2-18-48",
-      "set": "De01-ver2",
-      "source_number": 18,
-      "source_page": 10,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: khung báo nhận."
-    },
-    {
-      "id": "De01-ver2-18-48",
-      "set": "De01-ver2",
-      "source_number": 18,
-      "source_page": 10,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khung báo nhận"
-    },
-    {
-      "id": "De01-ver2-18-48",
-      "set": "De01-ver2",
-      "source_number": 18,
-      "source_page": 10,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thời gian chờ"
-    },
-    {
-      "id": "De01-ver2-24-49",
-      "set": "De01-ver2",
-      "source_number": 24,
-      "source_page": 10,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tầng ứng dụng."
-    },
-    {
-      "id": "De01-ver2-25-50",
-      "set": "De01-ver2",
-      "source_number": 25,
-      "source_page": 10,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi sử dụng tín hiệu tuần tự để mã hóa đường truyền, ta có thể sử dụng?"
+      "text": "Có thé thay đổi bằng Properties của Windows"
     },
     {
       "id": "De01-ver2-25-50",
@@ -962,7 +71,7 @@
       "source_page": 10,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dieu"
       ],
       "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: bie n dieu ta n so, bie n dieu pha, bie n dieu bie n do -----------------------------------------------------------------------------------------------------------------------------."
     },
@@ -973,7 +82,7 @@
       "source_page": 10,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:tan"
       ],
       "text": "Biến điệu tan số, Biến điệu băng thông, Biến điệu biên độ"
     },
@@ -984,7 +93,7 @@
       "source_page": 10,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dieu"
       ],
       "text": "bie n dieu ta n so, bie n dieu pha, bie n dieu bie n do -----------------------------------------------------------------------------------------------------------------------------"
     },
@@ -995,7 +104,7 @@
       "source_page": 10,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:mot|phan|may|tinh",
         "fractured-ocr"
       ],
       "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: mota nhu ng gi ma mot thanh phan mang may tinh cung cap cho ca c thanh phan kha c muo n giao tiep voi no."
@@ -1007,7 +116,7 @@
       "source_page": 10,
       "field": "option.a",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:mot|phan|may|tinh",
         "fractured-ocr"
       ],
       "text": "mota nhu ng gi ma mot thanh phan mang may tinh cung cap cho ca c thanh phan kha c muo n giao tiep voi no"
@@ -1019,20 +128,9 @@
       "source_page": 10,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
       "text": "Mô tả cách mà một khách hàng có thé sử dụng được một dịch vu mạng và cách các dịch vụ có thể được truy"
-    },
-    {
-      "id": "De02-4-51",
-      "set": "De02",
-      "source_number": 4,
-      "source_page": 10,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau"
     },
     {
       "id": "De02-6-53",
@@ -1041,7 +139,7 @@
       "source_page": 11,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:thong"
       ],
       "text": "Hay xác định khả năng của một kênh truyền có băng thong... thiếu đề"
     },
@@ -1052,119 +150,31 @@
       "source_page": 11,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:tinh"
       ],
       "text": "Công cụ nào sau đây có thể được sử dụng để nối kết va quản lý một máy tinh ở xa?"
     },
     {
-      "id": "De02-8-55",
-      "set": "De02",
-      "source_number": 8,
-      "source_page": 11,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Với địa chi mang con 100.200.0.0/21, hãy xác định số lượng mang con thiếu dữ kiện"
-    },
-    {
       "id": "De02-9-56",
       "set": "De02",
       "source_number": 9,
       "source_page": 11,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:phat"
       ],
       "text": "Phat biểu nào sau đây không đúng khi đề cập đến giao thức truy cập đường truyền Slotted ALOHA?"
     },
     {
-      "id": "De02-9-56",
-      "set": "De02",
-      "source_number": 9,
-      "source_page": 11,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Khi một nút có khung cần truyền nó sẽ truyền khung ngay."
-    },
-    {
-      "id": "De02-9-56",
-      "set": "De02",
-      "source_number": 9,
-      "source_page": 11,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hiệu suất truyền khung của giao thức Slotted ALOHA cao hơn so với Pure ALOHA"
-    },
-    {
-      "id": "De02-9-56",
-      "set": "De02",
-      "source_number": 9,
-      "source_page": 11,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi một nút có khung cần truyền nó sẽ truyền khung ngay"
-    },
-    {
-      "id": "De02-9-56",
-      "set": "De02",
-      "source_number": 9,
-      "source_page": 11,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi một nút có khung cần truyền nó sẽ truyền khung vào lúc bắt đầu của khe thời gian kế tiếp"
-    },
-    {
-      "id": "De02-9-56",
-      "set": "De02",
-      "source_number": 9,
-      "source_page": 11,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thời gian được chia thành nhiều khe bằng nhau (bằng thời gian truyền một khung)."
-    },
-    {
-      "id": "De02-10-57",
-      "set": "De02",
-      "source_number": 10,
-      "source_page": 11,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tang mang."
-    },
-    {
       "id": "De02-10-57",
       "set": "De02",
       "source_number": 10,
       "source_page": 11,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:chuyen"
       ],
       "text": "tang van chuyen"
-    },
-    {
-      "id": "De02-10-57",
-      "set": "De02",
-      "source_number": 10,
-      "source_page": 11,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "tang mang"
     },
     {
       "id": "De02-11-58",
@@ -1173,86 +183,19 @@
       "source_page": 12,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Xác định mặt na mang con của dia chỉ IP 136.36.44.111/24"
     },
     {
-      "id": "De02-12-59",
-      "set": "De02",
-      "source_number": 12,
-      "source_page": 12,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Một router thực hiện quyết định chọn đường dựa vào thông tin nào trong header của"
-    },
-    {
-      "id": "De02-16-60",
-      "set": "De02",
-      "source_number": 16,
-      "source_page": 12,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: POP3."
-    },
-    {
-      "id": "De02-16-60",
-      "set": "De02",
-      "source_number": 16,
-      "source_page": 12,
-      "field": "option.c",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "POP3"
-    },
-    {
-      "id": "De02-16-60",
-      "set": "De02",
-      "source_number": 16,
-      "source_page": 12,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "IMAP p199 POP3 (Post Office Protocol v3): Giao thức giúp tai email từ server về client và thường xóa trên server sau khi tải. IMAP: Tải email nhưng giữ bản gốc trên server, dùng cho truy cập đồng bộ (webmail, điện thoại). SMTP: Dùng để gửi email đi, không phải để nhận. SNMP: Dùng để quản lý mạng, không liên quan email."
-    },
-    {
-      "id": "De02-17-61",
-      "set": "De02",
-      "source_number": 17,
-      "source_page": 12,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong cơ sở dữ liệu của dịch vụ DNS, loại mẫu tin nao (type) được dùng để chỉ địa chi IP của aA"
-    },
-    {
-      "id": "De02-17-61",
-      "set": "De02",
-      "source_number": 17,
-      "source_page": 12,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: a."
-    },
-    {
       "id": "De02-17-61",
       "set": "De02",
       "source_number": 17,
       "source_page": 12,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia",
+        "known-missing-diacritics"
       ],
       "text": "CNAME A (Address record): ánh xa tên miền — dia chi IP (IPv4) MX (Mail Exchange): chỉ máy chủ email. NS (Name Server): chỉ máy chủ DNS chịu trách nhiệm (chỉ ra máy chủ của tên miền) CNAME (Canonical Name): bí danh (alias) cho một tên miền khác."
     },
@@ -1268,189 +211,13 @@
       "text": "Một tín hiệu được truyền từ điểm A đến điểm B. Tại vị trí A tín hiệu ... giảm của một tín hiệu này?"
     },
     {
-      "id": "De02-20-63",
-      "set": "De02",
-      "source_number": 20,
-      "source_page": 13,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "PDF thiếu các giá trị công suất đầu–cuối; tạm giữ đáp án gốc."
-    },
-    {
-      "id": "De02-21-64",
-      "set": "De02",
-      "source_number": 21,
-      "source_page": 13,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Ưu điểm của thiết bị switch so với Hub là gì?"
-    },
-    {
-      "id": "De02-21-64",
-      "set": "De02",
-      "source_number": 21,
-      "source_page": 13,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Switch nhận biết được địa chỉ MAC máy nhận của các khung và chuyển tiếp đến cổng tương ứng."
-    },
-    {
-      "id": "De02-21-64",
-      "set": "De02",
-      "source_number": 21,
-      "source_page": 13,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Switch nhận biết được địa chỉ MAC máy nhận của các khung và chuyển tiếp đến cổng tương ứng"
-    },
-    {
-      "id": "De02-21-64",
-      "set": "De02",
-      "source_number": 21,
-      "source_page": 13,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Switch có chi phí đầu tư thấp hon Hub"
-    },
-    {
-      "id": "De02-21-64",
-      "set": "De02",
-      "source_number": 21,
-      "source_page": 13,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Switch bỏ qua các khung broadcast"
-    },
-    {
-      "id": "De02-21-64",
-      "set": "De02",
-      "source_number": 21,
-      "source_page": 13,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Switch luôn gửi khung đến tất cả các cổng của nó"
-    },
-    {
-      "id": "De02-22-65",
-      "set": "De02",
-      "source_number": 22,
-      "source_page": 13,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi truyền, dữ liệu được đóng gói thì thứ tự nào sau đây? Theo các tầng"
-    },
-    {
-      "id": "De02-22-65",
-      "set": "De02",
-      "source_number": 22,
-      "source_page": 13,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Dữ liệu, Đoạn, Gói tin, Khung, các bit."
-    },
-    {
-      "id": "De02-22-65",
-      "set": "De02",
-      "source_number": 22,
-      "source_page": 13,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đoạn, Dữ liệu, Khung, Gói tin, các bit"
-    },
-    {
-      "id": "De02-22-65",
-      "set": "De02",
-      "source_number": 22,
-      "source_page": 13,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dữ liệu, Khung, Gói tin, Đoạn, các bit"
-    },
-    {
-      "id": "De02-22-65",
-      "set": "De02",
-      "source_number": 22,
-      "source_page": 13,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dữ liệu, Đoạn, Khung, Gói tin, các bit"
-    },
-    {
-      "id": "De02-22-65",
-      "set": "De02",
-      "source_number": 22,
-      "source_page": 13,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dữ liệu, Đoạn, Gói tin, Khung, các bit"
-    },
-    {
-      "id": "De02-27-70",
-      "set": "De02",
-      "source_number": 27,
-      "source_page": 14,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Loại mẫu tin nào được sử dụng để chỉ máy chủ phục vụ tên miền (DNS server) cho một miền?"
-    },
-    {
-      "id": "De02-28-71",
-      "set": "De02",
-      "source_number": 28,
-      "source_page": 15,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Decibels Băng thông là khả năng tối da của một kênh truyền tải dữ liệu trong một don vị thời gian, thường được đo bằng bps (bits per second)."
-    },
-    {
-      "id": "De02-29-72",
-      "set": "De02",
-      "source_number": 29,
-      "source_page": 15,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây KHÔNG ĐÚNG về máy chủ phục vụ tên miền cho miền Root (.)?"
-    },
-    {
       "id": "De02-29-72",
       "set": "De02",
       "source_number": 29,
       "source_page": 15,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:may|chu",
         "fractured-ocr"
       ],
       "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: may chu root co the ti m kie m di a chi IP cho ta t ca ca c te n mie n tre n internet."
@@ -1462,7 +229,7 @@
       "source_page": 15,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:may|chu|thong",
         "fractured-ocr"
       ],
       "text": "may chu root chu a ca c thong tin ve ca c may chu te n mie n cho ca c te n mie n mu c cao nha t"
@@ -1474,65 +241,21 @@
       "source_page": 15,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:may|chu",
         "fractured-ocr"
       ],
       "text": "may chu root co the ti m kie m di a chi IP cho ta t ca ca c te n mie n tre n internet"
     },
     {
-      "id": "De02-29-72",
+      "id": "De02-30-73",
       "set": "De02",
-      "source_number": 29,
-      "source_page": 15,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Máy chủ ROOT có thể đưa ra các truy vấn (query) để tìm kiếm tối thiểu các thông tin về địa chỉ của c... tìm"
-    },
-    {
-      "id": "De02-31-74",
-      "set": "De02",
-      "source_number": 31,
-      "source_page": 15,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Số lượng don vị tín hiệu được truyền trên mỗi đơn vị thời gian."
-    },
-    {
-      "id": "De02-31-74",
-      "set": "De02",
-      "source_number": 31,
-      "source_page": 15,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Số bytes được truyền trong một đơn vị thời gian"
-    },
-    {
-      "id": "De02-31-74",
-      "set": "De02",
-      "source_number": 31,
+      "source_number": 30,
       "source_page": 15,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
-      "text": "Số bits được truyền trong một đơn vị thời gian"
-    },
-    {
-      "id": "De02-31-74",
-      "set": "De02",
-      "source_number": 31,
-      "source_page": 15,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Số lượng don vị tín hiệu được truyền trên mỗi đơn vị thời gian"
+      "text": "WANs có thé sử dụng kênh truyền dữ liệu công cộng hoặc kênh truyền riêng"
     },
     {
       "id": "De02-32-75",
@@ -1541,20 +264,9 @@
       "source_page": 15,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Với dia chỉ mạng 200.200.200.0, hãy xác định mặt na mạng con để tao ra 30 mạng con va..."
-    },
-    {
-      "id": "De02-32-75",
-      "set": "De02",
-      "source_number": 32,
-      "source_page": 15,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "255.255.255.252 200.200.200.0 -> /24 (8 bit host), muốn tao ra 30 mạng con cần mượn 5 bit host -> /29 => 1111 1111.1111 1111.1111 1111.1111 1000 = 255.255.255.248"
     },
     {
       "id": "De02-33-77",
@@ -1563,8 +275,9 @@
       "source_page": 16,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese",
-        "fractured-ocr"
+        "ascii-token:thong|dieu|khien",
+        "fractured-ocr",
+        "known-missing-diacritics"
       ],
       "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: thong gu i ca c thong die p ba o lo i hoa c ca c thong die p dieu khien."
     },
@@ -1573,20 +286,9 @@
       "set": "De02",
       "source_number": 33,
       "source_page": 16,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Kiểm tra dịch vụ trên máy ở xa có hoạt động không"
-    },
-    {
-      "id": "De02-33-77",
-      "set": "De02",
-      "source_number": 33,
-      "source_page": 16,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:phat"
       ],
       "text": "phat hie n ta n co ng mang"
     },
@@ -1597,131 +299,22 @@
       "source_page": 16,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese",
-        "fractured-ocr"
+        "ascii-token:thong|dieu|khien",
+        "fractured-ocr",
+        "known-missing-diacritics"
       ],
       "text": "thong gu i ca c thong die p ba o lo i hoa c ca c thong die p dieu khien"
     },
     {
-      "id": "De02-34-78",
-      "set": "De02",
-      "source_number": 34,
-      "source_page": 16,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn 100BaseTX sử dụng bao nhiêu dây của cáp UTP để truyền và nhận dữ liệu"
-    },
-    {
-      "id": "De02-35-79",
-      "set": "De02",
-      "source_number": 35,
-      "source_page": 16,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn Ethernet nào sau đây sử dụng cáp xoắn đôi?"
-    },
-    {
-      "id": "De02-36-80",
-      "set": "De02",
-      "source_number": 36,
-      "source_page": 16,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chức năng nào sau đây không thuộc tầng MAC (Medium Access Control)"
-    },
-    {
-      "id": "De02-36-80",
-      "set": "De02",
-      "source_number": 36,
-      "source_page": 16,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: điều khiển luồng."
-    },
-    {
-      "id": "De02-36-80",
-      "set": "De02",
-      "source_number": 36,
-      "source_page": 16,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "di nh di a chi thie t bi"
-    },
-    {
-      "id": "De02-36-80",
-      "set": "De02",
-      "source_number": 36,
-      "source_page": 16,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Định khung"
-    },
-    {
-      "id": "De02-38-81",
-      "set": "De02",
-      "source_number": 38,
-      "source_page": 16,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi xác định địa chỉ IP máy nhận gói tin không nằm cùng mạng. Trạm gửi sẽ làm gì?"
-    },
-    {
-      "id": "De02-38-81",
-      "set": "De02",
-      "source_number": 38,
-      "source_page": 16,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: Địa chỉ MAC nhận được đổi thành địa chỉ MAC của default gateway để chuyển khung đến default."
-    },
-    {
-      "id": "De02-38-81",
-      "set": "De02",
-      "source_number": 38,
-      "source_page": 16,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Địa chỉ MAC nhận được đổi thành địa chỉ MAC của default gateway để chuyển khung đến default"
-    },
-    {
       "id": "De02-38-81",
       "set": "De02",
       "source_number": 38,
       "source_page": 16,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Dia chỉ IP gửi được đổi thành địa chỉ IP của Router"
-    },
-    {
-      "id": "De02-38-81",
-      "set": "De02",
-      "source_number": 38,
-      "source_page": 16,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Địa chỉ MAC nhận được đổi thành địa chỉ MAC của trạm đích của gói tin"
     },
     {
       "id": "De02-41-84",
@@ -1730,20 +323,10 @@
       "source_page": 17,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia",
+        "known-missing-diacritics"
       ],
       "text": "Các mạng con nào sau đây KHÔNG thuộc vùng dia chi IP dùng riêng (Private IP Address) được s"
-    },
-    {
-      "id": "De02-42-85",
-      "set": "De02",
-      "source_number": 42,
-      "source_page": 17,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo cấu trúc khung của chuẩn mang Ethernet 802.3, các trường địa chi nguồn và địa chi đích có"
     },
     {
       "id": "De02-45-86",
@@ -1752,98 +335,21 @@
       "source_page": 17,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia",
+        "known-missing-diacritics"
       ],
       "text": "Xác định dia chi mạng con của địa chi IP 190.132.166.4/21"
     },
     {
-      "id": "De03-2-88",
-      "set": "De03",
-      "source_number": 2,
-      "source_page": 18,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thông tin được truyền đi cùng với dữ liệu để cung cấp thông tin về dữ liệu được truyền đi này thì được tham khảo đến với tên là gì?"
-    },
-    {
-      "id": "De03-3-89",
-      "set": "De03",
-      "source_number": 3,
-      "source_page": 18,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phim anh va 4m thanh"
-    },
-    {
-      "id": "De03-4-90",
-      "set": "De03",
-      "source_number": 4,
-      "source_page": 18,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: sự khác biệt giữa tốc độ truyền và nhận của bên truyền và bên nhận p45."
-    },
-    {
-      "id": "De03-4-90",
-      "set": "De03",
-      "source_number": 4,
-      "source_page": 18,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các khung được phân phát và đến nơi theo đúng thứ tự đã gởi"
-    },
-    {
-      "id": "De03-4-90",
-      "set": "De03",
-      "source_number": 4,
-      "source_page": 18,
-      "field": "option.c",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "sự khác biệt giữa tốc độ truyền và nhận của bên truyền và bên nhận p45"
-    },
-    {
-      "id": "De03-4-90",
-      "set": "De03",
-      "source_number": 4,
-      "source_page": 18,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cùng một khung được nhận nhiều lần ở bên nhận như là những khung khác nhau."
-    },
-    {
       "id": "De03-5-91",
       "set": "De03",
       "source_number": 5,
       "source_page": 18,
-      "field": "explanation",
+      "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dam"
       ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Chia sé đường truyền vật lý giữa các máy tính ở cùng một nhánh mạng."
-    },
-    {
-      "id": "De03-5-91",
-      "set": "De03",
-      "source_number": 5,
-      "source_page": 18,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải thông tin giữa các máy tính không có đường nối kết trực tiếp"
+      "text": "Dam nhận chức năng vạch đường"
     },
     {
       "id": "De03-5-91",
@@ -1852,7 +358,6 @@
       "source_page": 18,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "Truyền tải thông tin giữa hai ứng dụng trên mạng Nó không định tuyến, không truyền giữa ứng dụng, không vượt qua mạng khác > chỉ xử lý việc chia sẻ đường truyền trong mạng LAN cùng nhánh. Note : 20 câu sau(có sai), *có nhiều đề 1a 2b 3a 4b 5c 6b 7c 8a 9a 10bit 11d 12c 13c 14c 15d 16a 17c 18d 19d 20c"
@@ -1864,8 +369,9 @@
       "source_page": 19,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese",
-        "fractured-ocr"
+        "ascii-token:duong|truyen|may|tinh|mot",
+        "fractured-ocr",
+        "known-missing-diacritics"
       ],
       "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: chia se duong truyen va t ly giu a ca c may tinh o cung mot nhanh mang."
     },
@@ -1876,252 +382,23 @@
       "source_page": 19,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese",
-        "fractured-ocr"
+        "ascii-token:duong|truyen|may|tinh|mot",
+        "fractured-ocr",
+        "known-missing-diacritics"
       ],
       "text": "chia se duong truyen va t ly giu a ca c may tinh o cung mot nhanh mang"
     },
     {
-      "id": "De03-1-92",
-      "set": "De03",
-      "source_number": 1,
-      "source_page": 19,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải thông tin giữa hai ứng dụng trên mạng"
-    },
-    {
-      "id": "De03-1-92",
-      "set": "De03",
-      "source_number": 1,
-      "source_page": 19,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải thông tin giữa các máy tính không có đường nối kết trực tiếp"
-    },
-    {
-      "id": "De03-2-93",
-      "set": "De03",
-      "source_number": 2,
-      "source_page": 19,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mục đích của việc xếp các giao thức theo thứ bậc là gì?"
-    },
-    {
-      "id": "De03-2-93",
-      "set": "De03",
-      "source_number": 2,
-      "source_page": 19,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: giảm độ phức tạp tổng thể của việc xây dựng một hệ thống mạng."
-    },
-    {
-      "id": "De03-2-93",
-      "set": "De03",
-      "source_number": 2,
-      "source_page": 19,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "giảm độ phức tạp tổng thể của việc xây dựng một hệ thống mạng"
-    },
-    {
-      "id": "De03-3-94",
-      "set": "De03",
-      "source_number": 3,
-      "source_page": 19,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào không đúng về phương pháp định khung sử dụng cờ bắt đầu và kết thúc?"
-    },
-    {
-      "id": "De03-3-94",
-      "set": "De03",
-      "source_number": 3,
-      "source_page": 19,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: sử dụng một bit đặc biệt để đánh dấu điểm bắt đầu và kết thúc của khung."
-    },
-    {
-      "id": "De03-3-94",
-      "set": "De03",
-      "source_number": 3,
-      "source_page": 19,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng một chuỗi bits đặc biệt để đánh dấu điểm bắt đầu và kết thúc của khung"
-    },
-    {
-      "id": "De03-3-94",
-      "set": "De03",
-      "source_number": 3,
-      "source_page": 19,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "sử dụng một bit đặc biệt để đánh dấu điểm bắt đầu và kết thúc của khung"
-    },
-    {
-      "id": "De03-3-94",
-      "set": "De03",
-      "source_number": 3,
-      "source_page": 19,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tổng số lượng bit dữ liệu trong khung được truyền đi có thể nhiều hơn số bits dữ liệu khi chưa đưa vào khung"
-    },
-    {
-      "id": "De03-4-95",
-      "set": "De03",
-      "source_number": 4,
-      "source_page": 19,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong kịch bản trao đổi dữ liệu hai chiều dùng giao thức HDLC như hình sau đây. Hãy cho biết các giá trị X, Y trong khung mà bên B sẽ gởi là gì? Với X là số thứ tự của khung gởi, Y là số thứ tự của khung đang chờ nhận. LX,Y"
-    },
-    {
-      "id": "De03-4-95",
-      "set": "De03",
-      "source_number": 4,
-      "source_page": 19,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu."
-    },
-    {
-      "id": "De03-5-96",
-      "set": "De03",
-      "source_number": 5,
-      "source_page": 20,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong kiến trúc của mạng LAN, các chức năng như định khung, gởi /nhận khung, lấy dữ liệu ra khỏi khung và kiểm tra lỗi dữ liệu trên khung được thực hiện bởi tầng nào?"
-    },
-    {
-      "id": "De03-5-96",
-      "set": "De03",
-      "source_number": 5,
-      "source_page": 20,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tầng MAC."
-    },
-    {
-      "id": "De03-5-96",
-      "set": "De03",
-      "source_number": 5,
-      "source_page": 20,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "tang mang"
-    },
-    {
       "id": "De03-5-96",
       "set": "De03",
       "source_number": 5,
       "source_page": 20,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:vat",
+        "known-missing-diacritics"
       ],
       "text": "Tang vat ly"
-    },
-    {
-      "id": "De03-8-97",
-      "set": "De03",
-      "source_number": 8,
-      "source_page": 20,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó."
-    },
-    {
-      "id": "De03-8-97",
-      "set": "De03",
-      "source_number": 8,
-      "source_page": 20,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó"
-    },
-    {
-      "id": "De03-8-97",
-      "set": "De03",
-      "source_number": 8,
-      "source_page": 20,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho phép người gởi biết được khung gởi đi có đến nơi hay không"
-    },
-    {
-      "id": "De03-8-97",
-      "set": "De03",
-      "source_number": 8,
-      "source_page": 20,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức cửa sổ trượt khắc phục được tình trạng bên nhận không phân biệt được các khung bị trùng lắp do bên gởi gởi lại."
-    },
-    {
-      "id": "De03-8-97",
-      "set": "De03",
-      "source_number": 8,
-      "source_page": 20,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức cửa sổ trượt khắc phục được tình trạng khung báo nhận có thể bị mất"
-    },
-    {
-      "id": "De03-9-98",
-      "set": "De03",
-      "source_number": 9,
-      "source_page": 20,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Đúng."
     },
     {
       "id": "De03-10-99",
@@ -2130,7 +407,7 @@
       "source_page": 20,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:vat"
       ],
       "text": "Nhiệm vụ chính của Tầng vat lý là gì?"
     },
@@ -2141,7 +418,7 @@
       "source_page": 20,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:truyen|mot|kenh",
         "fractured-ocr"
       ],
       "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: truyen ta i ca c bit tre n mot kenh truyen va t ly."
@@ -2153,198 +430,10 @@
       "source_page": 20,
       "field": "option.a",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:truyen|mot|kenh",
         "fractured-ocr"
       ],
       "text": "truyen ta i ca c bit tre n mot kenh truyen va t ly"
-    },
-    {
-      "id": "De03-10-99",
-      "set": "De03",
-      "source_number": 10,
-      "source_page": 20,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các khung (frame) trên một kênh truyền vật lý"
-    },
-    {
-      "id": "De03-10-99",
-      "set": "De03",
-      "source_number": 10,
-      "source_page": 20,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các gói tin (packet) giữa hai máy bất kỳ trên mạng"
-    },
-    {
-      "id": "De03-11-100",
-      "set": "De03",
-      "source_number": 11,
-      "source_page": 21,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Bằng cách nào để bên gởi khung biết rằng khung đã đến được nơi nhận?"
-    },
-    {
-      "id": "De03-11-100",
-      "set": "De03",
-      "source_number": 11,
-      "source_page": 21,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Sử dụng Khung báo nhận (acknowledgement)."
-    },
-    {
-      "id": "De03-11-100",
-      "set": "De03",
-      "source_number": 11,
-      "source_page": 21,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Gán số thứ tự cho khung"
-    },
-    {
-      "id": "De03-11-100",
-      "set": "De03",
-      "source_number": 11,
-      "source_page": 21,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng bộ đếm thời gian (timer) kết hợp với sự quá hạn (time-out)"
-    },
-    {
-      "id": "De03-11-100",
-      "set": "De03",
-      "source_number": 11,
-      "source_page": 21,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng Khung báo nhận (acknowledgement)"
-    },
-    {
-      "id": "De03-12-101",
-      "set": "De03",
-      "source_number": 12,
-      "source_page": 21,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Trong giao thức cửa sổ trượt (tầng 2), bên nhận có cửa sổ nhận (receiving window) gồm các số thứ tự 4, 5, 6, 7 (như hình), nếu khung số 2 đến bên nhận: p58 Bi °"
-    },
-    {
-      "id": "De03-12-101",
-      "set": "De03",
-      "source_number": 12,
-      "source_page": 21,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Bên nhận sẽ xóa khung này đi."
-    },
-    {
-      "id": "De03-12-101",
-      "set": "De03",
-      "source_number": 12,
-      "source_page": 21,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phụ thuộc hình cửa sổ nhận; đáp án C phù hợp vì khung 2 nằm ngoài cửa sổ 4–7."
-    },
-    {
-      "id": "De03-12-101",
-      "set": "De03",
-      "source_number": 12,
-      "source_page": 21,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Bên nhận vẫn nhận khung này và gởi lên tầng mạng"
-    },
-    {
-      "id": "De03-12-101",
-      "set": "De03",
-      "source_number": 12,
-      "source_page": 21,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Bên nhận sẽ xóa khung này đi"
-    },
-    {
-      "id": "De03-12-101",
-      "set": "De03",
-      "source_number": 12,
-      "source_page": 21,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Bên nhận sẽ di chuyển cửa sau lên một bước Cửa sổ nhận đang mở cho các khung 4, 5, 6, 7 Khung số 2 đến > Nằm ngoài cửa sổ -> Bị loại bỏ"
-    },
-    {
-      "id": "De03-13-102",
-      "set": "De03",
-      "source_number": 13,
-      "source_page": 21,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các khung được tạo ra tại tầng liên kết dữ liệu"
-    },
-    {
-      "id": "De03-13-102",
-      "set": "De03",
-      "source_number": 13,
-      "source_page": 21,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "dữ liệu của khung chứa dữ liệu của ứng dụng cùng với tất cả các tiêu đề của các tầng phía trên"
-    },
-    {
-      "id": "De03-13-102",
-      "set": "De03",
-      "source_number": 13,
-      "source_page": 21,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các khung chứa cả tiêu đề (Header) và phần theo dõi (Trailer)"
-    },
-    {
-      "id": "De03-14-103",
-      "set": "De03",
-      "source_number": 14,
-      "source_page": 21,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đường dial qua mạng điện thoại"
     },
     {
       "id": "De03-16-104",
@@ -2353,7 +442,8 @@
       "source_page": 22,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:lieu",
+        "known-missing-diacritics"
       ],
       "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: du lieu so."
     },
@@ -2364,20 +454,10 @@
       "source_page": 22,
       "field": "option.a",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:lieu",
+        "known-missing-diacritics"
       ],
       "text": "du lieu so"
-    },
-    {
-      "id": "De03-16-104",
-      "set": "De03",
-      "source_number": 16,
-      "source_page": 22,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phim anh va 4m thanh"
     },
     {
       "id": "De03-18-106",
@@ -2386,7 +466,8 @@
       "source_page": 22,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dieu|khien",
+        "known-missing-diacritics"
       ],
       "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: kho ng ca n co che dieu khien ta c nghe n."
     },
@@ -2395,152 +476,21 @@
       "set": "De03",
       "source_number": 18,
       "source_page": 22,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thông tin được truyền đi trong những đơn vị là gói tin"
-    },
-    {
-      "id": "De03-18-106",
-      "set": "De03",
-      "source_number": 18,
-      "source_page": 22,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dieu|khien",
+        "known-missing-diacritics"
       ],
       "text": "kho ng ca n co che dieu khien ta c nghe n"
     },
     {
-      "id": "De03-20-108",
-      "set": "De03",
-      "source_number": 20,
-      "source_page": 22,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thông tin của giao thức được truyền cùng với dữ liệu được đặt ở đâu trong đơn vị dữ liệu của giao thức?"
-    },
-    {
-      "id": "De03-20-108",
-      "set": "De03",
-      "source_number": 20,
-      "source_page": 22,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tie u de (header)."
-    },
-    {
-      "id": "De03-20-108",
-      "set": "De03",
-      "source_number": 20,
-      "source_page": 22,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "ky tu ----------------------------------------------------------------------------------------------------------------------------- cac cau tn tong hop tucac file"
-    },
-    {
-      "id": "De04-1-109",
-      "set": "De04",
-      "source_number": 1,
-      "source_page": 22,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mạng điện thoại hoạt động theo cơ chế chuyển gói?"
-    },
-    {
-      "id": "De04-2-110",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 23,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thành phần nào sau đây không thuộc đường biên mạng?"
-    },
-    {
-      "id": "De04-2-110",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 23,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các ứng dụng / dịch vụ mang Đường biên mạng gồm các host và ctr ứng dụng"
-    },
-    {
-      "id": "De04-4-112",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 23,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển mạch (Circuit switching network)?"
-    },
-    {
-      "id": "De04-4-112",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 23,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thường sử dụng phương pháp theo tần số và/hoặc theo thời gian"
-    },
-    {
-      "id": "De04-4-112",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 23,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Can thiết lập kết nối trước khi truyền tin"
-    },
-    {
-      "id": "De04-6-114",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 23,
-      "field": "explanation",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 3 b4 c2 d1 Đường biên mạng, đường trục mạng, mạng truy cập."
-    },
-    {
-      "id": "De04-6-114",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 23,
-      "field": "option.a",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "3 b4 c2 d1 Đường biên mạng, đường trục mạng, mạng truy cập"
-    },
-    {
       "id": "De04-6-114",
       "set": "De04",
       "source_number": 6,
       "source_page": 23,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:duong"
       ],
       "text": "1 duong bie n mang, duong truc mang, mang truy cap"
     },
@@ -2549,20 +499,10 @@
       "set": "De04",
       "source_number": 7,
       "source_page": 23,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Passing Network)?"
-    },
-    {
-      "id": "De04-7-115",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 23,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:khong|dieu|khien|nghen",
+        "known-missing-diacritics"
       ],
       "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: khong can co che dieu khien tac nghen."
     },
@@ -2573,7 +513,8 @@
       "source_page": 23,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:khong|dieu|khien|nghen",
+        "known-missing-diacritics"
       ],
       "text": "khong can co che dieu khien tac nghen"
     },
@@ -2584,164 +525,11 @@
       "source_page": 24,
       "field": "question",
       "rules": [
-        "ascii-vietnamese",
-        "fractured-ocr"
+        "ascii-token:chu|thoi|goi|mot|may|thong|chuyen|lien|ket|phan",
+        "fractured-ocr",
+        "known-missing-diacritics"
       ],
       "text": "chu ng ta phai ma t thoi gian bao la u de goi mot ta p tin co dung luong 320,000 bits tu may a to i may b thong qua mot mang chuyen ma ch, biet ra ng (1) ta t ca ca c lien kie t la 1.536 mbps (2) ta t ca ca c lien ket de u su dung ky thuat phan chia theo thoi gian voi 12 slots/sec (3) thoi gian thie t la p ket no i la 500ms (ghi chu 1mb=1000kb; 1kb=1000bit)?"
-    },
-    {
-      "id": "De04-9-117",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 24,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đảm bảo việc truyền dữ liệu giữa các host ở cách xa nhau"
-    },
-    {
-      "id": "De04-9-117",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 24,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng hai chế độ truyền tin là: chuyển mạch và chuyển gói"
-    },
-    {
-      "id": "De04-10-118",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 24,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mã Morse sử dụng hai tín hiệu TIC và TE để mã hóa dữ liệu như thế nào?"
-    },
-    {
-      "id": "De04-10-118",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 24,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Sử dụng một chuỗi tín hiệu TIC và TE không đều nhau."
-    },
-    {
-      "id": "De04-10-118",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 24,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng một chuỗi tín hiệu TIC và TE không đều nhau"
-    },
-    {
-      "id": "De04-10-118",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 24,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng một chuỗi 4 tín hiệu TIC va TE"
-    },
-    {
-      "id": "De04-10-118",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 24,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng một chuỗi 8 tín hiệu TIC và TE"
-    },
-    {
-      "id": "De04-10-118",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 24,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sử dụng một chuỗi tín hiệu TIC và TE đều nhau, tùy thuộc vào số lượng dữ liệu truyền đi"
-    },
-    {
-      "id": "De04-11-119",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 24,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: dung."
-    },
-    {
-      "id": "De04-11-119",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 24,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "dung"
-    },
-    {
-      "id": "De04-13-121",
-      "set": "De04",
-      "source_number": 13,
-      "source_page": 25,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc."
-    },
-    {
-      "id": "De04-13-121",
-      "set": "De04",
-      "source_number": 13,
-      "source_page": 25,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phương pháp phân chia theo tần số"
-    },
-    {
-      "id": "De04-13-121",
-      "set": "De04",
-      "source_number": 13,
-      "source_page": 25,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phương pháp phân chia theo thời gian"
-    },
-    {
-      "id": "De04-14-122",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 25,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "FTTH viết tắt là gì? Có thể vào câu điền"
     },
     {
       "id": "De04-15-123",
@@ -2750,7 +538,7 @@
       "source_page": 25,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
       "text": "Mệnh dé nào sau đây đề cập đến \"truy cập mang\"?"
     },
@@ -2759,176 +547,11 @@
       "set": "De04",
       "source_number": 15,
       "source_page": 25,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các End Systems: điểm khởi đầu và kết thúc của các dòng thông tin"
-    },
-    {
-      "id": "De04-15-123",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 25,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:phan"
       ],
       "text": "Các “máy chủ/trạm làm việc” và các ứng dụng mạng D: CÁC THÀNH PHAN"
-    },
-    {
-      "id": "De04-1-124",
-      "set": "De04",
-      "source_number": 1,
-      "source_page": 25,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng."
-    },
-    {
-      "id": "De04-1-124",
-      "set": "De04",
-      "source_number": 1,
-      "source_page": 25,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng"
-    },
-    {
-      "id": "De04-1-124",
-      "set": "De04",
-      "source_number": 1,
-      "source_page": 25,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các khung (frame) trên một kênh truyền vật lý"
-    },
-    {
-      "id": "De04-2-125",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 25,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Tầng liên kết dữ liệu (Data link layer)."
-    },
-    {
-      "id": "De04-3-126",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 25,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Truyền tải các thông điệp (message) từ tiến trình đến tiến trình."
-    },
-    {
-      "id": "De04-3-126",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 25,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các khung (frame) trên một kênh truyền vật lý"
-    },
-    {
-      "id": "De04-3-126",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 25,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng"
-    },
-    {
-      "id": "De04-4-127",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 26,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "5 c7"
-    },
-    {
-      "id": "De04-5-128",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 26,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dịch vụ mạng nào dưới đây vận hành theo mô hình thư tín?"
-    },
-    {
-      "id": "De04-5-128",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 26,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Không nối kết."
-    },
-    {
-      "id": "De04-5-128",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 26,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Không có dịch vụ nào hoạt động theo mô hình này"
-    },
-    {
-      "id": "De04-6-129",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 26,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mệnh đề nào sau đây không đề cập đến hình trạng mạng dạng sao?"
-    },
-    {
-      "id": "De04-6-129",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 26,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Không xảy ra đụng độ nên hiệu suất đạt 100%."
-    },
-    {
-      "id": "De04-6-129",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 26,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Không xảy ra đụng độ nên hiệu suất đạt 100%"
     },
     {
       "id": "De04-6-129",
@@ -2942,244 +565,13 @@
       "text": "Mạng vẫn hoạt động thi thêm hoặc bớt các máy tính ø . Không hoạt động nếu thiết bị tập trung (Hub) bị lỗi"
     },
     {
-      "id": "De04-7-130",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 26,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hệ thống mạng có một kênh giao tiếp được chia sẻ bởi tất cả các máy tính, khi một máy tính gởi tin thì tất cả các máy tính còn lại đều nhận được?"
-    },
-    {
-      "id": "De04-8-131",
-      "set": "De04",
-      "source_number": 8,
-      "source_page": 27,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phân loại mạng máy tính nào không theo phạm vi địa lý?"
-    },
-    {
-      "id": "De04-9-132",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 27,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "LAN là từ viết tắt của từ nào?"
-    },
-    {
-      "id": "De04-11-134",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 27,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "6 c5"
-    },
-    {
-      "id": "De04-12-135",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 27,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "WAN viết tắt của cụm từ nào?"
-    },
-    {
-      "id": "De04-13-136",
-      "set": "De04",
-      "source_number": 13,
-      "source_page": 27,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Xác định tốc độ truyền nhận giữa hai bên"
-    },
-    {
-      "id": "De04-13-136",
-      "set": "De04",
-      "source_number": 13,
-      "source_page": 27,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Xác định ai sẽ nhận thông tin trước"
-    },
-    {
-      "id": "De04-14-137",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 28,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Truyền tải các khung (frame) trên một kênh truyền vật lý."
-    },
-    {
-      "id": "De04-14-137",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 28,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các khung (frame) trên một kênh truyền vật lý"
-    },
-    {
-      "id": "De04-14-137",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 28,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng"
-    },
-    {
-      "id": "De04-15-138",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 28,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tầng vật lý (Physical layer) chịu trách nhiệm truyền chuỗi bit thô qua môi trường truyền vật lý. Gói tin thuộc tầng mạng, khung thuộc tầng liên kết dữ liệu, còn thông điệp giữa các tiến trình thuộc tầng vận chuyển."
-    },
-    {
-      "id": "De04-15-138",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 28,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng"
-    },
-    {
-      "id": "De04-15-138",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 28,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Truyền tải các khung (frame) trên một kênh truyền vật lý"
-    },
-    {
-      "id": "De04-16-139",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 28,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây là SAI khi đề cập đến tầng Liên kết dữ liệu?"
-    },
-    {
-      "id": "De04-16-139",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 28,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Dữ liệu của khung chỉ chứa dữ liệu cùng với tất ca Header của các tầng bên trên."
-    },
-    {
-      "id": "De04-16-139",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 28,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phương án A và C diễn đạt gần nhau; giữ đáp án gốc theo ngữ cảnh giáo trình."
-    },
-    {
-      "id": "De04-16-139",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 28,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dữ liệu của khung chỉ chứa dữ liệu của các tầng bên trên"
-    },
-    {
-      "id": "De04-16-139",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 28,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các khung được tạo ra tại tầng liên kết dữ liệu"
-    },
-    {
-      "id": "De04-16-139",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 28,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dữ liệu của khung chỉ chứa dữ liệu cùng với tất ca Header của các tầng bên trên"
-    },
-    {
-      "id": "De04-16-139",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 28,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các khung bao gồm Header và Trailer"
-    },
-    {
-      "id": "De04-17-140",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 28,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Giao diện."
-    },
-    {
       "id": "De04-17-140",
       "set": "De04",
       "source_number": 17,
       "source_page": 28,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dich"
       ],
       "text": "Dich vụ"
     },
@@ -3190,120 +582,9 @@
       "source_page": 28,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:phan"
       ],
       "text": "Phan mém mang"
-    },
-    {
-      "id": "De04-18-141",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 28,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "MAN là viết tat của cum từ nào?"
-    },
-    {
-      "id": "De04-19-142",
-      "set": "De04",
-      "source_number": 19,
-      "source_page": 28,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các dạng truyền tai (traffic) trên mang gồm?"
-    },
-    {
-      "id": "De04-20-143",
-      "set": "De04",
-      "source_number": 20,
-      "source_page": 29,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "“Mỗi máy tính được kết nối vào một thiết bị tập trung thông qua một liên kết mạng” mệnh đề này đề cập đến hình trạng mạng?"
-    },
-    {
-      "id": "De04-21-144",
-      "set": "De04",
-      "source_number": 21,
-      "source_page": 29,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mục đích của việc tổ chức hệ thống mạng được thành một chồng (stack) các tang (lớp) khác nhau là để giảm độ phức tạp trong quá trình thiết kế và xây dựng?"
-    },
-    {
-      "id": "De04-23-146",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 29,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hãy cho biết tên gọi của hình trạng mạng (topology) sau là gì?"
-    },
-    {
-      "id": "De04-23-146",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 29,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đáp án là Ring (vòng). Dấu hiệu nhận biết: mỗi nút nối với hai nút lân cận và toàn bộ các liên kết tạo thành một vòng khép kín. Star có một thiết bị trung tâm, Bus dùng một đường trục chung, còn Tree phân nhánh theo dạng cây."
-    },
-    {
-      "id": "De04-23-146",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 29,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hình minh họa này được phục dựng sạch để thay phần hình bị mất khi trích PDF; nội dung thể hiện đúng đặc trưng Ring topology và đáp án đã được đối chiếu với tài liệu nguồn."
-    },
-    {
-      "id": "De04-24-147",
-      "set": "De04",
-      "source_number": 24,
-      "source_page": 29,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Hãy cho biết tên gọi của hình trang mang (topology) sau là gi? PC1 PC2 PC3 PC4"
-    },
-    {
-      "id": "De04-25-148",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 30,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hãy cho biết tên gọi của hình trạng mang (topology) sau là gi?"
-    },
-    {
-      "id": "De04-25-148",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 30,
-      "field": "option.d",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Ring (vòng) Tự luận C2"
     },
     {
       "id": "De04-1-149",
@@ -3312,7 +593,6 @@
       "source_page": 30,
       "field": "question",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "Mã Morse sử dụng 2 tín hiệu tic (ký hiệu là dấu chấm . ) và te (ký hiệu là đầu gạch ngang -) để mã hóa dữ liệu truyền đi, hãy cho biết mã Morse của chuỗi kỹ efbh"
@@ -3373,497 +653,13 @@
       "text": ".. ..-. -. ...."
     },
     {
-      "id": "De04-2-150",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 30,
-      "field": "question",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Tìm trên trang https://www.arubanetworks.com/ va cho biết thông số Switch Capacity (khả năng chuyển mạch) của thiết bị chuyển mạch (Switch) Aruba 2540 24G 4SFP + Switch (JL354A)?"
-    },
-    {
-      "id": "De04-2-150",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 30,
-      "field": "explanation",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Thông số switching capacity của Aruba 2540 24G 4SFP+ (JL354A) là 128 Gbps."
-    },
-    {
-      "id": "De04-9-156",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 31,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chúng ta phải mất thời gian bao lâu để gởi một tập tin có dung lượng 640,000 bits từ máy A tới máy B thông qua một mạng chuyển mạch, biết rằng (1) Tất cả các liên kết là 1.536 Mbps (2) Tất cả các liên kết đều sử dụng kỹ thuật phân chia theo thời gian với 6 slots/sec (3) Thời gian thiết lập kết nối là 500ms (ghi chú 1Mb=1000Kb; 1Kb=1000bit)?"
-    },
-    {
-      "id": "De04-2-159",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 33,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "“Các bit \"1\" được mã hóa bằng một điện thế dương, sau đó đến một điện thế âm và tiếp tục như thế” là định nghĩa của phương pháp mã hóa đường truyền? Giáo trình trang 37"
-    },
-    {
-      "id": "De04-3-160",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 33,
-      "field": "question",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "\"Mỗi bit \"1\" được thể hiện bằng một chuyển đổi điện thé từ V0 về 0\" là định nghĩa của phương pháp mã hóa đường truyền?"
-    },
-    {
-      "id": "De04-4-161",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 33,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "\"Mỗi bit “1” được thể hiện bằng một chuyển đổi từ điện thế khác không về điện thế không. Giá trị của điện thế khác không đầu tiên là dương sau đó là âm và tiếp tục chuyển đổi qua lại như thế\" là định nghĩa của phương pháp mã hóa đường truyền?"
-    },
-    {
-      "id": "De04-8-165",
-      "set": "De04",
-      "source_number": 8,
-      "source_page": 34,
-      "field": "option.c",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "16 d8"
-    },
-    {
-      "id": "De04-10-167",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 34,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Bộ mã ASCII chuẩn có thể mã hóa được bao nhiêu ký tự?"
-    },
-    {
-      "id": "De04-12-169",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 34,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chất lượng của âm thanh & phim ảnh sau khi số hóa phụ thuộc vào?"
-    },
-    {
-      "id": "De04-12-169",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 34,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Cả ba yếu tố trên."
-    },
-    {
-      "id": "De04-12-169",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 34,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dung lượng file là hệ quả, không phải tham số chất lượng độc lập; câu diễn đạt chưa chặt."
-    },
-    {
-      "id": "De04-12-169",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 34,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cả ba yếu tố trên"
-    },
-    {
-      "id": "De04-12-169",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 34,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Dung lượng tập tin sau khi mã hóa"
-    },
-    {
-      "id": "De04-12-169",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 34,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tần suất lấy mẫu"
-    },
-    {
-      "id": "De04-13-170",
-      "set": "De04",
-      "source_number": 13,
-      "source_page": 35,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "144 Ảnh màu sử dụng 24 bits để số hóa một điểm ảnh Vậy số lượng bit cần để số hóa là 72*72*24 = 124416 bits Mà 1 byte = 8 bits => Can 124416/8 = 15552 bytes"
-    },
-    {
-      "id": "De04-14-171",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 35,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mang Ethernet 10Base2 cho phép kết nối hai máy tính có khoảng cách xa nhất là?"
-    },
-    {
-      "id": "De04-15-172",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 35,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mạng Ethernet 10Base5 cho phép kết nối hai máy tính có khoảng cách xa nhất là?"
-    },
-    {
-      "id": "De04-16-173",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 35,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mạng Ethernet 10BaseT cho phép kết nối hai máy tính có khoảng cách xa nhất là?"
-    },
-    {
-      "id": "De04-18-175",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 36,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi sử dụng tín hiệu tuần tự để mã hóa đường truyền, ta có thể sử dụng?"
-    },
-    {
-      "id": "De04-19-176",
-      "set": "De04",
-      "source_number": 19,
-      "source_page": 36,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Loại cáp nào sau đây sử dụng các đầu nối ST, SC và LC?"
-    },
-    {
-      "id": "De04-20-177",
-      "set": "De04",
-      "source_number": 20,
-      "source_page": 36,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Loại cáp nào sau đây sử dụng ngoài trời kết nối các hệ thống mạng của các tòa nhà lại với nhau?"
-    },
-    {
-      "id": "De04-21-178",
-      "set": "De04",
-      "source_number": 21,
-      "source_page": 36,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Loại cáp nào sau đây sử dụng đầu nối RJ45?"
-    },
-    {
-      "id": "De04-22-179",
-      "set": "De04",
-      "source_number": 22,
-      "source_page": 36,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Loại cáp nào sau đây được sử dụng trong mạng hình sao?"
-    },
-    {
-      "id": "De04-23-180",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 36,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Khi truyền tín hiệu, công suất của tín hiệu nên bằng hoặc nhỏ hơn nhiều công suất của nhiễu."
-    },
-    {
-      "id": "De04-23-180",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 36,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Nhiễu có thể sinh ra từ sự chuyển động của các điện tử trên kênh truyền."
-    },
-    {
-      "id": "De04-23-180",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 36,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi truyền tín hiệu, công suất của tín hiệu nên bằng hoặc nhỏ hơn nhiều công suất của nhiễu"
-    },
-    {
-      "id": "De04-23-180",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 36,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi truyền tín hiệu, công suất của tín hiệu nên lớn hơn nhiều công suất của nhiễu"
-    },
-    {
-      "id": "De04-23-180",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 36,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Nhiễu có thể sinh ra do điều kiện môi trường bên ngoài."
-    },
-    {
-      "id": "De04-24-181",
-      "set": "De04",
-      "source_number": 24,
-      "source_page": 37,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mệnh đề nào sau đây không đúng, khi đề cập đến băng thông (W) của kênh truyền?"
-    },
-    {
-      "id": "De04-24-181",
-      "set": "De04",
-      "source_number": 24,
-      "source_page": 37,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Kênh truyền có băng thông càng lớn càng dễ xảy ra nhiễu.."
-    },
-    {
-      "id": "De04-24-181",
-      "set": "De04",
-      "source_number": 24,
-      "source_page": 37,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Băng thông của kênh truyền là khoảng tần số của những tín hiệu mà bên nghe còn có thể nhận ra được."
-    },
-    {
-      "id": "De04-24-181",
-      "set": "De04",
-      "source_number": 24,
-      "source_page": 37,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Kênh truyền có băng thông càng lớn càng dễ xảy ra nhiễu."
-    },
-    {
-      "id": "De04-25-182",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 37,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Là tiến trình mã hóa các loại dữ liệu khác nhau như văn bản, âm thanh, hình anh, phim ảnh bằng mã nhị phân."
-    },
-    {
-      "id": "De04-25-182",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 37,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Là tiến trình thay thế các thiết bị truyền tải dữ liệu dạng tuần tự bằng các thiết bị kỹ thuật số"
-    },
-    {
-      "id": "De04-25-182",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 37,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Là tiến trình mã hóa các loại dữ liệu khác nhau như văn bản, âm thanh, hình anh, phim ảnh bằng mã nhị phân"
-    },
-    {
-      "id": "De04-26-183",
-      "set": "De04",
-      "source_number": 26,
-      "source_page": 37,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thiết bị mang nào sau đây hoạt động ở tầng vật lý của mô hình OSI?"
-    },
-    {
-      "id": "De04-27-184",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 37,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tín hiệu tuần tự là?"
-    },
-    {
-      "id": "De04-27-184",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 37,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Là tín hiệu có biên độ thay đổi liên tục theo thời gian.."
-    },
-    {
-      "id": "De04-27-184",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 37,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tín hiệu có biên độ không thay đổi trong một khoảng thời gian."
-    },
-    {
-      "id": "De04-27-184",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 37,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Là tín hiệu có biên độ thay đổi liên tục theo thời gian."
-    },
-    {
-      "id": "De04-29-186",
-      "set": "De04",
-      "source_number": 29,
-      "source_page": 38,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Để mỗi tín hiệu khi truyền tải mang 03 bit dữ liệu, thì chúng ta cần bao nhiêu mẫu tín hiệu khác nhau? 2^3"
-    },
-    {
-      "id": "De04-30-187",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 38,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khung (Frame)"
-    },
-    {
-      "id": "De04-30-187",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 38,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Gói tin (Packet)"
-    },
-    {
-      "id": "De04-1-188",
-      "set": "De04",
-      "source_number": 1,
-      "source_page": 38,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "“Khung bị lỗi bị loại bỏ, những khung tiếp sau vẫn được nhận và được lưu tạm trong vùng đệm, khi tới thời gian time-out bên gửi chỉ gửi lại khung bị mất” mệnh đề này đề cập đến cách thức xử lý nào của bên nhận khung bị lỗi"
-    },
-    {
       "id": "De04-2-189",
       "set": "De04",
       "source_number": 2,
       "source_page": 38,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
       "text": "“Nếu một khung bi sai thì ta không xác định được khung nào tiếp theo” mệnh dé này thể hiện khuyết điểm của phương pháp định khung nào"
     },
@@ -3872,20 +668,9 @@
       "set": "De04",
       "source_number": 3,
       "source_page": 38,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "“Người nhận gửi thông tin về cho người gửi cho phép người gửi gửi thêm dữ liệu, cũng như báo với người gửi những gì mà người nhận đang làm” mệnh đề này đề cập đến tiếp cận điều khiển luồng dựa trên"
-    },
-    {
-      "id": "De04-3-190",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 38,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:phan"
       ],
       "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Phan hồi (Feedback based)."
     },
@@ -3896,365 +681,29 @@
       "source_page": 38,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:phan"
       ],
       "text": "Phan hồi (Feedback based)"
     },
     {
-      "id": "De04-4-191",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 39,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "“Phương pháp kiểm tra chẵn lẻ” có thể phát hiện được bao nhiêu % số lỗi xảy ra trên đường truyền?"
-    },
-    {
-      "id": "De04-4-191",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 39,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Parity phát hiện chắc chắn mọi lỗi có số bit đảo là lẻ, nhưng không có một tỷ lệ phần trăm cố định nếu đề không cho mô hình xác suất lỗi."
-    },
-    {
-      "id": "De04-29-192",
-      "set": "De04",
-      "source_number": 29,
-      "source_page": 45,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong phương pháp sử dụng cờ bắt đầu & kết thúc khung cùng với các bit độn, với mẫu bit đặc biệt để làm cờ là 01111110, với đoạn dữ liệu gốc là 11001111111001110001111111000000, thì dữ liệu chuyển lên kênh truyền sẽ là:"
-    },
-    {
-      "id": "De04-29-192",
-      "set": "De04",
-      "source_number": 29,
-      "source_page": 45,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "1100111111100011100011111110000000 Do cờ có 6 bit 1 liên tiếp nên trong dữ liệu gốc nếu gặp 5 bit 1 liên tiếp -> phải chèn 1 bit 0 ngay sau đó (Để không bị trùng với cờ)"
-    },
-    {
-      "id": "De04-30-193",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 46,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Khung (Frame)."
-    },
-    {
-      "id": "De04-30-193",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 46,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Gói tin (Packet)"
-    },
-    {
-      "id": "De04-30-193",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 46,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khung (Frame)"
-    },
-    {
-      "id": "De04-30-193",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 46,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Byte Tự luận C4 Cau 1: Hình bên dưới là một đoạn dữ liệu trao đổi giữa 02 máy tính trên mạng sử dụng phương pháp định khung đếm ký tự (Character Count), bạn hãy cho biết đoạn dữ liệu đó bao gồm mấy khung? và các ký tự trong mỗi khung? 5 2 8 4 6 8 fA 8B 9 O ff 2 B 2 8B BS 9 0p A P2 Frame 1: số 5 đầu tiên, vậy lấy 5 khung là 5-2-3-4~6 Frame 2: tiếp theo là số 8, lấy 8 khung là8-1-8-9-0-1-2-3 Frame 3: tiếp theo lấy 2 khung là 2 - 3 Frame 4: cuối cùng lấy 5 khung là 5-9-0-1-~2 Cau 2: Trong phương pháp định khung sử dụng byte làm cờ và các byte độn, với đoạn dữ liệu gốc như bên dưới, thì đoạn dữ liệu chuyển lên kênh truyền sẽ là gì? A B |ESCIESC/FLAG| B Cứ có 1 ESC thi chèn thêm 1 ESC, có 1 FLAG thì chèn ESC vào trước FLAG => AB ESC ESC ESC ESC ESC FLAG B"
-    },
-    {
-      "id": "De04-1-194",
-      "set": "De04",
-      "source_number": 1,
-      "source_page": 48,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Mạng cục bộ - không kết nối không báo nhận (LAN)."
-    },
-    {
-      "id": "De04-2-195",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 49,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "\"Nếu đường truyền bận, đợi trong một khoảng thời gian ngẫu nhiên rồi tiếp tục nghe lại đường truyền\", mệnh đề này đề cập tới phương pháp trì hoãn gởi khung nào khi đường truyền bận?"
-    },
-    {
-      "id": "De04-2-195",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 49,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Non-persistent CSMA (Theo dõi không kiên trì)."
-    },
-    {
-      "id": "De04-2-195",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 49,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Non-persistent CSMA (Theo dõi không kiên trì)"
-    },
-    {
-      "id": "De04-3-196",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 49,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Byte Start of Frame (SOF) của chuẩn mang Ethernet là?"
-    },
-    {
-      "id": "De04-4-197",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 49,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cac mạng điện thoại GSM sử dụng phương pháp chia kênh nào?"
-    },
-    {
-      "id": "De04-5-198",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 49,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Cho sơ đồ mạng như hình, ban hãy cho biết có bao nhiêu miền đụng độ (Collision Domain)? « <P Giải thích: ® Router có n cổng => có n Broadcast domain ® 2 router kết nối với nhau => có 1 collision domain « Kết nối trực tiếp giữa router và switch => có 1 collision domain s Switch kết nối với n pc => có n collision domain ¢ Switch kết nối với 1 hub => có 1 collision domain ¢ Hub kết nối với n pc => chỉ có 1 collision domain ¢ Bridge xem như switch Nhin hinh ta thay: 2 Router kết nối với nhau qua Hub -> 1 Collision Domain Bên trai, Router kết nối trực tiếp với switch -> 1 Collision Domain 1 Switch kết nối với 2 PC -> 2 Collision Domain Bên trái, 1 Hub kết nối với 2 PC -> 1 Collision Domain Bên phải, 1 Hub kết nối với 3 PC -> 1 Collision Domain Tổng là1+1+2+1+1=6"
-    },
-    {
-      "id": "De04-5-198",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 49,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu."
-    },
-    {
       "id": "De04-5-198",
       "set": "De04",
       "source_number": 5,
       "source_page": 49,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:ket"
       ],
       "text": "4 gia i thi ch: * Router co n co ng => co n broadcast domain * 2 Router ket no i voi nhau => co 1 collision domain * ket no i truc tiep giu a Router va Switch => co 1 collision domain * Switch ket no i voi n pc => co n collision domain * Switch ket no i voi 1 Hub => co 1 collision domain * Hub ket no i voi n pc => chi co 1 collision domain * Bridge xem nhu Switch nhi n hinh ta tha y: 2 Router ket no i voi nhau qua Hub -> 1 collision domain be n tra i, Router ket no i truc tiep voi Switch -> 1 collision domain 1 Switch ket no i voi 2 pc -> 2 collision domain be n tra i, 1 Hub ket no i voi 2 pc -> 1 collision domain be n phai, 1 Hub ket no i voi 3 pc -> 1 collision domain to ng la 1 + 1 + 2 + 1 + 1 = 6"
     },
     {
-      "id": "De04-6-199",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 50,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mạng Ethernet 1000-Base-X, sử dụng phương pháp mã hóa đường truyền?"
-    },
-    {
-      "id": "De04-7-200",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 50,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mạng Ethernet 1000Base-LX, cho phép kết nối hai máy tính có khoảng cách xa nhất là? 1000.1.10 = 10000"
-    },
-    {
-      "id": "De04-7-200",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 50,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "1000BASE-LX chuẩn có tầm xa tối đa khoảng 5 km trên sợi quang đơn mode; 10 km là biến thể mở rộng/LX-LH hoặc LX10."
-    },
-    {
-      "id": "De04-8-201",
-      "set": "De04",
-      "source_number": 8,
-      "source_page": 50,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mạng Ethernet 10Base-2, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là? -> 10.2.10 = 200 ~ 185m"
-    },
-    {
-      "id": "De04-9-202",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 51,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mạng Ethernet 10Base-5, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là? -> 10.5.10 = 500m"
-    },
-    {
-      "id": "De04-10-203",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 51,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mang Ethernet 10Base-T, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là?"
-    },
-    {
-      "id": "De04-11-204",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 51,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chuẩn mạng Ethernet 10GBASE-LR, cho phép kết nối hai máy tính có khoảng cách xa nhất là?"
-    },
-    {
-      "id": "De04-14-207",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 51,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức CSMA/CD được sử dụng trong chuẩn mạng nào?"
-    },
-    {
-      "id": "De04-14-207",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 51,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Ethernet."
-    },
-    {
-      "id": "De04-15-208",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 52,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hai mã S và T có cùng chiều dài m bits được gọi là trực giao khi?"
-    },
-    {
-      "id": "De04-17-210",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 52,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mệnh đề nào sau đây không đề cập tới phương pháp phân lượt truy cập \"Thăm dò phân tán\""
-    },
-    {
-      "id": "De04-17-210",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 52,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Sau thời gian đặt chỗ, các trạm không đặt chỗ muốn truyền dữ liệu thì có thể truyền dữ liệu vào khe thời gian sau khe thời gian sau cùng. GTP93."
-    },
-    {
-      "id": "De04-17-210",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 52,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Sau thời gian đặt chỗ, các trạm không đặt chỗ thì không được phép truyền dữ liệu dù đang có dữ liệu muốn truyền."
-    },
-    {
-      "id": "De04-17-210",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 52,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Sau thời gian đặt chỗ, các trạm không đặt chỗ muốn truyền dữ liệu thì có thể truyền dữ liệu vào khe thời gian sau khe thời gian sau cùng. GTP93"
-    },
-    {
       "id": "De04-17-210",
       "set": "De04",
       "source_number": 17,
       "source_page": 52,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr",
-        "known-ocr-shape"
+        "ascii-token:chu"
       ],
       "text": "Thời gian được chia thành những “khe” (slot). Một chu kỳ hoạt động của hệ thống bắt đầu bằng N (N=S6 trạm) khe thời gian ngắn dùng để đặt chỗ."
     },
@@ -4263,177 +712,11 @@
       "set": "De04",
       "source_number": 18,
       "source_page": 52,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phương pháp chia kênh nào dưới đây dựa không dựa trên tần số và thời gian sử dụng của kênh truyền?"
-    },
-    {
-      "id": "De04-18-211",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 52,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "CDMA phân chia theo mã, không dựa trực tiếp vào khe thời gian hay dải tần như TDMA/FDMA."
-    },
-    {
-      "id": "De04-18-211",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 52,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "TDMA -> Thời gian"
-    },
-    {
-      "id": "De04-18-211",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 52,
       "field": "option.b",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:tan"
       ],
       "text": "GSM -> Thời gian + Tan số"
-    },
-    {
-      "id": "De04-22-215",
-      "set": "De04",
-      "source_number": 22,
-      "source_page": 53,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Phương pháp truy cập ngẫu nhiên."
-    },
-    {
-      "id": "De04-23-216",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 53,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tầng nào trong mô hình OSI được IEEE chia thành hai tầng con?"
-    },
-    {
-      "id": "De04-23-216",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 53,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Liên kết dữ liệu."
-    },
-    {
-      "id": "De04-24-217",
-      "set": "De04",
-      "source_number": 24,
-      "source_page": 53,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Phương pháp chia kênh."
-    },
-    {
-      "id": "De04-25-218",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 53,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "3 c2 d4"
-    },
-    {
-      "id": "De04-26-219",
-      "set": "De04",
-      "source_number": 26,
-      "source_page": 54,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong phương pháp CDMA, hai người dùng A và B có mã tương ứng là 11101000 và 10111011, hai người dùng có mã trực giao hay không?"
-    },
-    {
-      "id": "De04-27-220",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 54,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong phương pháp CDMA, hai người dung A và B có mã tương ứng là 11101000 và 10111011, nếu người dùng A gởi đi bit 0 và người dung B gởi đi bit 1, thì tín hiệu tổng trên kênh truyền sẽ là?"
-    },
-    {
-      "id": "De04-27-220",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 54,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "20202-200 c0-2020022"
-    },
-    {
-      "id": "De04-27-220",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 54,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "020-20022 A gửi bit 0 -> 0 tương đương với +1 / 1 tương đương với -1 A:11101000->ZA=-1-1-1+1-1+1+1+1 Bgửi bit 1 -> 1 tương đương với +1 / 0 tương đương với -1 B:10111011->ZB=+1-1+1+1+1-1+1+1 => Tin hiệu tổng hợp Z = ZA + ZB=0 -20+200 +2+2 hay0-2020022"
-    },
-    {
-      "id": "De04-28-221",
-      "set": "De04",
-      "source_number": 28,
-      "source_page": 54,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Với chuẩn mạng Ethernet 10GBASE-T sử dụng cáp UTP Cat 6, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là?"
-    },
-    {
-      "id": "De04-29-222",
-      "set": "De04",
-      "source_number": 29,
-      "source_page": 54,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Với chuẩn mạng Ethernet 10GBASE-T sử dụng cáp UTP Cat 6A, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là?"
-    },
-    {
-      "id": "De04-30-223",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 55,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Địa chỉ nguồn và đích của gói tin trong mạng Ethernet dài bao nhiêu byte?"
     },
     {
       "id": "De04-1-224",
@@ -4442,243 +725,20 @@
       "source_page": 55,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:tinh"
       ],
       "text": "\"Theo nguyên tắc phân mạng con: (1) Phần nhận dạng máy tinh của địa chi mạng ban dau được giữ nguyên (2) Phần nhận dạng mạng của địa chỉ mạng ban đầu được chia thành 02 phần: phần nhận dạng mạng con và phần nhận dạng máy tính trong mạng con\", mệnh đề này là đúng hay sai?"
     },
     {
-      "id": "De04-2-225",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 55,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho một mạng con 202.168.41.160/29, địa chỉ IP nào dưới đây không thuộc mang con đó?"
-    },
-    {
-      "id": "De04-3-227",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 55,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho một mạng mà ở đó mỗi router phải tự tính toán và tìm kiếm thông tin về các đường di đến những điểm khác nhau trên mạng, Mạng này đang sử dụng giải thuật chọn đường loại nào?"
-    },
-    {
-      "id": "De04-4-228",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 56,
-      "field": "question",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Cho sơ đồ mạng như hình, bạn hãy cho biết có bao nhiêu miền đụng độ (Collision Domain) và bao nhiêu miền quảng bá (Broadcast)? Lưu ý: - R1, R2: là các router - S1, S2: là các Switch - B1: là Brigde - H1: Hub PC1 Server! PC2 PC3 Server2 PC4"
-    },
-    {
-      "id": "De04-4-228",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 56,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 10 và 5 Tương tự câu 5, nhưng nhớ như sau dễ hơn Switch, Bridge có n cổng thì có n Collision Domain -> S1=3, S2=3, B1=2 Hub kết nối với bao nhiêu thiết bị cũng tính là 1 Collision Domain -> H1=1 Giữa 2 router có kết nối với nhau có 1 Collision Domain -> R1,R2=1 => Tổng có 10 Collision Domain Router1 và Router2 có 5 cổng (Giữa 2 Router liên kết với nhau tính là 1) => 5 Broadcasrt Domain."
-    },
-    {
-      "id": "De04-4-228",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 56,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Kết quả phụ thuộc chính xác sơ đồ; app kèm trang gốc để đối chiếu."
-    },
-    {
-      "id": "De04-4-228",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 56,
-      "field": "option.c",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "11và5"
-    },
-    {
-      "id": "De04-4-228",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 56,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "10 và 5 Tương tự câu 5, nhưng nhớ như sau dễ hơn Switch, Bridge có n cổng thì có n Collision Domain -> S1=3, S2=3, B1=2 Hub kết nối với bao nhiêu thiết bị cũng tính là 1 Collision Domain -> H1=1 Giữa 2 router có kết nối với nhau có 1 Collision Domain -> R1,R2=1 => Tổng có 10 Collision Domain Router1 và Router2 có 5 cổng (Giữa 2 Router liên kết với nhau tính là 1) => 5 Broadcasrt Domain"
-    },
-    {
-      "id": "De04-5-229",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 56,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho địa chỉ IP=10.1.20.1 với mặt nạ mạng con là 255.255.240.0, địa chỉ IP này thuộc mạng con nào sau đây?"
-    },
-    {
       "id": "De04-5-229",
       "set": "De04",
       "source_number": 5,
       "source_page": 56,
       "field": "explanation",
       "rules": [
-        "letter-digit-ocr",
         "spacing-before-punctuation"
       ],
       "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 10.1.16.0 Giải: Subnet Mask : 255.255.240.0 = 1111 1111.1111 1111.1111 0000.0000 0000, ta thấy có 20 bit1, tức 20 bit mạng -> /20 IP : 10.1.20.1 = 0000 1010.0000 0001.0001 0100.0000 0001 Từ IP, giữ nguyên 20 bit đầu tiên, còn lại đổi thành bit 0 : -> 0000 1010.0000 0001.0001 0000.0000 0000 = 10.1.16.0."
-    },
-    {
-      "id": "De04-6-230",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 57,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Tầng mạng."
-    },
-    {
-      "id": "De04-7-231",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 57,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức nào sau đây không thuộc tầng mạng của bộ giao thức TCP/IP"
-    },
-    {
-      "id": "De04-7-231",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 57,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: UDP."
-    },
-    {
-      "id": "De04-8-232",
-      "set": "De04",
-      "source_number": 8,
-      "source_page": 57,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Khi cài đặt giao thức IP cho một máy tính, thi máy tính đó mặc nhiên sé được gián địa chi IP?"
-    },
-    {
-      "id": "De04-9-233",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 57,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mặt nạ mạng con (Subnet Mask) của địa chỉ IP viết dưới dạng CIDR 31.16.21.8/27 là gì?"
-    },
-    {
-      "id": "De04-10-234",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 57,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây là đúng khi đề cập đến mặt nạ mang (Subnet Mask)?"
-    },
-    {
-      "id": "De04-10-234",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 57,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 0, được sử dụng để xác định một mạng"
-    },
-    {
-      "id": "De04-11-235",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 58,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây là đúng khi đề cập đến địa chỉ mạng (Network Address)?"
-    },
-    {
-      "id": "De04-11-235",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 58,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 1, được sử dụng để chỉ tất cả các máy tính trong mạng"
-    },
-    {
-      "id": "De04-12-236",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 58,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phát biểu nào sau đây là đúng khi đề cập đến địa chỉ quảng bá (Broadcast Address)?"
-    },
-    {
-      "id": "De04-12-236",
-      "set": "De04",
-      "source_number": 12,
-      "source_page": 58,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 0, được sử dụng để xác định một mạng"
-    },
-    {
-      "id": "De04-15-239",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 59,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo lược đồ phân lớp địa chỉ IP, mặt nạ mạng \"255.255.0.0\" là của lớp nào?"
     },
     {
       "id": "De04-15-239",
@@ -4703,28 +763,6 @@
       "text": "B Lớp A: 255.0.0.0 Lớp B : 255.255.0.0"
     },
     {
-      "id": "De04-16-240",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 59,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo lược đồ phân lớp địa chi IP, mặt nạ mạng \"255.255.255.0\" là của lớp nào? aA"
-    },
-    {
-      "id": "De04-17-241",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 59,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo phân lớp địa chỉ IP, địa chi IP nào sau đây thuộc lớp A"
-    },
-    {
       "id": "De04-17-241",
       "set": "De04",
       "source_number": 17,
@@ -4736,103 +774,15 @@
       "text": "204.0.0.1 Nhớ byte đầu tiên là được rồi Lớp A: 1.0.0.0 - 126.0.0.0 (1.0.0.0 - 126.255.255.255) Lớp B : 128.1.0.0 - 191.254.0.0 (128.0.0.0 - 191.255.255.255)"
     },
     {
-      "id": "De04-18-243",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 60,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo phân lớp địa chỉ IP, địa chỉ IP nào sau đây thuộc lớp B"
-    },
-    {
-      "id": "De04-19-244",
-      "set": "De04",
-      "source_number": 19,
-      "source_page": 60,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo phân lớp địa chỉ IP, địa chỉ IP nào sau đây thuộc lớp C"
-    },
-    {
-      "id": "De04-20-245",
-      "set": "De04",
-      "source_number": 20,
-      "source_page": 60,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo phân lớp địa chi IP, địa chi IP thuộc lớp B, luôn có 02 bit đầu tiên là?"
-    },
-    {
-      "id": "De04-21-246",
-      "set": "De04",
-      "source_number": 21,
-      "source_page": 60,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo phân lớp địa chỉ IP, địa chỉ IP thuộc lớp C, luôn có 03 bit đầu tiên là?"
-    },
-    {
       "id": "De04-22-247",
       "set": "De04",
       "source_number": 22,
       "source_page": 60,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Theo phương pháp vạch đường liên miền không phân lớp (CIDR), dia chỉ IP được viết dưới dạng X.X.X.X/Y, trong đó Y có ý nghĩa là?"
-    },
-    {
-      "id": "De04-23-248",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 61,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: 3."
-    },
-    {
-      "id": "De04-23-248",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 61,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "5 c2"
-    },
-    {
-      "id": "De04-24-249",
-      "set": "De04",
-      "source_number": 24,
-      "source_page": 61,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Thiết bị mạng nào sau đây hoạt động ở tầng mang của mô hình OSI?"
-    },
-    {
-      "id": "De04-25-250",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 61,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong một mạng ma ở đó các router sẽ tự động cập nhật lại thông tin về đường đi khi hình trạng mạng thay đổi. Mạng này đang sử dụng giải thuật (cách) chọn đường nào?"
     },
     {
       "id": "De04-26-251",
@@ -4841,7 +791,6 @@
       "source_page": 61,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "Tổ chức một mạng có tối đa 512 host /23 tức 9 bit dành cho host „1.1111 1111 = 511 -> 512 địa chỉ -> 510 địa chi host ( -2 địa chi Network va Broadcast ) Cách 2 dùng công thức :2*-2=2°-2=512~2=510 (xlà số bit host)"
@@ -4853,7 +802,7 @@
       "source_page": 61,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Với dia chỉ mạng con 172.18.100.0/29, ta có thể?"
     },
@@ -4864,7 +813,8 @@
       "source_page": 62,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia",
+        "known-missing-diacritics"
       ],
       "text": "Dia chi quảng ba (Broadcast) của mang con 181.16.21.8/29 la gì?"
     },
@@ -4884,353 +834,34 @@
       "set": "De04",
       "source_number": 30,
       "source_page": 62,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Gói tin (Packet)."
-    },
-    {
-      "id": "De04-30-256",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 62,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Gói tin (Packet)"
-    },
-    {
-      "id": "De04-30-256",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 62,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese",
+        "ascii-token:chuyen",
         "spacing-before-punctuation"
       ],
       "text": "Khung (Frame) Chwong 7 : TANG VAN CHUYEN (GIAO VAN)"
     },
     {
-      "id": "De04-2-258",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 62,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "\"Một nút phải tiếp tục nhận dữ liệu sau khi đã gởi đi yêu cầu giải phóng nối kết, cho đến khi nhận được chấp thuận hủy bỏ nối kết của bên đối tác\", mệnh đề này đề cập đến phương pháp giải phóng kết nối nào ở tầng vận chuyển?"
-    },
-    {
-      "id": "De04-3-259",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 63,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: sai."
-    },
-    {
-      "id": "De04-4-260",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 63,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Đúng."
-    },
-    {
-      "id": "De04-5-261",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 63,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Bên nhận có thể thay đổi buffer nhận.."
-    },
-    {
-      "id": "De04-6-262",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 63,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giao thức UDP cung cấp dịch vụ vận chuyển tin cậy hơn so với giao thức TCP?"
-    },
-    {
-      "id": "De04-6-262",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 63,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Sai."
-    },
-    {
-      "id": "De04-7-263",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 63,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hàm cơ sở nào sau đây không thuộc dịch vụ không kết nối?"
-    },
-    {
-      "id": "De04-7-263",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 63,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Câu gốc có hơn một lựa chọn không thuộc dịch vụ không kết nối. Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc."
-    },
-    {
-      "id": "De04-9-265",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 64,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: TCP là giao thức cung cấp dịch vụ vận chuyển không tin cậy, hướng nối kết.."
-    },
-    {
-      "id": "De04-9-265",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 64,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hai tiến trình sử dụng TCP phải thiết lập nối kết trước khi truyền nhận."
-    },
-    {
-      "id": "De04-9-265",
-      "set": "De04",
-      "source_number": 9,
-      "source_page": 64,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "TCP là giao thức cung cấp dịch vụ vận chuyển không tin cậy, hướng nối kết."
-    },
-    {
-      "id": "De04-10-266",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 64,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cả A và B đều sai: UDP không tự mang địa chỉ IP để router định tuyến, và UDP không thiết lập kết nối."
-    },
-    {
-      "id": "De04-10-266",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 64,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Câu gốc có hơn một phát biểu sai. Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc."
-    },
-    {
-      "id": "De04-10-266",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 64,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Các phân đoạn UDP tự thân chứa mọi thông tin cần thiết để các router có thể vạch đường và chuyển tiếp nó đến đích"
-    },
-    {
-      "id": "De04-10-266",
-      "set": "De04",
-      "source_number": 10,
-      "source_page": 64,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hai tiến trình sử dụng UDP phải thiết lập nối kết trước khi truyền nhận."
-    },
-    {
-      "id": "De04-11-267",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 64,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: địa chỉ IP nguồn, địa chỉ IP đích và chiều dài của gói UDP."
-    },
-    {
-      "id": "De04-11-267",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 64,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "chiều dài của gói UDP"
-    },
-    {
-      "id": "De04-11-267",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 64,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "địa chỉ IP nguồn, địa chi IP đích"
-    },
-    {
-      "id": "De04-11-267",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 64,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "địa chỉ IP nguồn, địa chỉ IP đích và chiều dài của gói UDP"
-    },
-    {
-      "id": "De04-13-269",
-      "set": "De04",
-      "source_number": 13,
-      "source_page": 64,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Byte."
-    },
-    {
-      "id": "De04-14-270",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 65,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Acknowledgement = SequenceNum + n."
-    },
-    {
-      "id": "De04-15-271",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 65,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: URG."
-    },
-    {
-      "id": "De04-16-272",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 65,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "4096 c0"
-    },
-    {
-      "id": "De04-17-273",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 65,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Số thứ tự của byte đầu tiên của dãy byte trong segment.."
-    },
-    {
       "id": "De04-17-273",
       "set": "De04",
       "source_number": 17,
       "source_page": 65,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Dia chỉ của cổng dịch vu."
     },
     {
-      "id": "De04-18-274",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 65,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: UDP."
-    },
-    {
       "id": "De04-19-275",
       "set": "De04",
       "source_number": 19,
       "source_page": 65,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dich"
       ],
       "text": "Trong tang vận chuyển của bộ giao thức TCP/IP, giao thức nao cung cấp dich vụ có nối kết?"
-    },
-    {
-      "id": "De04-19-275",
-      "set": "De04",
-      "source_number": 19,
-      "source_page": 65,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: TCP."
-    },
-    {
-      "id": "De04-20-276",
-      "set": "De04",
-      "source_number": 20,
-      "source_page": 66,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Cửa sổ trượt."
     },
     {
       "id": "De04-1-277",
@@ -5239,7 +870,6 @@
       "source_page": 66,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5251,30 +881,6 @@
       "source_page": 66,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
-        "spacing-before-punctuation"
-      ],
-      "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-2-278",
-      "set": "De04",
-      "source_number": 2,
-      "source_page": 66,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "DNS có thể dùng cả UDP và TCP, nên lựa chọn UDP đơn lẻ là thiếu. Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc."
-    },
-    {
-      "id": "De04-3-279",
-      "set": "De04",
-      "source_number": 3,
-      "source_page": 66,
-      "field": "chapter",
-      "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5284,20 +890,8 @@
       "set": "De04",
       "source_number": 3,
       "source_page": 66,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: TCP."
-    },
-    {
-      "id": "De04-4-280",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 66,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5307,22 +901,11 @@
       "set": "De04",
       "source_number": 4,
       "source_page": 66,
-      "field": "explanation",
+      "field": "chapter",
       "rules": [
-        "ascii-vietnamese"
+        "spacing-before-punctuation"
       ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: SMTP/SMTPS."
-    },
-    {
-      "id": "De04-4-280",
-      "set": "De04",
-      "source_number": 4,
-      "source_page": 66,
-      "field": "option.a",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "POP3/POP3S"
+      "text": "chuong 8 : tang ung dung"
     },
     {
       "id": "De04-5-281",
@@ -5331,7 +914,7 @@
       "source_page": 66,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:may"
       ],
       "text": "Giao thức cho phép người dùng doc trực tiếp email trong mailbox trên may chủ email?"
     },
@@ -5342,33 +925,9 @@
       "source_page": 66,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-5-281",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 66,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: IMAP/IMAPS."
-    },
-    {
-      "id": "De04-5-281",
-      "set": "De04",
-      "source_number": 5,
-      "source_page": 66,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "POP3/POP3S “S” theo sau la Secure, tức có mã hóa"
     },
     {
       "id": "De04-6-282",
@@ -5377,7 +936,7 @@
       "source_page": 67,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dich"
       ],
       "text": "Giao thức nao được sử dụng trong dich vụ Web (WWW)?"
     },
@@ -5388,32 +947,9 @@
       "source_page": 67,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-6-282",
-      "set": "De04",
-      "source_number": 6,
-      "source_page": 67,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: HTTP."
-    },
-    {
-      "id": "De04-7-283",
-      "set": "De04",
-      "source_number": 7,
-      "source_page": 67,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hai máy chủ email thực hiện việc chuyển email qua các giai đoạn?"
     },
     {
       "id": "De04-7-283",
@@ -5422,21 +958,9 @@
       "source_page": 67,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-8-284",
-      "set": "De04",
-      "source_number": 8,
-      "source_page": 67,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Hai máy chủ thư điện tử trao đổi thư với nhau qua giao thức?"
     },
     {
       "id": "De04-8-284",
@@ -5445,32 +969,9 @@
       "source_page": 67,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-8-284",
-      "set": "De04",
-      "source_number": 8,
-      "source_page": 67,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: SMTP/SMTPS."
-    },
-    {
-      "id": "De04-8-284",
-      "set": "De04",
-      "source_number": 8,
-      "source_page": 67,
-      "field": "option.d",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "POP3/POP3S"
     },
     {
       "id": "De04-9-285",
@@ -5479,7 +980,6 @@
       "source_page": 67,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5491,7 +991,6 @@
       "source_page": 67,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5501,20 +1000,8 @@
       "set": "De04",
       "source_number": 11,
       "source_page": 67,
-      "field": "question",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Hay cho biết cổng mặc định của giao thức POP3 và POP3S là bao nhiêu?"
-    },
-    {
-      "id": "De04-11-287",
-      "set": "De04",
-      "source_number": 11,
-      "source_page": 67,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5526,7 +1013,6 @@
       "source_page": 68,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5538,7 +1024,6 @@
       "source_page": 68,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5548,20 +1033,8 @@
       "set": "De04",
       "source_number": 14,
       "source_page": 68,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "IMAP là chữ viết tắt của?"
-    },
-    {
-      "id": "De04-14-290",
-      "set": "De04",
-      "source_number": 14,
-      "source_page": 68,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5571,20 +1044,8 @@
       "set": "De04",
       "source_number": 15,
       "source_page": 68,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mã lỗi nào mà Web Server trả ra khi nó thất bại trong việc đáp ứng một yêu cầu hợp lệ?"
-    },
-    {
-      "id": "De04-15-291",
-      "set": "De04",
-      "source_number": 15,
-      "source_page": 68,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5594,20 +1055,8 @@
       "set": "De04",
       "source_number": 16,
       "source_page": 68,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mã lỗi nào ma Webserver trả ra khi yêu cầu có cú pháp sai hoặc không thé đáp ứng?"
-    },
-    {
-      "id": "De04-16-292",
-      "set": "De04",
-      "source_number": 16,
-      "source_page": 68,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5619,21 +1068,9 @@
       "source_page": 68,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-17-293",
-      "set": "De04",
-      "source_number": 17,
-      "source_page": 68,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Máy chủ DNS chính chứa tập tin cơ sở dữ liệu chính của vùng. D"
     },
     {
       "id": "De04-18-294",
@@ -5642,65 +1079,9 @@
       "source_page": 69,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-18-294",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 69,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Chứa các mẫu tin NS của các máy chủ cấp một.."
-    },
-    {
-      "id": "De04-18-294",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 69,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chứa các mẫu tin NS của các máy chủ cấp bốn."
-    },
-    {
-      "id": "De04-18-294",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 69,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chứa các mẫu tin NS của các máy chủ cấp ba."
-    },
-    {
-      "id": "De04-18-294",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 69,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chứa các mẫu tin NS của các máy chủ cấp một."
-    },
-    {
-      "id": "De04-18-294",
-      "set": "De04",
-      "source_number": 18,
-      "source_page": 69,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chứa các mẫu tin NS của các máy chủ cấp hai."
     },
     {
       "id": "De04-19-295",
@@ -5709,54 +1090,9 @@
       "source_page": 69,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-19-295",
-      "set": "De04",
-      "source_number": 19,
-      "source_page": 69,
-      "field": "explanation",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: BASE64."
-    },
-    {
-      "id": "De04-19-295",
-      "set": "De04",
-      "source_number": 19,
-      "source_page": 69,
-      "field": "option.c",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "BASE46"
-    },
-    {
-      "id": "De04-19-295",
-      "set": "De04",
-      "source_number": 19,
-      "source_page": 69,
-      "field": "option.d",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "BASE64"
-    },
-    {
-      "id": "De04-20-296",
-      "set": "De04",
-      "source_number": 20,
-      "source_page": 69,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "MINE cho phép một thu điện tử mang được nhiều loại dữ liệu khác nhau như audio, video, hình ảnh, tài liệu...trường nào dưới đây chỉ ra loại dữ liệu có trong thư điện tử?"
     },
     {
       "id": "De04-20-296",
@@ -5765,7 +1101,6 @@
       "source_page": 69,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5777,7 +1112,7 @@
       "source_page": 69,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
       "text": "Người dùng có thé nhận và đọc email của mình qua các giao thức nào?"
     },
@@ -5788,64 +1123,6 @@
       "source_page": 69,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
-        "spacing-before-punctuation"
-      ],
-      "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-21-297",
-      "set": "De04",
-      "source_number": 21,
-      "source_page": 69,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: IMAP/IMAPS và POP3/POP3S."
-    },
-    {
-      "id": "De04-21-297",
-      "set": "De04",
-      "source_number": 21,
-      "source_page": 69,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "IMAP/IMAPS và POP3/POP3S"
-    },
-    {
-      "id": "De04-21-297",
-      "set": "De04",
-      "source_number": 21,
-      "source_page": 69,
-      "field": "option.d",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "POP3/POP3S và SMTP/SMTPS"
-    },
-    {
-      "id": "De04-22-298",
-      "set": "De04",
-      "source_number": 22,
-      "source_page": 69,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phiên bản mới nhất của giao thức HTTP là?"
-    },
-    {
-      "id": "De04-22-298",
-      "set": "De04",
-      "source_number": 22,
-      "source_page": 69,
-      "field": "chapter",
-      "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5855,22 +1132,11 @@
       "set": "De04",
       "source_number": 22,
       "source_page": 69,
-      "field": "explanation",
+      "field": "chapter",
       "rules": [
-        "ascii-vietnamese"
+        "spacing-before-punctuation"
       ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: 3.0."
-    },
-    {
-      "id": "De04-23-299",
-      "set": "De04",
-      "source_number": 23,
-      "source_page": 69,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Phương thức nào cho phép Webclient cung cấp thông tin cho Webserver?"
+      "text": "chuong 8 : tang ung dung"
     },
     {
       "id": "De04-23-299",
@@ -5879,7 +1145,6 @@
       "source_page": 69,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5891,7 +1156,6 @@
       "source_page": 70,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5901,20 +1165,8 @@
       "set": "De04",
       "source_number": 25,
       "source_page": 70,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo RFC 822, một thư điện tử gồm những \"header line\" nào?"
-    },
-    {
-      "id": "De04-25-301",
-      "set": "De04",
-      "source_number": 25,
-      "source_page": 70,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5924,20 +1176,8 @@
       "set": "De04",
       "source_number": 26,
       "source_page": 70,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tiện ích (công cụ) được dùng dé truy vấn các mẩu tin của DNS trên các hệ điều hành Liunx và Windows là?"
-    },
-    {
-      "id": "De04-26-302",
-      "set": "De04",
-      "source_number": 26,
-      "source_page": 70,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
@@ -5949,7 +1189,8 @@
       "source_page": 70,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dich",
+        "known-missing-diacritics"
       ],
       "text": "Trong cơ sở dữ liệu của dich vu DNS, kiểu mẫu tin kiểu nào được dùng dé chỉ một máy chủ DNS của một miền nào đó?"
     },
@@ -5960,21 +1201,9 @@
       "source_page": 70,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-27-303",
-      "set": "De04",
-      "source_number": 27,
-      "source_page": 70,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: NS."
     },
     {
       "id": "De04-28-304",
@@ -5983,7 +1212,8 @@
       "source_page": 70,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dich",
+        "known-missing-diacritics"
       ],
       "text": "Trong cơ sở dữ liệu của dich vu DNS, kiểu mẫu tin kiểu nào được dùng dé chi một máy chủ Email của một miền nào đó?"
     },
@@ -5994,32 +1224,9 @@
       "source_page": 70,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-28-304",
-      "set": "De04",
-      "source_number": 28,
-      "source_page": 70,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: MX."
-    },
-    {
-      "id": "De04-29-305",
-      "set": "De04",
-      "source_number": 29,
-      "source_page": 71,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong cơ sở dữ liệu của dịch vụ DNS, kiểu mẫu tin nào ngược với kiểu A, dùng để ánh xạ địa chỉ IP sang tên miền?"
     },
     {
       "id": "De04-29-305",
@@ -6028,21 +1235,9 @@
       "source_page": 71,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
-    },
-    {
-      "id": "De04-29-305",
-      "set": "De04",
-      "source_number": 29,
-      "source_page": 71,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: PTR."
     },
     {
       "id": "De04-30-306",
@@ -6051,7 +1246,8 @@
       "source_page": 71,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dich",
+        "known-missing-diacritics"
       ],
       "text": "Trong cơ sở dữ liệu của dich vu DNS, kiểu mẫu tin nào được dùng để ánh xa một tên miền sang địa chỉ IP?"
     },
@@ -6062,87 +1258,31 @@
       "source_page": 71,
       "field": "chapter",
       "rules": [
-        "ascii-vietnamese",
         "spacing-before-punctuation"
       ],
       "text": "chuong 8 : tang ung dung"
     },
     {
-      "id": "De04-30-306",
-      "set": "De04",
-      "source_number": 30,
-      "source_page": 71,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: a."
-    },
-    {
-      "id": "De07-7-307",
-      "set": "De07",
-      "source_number": 7,
-      "source_page": 71,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: File and Print."
-    },
-    {
       "id": "De07-8-308",
       "set": "De07",
       "source_number": 8,
-      "source_page": 71,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: Tập hợp một số thành phần phần cứng và máy tính được kết nối bởi các kênh truyền và được sử dụng để chia sẻ tài nguyên và thông tin."
-    },
-    {
-      "id": "De07-8-308",
-      "set": "De07",
-      "source_number": 8,
-      "source_page": 71,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chia sẻ tài nguyên và thông tin"
-    },
-    {
-      "id": "De07-8-308",
-      "set": "De07",
-      "source_number": 8,
-      "source_page": 71,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Tập hợp một số thành phần phần cứng và máy tính được kết nối bởi các kênh truyền và được sử dụng để chia sẻ tài nguyên và thông tin"
-    },
-    {
-      "id": "De07-15-310",
-      "set": "De07",
-      "source_number": 15,
       "source_page": 71,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:tinh"
       ],
-      "text": "Mục đích của việc tổ chức các chương trình ứng dụng thành nhiều tầng là?"
+      "text": "Mạng máy tinh là gi?"
     },
     {
       "id": "De07-10-312",
       "set": "De07",
       "source_number": 10,
       "source_page": 72,
-      "field": "warning",
+      "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "known-ocr-shape"
       ],
-      "text": "Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc."
+      "text": "Bộ mã UTF-8 có thé mã hóa được bao nhiêu ký tự?"
     },
     {
       "id": "De07-11-313",
@@ -6151,262 +1291,31 @@
       "source_page": 72,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Dia chỉ của cổng dịch vu."
     },
     {
-      "id": "De08-15-314",
-      "set": "De08",
-      "source_number": 15,
-      "source_page": 72,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Định khung dữ liệu (Framing).."
-    },
-    {
-      "id": "De08-15-314",
-      "set": "De08",
-      "source_number": 15,
-      "source_page": 72,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Định khung dữ liệu (Framing)."
-    },
-    {
-      "id": "De08-16-315",
-      "set": "De08",
-      "source_number": 16,
-      "source_page": 72,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: 21."
-    },
-    {
-      "id": "De08-20-316",
-      "set": "De08",
-      "source_number": 20,
-      "source_page": 73,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cụm “tất cả máy tính” không rõ có bao gồm thiết bị trung gian hay chỉ end host."
-    },
-    {
-      "id": "De08-21-317",
-      "set": "De08",
-      "source_number": 21,
-      "source_page": 73,
-      "field": "option.b",
-      "rules": [
-        "letter-digit-ocr"
-      ],
-      "text": "29 C255"
-    },
-    {
-      "id": "De08-26-318",
-      "set": "De08",
-      "source_number": 26,
-      "source_page": 73,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Giả sử hệ thống sử dụng phương pháp Kiểm tra phần dư tuần hoàn (Cycle Redundancy Check) để phát hiện lỗi khung P-1011. Hãy cho biết dữ liệu truyền đi (I) sau khi đã thêm chuỗi kiểm tra khung (F) là gì?"
-    },
-    {
-      "id": "De08-26-318",
-      "set": "De08",
-      "source_number": 26,
-      "source_page": 73,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Chỉ biết đa thức sinh P = 1011 là chưa đủ; cần chuỗi dữ liệu M để tính phần dư CRC."
-    },
-    {
-      "id": "De08-26-318",
-      "set": "De08",
-      "source_number": 26,
-      "source_page": 73,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Không thể xác định vì thiếu chuỗi dữ liệu M"
-    },
-    {
-      "id": "De08-27-319",
-      "set": "De08",
-      "source_number": 27,
-      "source_page": 73,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Cho một giao thức của số trượt sử dụng 2 bits để đánh số thứ tự các vị trí trên cửa sổ. Vùng bộ nhớ đệm của bên nhận có thể chứa được 2 khung của cửa sổ trượt trong trường hợp này là bao nhiêu?"
-    },
-    {
-      "id": "De08-27-319",
-      "set": "De08",
-      "source_number": 27,
-      "source_page": 73,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Đề cho bộ đệm phía nhận chứa được 2 khung, nên đáp án là 2 khung."
-    },
-    {
-      "id": "De08-27-319",
-      "set": "De08",
-      "source_number": 27,
-      "source_page": 73,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "1 khung"
-    },
-    {
-      "id": "De08-27-319",
-      "set": "De08",
-      "source_number": 27,
-      "source_page": 73,
-      "field": "option.b",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "2 khung"
-    },
-    {
-      "id": "De08-27-319",
-      "set": "De08",
-      "source_number": 27,
-      "source_page": 73,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "3 khung"
-    },
-    {
-      "id": "De08-27-319",
-      "set": "De08",
-      "source_number": 27,
-      "source_page": 73,
-      "field": "option.d",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "4 khung"
-    },
-    {
-      "id": "De08-31-321",
-      "set": "De08",
-      "source_number": 31,
-      "source_page": 73,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Bên nhận sẽ gửi lại báo nhận và Advertised Window (Window Size).."
-    },
-    {
-      "id": "De08-31-321",
-      "set": "De08",
-      "source_number": 31,
-      "source_page": 73,
-      "field": "warning",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "PDF có hai phương án B và D diễn đạt cùng ý. Giao diện đã bỏ B trùng nghĩa và giữ D theo khóa nguồn."
-    },
-    {
       "id": "De08-31-321",
       "set": "De08",
       "source_number": 31,
       "source_page": 73,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:thong"
       ],
       "text": "be n nhan se kho ng gu i la i bat ki thong ba o na o."
     },
     {
-      "id": "De08-35-322",
-      "set": "De08",
-      "source_number": 35,
-      "source_page": 73,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong các từ sau đây, từ nào không dùng để chỉ hình trạng (topology) mạng?"
-    },
-    {
-      "id": "De08-37-323",
-      "set": "De08",
-      "source_number": 37,
-      "source_page": 74,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: UDP."
-    },
-    {
       "id": "De08-38-324",
       "set": "De08",
       "source_number": 38,
       "source_page": 74,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dich"
       ],
       "text": "Mục đích của việc xây dựng dich vụ trực tuyến là gì?"
-    },
-    {
-      "id": "De08-38-324",
-      "set": "De08",
-      "source_number": 38,
-      "source_page": 74,
-      "field": "explanation",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Mở ra cách thức truy cập vào tài nguyên một cách dé dàng và linh hoạt.."
-    },
-    {
-      "id": "De08-38-324",
-      "set": "De08",
-      "source_number": 38,
-      "source_page": 74,
-      "field": "option.a",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Mở ra cách thức truy cập vào tài nguyên một cách dé dàng và linh hoạt."
-    },
-    {
-      "id": "De08-38-324",
-      "set": "De08",
-      "source_number": 38,
-      "source_page": 74,
-      "field": "option.c",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Ổn định và không thay đổi theo thời gian để đáp ứng nhu cầu khác nhau."
     },
     {
       "id": "De08-40-325",
@@ -6415,7 +1324,7 @@
       "source_page": 74,
       "field": "question",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:dia"
       ],
       "text": "Dia chỉ IP nào là hợp lệ cho một hoạt thuộc mạng 192.168.1.64/26?"
     },
@@ -6424,20 +1333,9 @@
       "set": "De08",
       "source_number": 42,
       "source_page": 74,
-      "field": "question",
-      "rules": [
-        "ascii-vietnamese"
-      ],
-      "text": "Trong mạng có một Trung tâm điều khiển mạng (Network Control Center) chịu trách nhiệm tính toán và cập nhật thông tin về đường đi cho tất cả các router, mạng này đang sử dụng giải thuật chọn đường loại nào?"
-    },
-    {
-      "id": "De08-42-327",
-      "set": "De08",
-      "source_number": 42,
-      "source_page": 74,
       "field": "explanation",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:duong"
       ],
       "text": "Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: cho n duong ta p trung."
     },
@@ -6448,7 +1346,7 @@
       "source_page": 74,
       "field": "option.c",
       "rules": [
-        "ascii-vietnamese"
+        "ascii-token:duong"
       ],
       "text": "cho n duong ta p trung"
     },
@@ -6459,8 +1357,6 @@
       "source_page": 74,
       "field": "option.d",
       "rules": [
-        "ascii-vietnamese",
-        "letter-digit-ocr",
         "spacing-before-punctuation"
       ],
       "text": "Chọn đường đăng De09, Thập cẩm, De10 : Có thời gian xem sau"
