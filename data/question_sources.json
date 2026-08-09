@@ -1,25 +1,30 @@
 {
-  "schema_version": 1,
-  "description": "Canonical source/provenance records for questions that have been manually verified against the PDF. This registry is the migration target that will replace scattered runtime hotfix knowledge.",
+  "schema_version": 2,
+  "description": "Question source/provenance registry. A record may be marked source_exact only when the exact source artifact is preserved and referenced by evidence.path. Candidate records remain unverified until that artifact is available.",
   "questions": {
     "De04-7-115": {
       "source_type": "pdf",
       "source_set": "De04",
       "source_question_number": 7,
       "source_page": 23,
-      "verification_status": "source_exact",
-      "question": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Passing Network)?",
-      "options": [
+      "verification_status": "awaiting_source_artifact",
+      "candidate_question": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Passing Network)?",
+      "candidate_options": [
         {"id": "a", "text": "Thông tin được truyền đi trong những đơn vị là gói tin"},
         {"id": "b", "text": "Khó đảm bảo được chất lượng dịch vụ"},
         {"id": "c", "text": "Thích hợp cho mạng có thông lượng lớn"},
         {"id": "d", "text": "Không cần cơ chế điều khiển tắc nghẽn"}
       ],
-      "correct_option_id": "d",
+      "candidate_correct_option_id": "d",
+      "evidence": {
+        "path": null,
+        "page": 23,
+        "status": "missing"
+      },
       "notes": [
         "Bản trích xuất cũ bị ghép các đáp án thời gian của câu kế tiếp.",
-        "Bản sửa trước đó phục hồi đúng ý nhưng sai thứ tự A/B/C và đổi 'Khó đảm bảo' thành 'Không đảm bảo'.",
-        "Record này giữ nguyên thứ tự và câu chữ đã đối chiếu với nguồn PDF."
+        "Nội dung candidate hiện tại chưa được phép coi là source_exact vì repository chưa lưu PDF gốc hoặc ảnh trang 23 để kiểm chứng trực tiếp.",
+        "Khi có nguồn, phải lưu artifact hoặc trang nguồn trong repository rồi mới nâng verification_status thành source_exact."
       ]
     }
   }
