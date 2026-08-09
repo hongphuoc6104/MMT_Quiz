@@ -9,7 +9,7 @@
     'manual_solutions/de04_ch5_a.js','manual_solutions/de04_ch5_b.js','manual_solutions/de04_ch6_a.js','manual_solutions/de04_ch6_b.js',
     'manual_solutions/de04_ch7_a.js','manual_solutions/de04_ch7_b.js','manual_solutions/de04_ch8_a.js','manual_solutions/de04_ch8_b.js',
     'manual_solutions/de07.js','manual_solutions/de08.js',
-    'data_corrections.js','pdf_ocr_hotfixes.js?v=20260809-ocr-2','vietnamese_text_cleanup_20260809.js?v=20260809-vi-1','vietnamese_text_cleanup_final_20260809.js?v=20260809-vi-2','manual_to_static.js','app.js','image-crops.js?v=20260808-dedicated-1','ux.js',
+    'data_corrections.js','pdf_ocr_hotfixes.js?v=20260809-ocr-2','vietnamese_text_cleanup_20260809.js?v=20260809-vi-1','vietnamese_text_cleanup_final_20260809.js?v=20260809-vi-3','manual_to_static.js','app.js','image-crops.js?v=20260808-dedicated-1','ux.js',
     'answer_audit_notes.js','beginner_theory.js','tthcm_layout.js'
   ];
 
