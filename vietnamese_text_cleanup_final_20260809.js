@@ -1,4 +1,4 @@
-// Final exact cleanup for the last two genuinely broken OCR records found by the 314-question audit.
+// Final exact cleanup for the last OCR/terminology records found by the 314-question audit.
 (function () {
   'use strict';
   const data = window.QUIZ_DATA;
@@ -16,5 +16,11 @@
     const optionD = qCollision.options?.find(o => o.id === 'd');
     if (optionD) optionD.text = '4';
     // Do not change correct_option_id: the audited correct answer remains option c = 6.
+  }
+
+  const qPacketSwitching = byId.get('De04-7-115');
+  if (qPacketSwitching) {
+    qPacketSwitching.question = 'Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Switching Network)?';
+    // Keep the audited answer unchanged: option d = Không cần cơ chế điều khiển tắc nghẽn.
   }
 })();
