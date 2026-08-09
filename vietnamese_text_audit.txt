@@ -1,0 +1,1746 @@
+Audited questions: 314
+Questions with suspicious text: 264
+Findings: 581
+
+===== De01-1-0 | De01 câu 1 | trang 1 | question | ascii-vietnamese =====
+Trong mô hình OSI, khi một đơn vị dữ liệu giao thức (PDU) được chuyển từ tang cao hơn xuống tầng thấp hơn, phần thông tin điều khiển Header sẽ:
+
+===== De01-1-0 | De01 câu 1 | trang 1 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Thêm vào.
+
+===== De01-1-0 | De01 câu 1 | trang 1 | option.d | ascii-vietnamese =====
+Bớt ra
+
+===== De01-4-3 | De01 câu 4 | trang 1 | question | ascii-vietnamese =====
+Trong phương pháp truy cập đường truyền ngẫu nhiên, tại một thời điểm, đụng độ sẽ KHÔNG xảy ra khi:
+
+===== De01-4-3 | De01 câu 4 | trang 1 | option.b | ascii-vietnamese =====
+chỉ hai trạm cùng truyền dữ liệu
+
+===== De01-5-4 | De01 câu 5 | trang 1 | question | letter-digit-ocr =====
+Giao thức bắt tay trong TCP được mô tả như hình. Hãy cho biết giá trị A1, A2?
+
+===== De01-5-4 | De01 câu 5 | trang 1 | explanation | letter-digit-ocr =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: A1=6, A2=8 Ở bước 2, B phải xác nhận đã nhận dữ liệu từ A với Seq = 5 -> Ack = Seq+ 1=6=A1 Ở bước 3, A phải xác nhận đã nhận dữ liệu từ B với Seq = 7 -> Ack = Seq + 1= 8= A2.
+
+===== De01-5-4 | De01 câu 5 | trang 1 | warning | ascii-vietnamese =====
+Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu.
+
+===== De01-5-4 | De01 câu 5 | trang 1 | option.a | letter-digit-ocr =====
+a1=3, a2=5
+
+===== De01-5-4 | De01 câu 5 | trang 1 | option.b | letter-digit-ocr =====
+A1=7, A2=9
+
+===== De01-5-4 | De01 câu 5 | trang 1 | option.c | letter-digit-ocr =====
+A1=4, A2=6
+
+===== De01-5-4 | De01 câu 5 | trang 1 | option.d | letter-digit-ocr =====
+A1=6, A2=8 Ở bước 2, B phải xác nhận đã nhận dữ liệu từ A với Seq = 5 -> Ack = Seq+ 1=6=A1 Ở bước 3, A phải xác nhận đã nhận dữ liệu từ B với Seq = 7 -> Ack = Seq + 1= 8= A2
+
+===== De01-6-5 | De01 câu 6 | trang 2 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau.
+
+===== De01-6-5 | De01 câu 6 | trang 2 | option.b | ascii-vietnamese =====
+Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau
+
+===== De01-9-8 | De01 câu 9 | trang 2 | question | ascii-vietnamese =====
+Bằng cách nào để đảm bảo rằng toàn bộ các khung đã được phân phát đến mạng và được phân phát theo đúng trình tự chúng đã được gởi?
+
+===== De01-9-8 | De01 câu 9 | trang 2 | warning | ascii-vietnamese =====
+Câu hỏi khái quát; cần phối hợp số thứ tự, ACK và timeout để bảo đảm tin cậy/thứ tự.
+
+===== De01-9-8 | De01 câu 9 | trang 2 | option.a | ascii-vietnamese =====
+Sử dụng bộ đếm thời gian (timer) kết hợp với sự quá hạn (time-out)
+
+===== De01-9-8 | De01 câu 9 | trang 2 | option.b | ascii-vietnamese =====
+Sử dụng Khung báo nhận (acknowledgement)
+
+===== De01-9-8 | De01 câu 9 | trang 2 | option.c | ascii-vietnamese =====
+Gán số thứ tự cho khung
+
+===== De01-11-10 | De01 câu 11 | trang 3 | question | ascii-vietnamese =====
+Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển mạch (Circuit switch network)?
+
+===== De01-11-10 | De01 câu 11 | trang 3 | option.c | ascii-vietnamese =====
+Thường sử dụng phương pháp theo tần số và/hoặc theo thời gian
+
+===== De01-11-10 | De01 câu 11 | trang 3 | option.d | ascii-vietnamese =====
+Cần thiết lập kết nối trước khi truyền tin
+
+===== De01-13-12 | De01 câu 13 | trang 3 | option.a | ascii-vietnamese =====
+Đường dial qua mạng điện thoại
+
+===== De01-14-13 | De01 câu 14 | trang 3 | explanation | spacing-before-punctuation =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: IP đích :cổng đích (destination port).
+
+===== De01-14-13 | De01 câu 14 | trang 3 | option.a | spacing-before-punctuation =====
+IP nguồn :cổng nguồn (source port)
+
+===== De01-14-13 | De01 câu 14 | trang 3 | option.b | spacing-before-punctuation =====
+IP đích :cổng đích (destination port)
+
+===== De01-15-14 | De01 câu 15 | trang 3 | option.d | ascii-vietnamese =====
+Đường dial qua mạng điện thoại
+
+===== De01-16-15 | De01 câu 16 | trang 3 | question | ascii-vietnamese =====
+Phát biểu nào sau đây không đúng về kỹ thuật định khung bang phương pháp sử dụng byte làm cờ (Flag type) và các byte độn?
+
+===== De01-16-15 | De01 câu 16 | trang 3 | option.b | ascii-vietnamese =====
+Sử dụng một byte đặc biệt để đánh dấu điểm bắt đầu và kết thúc khung
+
+===== De01-17-16 | De01 câu 17 | trang 4 | option.a | ascii-vietnamese =====
+Luôn luôn gởi riêng báo nhận và dữ liệu trên hai chuyến khác nhau
+
+===== De01-17-16 | De01 câu 17 | trang 4 | option.c | ascii-vietnamese =====
+Gởi báo nhận và chờ một khoảng thời gian sau để gởi dữ liệu
+
+===== De01-17-16 | De01 câu 17 | trang 4 | option.d | ascii-vietnamese =====
+Gởi dữ liệu và chờ một khoảng thời gian sau để gởi báo nhận
+
+===== De01-19-18 | De01 câu 19 | trang 4 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: chỉ ra những gì mà một máy chủ có thể cung cấp cho các khách hàng.
+
+===== De01-19-18 | De01 câu 19 | trang 4 | option.a | ascii-vietnamese =====
+Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau
+
+===== De01-19-18 | De01 câu 19 | trang 4 | option.b | ascii-vietnamese =====
+Chỉ ra những gì mà một máy chủ có thể cung cấp cho các khách hàng
+
+===== De01-23-21 | De01 câu 23 | trang 5 | question | ascii-vietnamese =====
+Loại cáp nào sau đây thường được sử dụng ngoài trời để kết nối các hệ thống mạng của các tòa nhà lại với nhau?
+
+===== De01-24-22 | De01 câu 24 | trang 5 | option.a | ascii-vietnamese =====
+Ba máy tính
+
+===== De01-24-22 | De01 câu 24 | trang 5 | option.d | ascii-vietnamese =====
+Hai máy tính
+
+===== De01-26-24 | De01 câu 26 | trang 5 | question | ascii-vietnamese =====
+Cho một giao thức cửa sổ trượt sử dụng 3 bits để đánh số thứ tự các vi trí trên cửa sổ, với kích thước của cửa sổ trượt được thỏa thuận giữa bên gởi và nhận là 4. Giả sử thời điểm hiện tại, cửa sổ bên gởi đang chứa các giá trị 2,3,4. Hỏi khung tiếp theo được phép gởi là những khung nào (sử dụng dấu, để ngăn cách các khung)?
+
+===== De01-26-24 | De01 câu 26 | trang 5 | explanation | ascii-vietnamese =====
+Khung 2, 3, 4 đã gửi và cửa sổ có kích thước 4, nên còn một vị trí cho khung 5.
+
+===== De01-27-25 | De01 câu 27 | trang 5 | explanation | ascii-vietnamese =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: giúp tăng hiệu suất của máy tính cá nhân.
+
+===== De01-27-25 | De01 câu 27 | trang 5 | option.b | ascii-vietnamese =====
+Giúp tạo ra nhiều ứng dụng mới
+
+===== De01-27-25 | De01 câu 27 | trang 5 | option.c | ascii-vietnamese =====
+Giúp tăng hiệu suất của máy tính cá nhân
+
+===== De01-28-26 | De01 câu 28 | trang 5 | question | ascii-vietnamese =====
+Giao thức nào thực hiện việc ánh xạ từ địa chỉ IP về địa chỉ MAC?
+
+===== De01-28-26 | De01 câu 28 | trang 5 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: ARP.
+
+===== De01-29-27 | De01 câu 29 | trang 6 | explanation | letter-digit-ocr =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 1->0 đen / 1 trắng b8 c4.
+
+===== De01-30-28 | De01 câu 30 | trang 6 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: bên gửi sẽ tạm dừng gửi dữ liệu.
+
+===== De01-31-29 | De01 câu 31 | trang 6 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Không có báo nhận.
+
+===== De01-31-29 | De01 câu 31 | trang 6 | option.c | ascii-vietnamese =====
+Cần cơ chế gởi lại gói tin bị mất (lỗi)
+
+===== De01-32-30 | De01 câu 32 | trang 6 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: truyền tải các gói tin (packet) qua một liên mạng.
+
+===== De01-32-30 | De01 câu 32 | trang 6 | option.c | ascii-vietnamese =====
+Truyền tải các khung (frame) trên một kênh truyền vật lý
+
+===== De01-32-30 | De01 câu 32 | trang 6 | option.d | ascii-vietnamese =====
+Truyền tải các gói tin (packet) qua một liên mạng
+
+===== De01-33-31 | De01 câu 33 | trang 6 | question | ascii-vietnamese =====
+Tầng nào trong mô hình OSI được IEEE chia thành hai tầng con?
+
+===== De01-33-31 | De01 câu 33 | trang 6 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Liên kết dữ liệu -> LLC & MAC.
+
+===== De01-34-32 | De01 câu 34 | trang 7 | question | ascii-vietnamese =====
+Mạng nào sau đây sử dụng mã Morse (sử dụng hai tín hiệu tít và te) để mã hóa thông tin cần truyền?
+
+===== De01-35-33 | De01 câu 35 | trang 7 | question | ascii-vietnamese =====
+Cho một mạng mà ở đó mỗi router phải tự tính toán tìm kiếm thông tin về các đường đi đến những điểm khác nhau trên mạng, mạng này đang sử dụng giải thuật chọn đường loại nào?
+
+===== De01-36-34 | De01 câu 36 | trang 7 | question | ascii-vietnamese =====
+Trong phương pháp kiểm tra phần dư tuần hoàn (Cyclic Redundancy Check) dùng để phát hiện lỗi, với thông điệp cần truyền M=101010, số dùng để kiểm tra khung P=1001. Hãy cho biết dữ liệu truyền đi (T) sau khi đã thêm chuỗi kiểm tra khung (F) là gì?
+
+===== De01-37-35 | De01 câu 37 | trang 7 | question | ascii-vietnamese =====
+Phát biểu nào sau đây là đúng khi đề cập đến địa chi quảng bá (Broadcast Address)?
+
+===== De01-37-35 | De01 câu 37 | trang 7 | option.d | ascii-vietnamese =====
+Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 0, được sử dụng để xác định một mạng
+
+===== De01-38-36 | De01 câu 38 | trang 7 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: giao thức TCP và UDP.
+
+===== De01-40-38 | De01 câu 40 | trang 8 | question | ascii-vietnamese =====
+Giao thức nào có thể tính được thời gian tối đa mà một máy trạm phải chờ để đến lượt mình sử dụng đường truyền?
+
+===== De01-41-39 | De01 câu 41 | trang 8 | question | ascii-vietnamese =====
+“Phương pháp kiểm tra chan lẻ” có thể khắc phục được bao nhiêu % số lỗi xảy ra trên đường truyền?
+
+===== De01-41-39 | De01 câu 41 | trang 8 | explanation | ascii-vietnamese =====
+Kiểm tra chẵn lẻ phát hiện mọi lỗi có số bit đảo là lẻ, nhưng không có một tỷ lệ phần trăm cố định như 10%.
+
+===== De01-41-39 | De01 câu 41 | trang 8 | warning | ascii-vietnamese =====
+Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc.
+
+===== De01-42-40 | De01 câu 42 | trang 8 | question | ascii-vietnamese =====
+Chức năng nào sau đây không thuộc tầng MAC (Medium Access Control)?
+
+===== De01-42-40 | De01 câu 42 | trang 8 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: điều khiển luồng.
+
+===== De01-42-40 | De01 câu 42 | trang 8 | option.a | ascii-vietnamese =====
+Kiểm tra lỗi
+
+===== De01-42-40 | De01 câu 42 | trang 8 | option.d | ascii-vietnamese =====
+Định khung
+
+===== De01-45-43 | De01 câu 45 | trang 9 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó.
+
+===== De01-45-43 | De01 câu 45 | trang 9 | option.a | ascii-vietnamese =====
+Giao thức cửa sổ trượt khắc phục được tình trạng bên nhận không phân biệt được các khung bị trùng lắp do bên gởi gởi lại.
+
+===== De01-45-43 | De01 câu 45 | trang 9 | option.b | ascii-vietnamese =====
+Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó
+
+===== De01-45-43 | De01 câu 45 | trang 9 | option.c | ascii-vietnamese =====
+Giao thức cửa sổ trượt khắc phục được tình trạng khung báo nhận có thể bị mất
+
+===== De01-45-43 | De01 câu 45 | trang 9 | option.d | ascii-vietnamese =====
+Cho phép người gởi biết được khung gởi đi có đến nơi hay không
+
+===== De01-47-44 | De01 câu 47 | trang 9 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Đúng.
+
+===== De01-48-45 | De01 câu 48 | trang 9 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Tất cả vấn đề trên.
+
+===== De01-48-45 | De01 câu 48 | trang 9 | option.b | ascii-vietnamese =====
+Đảm bảo cho phép một trạm truyền tin thành công tại một thời điểm
+
+===== De01-49-46 | De01 câu 49 | trang 9 | question | ascii-vietnamese =====
+“Người nhận gởi thông tin về cho người gởi cho phép người gởi gởi thêm dữ liệu, cũng như báo với người gởi những gì mà người nhận đang làm” mệnh đề này đề cập đến tiếp cận điều khiển luồng dựa trên
+
+===== De01-50-47 | De01 câu 50 | trang 10 | question | ascii-vietnamese =====
+Trong kịch bản trao đổi dữ liệu dùng TCP như hình sau đây. Hãy cho biết giá trị Y?
+
+===== De01-50-47 | De01 câu 50 | trang 10 | explanation | ascii-vietnamese =====
+Theo sơ đồ TCP trong tài liệu, giá trị Y là 4.
+
+===== De01-50-47 | De01 câu 50 | trang 10 | warning | ascii-vietnamese =====
+Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu.
+
+===== De01-ver2-18-48 | De01-ver2 câu 18 | trang 10 | question | ascii-vietnamese =====
+Trong giao thức cửa sổ trượt (sliding window), bên gởi dựa vào yếu tố gì để biết được bên nhận đã nhận được khung (frame) dữ liệu?
+
+===== De01-ver2-18-48 | De01-ver2 câu 18 | trang 10 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: khung báo nhận.
+
+===== De01-ver2-18-48 | De01-ver2 câu 18 | trang 10 | option.b | ascii-vietnamese =====
+Khung báo nhận
+
+===== De01-ver2-18-48 | De01-ver2 câu 18 | trang 10 | option.d | ascii-vietnamese =====
+Thời gian chờ
+
+===== De01-ver2-24-49 | De01-ver2 câu 24 | trang 10 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tầng ứng dụng.
+
+===== De01-ver2-25-50 | De01-ver2 câu 25 | trang 10 | question | ascii-vietnamese =====
+Khi sử dụng tín hiệu tuần tự để mã hóa đường truyền, ta có thể sử dụng?
+
+===== De01-ver2-25-50 | De01-ver2 câu 25 | trang 10 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: bie n dieu ta n so, bie n dieu pha, bie n dieu bie n do -----------------------------------------------------------------------------------------------------------------------------.
+
+===== De01-ver2-25-50 | De01-ver2 câu 25 | trang 10 | option.b | ascii-vietnamese =====
+Biến điệu tan số, Biến điệu băng thông, Biến điệu biên độ
+
+===== De01-ver2-25-50 | De01-ver2 câu 25 | trang 10 | option.c | ascii-vietnamese =====
+bie n dieu ta n so, bie n dieu pha, bie n dieu bie n do -----------------------------------------------------------------------------------------------------------------------------
+
+===== De02-4-51 | De02 câu 4 | trang 10 | explanation | ascii-vietnamese,fractured-ocr =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: mota nhu ng gi ma mot thanh phan mang may tinh cung cap cho ca c thanh phan kha c muo n giao tiep voi no.
+
+===== De02-4-51 | De02 câu 4 | trang 10 | option.a | ascii-vietnamese,fractured-ocr =====
+mota nhu ng gi ma mot thanh phan mang may tinh cung cap cho ca c thanh phan kha c muo n giao tiep voi no
+
+===== De02-4-51 | De02 câu 4 | trang 10 | option.b | ascii-vietnamese =====
+Mô tả cách mà một khách hàng có thé sử dụng được một dịch vu mạng và cách các dịch vụ có thể được truy
+
+===== De02-4-51 | De02 câu 4 | trang 10 | option.d | ascii-vietnamese =====
+Mô tả cách thức hai thành phần giao tiếp trao đổi thông tin với nhau
+
+===== De02-6-53 | De02 câu 6 | trang 11 | question | ascii-vietnamese =====
+Hay xác định khả năng của một kênh truyền có băng thong... thiếu đề
+
+===== De02-7-54 | De02 câu 7 | trang 11 | question | ascii-vietnamese =====
+Công cụ nào sau đây có thể được sử dụng để nối kết va quản lý một máy tinh ở xa?
+
+===== De02-8-55 | De02 câu 8 | trang 11 | question | ascii-vietnamese =====
+Với địa chi mang con 100.200.0.0/21, hãy xác định số lượng mang con thiếu dữ kiện
+
+===== De02-9-56 | De02 câu 9 | trang 11 | question | ascii-vietnamese =====
+Phat biểu nào sau đây không đúng khi đề cập đến giao thức truy cập đường truyền Slotted ALOHA?
+
+===== De02-9-56 | De02 câu 9 | trang 11 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Khi một nút có khung cần truyền nó sẽ truyền khung ngay.
+
+===== De02-9-56 | De02 câu 9 | trang 11 | option.a | ascii-vietnamese =====
+Hiệu suất truyền khung của giao thức Slotted ALOHA cao hơn so với Pure ALOHA
+
+===== De02-9-56 | De02 câu 9 | trang 11 | option.b | ascii-vietnamese =====
+Khi một nút có khung cần truyền nó sẽ truyền khung ngay
+
+===== De02-9-56 | De02 câu 9 | trang 11 | option.c | ascii-vietnamese =====
+Khi một nút có khung cần truyền nó sẽ truyền khung vào lúc bắt đầu của khe thời gian kế tiếp
+
+===== De02-9-56 | De02 câu 9 | trang 11 | option.d | ascii-vietnamese =====
+Thời gian được chia thành nhiều khe bằng nhau (bằng thời gian truyền một khung).
+
+===== De02-10-57 | De02 câu 10 | trang 11 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tang mang.
+
+===== De02-10-57 | De02 câu 10 | trang 11 | option.b | ascii-vietnamese =====
+tang van chuyen
+
+===== De02-10-57 | De02 câu 10 | trang 11 | option.c | ascii-vietnamese =====
+tang mang
+
+===== De02-11-58 | De02 câu 11 | trang 12 | question | ascii-vietnamese =====
+Xác định mặt na mang con của dia chỉ IP 136.36.44.111/24
+
+===== De02-12-59 | De02 câu 12 | trang 12 | question | ascii-vietnamese =====
+Một router thực hiện quyết định chọn đường dựa vào thông tin nào trong header của
+
+===== De02-16-60 | De02 câu 16 | trang 12 | explanation | ascii-vietnamese,letter-digit-ocr =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: POP3.
+
+===== De02-16-60 | De02 câu 16 | trang 12 | option.c | letter-digit-ocr =====
+POP3
+
+===== De02-16-60 | De02 câu 16 | trang 12 | option.d | ascii-vietnamese,letter-digit-ocr =====
+IMAP p199 POP3 (Post Office Protocol v3): Giao thức giúp tai email từ server về client và thường xóa trên server sau khi tải. IMAP: Tải email nhưng giữ bản gốc trên server, dùng cho truy cập đồng bộ (webmail, điện thoại). SMTP: Dùng để gửi email đi, không phải để nhận. SNMP: Dùng để quản lý mạng, không liên quan email.
+
+===== De02-17-61 | De02 câu 17 | trang 12 | question | ascii-vietnamese =====
+Trong cơ sở dữ liệu của dịch vụ DNS, loại mẫu tin nao (type) được dùng để chỉ địa chi IP của aA
+
+===== De02-17-61 | De02 câu 17 | trang 12 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: a.
+
+===== De02-17-61 | De02 câu 17 | trang 12 | option.d | ascii-vietnamese =====
+CNAME A (Address record): ánh xa tên miền — dia chi IP (IPv4) MX (Mail Exchange): chỉ máy chủ email. NS (Name Server): chỉ máy chủ DNS chịu trách nhiệm (chỉ ra máy chủ của tên miền) CNAME (Canonical Name): bí danh (alias) cho một tên miền khác.
+
+===== De02-20-63 | De02 câu 20 | trang 13 | question | spacing-before-punctuation =====
+Một tín hiệu được truyền từ điểm A đến điểm B. Tại vị trí A tín hiệu ... giảm của một tín hiệu này?
+
+===== De02-20-63 | De02 câu 20 | trang 13 | warning | ascii-vietnamese =====
+PDF thiếu các giá trị công suất đầu–cuối; tạm giữ đáp án gốc.
+
+===== De02-21-64 | De02 câu 21 | trang 13 | question | ascii-vietnamese =====
+Ưu điểm của thiết bị switch so với Hub là gì?
+
+===== De02-21-64 | De02 câu 21 | trang 13 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Switch nhận biết được địa chỉ MAC máy nhận của các khung và chuyển tiếp đến cổng tương ứng.
+
+===== De02-21-64 | De02 câu 21 | trang 13 | option.a | ascii-vietnamese =====
+Switch nhận biết được địa chỉ MAC máy nhận của các khung và chuyển tiếp đến cổng tương ứng
+
+===== De02-21-64 | De02 câu 21 | trang 13 | option.b | ascii-vietnamese =====
+Switch có chi phí đầu tư thấp hon Hub
+
+===== De02-21-64 | De02 câu 21 | trang 13 | option.c | ascii-vietnamese =====
+Switch bỏ qua các khung broadcast
+
+===== De02-21-64 | De02 câu 21 | trang 13 | option.d | ascii-vietnamese =====
+Switch luôn gửi khung đến tất cả các cổng của nó
+
+===== De02-22-65 | De02 câu 22 | trang 13 | question | ascii-vietnamese =====
+Khi truyền, dữ liệu được đóng gói thì thứ tự nào sau đây? Theo các tầng
+
+===== De02-22-65 | De02 câu 22 | trang 13 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Dữ liệu, Đoạn, Gói tin, Khung, các bit.
+
+===== De02-22-65 | De02 câu 22 | trang 13 | option.a | ascii-vietnamese =====
+Đoạn, Dữ liệu, Khung, Gói tin, các bit
+
+===== De02-22-65 | De02 câu 22 | trang 13 | option.b | ascii-vietnamese =====
+Dữ liệu, Khung, Gói tin, Đoạn, các bit
+
+===== De02-22-65 | De02 câu 22 | trang 13 | option.c | ascii-vietnamese =====
+Dữ liệu, Đoạn, Khung, Gói tin, các bit
+
+===== De02-22-65 | De02 câu 22 | trang 13 | option.d | ascii-vietnamese =====
+Dữ liệu, Đoạn, Gói tin, Khung, các bit
+
+===== De02-27-70 | De02 câu 27 | trang 14 | question | ascii-vietnamese =====
+Loại mẫu tin nào được sử dụng để chỉ máy chủ phục vụ tên miền (DNS server) cho một miền?
+
+===== De02-28-71 | De02 câu 28 | trang 15 | option.d | ascii-vietnamese =====
+Decibels Băng thông là khả năng tối da của một kênh truyền tải dữ liệu trong một don vị thời gian, thường được đo bằng bps (bits per second).
+
+===== De02-29-72 | De02 câu 29 | trang 15 | question | ascii-vietnamese =====
+Phát biểu nào sau đây KHÔNG ĐÚNG về máy chủ phục vụ tên miền cho miền Root (.)?
+
+===== De02-29-72 | De02 câu 29 | trang 15 | explanation | ascii-vietnamese,fractured-ocr =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: may chu root co the ti m kie m di a chi IP cho ta t ca ca c te n mie n tre n internet.
+
+===== De02-29-72 | De02 câu 29 | trang 15 | option.b | ascii-vietnamese,fractured-ocr =====
+may chu root chu a ca c thong tin ve ca c may chu te n mie n cho ca c te n mie n mu c cao nha t
+
+===== De02-29-72 | De02 câu 29 | trang 15 | option.c | ascii-vietnamese,fractured-ocr =====
+may chu root co the ti m kie m di a chi IP cho ta t ca ca c te n mie n tre n internet
+
+===== De02-29-72 | De02 câu 29 | trang 15 | option.d | ascii-vietnamese =====
+Máy chủ ROOT có thể đưa ra các truy vấn (query) để tìm kiếm tối thiểu các thông tin về địa chỉ của c... tìm
+
+===== De02-31-74 | De02 câu 31 | trang 15 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Số lượng don vị tín hiệu được truyền trên mỗi đơn vị thời gian.
+
+===== De02-31-74 | De02 câu 31 | trang 15 | option.b | ascii-vietnamese =====
+Số bytes được truyền trong một đơn vị thời gian
+
+===== De02-31-74 | De02 câu 31 | trang 15 | option.c | ascii-vietnamese =====
+Số bits được truyền trong một đơn vị thời gian
+
+===== De02-31-74 | De02 câu 31 | trang 15 | option.d | ascii-vietnamese =====
+Số lượng don vị tín hiệu được truyền trên mỗi đơn vị thời gian
+
+===== De02-32-75 | De02 câu 32 | trang 15 | question | ascii-vietnamese =====
+Với dia chỉ mạng 200.200.200.0, hãy xác định mặt na mạng con để tao ra 30 mạng con va...
+
+===== De02-32-75 | De02 câu 32 | trang 15 | option.d | ascii-vietnamese =====
+255.255.255.252 200.200.200.0 -> /24 (8 bit host), muốn tao ra 30 mạng con cần mượn 5 bit host -> /29 => 1111 1111.1111 1111.1111 1111.1111 1000 = 255.255.255.248
+
+===== De02-33-77 | De02 câu 33 | trang 16 | explanation | ascii-vietnamese,fractured-ocr =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: thong gu i ca c thong die p ba o lo i hoa c ca c thong die p dieu khien.
+
+===== De02-33-77 | De02 câu 33 | trang 16 | option.a | ascii-vietnamese =====
+Kiểm tra dịch vụ trên máy ở xa có hoạt động không
+
+===== De02-33-77 | De02 câu 33 | trang 16 | option.b | ascii-vietnamese =====
+phat hie n ta n co ng mang
+
+===== De02-33-77 | De02 câu 33 | trang 16 | option.c | ascii-vietnamese,fractured-ocr =====
+thong gu i ca c thong die p ba o lo i hoa c ca c thong die p dieu khien
+
+===== De02-34-78 | De02 câu 34 | trang 16 | question | ascii-vietnamese =====
+Chuẩn 100BaseTX sử dụng bao nhiêu dây của cáp UTP để truyền và nhận dữ liệu
+
+===== De02-35-79 | De02 câu 35 | trang 16 | question | ascii-vietnamese =====
+Chuẩn Ethernet nào sau đây sử dụng cáp xoắn đôi?
+
+===== De02-36-80 | De02 câu 36 | trang 16 | question | ascii-vietnamese =====
+Chức năng nào sau đây không thuộc tầng MAC (Medium Access Control)
+
+===== De02-36-80 | De02 câu 36 | trang 16 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: điều khiển luồng.
+
+===== De02-36-80 | De02 câu 36 | trang 16 | option.b | ascii-vietnamese =====
+di nh di a chi thie t bi
+
+===== De02-36-80 | De02 câu 36 | trang 16 | option.d | ascii-vietnamese =====
+Định khung
+
+===== De02-38-81 | De02 câu 38 | trang 16 | question | ascii-vietnamese =====
+Khi xác định địa chỉ IP máy nhận gói tin không nằm cùng mạng. Trạm gửi sẽ làm gì?
+
+===== De02-38-81 | De02 câu 38 | trang 16 | explanation | ascii-vietnamese =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: Địa chỉ MAC nhận được đổi thành địa chỉ MAC của default gateway để chuyển khung đến default.
+
+===== De02-38-81 | De02 câu 38 | trang 16 | option.a | ascii-vietnamese =====
+Địa chỉ MAC nhận được đổi thành địa chỉ MAC của default gateway để chuyển khung đến default
+
+===== De02-38-81 | De02 câu 38 | trang 16 | option.b | ascii-vietnamese =====
+Dia chỉ IP gửi được đổi thành địa chỉ IP của Router
+
+===== De02-38-81 | De02 câu 38 | trang 16 | option.d | ascii-vietnamese =====
+Địa chỉ MAC nhận được đổi thành địa chỉ MAC của trạm đích của gói tin
+
+===== De02-41-84 | De02 câu 41 | trang 17 | question | ascii-vietnamese =====
+Các mạng con nào sau đây KHÔNG thuộc vùng dia chi IP dùng riêng (Private IP Address) được s
+
+===== De02-42-85 | De02 câu 42 | trang 17 | question | ascii-vietnamese =====
+Theo cấu trúc khung của chuẩn mang Ethernet 802.3, các trường địa chi nguồn và địa chi đích có
+
+===== De02-45-86 | De02 câu 45 | trang 17 | question | ascii-vietnamese =====
+Xác định dia chi mạng con của địa chi IP 190.132.166.4/21
+
+===== De03-2-88 | De03 câu 2 | trang 18 | question | ascii-vietnamese =====
+Thông tin được truyền đi cùng với dữ liệu để cung cấp thông tin về dữ liệu được truyền đi này thì được tham khảo đến với tên là gì?
+
+===== De03-3-89 | De03 câu 3 | trang 18 | option.c | ascii-vietnamese =====
+Phim anh va 4m thanh
+
+===== De03-4-90 | De03 câu 4 | trang 18 | explanation | ascii-vietnamese,letter-digit-ocr =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: sự khác biệt giữa tốc độ truyền và nhận của bên truyền và bên nhận p45.
+
+===== De03-4-90 | De03 câu 4 | trang 18 | option.a | ascii-vietnamese =====
+Các khung được phân phát và đến nơi theo đúng thứ tự đã gởi
+
+===== De03-4-90 | De03 câu 4 | trang 18 | option.c | letter-digit-ocr =====
+sự khác biệt giữa tốc độ truyền và nhận của bên truyền và bên nhận p45
+
+===== De03-4-90 | De03 câu 4 | trang 18 | option.d | ascii-vietnamese =====
+Cùng một khung được nhận nhiều lần ở bên nhận như là những khung khác nhau.
+
+===== De03-5-91 | De03 câu 5 | trang 18 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Chia sé đường truyền vật lý giữa các máy tính ở cùng một nhánh mạng.
+
+===== De03-5-91 | De03 câu 5 | trang 18 | option.a | ascii-vietnamese =====
+Truyền tải thông tin giữa các máy tính không có đường nối kết trực tiếp
+
+===== De03-5-91 | De03 câu 5 | trang 18 | option.d | ascii-vietnamese,spacing-before-punctuation =====
+Truyền tải thông tin giữa hai ứng dụng trên mạng Nó không định tuyến, không truyền giữa ứng dụng, không vượt qua mạng khác > chỉ xử lý việc chia sẻ đường truyền trong mạng LAN cùng nhánh. Note : 20 câu sau(có sai), *có nhiều đề 1a 2b 3a 4b 5c 6b 7c 8a 9a 10bit 11d 12c 13c 14c 15d 16a 17c 18d 19d 20c
+
+===== De03-1-92 | De03 câu 1 | trang 19 | explanation | ascii-vietnamese,fractured-ocr =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: chia se duong truyen va t ly giu a ca c may tinh o cung mot nhanh mang.
+
+===== De03-1-92 | De03 câu 1 | trang 19 | option.b | ascii-vietnamese,fractured-ocr =====
+chia se duong truyen va t ly giu a ca c may tinh o cung mot nhanh mang
+
+===== De03-1-92 | De03 câu 1 | trang 19 | option.c | ascii-vietnamese =====
+Truyền tải thông tin giữa hai ứng dụng trên mạng
+
+===== De03-1-92 | De03 câu 1 | trang 19 | option.d | ascii-vietnamese =====
+Truyền tải thông tin giữa các máy tính không có đường nối kết trực tiếp
+
+===== De03-2-93 | De03 câu 2 | trang 19 | question | ascii-vietnamese =====
+Mục đích của việc xếp các giao thức theo thứ bậc là gì?
+
+===== De03-2-93 | De03 câu 2 | trang 19 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: giảm độ phức tạp tổng thể của việc xây dựng một hệ thống mạng.
+
+===== De03-2-93 | De03 câu 2 | trang 19 | option.b | ascii-vietnamese =====
+giảm độ phức tạp tổng thể của việc xây dựng một hệ thống mạng
+
+===== De03-3-94 | De03 câu 3 | trang 19 | question | ascii-vietnamese =====
+Phát biểu nào không đúng về phương pháp định khung sử dụng cờ bắt đầu và kết thúc?
+
+===== De03-3-94 | De03 câu 3 | trang 19 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: sử dụng một bit đặc biệt để đánh dấu điểm bắt đầu và kết thúc của khung.
+
+===== De03-3-94 | De03 câu 3 | trang 19 | option.a | ascii-vietnamese =====
+Sử dụng một chuỗi bits đặc biệt để đánh dấu điểm bắt đầu và kết thúc của khung
+
+===== De03-3-94 | De03 câu 3 | trang 19 | option.b | ascii-vietnamese =====
+sử dụng một bit đặc biệt để đánh dấu điểm bắt đầu và kết thúc của khung
+
+===== De03-3-94 | De03 câu 3 | trang 19 | option.c | ascii-vietnamese =====
+Tổng số lượng bit dữ liệu trong khung được truyền đi có thể nhiều hơn số bits dữ liệu khi chưa đưa vào khung
+
+===== De03-4-95 | De03 câu 4 | trang 19 | question | ascii-vietnamese =====
+Trong kịch bản trao đổi dữ liệu hai chiều dùng giao thức HDLC như hình sau đây. Hãy cho biết các giá trị X, Y trong khung mà bên B sẽ gởi là gì? Với X là số thứ tự của khung gởi, Y là số thứ tự của khung đang chờ nhận. LX,Y
+
+===== De03-4-95 | De03 câu 4 | trang 19 | warning | ascii-vietnamese =====
+Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu.
+
+===== De03-5-96 | De03 câu 5 | trang 20 | question | ascii-vietnamese =====
+Trong kiến trúc của mạng LAN, các chức năng như định khung, gởi /nhận khung, lấy dữ liệu ra khỏi khung và kiểm tra lỗi dữ liệu trên khung được thực hiện bởi tầng nào?
+
+===== De03-5-96 | De03 câu 5 | trang 20 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tầng MAC.
+
+===== De03-5-96 | De03 câu 5 | trang 20 | option.b | ascii-vietnamese =====
+tang mang
+
+===== De03-5-96 | De03 câu 5 | trang 20 | option.d | ascii-vietnamese =====
+Tang vat ly
+
+===== De03-8-97 | De03 câu 8 | trang 20 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó.
+
+===== De03-8-97 | De03 câu 8 | trang 20 | option.a | ascii-vietnamese =====
+Giao thức cửa sổ trượt cho phép gởi thêm các khung trước khi có hồi báo cho khung đã gửi trước đó
+
+===== De03-8-97 | De03 câu 8 | trang 20 | option.b | ascii-vietnamese =====
+Cho phép người gởi biết được khung gởi đi có đến nơi hay không
+
+===== De03-8-97 | De03 câu 8 | trang 20 | option.c | ascii-vietnamese =====
+Giao thức cửa sổ trượt khắc phục được tình trạng bên nhận không phân biệt được các khung bị trùng lắp do bên gởi gởi lại.
+
+===== De03-8-97 | De03 câu 8 | trang 20 | option.d | ascii-vietnamese =====
+Giao thức cửa sổ trượt khắc phục được tình trạng khung báo nhận có thể bị mất
+
+===== De03-9-98 | De03 câu 9 | trang 20 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Đúng.
+
+===== De03-10-99 | De03 câu 10 | trang 20 | question | ascii-vietnamese =====
+Nhiệm vụ chính của Tầng vat lý là gì?
+
+===== De03-10-99 | De03 câu 10 | trang 20 | explanation | ascii-vietnamese,fractured-ocr =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: truyen ta i ca c bit tre n mot kenh truyen va t ly.
+
+===== De03-10-99 | De03 câu 10 | trang 20 | option.a | ascii-vietnamese,fractured-ocr =====
+truyen ta i ca c bit tre n mot kenh truyen va t ly
+
+===== De03-10-99 | De03 câu 10 | trang 20 | option.b | ascii-vietnamese =====
+Truyền tải các khung (frame) trên một kênh truyền vật lý
+
+===== De03-10-99 | De03 câu 10 | trang 20 | option.c | ascii-vietnamese =====
+Truyền tải các gói tin (packet) giữa hai máy bất kỳ trên mạng
+
+===== De03-11-100 | De03 câu 11 | trang 21 | question | ascii-vietnamese =====
+Bằng cách nào để bên gởi khung biết rằng khung đã đến được nơi nhận?
+
+===== De03-11-100 | De03 câu 11 | trang 21 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Sử dụng Khung báo nhận (acknowledgement).
+
+===== De03-11-100 | De03 câu 11 | trang 21 | option.a | ascii-vietnamese =====
+Gán số thứ tự cho khung
+
+===== De03-11-100 | De03 câu 11 | trang 21 | option.b | ascii-vietnamese =====
+Sử dụng bộ đếm thời gian (timer) kết hợp với sự quá hạn (time-out)
+
+===== De03-11-100 | De03 câu 11 | trang 21 | option.d | ascii-vietnamese =====
+Sử dụng Khung báo nhận (acknowledgement)
+
+===== De03-12-101 | De03 câu 12 | trang 21 | question | ascii-vietnamese,letter-digit-ocr =====
+Trong giao thức cửa sổ trượt (tầng 2), bên nhận có cửa sổ nhận (receiving window) gồm các số thứ tự 4, 5, 6, 7 (như hình), nếu khung số 2 đến bên nhận: p58 Bi °
+
+===== De03-12-101 | De03 câu 12 | trang 21 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Bên nhận sẽ xóa khung này đi.
+
+===== De03-12-101 | De03 câu 12 | trang 21 | warning | ascii-vietnamese =====
+Phụ thuộc hình cửa sổ nhận; đáp án C phù hợp vì khung 2 nằm ngoài cửa sổ 4–7.
+
+===== De03-12-101 | De03 câu 12 | trang 21 | option.b | ascii-vietnamese =====
+Bên nhận vẫn nhận khung này và gởi lên tầng mạng
+
+===== De03-12-101 | De03 câu 12 | trang 21 | option.c | ascii-vietnamese =====
+Bên nhận sẽ xóa khung này đi
+
+===== De03-12-101 | De03 câu 12 | trang 21 | option.d | ascii-vietnamese =====
+Bên nhận sẽ di chuyển cửa sau lên một bước Cửa sổ nhận đang mở cho các khung 4, 5, 6, 7 Khung số 2 đến > Nằm ngoài cửa sổ -> Bị loại bỏ
+
+===== De03-13-102 | De03 câu 13 | trang 21 | option.a | ascii-vietnamese =====
+Các khung được tạo ra tại tầng liên kết dữ liệu
+
+===== De03-13-102 | De03 câu 13 | trang 21 | option.b | ascii-vietnamese =====
+dữ liệu của khung chứa dữ liệu của ứng dụng cùng với tất cả các tiêu đề của các tầng phía trên
+
+===== De03-13-102 | De03 câu 13 | trang 21 | option.d | ascii-vietnamese =====
+Các khung chứa cả tiêu đề (Header) và phần theo dõi (Trailer)
+
+===== De03-14-103 | De03 câu 14 | trang 21 | option.a | ascii-vietnamese =====
+Đường dial qua mạng điện thoại
+
+===== De03-16-104 | De03 câu 16 | trang 22 | explanation | ascii-vietnamese =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: du lieu so.
+
+===== De03-16-104 | De03 câu 16 | trang 22 | option.a | ascii-vietnamese =====
+du lieu so
+
+===== De03-16-104 | De03 câu 16 | trang 22 | option.c | ascii-vietnamese =====
+Phim anh va 4m thanh
+
+===== De03-18-106 | De03 câu 18 | trang 22 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: kho ng ca n co che dieu khien ta c nghe n.
+
+===== De03-18-106 | De03 câu 18 | trang 22 | option.b | ascii-vietnamese =====
+Thông tin được truyền đi trong những đơn vị là gói tin
+
+===== De03-18-106 | De03 câu 18 | trang 22 | option.d | ascii-vietnamese =====
+kho ng ca n co che dieu khien ta c nghe n
+
+===== De03-20-108 | De03 câu 20 | trang 22 | question | ascii-vietnamese =====
+Thông tin của giao thức được truyền cùng với dữ liệu được đặt ở đâu trong đơn vị dữ liệu của giao thức?
+
+===== De03-20-108 | De03 câu 20 | trang 22 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: tie u de (header).
+
+===== De03-20-108 | De03 câu 20 | trang 22 | option.d | ascii-vietnamese =====
+ky tu ----------------------------------------------------------------------------------------------------------------------------- cac cau tn tong hop tucac file
+
+===== De04-1-109 | De04 câu 1 | trang 22 | question | ascii-vietnamese =====
+Mạng điện thoại hoạt động theo cơ chế chuyển gói?
+
+===== De04-2-110 | De04 câu 2 | trang 23 | question | ascii-vietnamese =====
+Thành phần nào sau đây không thuộc đường biên mạng?
+
+===== De04-2-110 | De04 câu 2 | trang 23 | option.d | ascii-vietnamese =====
+Các ứng dụng / dịch vụ mang Đường biên mạng gồm các host và ctr ứng dụng
+
+===== De04-4-112 | De04 câu 4 | trang 23 | question | ascii-vietnamese =====
+Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển mạch (Circuit switching network)?
+
+===== De04-4-112 | De04 câu 4 | trang 23 | option.a | ascii-vietnamese =====
+Thường sử dụng phương pháp theo tần số và/hoặc theo thời gian
+
+===== De04-4-112 | De04 câu 4 | trang 23 | option.c | ascii-vietnamese =====
+Can thiết lập kết nối trước khi truyền tin
+
+===== De04-6-114 | De04 câu 6 | trang 23 | explanation | letter-digit-ocr =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 3 b4 c2 d1 Đường biên mạng, đường trục mạng, mạng truy cập.
+
+===== De04-6-114 | De04 câu 6 | trang 23 | option.a | letter-digit-ocr =====
+3 b4 c2 d1 Đường biên mạng, đường trục mạng, mạng truy cập
+
+===== De04-6-114 | De04 câu 6 | trang 23 | option.d | ascii-vietnamese =====
+1 duong bie n mang, duong truc mang, mang truy cap
+
+===== De04-7-115 | De04 câu 7 | trang 23 | question | ascii-vietnamese =====
+Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Passing Network)?
+
+===== De04-7-115 | De04 câu 7 | trang 23 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: khong can co che dieu khien tac nghen.
+
+===== De04-7-115 | De04 câu 7 | trang 23 | option.d | ascii-vietnamese =====
+khong can co che dieu khien tac nghen
+
+===== De04-8-116 | De04 câu 8 | trang 24 | question | ascii-vietnamese,fractured-ocr =====
+chu ng ta phai ma t thoi gian bao la u de goi mot ta p tin co dung luong 320,000 bits tu may a to i may b thong qua mot mang chuyen ma ch, biet ra ng (1) ta t ca ca c lien kie t la 1.536 mbps (2) ta t ca ca c lien ket de u su dung ky thuat phan chia theo thoi gian voi 12 slots/sec (3) thoi gian thie t la p ket no i la 500ms (ghi chu 1mb=1000kb; 1kb=1000bit)?
+
+===== De04-9-117 | De04 câu 9 | trang 24 | option.b | ascii-vietnamese =====
+Đảm bảo việc truyền dữ liệu giữa các host ở cách xa nhau
+
+===== De04-9-117 | De04 câu 9 | trang 24 | option.c | ascii-vietnamese =====
+Sử dụng hai chế độ truyền tin là: chuyển mạch và chuyển gói
+
+===== De04-10-118 | De04 câu 10 | trang 24 | question | ascii-vietnamese =====
+Mã Morse sử dụng hai tín hiệu TIC và TE để mã hóa dữ liệu như thế nào?
+
+===== De04-10-118 | De04 câu 10 | trang 24 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Sử dụng một chuỗi tín hiệu TIC và TE không đều nhau.
+
+===== De04-10-118 | De04 câu 10 | trang 24 | option.a | ascii-vietnamese =====
+Sử dụng một chuỗi tín hiệu TIC và TE không đều nhau
+
+===== De04-10-118 | De04 câu 10 | trang 24 | option.b | ascii-vietnamese =====
+Sử dụng một chuỗi 4 tín hiệu TIC va TE
+
+===== De04-10-118 | De04 câu 10 | trang 24 | option.c | ascii-vietnamese =====
+Sử dụng một chuỗi 8 tín hiệu TIC và TE
+
+===== De04-10-118 | De04 câu 10 | trang 24 | option.d | ascii-vietnamese =====
+Sử dụng một chuỗi tín hiệu TIC và TE đều nhau, tùy thuộc vào số lượng dữ liệu truyền đi
+
+===== De04-11-119 | De04 câu 11 | trang 24 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: dung.
+
+===== De04-11-119 | De04 câu 11 | trang 24 | option.a | ascii-vietnamese =====
+dung
+
+===== De04-13-121 | De04 câu 13 | trang 25 | warning | ascii-vietnamese =====
+Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc.
+
+===== De04-13-121 | De04 câu 13 | trang 25 | option.a | ascii-vietnamese =====
+Phương pháp phân chia theo tần số
+
+===== De04-13-121 | De04 câu 13 | trang 25 | option.d | ascii-vietnamese =====
+Phương pháp phân chia theo thời gian
+
+===== De04-14-122 | De04 câu 14 | trang 25 | question | ascii-vietnamese =====
+FTTH viết tắt là gì? Có thể vào câu điền
+
+===== De04-15-123 | De04 câu 15 | trang 25 | question | ascii-vietnamese =====
+Mệnh dé nào sau đây đề cập đến "truy cập mang"?
+
+===== De04-15-123 | De04 câu 15 | trang 25 | option.c | ascii-vietnamese =====
+Các End Systems: điểm khởi đầu và kết thúc của các dòng thông tin
+
+===== De04-15-123 | De04 câu 15 | trang 25 | option.d | ascii-vietnamese =====
+Các “máy chủ/trạm làm việc” và các ứng dụng mạng D: CÁC THÀNH PHAN
+
+===== De04-1-124 | De04 câu 1 | trang 25 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng.
+
+===== De04-1-124 | De04 câu 1 | trang 25 | option.a | ascii-vietnamese =====
+Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng
+
+===== De04-1-124 | De04 câu 1 | trang 25 | option.c | ascii-vietnamese =====
+Truyền tải các khung (frame) trên một kênh truyền vật lý
+
+===== De04-2-125 | De04 câu 2 | trang 25 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Tầng liên kết dữ liệu (Data link layer).
+
+===== De04-3-126 | De04 câu 3 | trang 25 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Truyền tải các thông điệp (message) từ tiến trình đến tiến trình.
+
+===== De04-3-126 | De04 câu 3 | trang 25 | option.b | ascii-vietnamese =====
+Truyền tải các khung (frame) trên một kênh truyền vật lý
+
+===== De04-3-126 | De04 câu 3 | trang 25 | option.c | ascii-vietnamese =====
+Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng
+
+===== De04-4-127 | De04 câu 4 | trang 26 | option.b | letter-digit-ocr =====
+5 c7
+
+===== De04-5-128 | De04 câu 5 | trang 26 | question | ascii-vietnamese =====
+Dịch vụ mạng nào dưới đây vận hành theo mô hình thư tín?
+
+===== De04-5-128 | De04 câu 5 | trang 26 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Không nối kết.
+
+===== De04-5-128 | De04 câu 5 | trang 26 | option.d | ascii-vietnamese =====
+Không có dịch vụ nào hoạt động theo mô hình này
+
+===== De04-6-129 | De04 câu 6 | trang 26 | question | ascii-vietnamese =====
+Mệnh đề nào sau đây không đề cập đến hình trạng mạng dạng sao?
+
+===== De04-6-129 | De04 câu 6 | trang 26 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Không xảy ra đụng độ nên hiệu suất đạt 100%.
+
+===== De04-6-129 | De04 câu 6 | trang 26 | option.a | ascii-vietnamese =====
+Không xảy ra đụng độ nên hiệu suất đạt 100%
+
+===== De04-6-129 | De04 câu 6 | trang 26 | option.c | spacing-before-punctuation =====
+Mạng vẫn hoạt động thi thêm hoặc bớt các máy tính ø . Không hoạt động nếu thiết bị tập trung (Hub) bị lỗi
+
+===== De04-7-130 | De04 câu 7 | trang 26 | question | ascii-vietnamese =====
+Hệ thống mạng có một kênh giao tiếp được chia sẻ bởi tất cả các máy tính, khi một máy tính gởi tin thì tất cả các máy tính còn lại đều nhận được?
+
+===== De04-8-131 | De04 câu 8 | trang 27 | question | ascii-vietnamese =====
+Phân loại mạng máy tính nào không theo phạm vi địa lý?
+
+===== De04-9-132 | De04 câu 9 | trang 27 | question | ascii-vietnamese =====
+LAN là từ viết tắt của từ nào?
+
+===== De04-11-134 | De04 câu 11 | trang 27 | option.b | letter-digit-ocr =====
+6 c5
+
+===== De04-12-135 | De04 câu 12 | trang 27 | question | ascii-vietnamese =====
+WAN viết tắt của cụm từ nào?
+
+===== De04-13-136 | De04 câu 13 | trang 27 | option.b | ascii-vietnamese =====
+Xác định tốc độ truyền nhận giữa hai bên
+
+===== De04-13-136 | De04 câu 13 | trang 27 | option.c | ascii-vietnamese =====
+Xác định ai sẽ nhận thông tin trước
+
+===== De04-14-137 | De04 câu 14 | trang 28 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Truyền tải các khung (frame) trên một kênh truyền vật lý.
+
+===== De04-14-137 | De04 câu 14 | trang 28 | option.a | ascii-vietnamese =====
+Truyền tải các khung (frame) trên một kênh truyền vật lý
+
+===== De04-14-137 | De04 câu 14 | trang 28 | option.b | ascii-vietnamese =====
+Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng
+
+===== De04-15-138 | De04 câu 15 | trang 28 | explanation | ascii-vietnamese =====
+Tầng vật lý (Physical layer) chịu trách nhiệm truyền chuỗi bit thô qua môi trường truyền vật lý. Gói tin thuộc tầng mạng, khung thuộc tầng liên kết dữ liệu, còn thông điệp giữa các tiến trình thuộc tầng vận chuyển.
+
+===== De04-15-138 | De04 câu 15 | trang 28 | option.b | ascii-vietnamese =====
+Truyền tải các gói tin (packet) qua một mạng hoặc một liên mạng
+
+===== De04-15-138 | De04 câu 15 | trang 28 | option.c | ascii-vietnamese =====
+Truyền tải các khung (frame) trên một kênh truyền vật lý
+
+===== De04-16-139 | De04 câu 16 | trang 28 | question | ascii-vietnamese =====
+Phát biểu nào sau đây là SAI khi đề cập đến tầng Liên kết dữ liệu?
+
+===== De04-16-139 | De04 câu 16 | trang 28 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Dữ liệu của khung chỉ chứa dữ liệu cùng với tất ca Header của các tầng bên trên.
+
+===== De04-16-139 | De04 câu 16 | trang 28 | warning | ascii-vietnamese =====
+Phương án A và C diễn đạt gần nhau; giữ đáp án gốc theo ngữ cảnh giáo trình.
+
+===== De04-16-139 | De04 câu 16 | trang 28 | option.a | ascii-vietnamese =====
+Dữ liệu của khung chỉ chứa dữ liệu của các tầng bên trên
+
+===== De04-16-139 | De04 câu 16 | trang 28 | option.b | ascii-vietnamese =====
+Các khung được tạo ra tại tầng liên kết dữ liệu
+
+===== De04-16-139 | De04 câu 16 | trang 28 | option.c | ascii-vietnamese =====
+Dữ liệu của khung chỉ chứa dữ liệu cùng với tất ca Header của các tầng bên trên
+
+===== De04-16-139 | De04 câu 16 | trang 28 | option.d | ascii-vietnamese =====
+Các khung bao gồm Header và Trailer
+
+===== De04-17-140 | De04 câu 17 | trang 28 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Giao diện.
+
+===== De04-17-140 | De04 câu 17 | trang 28 | option.c | ascii-vietnamese =====
+Dich vụ
+
+===== De04-17-140 | De04 câu 17 | trang 28 | option.d | ascii-vietnamese =====
+Phan mém mang
+
+===== De04-18-141 | De04 câu 18 | trang 28 | question | ascii-vietnamese =====
+MAN là viết tat của cum từ nào?
+
+===== De04-19-142 | De04 câu 19 | trang 28 | question | ascii-vietnamese =====
+Các dạng truyền tai (traffic) trên mang gồm?
+
+===== De04-20-143 | De04 câu 20 | trang 29 | question | ascii-vietnamese =====
+“Mỗi máy tính được kết nối vào một thiết bị tập trung thông qua một liên kết mạng” mệnh đề này đề cập đến hình trạng mạng?
+
+===== De04-21-144 | De04 câu 21 | trang 29 | question | ascii-vietnamese =====
+Mục đích của việc tổ chức hệ thống mạng được thành một chồng (stack) các tang (lớp) khác nhau là để giảm độ phức tạp trong quá trình thiết kế và xây dựng?
+
+===== De04-23-146 | De04 câu 23 | trang 29 | question | ascii-vietnamese =====
+Hãy cho biết tên gọi của hình trạng mạng (topology) sau là gì?
+
+===== De04-23-146 | De04 câu 23 | trang 29 | explanation | ascii-vietnamese =====
+Đáp án là Ring (vòng). Dấu hiệu nhận biết: mỗi nút nối với hai nút lân cận và toàn bộ các liên kết tạo thành một vòng khép kín. Star có một thiết bị trung tâm, Bus dùng một đường trục chung, còn Tree phân nhánh theo dạng cây.
+
+===== De04-23-146 | De04 câu 23 | trang 29 | warning | ascii-vietnamese =====
+Hình minh họa này được phục dựng sạch để thay phần hình bị mất khi trích PDF; nội dung thể hiện đúng đặc trưng Ring topology và đáp án đã được đối chiếu với tài liệu nguồn.
+
+===== De04-24-147 | De04 câu 24 | trang 29 | question | ascii-vietnamese,letter-digit-ocr =====
+Hãy cho biết tên gọi của hình trang mang (topology) sau là gi? PC1 PC2 PC3 PC4
+
+===== De04-25-148 | De04 câu 25 | trang 30 | question | ascii-vietnamese =====
+Hãy cho biết tên gọi của hình trạng mang (topology) sau là gi?
+
+===== De04-25-148 | De04 câu 25 | trang 30 | option.d | letter-digit-ocr =====
+Ring (vòng) Tự luận C2
+
+===== De04-1-149 | De04 câu 1 | trang 30 | question | ascii-vietnamese,spacing-before-punctuation =====
+Mã Morse sử dụng 2 tín hiệu tic (ký hiệu là dấu chấm . ) và te (ký hiệu là đầu gạch ngang -) để mã hóa dữ liệu truyền đi, hãy cho biết mã Morse của chuỗi kỹ efbh
+
+===== De04-1-149 | De04 câu 1 | trang 30 | explanation | spacing-before-punctuation =====
+Mã Morse: E = ., F = ..-., G = --., H = .....
+
+===== De04-1-149 | De04 câu 1 | trang 30 | option.a | spacing-before-punctuation =====
+. ..-. --. ....
+
+===== De04-1-149 | De04 câu 1 | trang 30 | option.b | spacing-before-punctuation =====
+.. .--. -- ....
+
+===== De04-1-149 | De04 câu 1 | trang 30 | option.c | spacing-before-punctuation =====
+. ...- --. ....
+
+===== De04-1-149 | De04 câu 1 | trang 30 | option.d | spacing-before-punctuation =====
+.. ..-. -. ....
+
+===== De04-2-150 | De04 câu 2 | trang 30 | question | letter-digit-ocr =====
+Tìm trên trang https://www.arubanetworks.com/ va cho biết thông số Switch Capacity (khả năng chuyển mạch) của thiết bị chuyển mạch (Switch) Aruba 2540 24G 4SFP + Switch (JL354A)?
+
+===== De04-2-150 | De04 câu 2 | trang 30 | explanation | letter-digit-ocr =====
+Thông số switching capacity của Aruba 2540 24G 4SFP+ (JL354A) là 128 Gbps.
+
+===== De04-9-156 | De04 câu 9 | trang 31 | question | ascii-vietnamese =====
+Chúng ta phải mất thời gian bao lâu để gởi một tập tin có dung lượng 640,000 bits từ máy A tới máy B thông qua một mạng chuyển mạch, biết rằng (1) Tất cả các liên kết là 1.536 Mbps (2) Tất cả các liên kết đều sử dụng kỹ thuật phân chia theo thời gian với 6 slots/sec (3) Thời gian thiết lập kết nối là 500ms (ghi chú 1Mb=1000Kb; 1Kb=1000bit)?
+
+===== De04-2-159 | De04 câu 2 | trang 33 | question | ascii-vietnamese =====
+“Các bit "1" được mã hóa bằng một điện thế dương, sau đó đến một điện thế âm và tiếp tục như thế” là định nghĩa của phương pháp mã hóa đường truyền? Giáo trình trang 37
+
+===== De04-3-160 | De04 câu 3 | trang 33 | question | letter-digit-ocr =====
+"Mỗi bit "1" được thể hiện bằng một chuyển đổi điện thé từ V0 về 0" là định nghĩa của phương pháp mã hóa đường truyền?
+
+===== De04-4-161 | De04 câu 4 | trang 33 | question | ascii-vietnamese =====
+"Mỗi bit “1” được thể hiện bằng một chuyển đổi từ điện thế khác không về điện thế không. Giá trị của điện thế khác không đầu tiên là dương sau đó là âm và tiếp tục chuyển đổi qua lại như thế" là định nghĩa của phương pháp mã hóa đường truyền?
+
+===== De04-8-165 | De04 câu 8 | trang 34 | option.c | letter-digit-ocr =====
+16 d8
+
+===== De04-10-167 | De04 câu 10 | trang 34 | question | ascii-vietnamese =====
+Bộ mã ASCII chuẩn có thể mã hóa được bao nhiêu ký tự?
+
+===== De04-12-169 | De04 câu 12 | trang 34 | question | ascii-vietnamese =====
+Chất lượng của âm thanh & phim ảnh sau khi số hóa phụ thuộc vào?
+
+===== De04-12-169 | De04 câu 12 | trang 34 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Cả ba yếu tố trên.
+
+===== De04-12-169 | De04 câu 12 | trang 34 | warning | ascii-vietnamese =====
+Dung lượng file là hệ quả, không phải tham số chất lượng độc lập; câu diễn đạt chưa chặt.
+
+===== De04-12-169 | De04 câu 12 | trang 34 | option.a | ascii-vietnamese =====
+Cả ba yếu tố trên
+
+===== De04-12-169 | De04 câu 12 | trang 34 | option.c | ascii-vietnamese =====
+Dung lượng tập tin sau khi mã hóa
+
+===== De04-12-169 | De04 câu 12 | trang 34 | option.d | ascii-vietnamese =====
+Tần suất lấy mẫu
+
+===== De04-13-170 | De04 câu 13 | trang 35 | option.d | ascii-vietnamese =====
+144 Ảnh màu sử dụng 24 bits để số hóa một điểm ảnh Vậy số lượng bit cần để số hóa là 72*72*24 = 124416 bits Mà 1 byte = 8 bits => Can 124416/8 = 15552 bytes
+
+===== De04-14-171 | De04 câu 14 | trang 35 | question | ascii-vietnamese =====
+Chuẩn mang Ethernet 10Base2 cho phép kết nối hai máy tính có khoảng cách xa nhất là?
+
+===== De04-15-172 | De04 câu 15 | trang 35 | question | ascii-vietnamese =====
+Chuẩn mạng Ethernet 10Base5 cho phép kết nối hai máy tính có khoảng cách xa nhất là?
+
+===== De04-16-173 | De04 câu 16 | trang 35 | question | ascii-vietnamese =====
+Chuẩn mạng Ethernet 10BaseT cho phép kết nối hai máy tính có khoảng cách xa nhất là?
+
+===== De04-18-175 | De04 câu 18 | trang 36 | question | ascii-vietnamese =====
+Khi sử dụng tín hiệu tuần tự để mã hóa đường truyền, ta có thể sử dụng?
+
+===== De04-19-176 | De04 câu 19 | trang 36 | question | ascii-vietnamese =====
+Loại cáp nào sau đây sử dụng các đầu nối ST, SC và LC?
+
+===== De04-20-177 | De04 câu 20 | trang 36 | question | ascii-vietnamese =====
+Loại cáp nào sau đây sử dụng ngoài trời kết nối các hệ thống mạng của các tòa nhà lại với nhau?
+
+===== De04-21-178 | De04 câu 21 | trang 36 | question | ascii-vietnamese =====
+Loại cáp nào sau đây sử dụng đầu nối RJ45?
+
+===== De04-22-179 | De04 câu 22 | trang 36 | question | ascii-vietnamese =====
+Loại cáp nào sau đây được sử dụng trong mạng hình sao?
+
+===== De04-23-180 | De04 câu 23 | trang 36 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Khi truyền tín hiệu, công suất của tín hiệu nên bằng hoặc nhỏ hơn nhiều công suất của nhiễu.
+
+===== De04-23-180 | De04 câu 23 | trang 36 | option.a | ascii-vietnamese =====
+Nhiễu có thể sinh ra từ sự chuyển động của các điện tử trên kênh truyền.
+
+===== De04-23-180 | De04 câu 23 | trang 36 | option.b | ascii-vietnamese =====
+Khi truyền tín hiệu, công suất của tín hiệu nên bằng hoặc nhỏ hơn nhiều công suất của nhiễu
+
+===== De04-23-180 | De04 câu 23 | trang 36 | option.c | ascii-vietnamese =====
+Khi truyền tín hiệu, công suất của tín hiệu nên lớn hơn nhiều công suất của nhiễu
+
+===== De04-23-180 | De04 câu 23 | trang 36 | option.d | ascii-vietnamese =====
+Nhiễu có thể sinh ra do điều kiện môi trường bên ngoài.
+
+===== De04-24-181 | De04 câu 24 | trang 37 | question | ascii-vietnamese =====
+Mệnh đề nào sau đây không đúng, khi đề cập đến băng thông (W) của kênh truyền?
+
+===== De04-24-181 | De04 câu 24 | trang 37 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Kênh truyền có băng thông càng lớn càng dễ xảy ra nhiễu..
+
+===== De04-24-181 | De04 câu 24 | trang 37 | option.a | ascii-vietnamese =====
+Băng thông của kênh truyền là khoảng tần số của những tín hiệu mà bên nghe còn có thể nhận ra được.
+
+===== De04-24-181 | De04 câu 24 | trang 37 | option.b | ascii-vietnamese =====
+Kênh truyền có băng thông càng lớn càng dễ xảy ra nhiễu.
+
+===== De04-25-182 | De04 câu 25 | trang 37 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Là tiến trình mã hóa các loại dữ liệu khác nhau như văn bản, âm thanh, hình anh, phim ảnh bằng mã nhị phân.
+
+===== De04-25-182 | De04 câu 25 | trang 37 | option.b | ascii-vietnamese =====
+Là tiến trình thay thế các thiết bị truyền tải dữ liệu dạng tuần tự bằng các thiết bị kỹ thuật số
+
+===== De04-25-182 | De04 câu 25 | trang 37 | option.c | ascii-vietnamese =====
+Là tiến trình mã hóa các loại dữ liệu khác nhau như văn bản, âm thanh, hình anh, phim ảnh bằng mã nhị phân
+
+===== De04-26-183 | De04 câu 26 | trang 37 | question | ascii-vietnamese =====
+Thiết bị mang nào sau đây hoạt động ở tầng vật lý của mô hình OSI?
+
+===== De04-27-184 | De04 câu 27 | trang 37 | question | ascii-vietnamese =====
+Tín hiệu tuần tự là?
+
+===== De04-27-184 | De04 câu 27 | trang 37 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Là tín hiệu có biên độ thay đổi liên tục theo thời gian..
+
+===== De04-27-184 | De04 câu 27 | trang 37 | option.c | ascii-vietnamese =====
+Tín hiệu có biên độ không thay đổi trong một khoảng thời gian.
+
+===== De04-27-184 | De04 câu 27 | trang 37 | option.d | ascii-vietnamese =====
+Là tín hiệu có biên độ thay đổi liên tục theo thời gian.
+
+===== De04-29-186 | De04 câu 29 | trang 38 | question | ascii-vietnamese =====
+Để mỗi tín hiệu khi truyền tải mang 03 bit dữ liệu, thì chúng ta cần bao nhiêu mẫu tín hiệu khác nhau? 2^3
+
+===== De04-30-187 | De04 câu 30 | trang 38 | option.c | ascii-vietnamese =====
+Khung (Frame)
+
+===== De04-30-187 | De04 câu 30 | trang 38 | option.d | ascii-vietnamese =====
+Gói tin (Packet)
+
+===== De04-1-188 | De04 câu 1 | trang 38 | question | ascii-vietnamese =====
+“Khung bị lỗi bị loại bỏ, những khung tiếp sau vẫn được nhận và được lưu tạm trong vùng đệm, khi tới thời gian time-out bên gửi chỉ gửi lại khung bị mất” mệnh đề này đề cập đến cách thức xử lý nào của bên nhận khung bị lỗi
+
+===== De04-2-189 | De04 câu 2 | trang 38 | question | ascii-vietnamese =====
+“Nếu một khung bi sai thì ta không xác định được khung nào tiếp theo” mệnh dé này thể hiện khuyết điểm của phương pháp định khung nào
+
+===== De04-3-190 | De04 câu 3 | trang 38 | question | ascii-vietnamese =====
+“Người nhận gửi thông tin về cho người gửi cho phép người gửi gửi thêm dữ liệu, cũng như báo với người gửi những gì mà người nhận đang làm” mệnh đề này đề cập đến tiếp cận điều khiển luồng dựa trên
+
+===== De04-3-190 | De04 câu 3 | trang 38 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Phan hồi (Feedback based).
+
+===== De04-3-190 | De04 câu 3 | trang 38 | option.c | ascii-vietnamese =====
+Phan hồi (Feedback based)
+
+===== De04-4-191 | De04 câu 4 | trang 39 | question | ascii-vietnamese =====
+“Phương pháp kiểm tra chẵn lẻ” có thể phát hiện được bao nhiêu % số lỗi xảy ra trên đường truyền?
+
+===== De04-4-191 | De04 câu 4 | trang 39 | explanation | ascii-vietnamese =====
+Parity phát hiện chắc chắn mọi lỗi có số bit đảo là lẻ, nhưng không có một tỷ lệ phần trăm cố định nếu đề không cho mô hình xác suất lỗi.
+
+===== De04-29-192 | De04 câu 29 | trang 45 | question | ascii-vietnamese =====
+Trong phương pháp sử dụng cờ bắt đầu & kết thúc khung cùng với các bit độn, với mẫu bit đặc biệt để làm cờ là 01111110, với đoạn dữ liệu gốc là 11001111111001110001111111000000, thì dữ liệu chuyển lên kênh truyền sẽ là:
+
+===== De04-29-192 | De04 câu 29 | trang 45 | option.d | ascii-vietnamese =====
+1100111111100011100011111110000000 Do cờ có 6 bit 1 liên tiếp nên trong dữ liệu gốc nếu gặp 5 bit 1 liên tiếp -> phải chèn 1 bit 0 ngay sau đó (Để không bị trùng với cờ)
+
+===== De04-30-193 | De04 câu 30 | trang 46 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Khung (Frame).
+
+===== De04-30-193 | De04 câu 30 | trang 46 | option.a | ascii-vietnamese =====
+Gói tin (Packet)
+
+===== De04-30-193 | De04 câu 30 | trang 46 | option.b | ascii-vietnamese =====
+Khung (Frame)
+
+===== De04-30-193 | De04 câu 30 | trang 46 | option.d | ascii-vietnamese,letter-digit-ocr =====
+Byte Tự luận C4 Cau 1: Hình bên dưới là một đoạn dữ liệu trao đổi giữa 02 máy tính trên mạng sử dụng phương pháp định khung đếm ký tự (Character Count), bạn hãy cho biết đoạn dữ liệu đó bao gồm mấy khung? và các ký tự trong mỗi khung? 5 2 8 4 6 8 fA 8B 9 O ff 2 B 2 8B BS 9 0p A P2 Frame 1: số 5 đầu tiên, vậy lấy 5 khung là 5-2-3-4~6 Frame 2: tiếp theo là số 8, lấy 8 khung là8-1-8-9-0-1-2-3 Frame 3: tiếp theo lấy 2 khung là 2 - 3 Frame 4: cuối cùng lấy 5 khung là 5-9-0-1-~2 Cau 2: Trong phương pháp định khung sử dụng byte làm cờ và các byte độn, với đoạn dữ liệu gốc như bên dưới, thì đoạn dữ liệu chuyển lên kênh truyền sẽ là gì? A B |ESCIESC/FLAG| B Cứ có 1 ESC thi chèn thêm 1 ESC, có 1 FLAG thì chèn ESC vào trước FLAG => AB ESC ESC ESC ESC ESC FLAG B
+
+===== De04-1-194 | De04 câu 1 | trang 48 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Mạng cục bộ - không kết nối không báo nhận (LAN).
+
+===== De04-2-195 | De04 câu 2 | trang 49 | question | ascii-vietnamese =====
+"Nếu đường truyền bận, đợi trong một khoảng thời gian ngẫu nhiên rồi tiếp tục nghe lại đường truyền", mệnh đề này đề cập tới phương pháp trì hoãn gởi khung nào khi đường truyền bận?
+
+===== De04-2-195 | De04 câu 2 | trang 49 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Non-persistent CSMA (Theo dõi không kiên trì).
+
+===== De04-2-195 | De04 câu 2 | trang 49 | option.b | ascii-vietnamese =====
+Non-persistent CSMA (Theo dõi không kiên trì)
+
+===== De04-3-196 | De04 câu 3 | trang 49 | question | ascii-vietnamese =====
+Byte Start of Frame (SOF) của chuẩn mang Ethernet là?
+
+===== De04-4-197 | De04 câu 4 | trang 49 | question | ascii-vietnamese =====
+Cac mạng điện thoại GSM sử dụng phương pháp chia kênh nào?
+
+===== De04-5-198 | De04 câu 5 | trang 49 | question | ascii-vietnamese,letter-digit-ocr =====
+Cho sơ đồ mạng như hình, ban hãy cho biết có bao nhiêu miền đụng độ (Collision Domain)? « <P Giải thích: ® Router có n cổng => có n Broadcast domain ® 2 router kết nối với nhau => có 1 collision domain « Kết nối trực tiếp giữa router và switch => có 1 collision domain s Switch kết nối với n pc => có n collision domain ¢ Switch kết nối với 1 hub => có 1 collision domain ¢ Hub kết nối với n pc => chỉ có 1 collision domain ¢ Bridge xem như switch Nhin hinh ta thay: 2 Router kết nối với nhau qua Hub -> 1 Collision Domain Bên trai, Router kết nối trực tiếp với switch -> 1 Collision Domain 1 Switch kết nối với 2 PC -> 2 Collision Domain Bên trái, 1 Hub kết nối với 2 PC -> 1 Collision Domain Bên phải, 1 Hub kết nối với 3 PC -> 1 Collision Domain Tổng là1+1+2+1+1=6
+
+===== De04-5-198 | De04 câu 5 | trang 49 | warning | ascii-vietnamese =====
+Câu hỏi phụ thuộc hình/sơ đồ; mở ảnh trang gốc để đối chiếu.
+
+===== De04-5-198 | De04 câu 5 | trang 49 | option.d | ascii-vietnamese =====
+4 gia i thi ch: * Router co n co ng => co n broadcast domain * 2 Router ket no i voi nhau => co 1 collision domain * ket no i truc tiep giu a Router va Switch => co 1 collision domain * Switch ket no i voi n pc => co n collision domain * Switch ket no i voi 1 Hub => co 1 collision domain * Hub ket no i voi n pc => chi co 1 collision domain * Bridge xem nhu Switch nhi n hinh ta tha y: 2 Router ket no i voi nhau qua Hub -> 1 collision domain be n tra i, Router ket no i truc tiep voi Switch -> 1 collision domain 1 Switch ket no i voi 2 pc -> 2 collision domain be n tra i, 1 Hub ket no i voi 2 pc -> 1 collision domain be n phai, 1 Hub ket no i voi 3 pc -> 1 collision domain to ng la 1 + 1 + 2 + 1 + 1 = 6
+
+===== De04-6-199 | De04 câu 6 | trang 50 | question | ascii-vietnamese =====
+Chuẩn mạng Ethernet 1000-Base-X, sử dụng phương pháp mã hóa đường truyền?
+
+===== De04-7-200 | De04 câu 7 | trang 50 | question | ascii-vietnamese =====
+Chuẩn mạng Ethernet 1000Base-LX, cho phép kết nối hai máy tính có khoảng cách xa nhất là? 1000.1.10 = 10000
+
+===== De04-7-200 | De04 câu 7 | trang 50 | explanation | ascii-vietnamese =====
+1000BASE-LX chuẩn có tầm xa tối đa khoảng 5 km trên sợi quang đơn mode; 10 km là biến thể mở rộng/LX-LH hoặc LX10.
+
+===== De04-8-201 | De04 câu 8 | trang 50 | question | ascii-vietnamese =====
+Chuẩn mạng Ethernet 10Base-2, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là? -> 10.2.10 = 200 ~ 185m
+
+===== De04-9-202 | De04 câu 9 | trang 51 | question | ascii-vietnamese =====
+Chuẩn mạng Ethernet 10Base-5, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là? -> 10.5.10 = 500m
+
+===== De04-10-203 | De04 câu 10 | trang 51 | question | ascii-vietnamese =====
+Chuẩn mang Ethernet 10Base-T, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là?
+
+===== De04-11-204 | De04 câu 11 | trang 51 | question | ascii-vietnamese =====
+Chuẩn mạng Ethernet 10GBASE-LR, cho phép kết nối hai máy tính có khoảng cách xa nhất là?
+
+===== De04-14-207 | De04 câu 14 | trang 51 | question | ascii-vietnamese =====
+Giao thức CSMA/CD được sử dụng trong chuẩn mạng nào?
+
+===== De04-14-207 | De04 câu 14 | trang 51 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Ethernet.
+
+===== De04-15-208 | De04 câu 15 | trang 52 | question | ascii-vietnamese =====
+Hai mã S và T có cùng chiều dài m bits được gọi là trực giao khi?
+
+===== De04-17-210 | De04 câu 17 | trang 52 | question | ascii-vietnamese =====
+Mệnh đề nào sau đây không đề cập tới phương pháp phân lượt truy cập "Thăm dò phân tán"
+
+===== De04-17-210 | De04 câu 17 | trang 52 | explanation | ascii-vietnamese,letter-digit-ocr =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Sau thời gian đặt chỗ, các trạm không đặt chỗ muốn truyền dữ liệu thì có thể truyền dữ liệu vào khe thời gian sau khe thời gian sau cùng. GTP93.
+
+===== De04-17-210 | De04 câu 17 | trang 52 | option.a | ascii-vietnamese =====
+Sau thời gian đặt chỗ, các trạm không đặt chỗ thì không được phép truyền dữ liệu dù đang có dữ liệu muốn truyền.
+
+===== De04-17-210 | De04 câu 17 | trang 52 | option.b | ascii-vietnamese,letter-digit-ocr =====
+Sau thời gian đặt chỗ, các trạm không đặt chỗ muốn truyền dữ liệu thì có thể truyền dữ liệu vào khe thời gian sau khe thời gian sau cùng. GTP93
+
+===== De04-17-210 | De04 câu 17 | trang 52 | option.d | ascii-vietnamese,letter-digit-ocr,known-ocr-shape =====
+Thời gian được chia thành những “khe” (slot). Một chu kỳ hoạt động của hệ thống bắt đầu bằng N (N=S6 trạm) khe thời gian ngắn dùng để đặt chỗ.
+
+===== De04-18-211 | De04 câu 18 | trang 52 | question | ascii-vietnamese =====
+Phương pháp chia kênh nào dưới đây dựa không dựa trên tần số và thời gian sử dụng của kênh truyền?
+
+===== De04-18-211 | De04 câu 18 | trang 52 | explanation | ascii-vietnamese =====
+CDMA phân chia theo mã, không dựa trực tiếp vào khe thời gian hay dải tần như TDMA/FDMA.
+
+===== De04-18-211 | De04 câu 18 | trang 52 | option.a | ascii-vietnamese =====
+TDMA -> Thời gian
+
+===== De04-18-211 | De04 câu 18 | trang 52 | option.b | ascii-vietnamese =====
+GSM -> Thời gian + Tan số
+
+===== De04-22-215 | De04 câu 22 | trang 53 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Phương pháp truy cập ngẫu nhiên.
+
+===== De04-23-216 | De04 câu 23 | trang 53 | question | ascii-vietnamese =====
+Tầng nào trong mô hình OSI được IEEE chia thành hai tầng con?
+
+===== De04-23-216 | De04 câu 23 | trang 53 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Liên kết dữ liệu.
+
+===== De04-24-217 | De04 câu 24 | trang 53 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Phương pháp chia kênh.
+
+===== De04-25-218 | De04 câu 25 | trang 53 | option.b | letter-digit-ocr =====
+3 c2 d4
+
+===== De04-26-219 | De04 câu 26 | trang 54 | question | ascii-vietnamese =====
+Trong phương pháp CDMA, hai người dùng A và B có mã tương ứng là 11101000 và 10111011, hai người dùng có mã trực giao hay không?
+
+===== De04-27-220 | De04 câu 27 | trang 54 | question | ascii-vietnamese =====
+Trong phương pháp CDMA, hai người dung A và B có mã tương ứng là 11101000 và 10111011, nếu người dùng A gởi đi bit 0 và người dung B gởi đi bit 1, thì tín hiệu tổng trên kênh truyền sẽ là?
+
+===== De04-27-220 | De04 câu 27 | trang 54 | option.b | letter-digit-ocr =====
+20202-200 c0-2020022
+
+===== De04-27-220 | De04 câu 27 | trang 54 | option.d | ascii-vietnamese,letter-digit-ocr =====
+020-20022 A gửi bit 0 -> 0 tương đương với +1 / 1 tương đương với -1 A:11101000->ZA=-1-1-1+1-1+1+1+1 Bgửi bit 1 -> 1 tương đương với +1 / 0 tương đương với -1 B:10111011->ZB=+1-1+1+1+1-1+1+1 => Tin hiệu tổng hợp Z = ZA + ZB=0 -20+200 +2+2 hay0-2020022
+
+===== De04-28-221 | De04 câu 28 | trang 54 | question | ascii-vietnamese =====
+Với chuẩn mạng Ethernet 10GBASE-T sử dụng cáp UTP Cat 6, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là?
+
+===== De04-29-222 | De04 câu 29 | trang 54 | question | ascii-vietnamese =====
+Với chuẩn mạng Ethernet 10GBASE-T sử dụng cáp UTP Cat 6A, cho phép kết nối trực tiếp 02 nút mạng có khoảng cách xa nhất là?
+
+===== De04-30-223 | De04 câu 30 | trang 55 | question | ascii-vietnamese =====
+Địa chỉ nguồn và đích của gói tin trong mạng Ethernet dài bao nhiêu byte?
+
+===== De04-1-224 | De04 câu 1 | trang 55 | question | ascii-vietnamese =====
+"Theo nguyên tắc phân mạng con: (1) Phần nhận dạng máy tinh của địa chi mạng ban dau được giữ nguyên (2) Phần nhận dạng mạng của địa chỉ mạng ban đầu được chia thành 02 phần: phần nhận dạng mạng con và phần nhận dạng máy tính trong mạng con", mệnh đề này là đúng hay sai?
+
+===== De04-2-225 | De04 câu 2 | trang 55 | question | ascii-vietnamese =====
+Cho một mạng con 202.168.41.160/29, địa chỉ IP nào dưới đây không thuộc mang con đó?
+
+===== De04-3-227 | De04 câu 3 | trang 55 | question | ascii-vietnamese =====
+Cho một mạng mà ở đó mỗi router phải tự tính toán và tìm kiếm thông tin về các đường di đến những điểm khác nhau trên mạng, Mạng này đang sử dụng giải thuật chọn đường loại nào?
+
+===== De04-4-228 | De04 câu 4 | trang 56 | question | letter-digit-ocr =====
+Cho sơ đồ mạng như hình, bạn hãy cho biết có bao nhiêu miền đụng độ (Collision Domain) và bao nhiêu miền quảng bá (Broadcast)? Lưu ý: - R1, R2: là các router - S1, S2: là các Switch - B1: là Brigde - H1: Hub PC1 Server! PC2 PC3 Server2 PC4
+
+===== De04-4-228 | De04 câu 4 | trang 56 | explanation | ascii-vietnamese,letter-digit-ocr =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 10 và 5 Tương tự câu 5, nhưng nhớ như sau dễ hơn Switch, Bridge có n cổng thì có n Collision Domain -> S1=3, S2=3, B1=2 Hub kết nối với bao nhiêu thiết bị cũng tính là 1 Collision Domain -> H1=1 Giữa 2 router có kết nối với nhau có 1 Collision Domain -> R1,R2=1 => Tổng có 10 Collision Domain Router1 và Router2 có 5 cổng (Giữa 2 Router liên kết với nhau tính là 1) => 5 Broadcasrt Domain.
+
+===== De04-4-228 | De04 câu 4 | trang 56 | warning | ascii-vietnamese =====
+Kết quả phụ thuộc chính xác sơ đồ; app kèm trang gốc để đối chiếu.
+
+===== De04-4-228 | De04 câu 4 | trang 56 | option.c | letter-digit-ocr =====
+11và5
+
+===== De04-4-228 | De04 câu 4 | trang 56 | option.d | ascii-vietnamese,letter-digit-ocr =====
+10 và 5 Tương tự câu 5, nhưng nhớ như sau dễ hơn Switch, Bridge có n cổng thì có n Collision Domain -> S1=3, S2=3, B1=2 Hub kết nối với bao nhiêu thiết bị cũng tính là 1 Collision Domain -> H1=1 Giữa 2 router có kết nối với nhau có 1 Collision Domain -> R1,R2=1 => Tổng có 10 Collision Domain Router1 và Router2 có 5 cổng (Giữa 2 Router liên kết với nhau tính là 1) => 5 Broadcasrt Domain
+
+===== De04-5-229 | De04 câu 5 | trang 56 | question | ascii-vietnamese =====
+Cho địa chỉ IP=10.1.20.1 với mặt nạ mạng con là 255.255.240.0, địa chỉ IP này thuộc mạng con nào sau đây?
+
+===== De04-5-229 | De04 câu 5 | trang 56 | explanation | letter-digit-ocr,spacing-before-punctuation =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: 10.1.16.0 Giải: Subnet Mask : 255.255.240.0 = 1111 1111.1111 1111.1111 0000.0000 0000, ta thấy có 20 bit1, tức 20 bit mạng -> /20 IP : 10.1.20.1 = 0000 1010.0000 0001.0001 0100.0000 0001 Từ IP, giữ nguyên 20 bit đầu tiên, còn lại đổi thành bit 0 : -> 0000 1010.0000 0001.0001 0000.0000 0000 = 10.1.16.0.
+
+===== De04-6-230 | De04 câu 6 | trang 57 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Tầng mạng.
+
+===== De04-7-231 | De04 câu 7 | trang 57 | question | ascii-vietnamese =====
+Giao thức nào sau đây không thuộc tầng mạng của bộ giao thức TCP/IP
+
+===== De04-7-231 | De04 câu 7 | trang 57 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: UDP.
+
+===== De04-8-232 | De04 câu 8 | trang 57 | question | ascii-vietnamese =====
+Khi cài đặt giao thức IP cho một máy tính, thi máy tính đó mặc nhiên sé được gián địa chi IP?
+
+===== De04-9-233 | De04 câu 9 | trang 57 | question | ascii-vietnamese =====
+Mặt nạ mạng con (Subnet Mask) của địa chỉ IP viết dưới dạng CIDR 31.16.21.8/27 là gì?
+
+===== De04-10-234 | De04 câu 10 | trang 57 | question | ascii-vietnamese =====
+Phát biểu nào sau đây là đúng khi đề cập đến mặt nạ mang (Subnet Mask)?
+
+===== De04-10-234 | De04 câu 10 | trang 57 | option.d | ascii-vietnamese =====
+Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 0, được sử dụng để xác định một mạng
+
+===== De04-11-235 | De04 câu 11 | trang 58 | question | ascii-vietnamese =====
+Phát biểu nào sau đây là đúng khi đề cập đến địa chỉ mạng (Network Address)?
+
+===== De04-11-235 | De04 câu 11 | trang 58 | option.d | ascii-vietnamese =====
+Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 1, được sử dụng để chỉ tất cả các máy tính trong mạng
+
+===== De04-12-236 | De04 câu 12 | trang 58 | question | ascii-vietnamese =====
+Phát biểu nào sau đây là đúng khi đề cập đến địa chỉ quảng bá (Broadcast Address)?
+
+===== De04-12-236 | De04 câu 12 | trang 58 | option.d | ascii-vietnamese =====
+Là địa chi IP mà giá trị của tất cả các bits ở phần nhận dạng máy tính đều là 0, được sử dụng để xác định một mạng
+
+===== De04-15-239 | De04 câu 15 | trang 59 | question | ascii-vietnamese =====
+Theo lược đồ phân lớp địa chỉ IP, mặt nạ mạng "255.255.0.0" là của lớp nào?
+
+===== De04-15-239 | De04 câu 15 | trang 59 | explanation | spacing-before-punctuation =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: B Lớp A: 255.0.0.0 Lớp B : 255.255.0.0 Lớp C : 255.255.255.0.
+
+===== De04-15-239 | De04 câu 15 | trang 59 | option.d | spacing-before-punctuation =====
+B Lớp A: 255.0.0.0 Lớp B : 255.255.0.0
+
+===== De04-16-240 | De04 câu 16 | trang 59 | question | ascii-vietnamese =====
+Theo lược đồ phân lớp địa chi IP, mặt nạ mạng "255.255.255.0" là của lớp nào? aA
+
+===== De04-17-241 | De04 câu 17 | trang 59 | question | ascii-vietnamese =====
+Theo phân lớp địa chỉ IP, địa chi IP nào sau đây thuộc lớp A
+
+===== De04-17-241 | De04 câu 17 | trang 59 | option.d | spacing-before-punctuation =====
+204.0.0.1 Nhớ byte đầu tiên là được rồi Lớp A: 1.0.0.0 - 126.0.0.0 (1.0.0.0 - 126.255.255.255) Lớp B : 128.1.0.0 - 191.254.0.0 (128.0.0.0 - 191.255.255.255)
+
+===== De04-18-243 | De04 câu 18 | trang 60 | question | ascii-vietnamese =====
+Theo phân lớp địa chỉ IP, địa chỉ IP nào sau đây thuộc lớp B
+
+===== De04-19-244 | De04 câu 19 | trang 60 | question | ascii-vietnamese =====
+Theo phân lớp địa chỉ IP, địa chỉ IP nào sau đây thuộc lớp C
+
+===== De04-20-245 | De04 câu 20 | trang 60 | question | ascii-vietnamese =====
+Theo phân lớp địa chi IP, địa chi IP thuộc lớp B, luôn có 02 bit đầu tiên là?
+
+===== De04-21-246 | De04 câu 21 | trang 60 | question | ascii-vietnamese =====
+Theo phân lớp địa chỉ IP, địa chỉ IP thuộc lớp C, luôn có 03 bit đầu tiên là?
+
+===== De04-22-247 | De04 câu 22 | trang 60 | question | ascii-vietnamese =====
+Theo phương pháp vạch đường liên miền không phân lớp (CIDR), dia chỉ IP được viết dưới dạng X.X.X.X/Y, trong đó Y có ý nghĩa là?
+
+===== De04-23-248 | De04 câu 23 | trang 61 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: 3.
+
+===== De04-23-248 | De04 câu 23 | trang 61 | option.b | letter-digit-ocr =====
+5 c2
+
+===== De04-24-249 | De04 câu 24 | trang 61 | question | ascii-vietnamese =====
+Thiết bị mạng nào sau đây hoạt động ở tầng mang của mô hình OSI?
+
+===== De04-25-250 | De04 câu 25 | trang 61 | question | ascii-vietnamese =====
+Trong một mạng ma ở đó các router sẽ tự động cập nhật lại thông tin về đường đi khi hình trạng mạng thay đổi. Mạng này đang sử dụng giải thuật (cách) chọn đường nào?
+
+===== De04-26-251 | De04 câu 26 | trang 61 | option.d | ascii-vietnamese,spacing-before-punctuation =====
+Tổ chức một mạng có tối đa 512 host /23 tức 9 bit dành cho host „1.1111 1111 = 511 -> 512 địa chỉ -> 510 địa chi host ( -2 địa chi Network va Broadcast ) Cách 2 dùng công thức :2*-2=2°-2=512~2=510 (xlà số bit host)
+
+===== De04-28-253 | De04 câu 28 | trang 61 | question | ascii-vietnamese =====
+Với dia chỉ mạng con 172.18.100.0/29, ta có thể?
+
+===== De04-29-254 | De04 câu 29 | trang 62 | question | ascii-vietnamese =====
+Dia chi quảng ba (Broadcast) của mang con 181.16.21.8/29 la gì?
+
+===== De04-29-254 | De04 câu 29 | trang 62 | option.d | spacing-before-punctuation =====
+181.16.21.9 /29 -> 3 bit danh cho host 181.16.21.8 = 1011 0101.0001 0000.0001 0101.0000 1000, giữ nguyên 29 bit đầu, còn lai đổi thành 1 -> ...0000 1111 = 181.16.21.15 Cách 2: 23 = 8 địa chỉ -> 181.16.21.8 - 181.16.21.15
+
+===== De04-30-256 | De04 câu 30 | trang 62 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Gói tin (Packet).
+
+===== De04-30-256 | De04 câu 30 | trang 62 | option.b | ascii-vietnamese =====
+Gói tin (Packet)
+
+===== De04-30-256 | De04 câu 30 | trang 62 | option.d | ascii-vietnamese,spacing-before-punctuation =====
+Khung (Frame) Chwong 7 : TANG VAN CHUYEN (GIAO VAN)
+
+===== De04-2-258 | De04 câu 2 | trang 62 | question | ascii-vietnamese =====
+"Một nút phải tiếp tục nhận dữ liệu sau khi đã gởi đi yêu cầu giải phóng nối kết, cho đến khi nhận được chấp thuận hủy bỏ nối kết của bên đối tác", mệnh đề này đề cập đến phương pháp giải phóng kết nối nào ở tầng vận chuyển?
+
+===== De04-3-259 | De04 câu 3 | trang 63 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: sai.
+
+===== De04-4-260 | De04 câu 4 | trang 63 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Đúng.
+
+===== De04-5-261 | De04 câu 5 | trang 63 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Bên nhận có thể thay đổi buffer nhận..
+
+===== De04-6-262 | De04 câu 6 | trang 63 | question | ascii-vietnamese =====
+Giao thức UDP cung cấp dịch vụ vận chuyển tin cậy hơn so với giao thức TCP?
+
+===== De04-6-262 | De04 câu 6 | trang 63 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Sai.
+
+===== De04-7-263 | De04 câu 7 | trang 63 | question | ascii-vietnamese =====
+Hàm cơ sở nào sau đây không thuộc dịch vụ không kết nối?
+
+===== De04-7-263 | De04 câu 7 | trang 63 | warning | ascii-vietnamese =====
+Câu gốc có hơn một lựa chọn không thuộc dịch vụ không kết nối. Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc.
+
+===== De04-9-265 | De04 câu 9 | trang 64 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: TCP là giao thức cung cấp dịch vụ vận chuyển không tin cậy, hướng nối kết..
+
+===== De04-9-265 | De04 câu 9 | trang 64 | option.b | ascii-vietnamese =====
+Hai tiến trình sử dụng TCP phải thiết lập nối kết trước khi truyền nhận.
+
+===== De04-9-265 | De04 câu 9 | trang 64 | option.d | ascii-vietnamese =====
+TCP là giao thức cung cấp dịch vụ vận chuyển không tin cậy, hướng nối kết.
+
+===== De04-10-266 | De04 câu 10 | trang 64 | explanation | ascii-vietnamese =====
+Cả A và B đều sai: UDP không tự mang địa chỉ IP để router định tuyến, và UDP không thiết lập kết nối.
+
+===== De04-10-266 | De04 câu 10 | trang 64 | warning | ascii-vietnamese =====
+Câu gốc có hơn một phát biểu sai. Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc.
+
+===== De04-10-266 | De04 câu 10 | trang 64 | option.a | ascii-vietnamese =====
+Các phân đoạn UDP tự thân chứa mọi thông tin cần thiết để các router có thể vạch đường và chuyển tiếp nó đến đích
+
+===== De04-10-266 | De04 câu 10 | trang 64 | option.b | ascii-vietnamese =====
+Hai tiến trình sử dụng UDP phải thiết lập nối kết trước khi truyền nhận.
+
+===== De04-11-267 | De04 câu 11 | trang 64 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: địa chỉ IP nguồn, địa chỉ IP đích và chiều dài của gói UDP.
+
+===== De04-11-267 | De04 câu 11 | trang 64 | option.b | ascii-vietnamese =====
+chiều dài của gói UDP
+
+===== De04-11-267 | De04 câu 11 | trang 64 | option.c | ascii-vietnamese =====
+địa chỉ IP nguồn, địa chi IP đích
+
+===== De04-11-267 | De04 câu 11 | trang 64 | option.d | ascii-vietnamese =====
+địa chỉ IP nguồn, địa chỉ IP đích và chiều dài của gói UDP
+
+===== De04-13-269 | De04 câu 13 | trang 64 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Byte.
+
+===== De04-14-270 | De04 câu 14 | trang 65 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Acknowledgement = SequenceNum + n.
+
+===== De04-15-271 | De04 câu 15 | trang 65 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: URG.
+
+===== De04-16-272 | De04 câu 16 | trang 65 | option.b | letter-digit-ocr =====
+4096 c0
+
+===== De04-17-273 | De04 câu 17 | trang 65 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Số thứ tự của byte đầu tiên của dãy byte trong segment..
+
+===== De04-17-273 | De04 câu 17 | trang 65 | option.c | ascii-vietnamese =====
+Dia chỉ của cổng dịch vu.
+
+===== De04-18-274 | De04 câu 18 | trang 65 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: UDP.
+
+===== De04-19-275 | De04 câu 19 | trang 65 | question | ascii-vietnamese =====
+Trong tang vận chuyển của bộ giao thức TCP/IP, giao thức nao cung cấp dich vụ có nối kết?
+
+===== De04-19-275 | De04 câu 19 | trang 65 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: TCP.
+
+===== De04-20-276 | De04 câu 20 | trang 66 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Cửa sổ trượt.
+
+===== De04-1-277 | De04 câu 1 | trang 66 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-2-278 | De04 câu 2 | trang 66 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-2-278 | De04 câu 2 | trang 66 | warning | ascii-vietnamese =====
+DNS có thể dùng cả UDP và TCP, nên lựa chọn UDP đơn lẻ là thiếu. Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc.
+
+===== De04-3-279 | De04 câu 3 | trang 66 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-3-279 | De04 câu 3 | trang 66 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: TCP.
+
+===== De04-4-280 | De04 câu 4 | trang 66 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-4-280 | De04 câu 4 | trang 66 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: SMTP/SMTPS.
+
+===== De04-4-280 | De04 câu 4 | trang 66 | option.a | letter-digit-ocr =====
+POP3/POP3S
+
+===== De04-5-281 | De04 câu 5 | trang 66 | question | ascii-vietnamese =====
+Giao thức cho phép người dùng doc trực tiếp email trong mailbox trên may chủ email?
+
+===== De04-5-281 | De04 câu 5 | trang 66 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-5-281 | De04 câu 5 | trang 66 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: IMAP/IMAPS.
+
+===== De04-5-281 | De04 câu 5 | trang 66 | option.d | ascii-vietnamese,letter-digit-ocr =====
+POP3/POP3S “S” theo sau la Secure, tức có mã hóa
+
+===== De04-6-282 | De04 câu 6 | trang 67 | question | ascii-vietnamese =====
+Giao thức nao được sử dụng trong dich vụ Web (WWW)?
+
+===== De04-6-282 | De04 câu 6 | trang 67 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-6-282 | De04 câu 6 | trang 67 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: HTTP.
+
+===== De04-7-283 | De04 câu 7 | trang 67 | question | ascii-vietnamese =====
+Hai máy chủ email thực hiện việc chuyển email qua các giai đoạn?
+
+===== De04-7-283 | De04 câu 7 | trang 67 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-8-284 | De04 câu 8 | trang 67 | question | ascii-vietnamese =====
+Hai máy chủ thư điện tử trao đổi thư với nhau qua giao thức?
+
+===== De04-8-284 | De04 câu 8 | trang 67 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-8-284 | De04 câu 8 | trang 67 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: SMTP/SMTPS.
+
+===== De04-8-284 | De04 câu 8 | trang 67 | option.d | letter-digit-ocr =====
+POP3/POP3S
+
+===== De04-9-285 | De04 câu 9 | trang 67 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-10-286 | De04 câu 10 | trang 67 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-11-287 | De04 câu 11 | trang 67 | question | letter-digit-ocr =====
+Hay cho biết cổng mặc định của giao thức POP3 và POP3S là bao nhiêu?
+
+===== De04-11-287 | De04 câu 11 | trang 67 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-12-288 | De04 câu 12 | trang 68 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-13-289 | De04 câu 13 | trang 68 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-14-290 | De04 câu 14 | trang 68 | question | ascii-vietnamese =====
+IMAP là chữ viết tắt của?
+
+===== De04-14-290 | De04 câu 14 | trang 68 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-15-291 | De04 câu 15 | trang 68 | question | ascii-vietnamese =====
+Mã lỗi nào mà Web Server trả ra khi nó thất bại trong việc đáp ứng một yêu cầu hợp lệ?
+
+===== De04-15-291 | De04 câu 15 | trang 68 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-16-292 | De04 câu 16 | trang 68 | question | ascii-vietnamese =====
+Mã lỗi nào ma Webserver trả ra khi yêu cầu có cú pháp sai hoặc không thé đáp ứng?
+
+===== De04-16-292 | De04 câu 16 | trang 68 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-17-293 | De04 câu 17 | trang 68 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-17-293 | De04 câu 17 | trang 68 | option.b | ascii-vietnamese =====
+Máy chủ DNS chính chứa tập tin cơ sở dữ liệu chính của vùng. D
+
+===== De04-18-294 | De04 câu 18 | trang 69 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-18-294 | De04 câu 18 | trang 69 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Chứa các mẫu tin NS của các máy chủ cấp một..
+
+===== De04-18-294 | De04 câu 18 | trang 69 | option.a | ascii-vietnamese =====
+Chứa các mẫu tin NS của các máy chủ cấp bốn.
+
+===== De04-18-294 | De04 câu 18 | trang 69 | option.b | ascii-vietnamese =====
+Chứa các mẫu tin NS của các máy chủ cấp ba.
+
+===== De04-18-294 | De04 câu 18 | trang 69 | option.c | ascii-vietnamese =====
+Chứa các mẫu tin NS của các máy chủ cấp một.
+
+===== De04-18-294 | De04 câu 18 | trang 69 | option.d | ascii-vietnamese =====
+Chứa các mẫu tin NS của các máy chủ cấp hai.
+
+===== De04-19-295 | De04 câu 19 | trang 69 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-19-295 | De04 câu 19 | trang 69 | explanation | letter-digit-ocr =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: BASE64.
+
+===== De04-19-295 | De04 câu 19 | trang 69 | option.c | letter-digit-ocr =====
+BASE46
+
+===== De04-19-295 | De04 câu 19 | trang 69 | option.d | letter-digit-ocr =====
+BASE64
+
+===== De04-20-296 | De04 câu 20 | trang 69 | question | ascii-vietnamese =====
+MINE cho phép một thu điện tử mang được nhiều loại dữ liệu khác nhau như audio, video, hình ảnh, tài liệu...trường nào dưới đây chỉ ra loại dữ liệu có trong thư điện tử?
+
+===== De04-20-296 | De04 câu 20 | trang 69 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-21-297 | De04 câu 21 | trang 69 | question | ascii-vietnamese =====
+Người dùng có thé nhận và đọc email của mình qua các giao thức nào?
+
+===== De04-21-297 | De04 câu 21 | trang 69 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-21-297 | De04 câu 21 | trang 69 | explanation | ascii-vietnamese,letter-digit-ocr =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: IMAP/IMAPS và POP3/POP3S.
+
+===== De04-21-297 | De04 câu 21 | trang 69 | option.b | letter-digit-ocr =====
+IMAP/IMAPS và POP3/POP3S
+
+===== De04-21-297 | De04 câu 21 | trang 69 | option.d | letter-digit-ocr =====
+POP3/POP3S và SMTP/SMTPS
+
+===== De04-22-298 | De04 câu 22 | trang 69 | question | ascii-vietnamese =====
+Phiên bản mới nhất của giao thức HTTP là?
+
+===== De04-22-298 | De04 câu 22 | trang 69 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-22-298 | De04 câu 22 | trang 69 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: 3.0.
+
+===== De04-23-299 | De04 câu 23 | trang 69 | question | ascii-vietnamese =====
+Phương thức nào cho phép Webclient cung cấp thông tin cho Webserver?
+
+===== De04-23-299 | De04 câu 23 | trang 69 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-24-300 | De04 câu 24 | trang 70 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-25-301 | De04 câu 25 | trang 70 | question | ascii-vietnamese =====
+Theo RFC 822, một thư điện tử gồm những "header line" nào?
+
+===== De04-25-301 | De04 câu 25 | trang 70 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-26-302 | De04 câu 26 | trang 70 | question | ascii-vietnamese =====
+Tiện ích (công cụ) được dùng dé truy vấn các mẩu tin của DNS trên các hệ điều hành Liunx và Windows là?
+
+===== De04-26-302 | De04 câu 26 | trang 70 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-27-303 | De04 câu 27 | trang 70 | question | ascii-vietnamese =====
+Trong cơ sở dữ liệu của dich vu DNS, kiểu mẫu tin kiểu nào được dùng dé chỉ một máy chủ DNS của một miền nào đó?
+
+===== De04-27-303 | De04 câu 27 | trang 70 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-27-303 | De04 câu 27 | trang 70 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: NS.
+
+===== De04-28-304 | De04 câu 28 | trang 70 | question | ascii-vietnamese =====
+Trong cơ sở dữ liệu của dich vu DNS, kiểu mẫu tin kiểu nào được dùng dé chi một máy chủ Email của một miền nào đó?
+
+===== De04-28-304 | De04 câu 28 | trang 70 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-28-304 | De04 câu 28 | trang 70 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: MX.
+
+===== De04-29-305 | De04 câu 29 | trang 71 | question | ascii-vietnamese =====
+Trong cơ sở dữ liệu của dịch vụ DNS, kiểu mẫu tin nào ngược với kiểu A, dùng để ánh xạ địa chỉ IP sang tên miền?
+
+===== De04-29-305 | De04 câu 29 | trang 71 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-29-305 | De04 câu 29 | trang 71 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: PTR.
+
+===== De04-30-306 | De04 câu 30 | trang 71 | question | ascii-vietnamese =====
+Trong cơ sở dữ liệu của dich vu DNS, kiểu mẫu tin nào được dùng để ánh xa một tên miền sang địa chỉ IP?
+
+===== De04-30-306 | De04 câu 30 | trang 71 | chapter | ascii-vietnamese,spacing-before-punctuation =====
+chuong 8 : tang ung dung
+
+===== De04-30-306 | De04 câu 30 | trang 71 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: a.
+
+===== De07-7-307 | De07 câu 7 | trang 71 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: File and Print.
+
+===== De07-8-308 | De07 câu 8 | trang 71 | explanation | ascii-vietnamese =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: Tập hợp một số thành phần phần cứng và máy tính được kết nối bởi các kênh truyền và được sử dụng để chia sẻ tài nguyên và thông tin.
+
+===== De07-8-308 | De07 câu 8 | trang 71 | option.c | ascii-vietnamese =====
+Chia sẻ tài nguyên và thông tin
+
+===== De07-8-308 | De07 câu 8 | trang 71 | option.d | ascii-vietnamese =====
+Tập hợp một số thành phần phần cứng và máy tính được kết nối bởi các kênh truyền và được sử dụng để chia sẻ tài nguyên và thông tin
+
+===== De07-15-310 | De07 câu 15 | trang 71 | question | ascii-vietnamese =====
+Mục đích của việc tổ chức các chương trình ứng dụng thành nhiều tầng là?
+
+===== De07-10-312 | De07 câu 10 | trang 72 | warning | ascii-vietnamese =====
+Đề PDF không có lựa chọn nào khớp hoàn toàn với kết luận kỹ thuật sau khi kiểm tra; phương án có nhãn “Đáp án kỹ thuật bổ sung” do web thêm để giải thích và không phải là phương án in trong đề gốc.
+
+===== De07-11-313 | De07 câu 11 | trang 72 | option.c | ascii-vietnamese =====
+Dia chỉ của cổng dịch vu.
+
+===== De08-15-314 | De08 câu 15 | trang 72 | explanation | ascii-vietnamese =====
+Lựa chọn phù hợp nhất với khái niệm trong câu hỏi là: Định khung dữ liệu (Framing)..
+
+===== De08-15-314 | De08 câu 15 | trang 72 | option.b | ascii-vietnamese =====
+Định khung dữ liệu (Framing).
+
+===== De08-16-315 | De08 câu 16 | trang 72 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: 21.
+
+===== De08-20-316 | De08 câu 20 | trang 73 | warning | ascii-vietnamese =====
+Cụm “tất cả máy tính” không rõ có bao gồm thiết bị trung gian hay chỉ end host.
+
+===== De08-21-317 | De08 câu 21 | trang 73 | option.b | letter-digit-ocr =====
+29 C255
+
+===== De08-26-318 | De08 câu 26 | trang 73 | question | ascii-vietnamese =====
+Giả sử hệ thống sử dụng phương pháp Kiểm tra phần dư tuần hoàn (Cycle Redundancy Check) để phát hiện lỗi khung P-1011. Hãy cho biết dữ liệu truyền đi (I) sau khi đã thêm chuỗi kiểm tra khung (F) là gì?
+
+===== De08-26-318 | De08 câu 26 | trang 73 | explanation | ascii-vietnamese =====
+Chỉ biết đa thức sinh P = 1011 là chưa đủ; cần chuỗi dữ liệu M để tính phần dư CRC.
+
+===== De08-26-318 | De08 câu 26 | trang 73 | option.a | ascii-vietnamese =====
+Không thể xác định vì thiếu chuỗi dữ liệu M
+
+===== De08-27-319 | De08 câu 27 | trang 73 | question | ascii-vietnamese =====
+Cho một giao thức của số trượt sử dụng 2 bits để đánh số thứ tự các vị trí trên cửa sổ. Vùng bộ nhớ đệm của bên nhận có thể chứa được 2 khung của cửa sổ trượt trong trường hợp này là bao nhiêu?
+
+===== De08-27-319 | De08 câu 27 | trang 73 | explanation | ascii-vietnamese =====
+Đề cho bộ đệm phía nhận chứa được 2 khung, nên đáp án là 2 khung.
+
+===== De08-27-319 | De08 câu 27 | trang 73 | option.a | ascii-vietnamese =====
+1 khung
+
+===== De08-27-319 | De08 câu 27 | trang 73 | option.b | ascii-vietnamese =====
+2 khung
+
+===== De08-27-319 | De08 câu 27 | trang 73 | option.c | ascii-vietnamese =====
+3 khung
+
+===== De08-27-319 | De08 câu 27 | trang 73 | option.d | ascii-vietnamese =====
+4 khung
+
+===== De08-31-321 | De08 câu 31 | trang 73 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Bên nhận sẽ gửi lại báo nhận và Advertised Window (Window Size)..
+
+===== De08-31-321 | De08 câu 31 | trang 73 | warning | ascii-vietnamese =====
+PDF có hai phương án B và D diễn đạt cùng ý. Giao diện đã bỏ B trùng nghĩa và giữ D theo khóa nguồn.
+
+===== De08-31-321 | De08 câu 31 | trang 73 | option.c | ascii-vietnamese =====
+be n nhan se kho ng gu i la i bat ki thong ba o na o.
+
+===== De08-35-322 | De08 câu 35 | trang 73 | question | ascii-vietnamese =====
+Trong các từ sau đây, từ nào không dùng để chỉ hình trạng (topology) mạng?
+
+===== De08-37-323 | De08 câu 37 | trang 74 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: UDP.
+
+===== De08-38-324 | De08 câu 38 | trang 74 | question | ascii-vietnamese =====
+Mục đích của việc xây dựng dich vụ trực tuyến là gì?
+
+===== De08-38-324 | De08 câu 38 | trang 74 | explanation | ascii-vietnamese =====
+Theo chức năng/chuẩn của giao thức hoặc tầng mạng được hỏi, lựa chọn phù hợp là: Mở ra cách thức truy cập vào tài nguyên một cách dé dàng và linh hoạt..
+
+===== De08-38-324 | De08 câu 38 | trang 74 | option.a | ascii-vietnamese =====
+Mở ra cách thức truy cập vào tài nguyên một cách dé dàng và linh hoạt.
+
+===== De08-38-324 | De08 câu 38 | trang 74 | option.c | ascii-vietnamese =====
+Ổn định và không thay đổi theo thời gian để đáp ứng nhu cầu khác nhau.
+
+===== De08-40-325 | De08 câu 40 | trang 74 | question | ascii-vietnamese =====
+Dia chỉ IP nào là hợp lệ cho một hoạt thuộc mạng 192.168.1.64/26?
+
+===== De08-42-327 | De08 câu 42 | trang 74 | question | ascii-vietnamese =====
+Trong mạng có một Trung tâm điều khiển mạng (Network Control Center) chịu trách nhiệm tính toán và cập nhật thông tin về đường đi cho tất cả các router, mạng này đang sử dụng giải thuật chọn đường loại nào?
+
+===== De08-42-327 | De08 câu 42 | trang 74 | explanation | ascii-vietnamese =====
+Áp dụng dữ kiện hoặc phép tính trong đề, kết quả phù hợp là: cho n duong ta p trung.
+
+===== De08-42-327 | De08 câu 42 | trang 74 | option.c | ascii-vietnamese =====
+cho n duong ta p trung
+
+===== De08-42-327 | De08 câu 42 | trang 74 | option.d | ascii-vietnamese,letter-digit-ocr,spacing-before-punctuation =====
+Chọn đường đăng De09, Thập cẩm, De10 : Có thời gian xem sau
