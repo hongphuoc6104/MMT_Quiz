@@ -1,0 +1,46 @@
+name: Validate question and theory consistency
+
+on:
+  push:
+    paths:
+      - 'questions.js'
+      - 'question_structure_fixes.js'
+      - 'data_corrections.js'
+      - 'question_consistency_fixes.js'
+      - 'beginner_theory.js'
+      - 'theory_topic_guard.js'
+      - 'manual_bootstrap.js'
+      - 'scripts/validate-question-solution-consistency.cjs'
+      - '.github/workflows/validate-question-consistency.yml'
+  pull_request:
+    paths:
+      - 'questions.js'
+      - 'question_structure_fixes.js'
+      - 'data_corrections.js'
+      - 'question_consistency_fixes.js'
+      - 'beginner_theory.js'
+      - 'theory_topic_guard.js'
+      - 'manual_bootstrap.js'
+      - 'scripts/validate-question-solution-consistency.cjs'
+      - '.github/workflows/validate-question-consistency.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate question/options and theory topic isolation
+        run: node scripts/validate-question-solution-consistency.cjs
+      - name: Verify runtime wiring
+        run: |
+          grep -q "'question_consistency_fixes.js" manual_bootstrap.js
+          grep -q "'theory_topic_guard.js" manual_bootstrap.js
+          node --check question_consistency_fixes.js
+          node --check theory_topic_guard.js
