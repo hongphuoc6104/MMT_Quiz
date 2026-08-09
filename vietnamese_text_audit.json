@@ -63,7 +63,7 @@
       "warning": "PDF thiếu các giá trị công suất đầu–cuối; tạm giữ đáp án gốc."
     },
     "De04-7-115": {
-      "question": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Passing Network)?",
+      "question": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Switching Network)?",
       "options": [
         {
           "id": "a",

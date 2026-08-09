@@ -58,7 +58,7 @@ Findings: 0
 
 ===== FOCUS De04-7-115 =====
 {
-  "question": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Passing Network)?",
+  "question": "Phát biểu nào sau đây KHÔNG ĐÚNG về mạng chuyển gói (Packet Switching Network)?",
   "options": [
     {
       "id": "a",
